@@ -1,0 +1,60 @@
+jQuery(document).ready(function(){
+  jQuery("#partnersCarrousel").jCarrousel({
+    viewItems:3,
+    complete:function(){
+      var slide=jQuery("#partnersCarrousel").jCarrousel("getSlideN")+1;
+      var slidesLength=jQuery("#partnersCarrousel").jCarrousel("length");
+      if(slide>slidesLength-1){
+        slide=0;
+      }
+      jQuery("#partnersInfoBoxContent").
+        empty().
+        append(jQuery(this).children().eq(slide).find(".views-field-title").clone()).
+        append(jQuery(this).children().eq(slide).find(".views-field-entity-id-1").clone());
+        jQuery("#partnersInfoBox").fadeToggle();
+    },
+    configured:function(){
+      jQuery("#partnersInfoBoxContent").
+        empty().
+        append(jQuery(this).children().eq(1).find(".views-field-title").clone()).
+        append(jQuery(this).children().eq(1).find(".views-field-entity-id-1").clone());
+    }
+  });
+  jQuery("#nextSlideArrow").click(function(){
+    jQuery("#partnersInfoBox").fadeToggle();
+    jQuery("#partnersCarrousel").jCarrousel("nextSlide");
+  });
+  jQuery("#prevSlideArrow").click(function(){
+    jQuery("#partnersInfoBox").fadeToggle();
+    jQuery("#partnersCarrousel").jCarrousel("prevSlide");
+  });
+  jQuery("#clientsCarrousel").jCarrousel({
+    viewItems:3,
+    complete:function(){
+      var slide=jQuery("#clientsCarrousel").jCarrousel("getSlideN")+1;
+      var slidesLength=jQuery("#clientsCarrousel").jCarrousel("length");
+      if(slide>slidesLength-1){
+        slide=0;
+      }
+      jQuery("#clientsInfoBoxContent").
+        empty().
+        append(jQuery(this).children().eq(slide).find(".views-field-title").clone()).
+        append(jQuery(this).children().eq(slide).find(".views-field-entity-id-1").clone());
+        jQuery("#clientsInfoBox").fadeToggle();
+    },
+    configured:function(){
+      jQuery("#clientsInfoBoxContent").
+        empty().
+        append(jQuery(this).children().eq(1).find(".views-field-title").clone()).
+        append(jQuery(this).children().eq(1).find(".views-field-entity-id-1").clone());
+    }
+  });
+  jQuery("#nextSlideArrow").click(function(){
+    jQuery("#clientsInfoBox").fadeToggle();
+    jQuery("#clientsCarrousel").jCarrousel("nextSlide");
+  });
+  jQuery("#prevSlideArrow").click(function(){
+    jQuery("#clientsInfoBox").fadeToggle();
+    jQuery("#clientsCarrousel").jCarrousel("prevSlide");
+  });
+});

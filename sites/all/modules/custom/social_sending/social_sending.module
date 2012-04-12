@@ -1,0 +1,110 @@
+<?php
+
+// $Id: social_sending.module Exp $
+
+  include "class/twitter.php";
+/**
+ * config page
+ */
+function social_sending_menu() {
+  $items['admin/config/services/social-sending'] = array(
+    'title' => 'Social Sending',
+    'description' => 'Configure targets and others params',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('social_sending_form'),
+    'access arguments' => array('access administration pages'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+/**
+ *
+ */
+function social_sending_form() {
+
+// settings for social accounts, etc.
+  $form = array();
+  $form['social_sending']['linkedin'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Linkedin API'),
+    '#collapsible' => TRUE,
+  );
+  $form['social_sending']['linkedin']['social_sending_linkedin_api'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Linkedin API'),
+    '#description' => t('Get your api-key in http://developer.linkedin.com/'),
+    '#default_value' => variable_get('social_sending_linkedin_api', ''),
+  );
+
+  $form['social_sending']['linkedin']['social_sending_linkedin_secret'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Linkedin Secret'),
+    '#description' => t('Get your secret password in http://developer.linkedin.com/'),
+    '#default_value' => variable_get('social_sending_linkedin_secret', ''),
+    '#suffix' => linkedin_social_sending(),
+  );
+
+  return system_settings_form($form);
+}
+//
+///**
+// * implement custom hook
+// */
+//foreach (module_implements('social_sending_send') as $module) {
+//  $function = ($module . '_social_sending_send');
+//  $resultado = $function($dato1, $dato2, $dato3);
+//}
+//
+function linkedin_social_sending() {
+//  session_start();
+//  include_once 'config.php';
+//  include_once $config['linkedin_library_path'];
+//
+//# First step is to initialize with your consumer key and secret. We'll use an out-of-band oauth_callback
+//  $linkedin = new LinkedIn($config['linkedin_access'], $config['linkedin_secret'], $config['base_url'] . '/linkedinauth.php');
+////$linkedin->debug = true;
+//# Now we retrieve a request token. It will be set as $linkedin->request_token
+//  $linkedin->getRequestToken();
+//  $_SESSION['requestToken'] = serialize($linkedin->request_token);
+//
+//  $status = "update status for Drupal";
+//  if (isset($_SESSION['requestToken']) && isset($_SESSION['oauth_verifier']) && isset($_SESSION['oauth_access_token'])) {
+////$fblinkedtwit->linkedinStatusUpdate($status, $_SESSION['requestToken'], $_SESSION['oauth_verifier'], $_SESSION['oauth_access_token']);
+//    return 'enviado';
+//  }
+//  else {
+//    return 'no cookies';
+//  }
+  return '';
+}
+
+function tinyURL($url) {
+  $curl = curl_init();
+  curl_setopt($curl,CURLOPT_URL, "http://tinyurl.com/api-create.php?url=".urlencode($url));
+  curl_setopt($curl,CURLOPT_RETURNTRANSFER,1);
+  curl_setopt($curl,CURLOPT_CONNECTTIMEOUT,10);
+  $tiny = curl_exec($curl); curl_close($curl);
+  print $tiny;
+  return($tiny);
+}
+
+
+function social_sending_node_insert($node) {
+//
+//  //instancio un objeto de la clase Twitter
+//  $myTwitter = new Twitter('fulanodenadie', 'racingX21');
+//  $sitebase = 'http://summasolutions.net/';
+//  $tinyurl = tinyURL($sitebase.'node/'.$node->nid);
+//
+//
+//  $message = $node->title;
+//  if ((strlen($tinyurl) + strlen($message)) > 139) {
+//    $message = substr($message, 0, (140 - strlen($message) - strlen($tinyurl)));
+//  }
+//  $message .= ' '.$tinyurl;
+//
+//  $myTwitter->updateStatus($message);
+
+
+}

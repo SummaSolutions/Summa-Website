@@ -1,0 +1,7 @@
+; $Id: summa_blocks.info,v 1.0.0.0 2010/12/06 10:11:15 summasolutions.net Exp $
+name = "Summa Blocks"
+description = "Summa Custom Blocks"
+core = "7.x"
+package = "Summa Solutions"
+
+

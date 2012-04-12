@@ -1,0 +1,41 @@
+<?php
+
+function show_blog_default() {
+
+  $show = FALSE;
+  $argument = arg(1);
+
+  return !isset($argument);
+
+}
+
+function show_blog_by_user() {
+
+  $show = FALSE;
+  $name = arg(1);
+
+  if ($name) {
+
+    
+    $result = db_query("SELECT uid FROM {users} WHERE name = :name", array(':name' => $name));    
+    $info = $result->fetch();
+    
+    $show = !is_null($info->uid);
+    
+  }
+
+  return $show;
+}
+
+function show_blog_by_term() {
+
+  $show = FALSE;
+  $term_name = arg(1);
+
+  if ($term_name) {
+    $term = taxonomy_get_term_by_name($term_name);
+    $show = !is_null($term) && count($term) > 0;
+  }
+
+  return $show;
+}

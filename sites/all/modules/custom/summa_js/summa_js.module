@@ -1,0 +1,30 @@
+<?php
+
+function summa_js_init() {
+//   if (preg_match('/company/i', $_SERVER['REQUEST_URI'])) {
+//    drupal_add_js('
+//        jQuery(document).ready(function(){
+//          jQuery("#block-nice_menus-4 a[href=\'/company\']").addClass("active");
+//        });
+//    ', 'inline');
+//  }
+//   if (preg_match('/services/i', $_SERVER['REQUEST_URI'])) {
+//    drupal_add_js('
+//        jQuery(document).ready(function(){
+//          jQuery("#block-nice_menus-4 a[href=\'/services\']").addClass("active");
+//        });
+//    ', 'inline');
+//  }
+//   if (preg_match('/blogs/i', $_SERVER['REQUEST_URI'])) {
+//    drupal_add_js('
+//        jQuery(document).ready(function(){
+//          jQuery("#block-nice_menus-4 a[href=\'/blogs\']").addClass("active");
+//        });
+//    ', 'inline');
+//  }
+  drupal_add_js(drupal_get_path("module","summa_js")."/js/jquery.ui.widget.js");
+  drupal_add_js(drupal_get_path("module","summa_js")."/js/jquery.effects.core.js");
+  drupal_add_js(drupal_get_path("module","summa_js")."/js/jCarrousel.js");
+  drupal_add_js(drupal_get_path("module","summa_js")."/js/index.js");
+}
+

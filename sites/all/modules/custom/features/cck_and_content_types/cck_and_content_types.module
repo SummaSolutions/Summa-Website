@@ -1,0 +1,3 @@
+<?php
+
+include_once('cck_and_content_types.features.inc');

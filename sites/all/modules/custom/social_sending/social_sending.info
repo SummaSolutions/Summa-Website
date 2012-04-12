@@ -1,0 +1,7 @@
+; $Id: social_sending.info,v 1.0.0.0 2011/02/10 10:11:15 summasolutions.net Exp $
+name = "Social Sending"
+description = "Social Sending"
+core = "7.x"
+package = "Summa Solutions"
+version = "0.2alpha"
+

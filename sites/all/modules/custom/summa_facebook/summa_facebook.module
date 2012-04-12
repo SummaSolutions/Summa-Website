@@ -1,0 +1,58 @@
+<?php
+function summa_facebook_panels_pre_render(&$panel) {
+  if($panel->cache_key=="panel_context:node_view:node_view_panel_context_3" && $panel->css_id=="blog-entry-page"){
+    $data=$panel->context['argument_nid_1']->data;
+    global $base_path;
+    global $base_url;
+    global $language;
+    drupal_add_html_head(array(
+        "#tag"=>"meta",
+        "#attributes"=>array(
+            "property"=>"og:title",
+            "content"=>$data->title
+        )
+    ),"og_title");
+    drupal_add_html_head(array(
+        "#tag"=>"meta",
+        "#attributes"=>array(
+            "property"=>"og:image",
+            "content"=>$base_url.'/sites/default/files/styles/post_browse/public/'.$data->field_picture[$language->language][0]["filename"]
+        )
+    ),"og_image");
+    drupal_add_html_head(array(
+        "#tag"=>"meta",
+        "#attributes"=>array(
+            "property"=>"og:type",
+            "content"=>"article"
+        )
+    ),"og_type");
+    drupal_add_html_head(array(
+        "#tag"=>"meta",
+        "#attributes"=>array(
+            "property"=>"og:url",
+            "content"=>$base_url.request_uri()
+        )
+    ),"og_url");
+    drupal_add_html_head(array(
+        "#tag"=>"meta",
+        "#attributes"=>array(
+            "property"=>"og:site_name",
+            "content"=>"Summa Solutions"
+        )
+    ),"og_site_name");
+    drupal_add_html_head(array(
+        "#tag"=>"meta",
+        "#attributes"=>array(
+            "property"=>"og:app_id",
+            "content"=>"125429814196408"
+        )
+    ),"og_app_id");
+    drupal_add_html_head(array(
+        "#tag"=>"meta",
+        "#attributes"=>array(
+            "property"=>"og:admins",
+            "content"=>"1070276090"
+        )
+    ),"og_admins");
+  }
+}

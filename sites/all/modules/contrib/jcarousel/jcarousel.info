@@ -1,0 +1,12 @@
+; $Id$
+name = jCarousel
+description = Create jQuery-based carousel rotators.
+package = User interface
+core = 7.x
+
+; Information added by drupal.org packaging script on 2010-12-20
+version = "7.x-2.2-alpha1"
+core = "7.x"
+project = "jcarousel"
+datestamp = "1292868983"
+
