@@ -1,0 +1,12 @@
+website,email,group_id,group,firstname,lastname,password_hash,billing_firstname,billing_lastname,billing_company,billing_street1,billing_street2,billing_city,billing_region,billing_country,billing_postcode,billing_telephone,billing_fax,shipping_firstname,shipping_lastname,shipping_company,shipping_street1,shipping_street2,shipping_city,shipping_region,shipping_country,shipping_postcode,shipping_telephone,shipping_fax,created_in,is_subscribed
+base,,General,General,,,,,,,,,,,,,,,,,,,,,,,,,,default,1
+base,,General,General,,,,,,,,,,,,,,,,,,,,,,,,,,default,1
+base,,General,General,,,,,,,,,,,,,,,,,,,,,,,,,,default,1
+base,,General,General,,,,,,,,,,,,,,,,,,,,,,,,,,default,1
+base,,General,General,,,,,,,,,,,,,,,,,,,,,,,,,,default,1
+base,,General,General,,,,,,,,,,,,,,,,,,,,,,,,,,default,1
+base,,General,General,,,,,,,,,,,,,,,,,,,,,,,,,,default,1
+base,,General,General,,,,,,,,,,,,,,,,,,,,,,,,,,default,1
+base,,General,General,,,,,,,,,,,,,,,,,,,,,,,,,,default,1
+base,,General,General,,,,,,,,,,,,,,,,,,,,,,,,,,default,1
+base,,General,General,,,,,,,,,,,,,,,,,,,,,,,,,,default,1

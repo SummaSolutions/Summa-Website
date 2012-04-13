@@ -70,10 +70,12 @@ p.social-contact { margin-bottom:10px;}
 #header-tweets-cage div.tweets-pulled-listing { background:transparent url(../images/bg_black_opacity.png) top left; padding:14px 18px;}
 .header-tweets-followus  {height:30px; position:absolute; bottom:15px; }
 .header-tweets-followus a {padding:0px 18px; float:left; background-color:#fff; -moz-border-radius:3px;	-webkit-border-radius: 3px;	border-radius:3px;color:#999; padding:1px 4px; display: inline-block; margin-top:2px; font-size:0.786em; margin-left:18px; line-height:20px;}
-#sidebar-tweets-cage .sidebar-tweets-followus a {padding:0px 18px; background-color:#aaa; -moz-border-radius:3px;-webkit-border-radius: 3px;border-radius:3px;color:#fff; padding:1px 4px; display: inline-block; margin-top:0; font-size:0.786em; margin-left:0; line-height:20px;}
+#sidebar-tweets-cage .sidebar-tweets-followus a {padding:0px 18px; background-color:#F1F1F1; -moz-border-radius:3px;-webkit-border-radius: 3px;border-radius:3px;color:#666666; padding:3px 9px; display: inline-block; font-size:0.786em; line-height:20px; position:absolute; right:8px; top:16px;}
+.page-portfolio #sidebar-tweets-cage .sidebar-tweets-followus a,
+.page-company #sidebar-tweets-cage .sidebar-tweets-followus a{top:72px;}
 #sidebar-tweets-cage .sidebar-tweets-followus img { margin-right:3px;}
 #header-tweets-cage div.tweets-pulled-listing h2 { padding:0; color:#fff; font-family:Arial, Helvetica, sans-serif; font-size:1.063em; font-weight:bold; float:left; margin:0 0 5px 0;}
-#header-tweets-cage ul, #sidebar-tweets-cage ul { margin:0 0 40px 0; padding:0}
+#header-tweets-cage ul, #sidebar-tweets-cage ul { margin:0 0 15px 0; padding:0}
 #header-tweets-cage li, #sidebar-tweets-cage li { float:none; clear:both;height: auto; margin:0 0 15px 0; padding:0; background:none;}
 #header-tweets-cage li span { font-size:12px; color:#ccc}
 #sidebar-tweets-cage li span { font-size:12px; color:#666}
@@ -166,8 +168,9 @@ div#site-name /* The name of the website */ {
 .page-blogposts .pane-blog-posts-full-list { font-size:1em !important;}
 .view-blog-latest-posts .blog-color { color:#fff; padding:2px 4px; display: inline-block; margin-top:3px; font-size:0.857em;-moz-border-radius:3px;-webkit-border-radius: 3px;border-radius:3px;}
 .page-blogposts .pane-blog-posts-full-list .user-picture { float:left; margin-right:10px; border:1px dotted #999; padding:4px; height:64px; width:67px;}
-.page-blogposts .pane-top-blog-posters, .pane-summa-blocks-sidebar-tweets { clear:both; margin-top:20px;}
+.page-blogposts .pane-top-blog-posters, .pane-summa-blocks-sidebar-tweets { clear:both;}
 .pane-summa-blocks-sidebar-tweets { /*padding-top:15px;*/}
+.panels-flexible-region-29-why_summa{margin-left:24px; width:44.5% !important;}
 .item-list-small-blogers ul {}
 .page-blogposts .view-top-blog-posters .views-row, .node-type-blog .view-top-blog-posters .views-row { width:93px; margin-left:5px; float:left; text-align:center; margin-bottom:20px;}
 .page-blogposts .view-top-blog-posters .views-field-entity-id, .node-type-blog .view-top-blog-posters .views-field-entity-id  {margin-left:7px; border:1px dotted #999; padding:4px; height:64px; width:67px;}
@@ -222,6 +225,9 @@ div#site-name /* The name of the website */ {
 .pane-top-blog-posters h2.pane-title, 
 .panel-col-last h2.pane-title
 { background:transparent url(../images/lines2.png) bottom left repeat-x; padding-bottom:8px; margin-bottom:0; margin-bottom:13px; font:normal 1.571em Georgia, "Times New Roman", Times, serif; color:#000;}
+.page-company .pane-blog-posts-tags-list h2.pane-title, 
+.page-company .pane-top-blog-posters h2.pane-title, 
+.page-company .panel-col-last h2.pane-title{margin-top:0;}
 
 
 
@@ -250,12 +256,12 @@ ul.services li {background:transparent url(../images/lines3.png) bottom left rep
 
 .pane-blog-latest-posts { position:relative; background:transparent url(../images/bg_blog.png) 0 0 no-repeat;}
 .pane-blog-latest-posts .view-blog-latest-posts { padding-top:6px; font-size:0.875em;	}
-.pane-blog-latest-posts h2.pane-title { background:transparent url(../images/lines4.png) bottom left repeat-x; padding-bottom:8px; margin-bottom:0; color:#fff; padding-left:8px; font:normal 1.571em Georgia, "Times New Roman", Times, serif;}
+.pane-blog-latest-posts h2.pane-title { margin-top: 16px; background:transparent url(../images/lines4.png) bottom left repeat-x; padding-bottom:8px; margin-bottom:0; color:#fff; padding-left:8px; font:normal 1.571em Georgia, "Times New Roman", Times, serif;}
 .pane-blog-latest-posts .views-field-title { margin-top:6px;}
 .pane-blog-latest-posts .views-field-title a { color:#517EC4; font-weight:bold; }
 .pane-blog-latest-posts p { margin:0;}
 
-.recent-post { position:absolute; top:8px; left:68px; color:#517EC4; font:normal 1em Georgia, "Times New Roman", Times, serif;}
+.recent-post { position:absolute; top:440px; left:73px; color:#517EC4; font:normal 1em Georgia, "Times New Roman", Times, serif;}
 
 .pane-products .view-products ul{ list-style:none; padding:0;}
 .pane-products .view-products ul li{ float:left; width:146px; margin-right:12px; }
@@ -266,11 +272,22 @@ ul.services li {background:transparent url(../images/lines3.png) bottom left rep
 .pane-products .view-products ul li p { margin:7px 0;}
 
 
-.pane-case-studies-features .view-case-studies-features ul{ list-style:none; padding:0;}
-.pane-case-studies-features .view-case-studies-features ul li{ float:left; width:146px; margin-right:12px; }
+.front .pane-case-studies-features .view-case-studies-features ul{ list-style:none; padding:0;}
+.front .pane-case-studies-features .view-case-studies-features ul li{ float:left; width:30%; margin-right:30px; }
+
+/* PORTFOLIO */
+.page-portfolio .pane-case-studies-features .view-case-studies-features ul {list-style:none !important;padding:0 !important; margin-top:0 !important;}
+.page-portfolio .pane-case-studies-features .view-case-studies-features ul li{ float:left; width:290px; margin-right:30px}
+.page-portfolio .pane-case-studies-features .view-case-studies-features ul li .views-field{position:relative;display:block;}
+.page-portfolio .pane-case-studies-features .view-case-studies-features ul li .views-field-title{font-size:1.5em; background:none;padding-top:0;}
+.page-portfolio .pane-case-studies-features .view-case-studies-features ul li .views-field-field-picture{width:290px; height:190px; margin:10px auto 20px auto;}
+
+
 .pane-case-studies-features .view-case-studies-features ul li.views-row-last{ margin-right:0}
-.pane-case-studies-features .view-case-studies-features ul li .views-field-title { background: transparent url(../images/arrow2.jpg) top center no-repeat; padding-top:18px;font:italic 1.125em Georgia, "Times New Roman", Times, serif; color:#999;}
+.pane-case-studies-features .view-case-studies-features ul li .views-field-title { background: transparent url(../images/arrow2.jpg) top center no-repeat; padding:18px 0 10px 0;font:italic 1.125em Georgia, "Times New Roman", Times, serif; color:#999;}
 .pane-case-studies-features .view-case-studies-features ul li .views-field-title a {color:#999;}
+.front .pane-case-studies-features .view-case-studies-features ul li .views-field-field-picture{width:180px; height:117px;}
+.front .pane-case-studies-features .view-case-studies-features ul li .views-field-field-picture img{width:180px; height:117px;}
 .pane-case-studies-features .view-case-studies-features ul li .views-field-entity-id { font-size:0.875em; color:#050505;}
 .pane-case-studies-features .view-case-studies-features ul li p { margin:7px 0;}
 .node-type-case-study .panel-2col .panel-col-first { width:304px; float:left;} 
@@ -516,13 +533,14 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
 #footer .section ul.menu li.first { padding-left:0;}
 #footer .section ul.menu li { color:#C8C8C8; font-size:0.75em; float:left; list-style:none; padding-left:40px;}
 #footer .section ul.menu li a { color:#C8C8C8;}
+#footer .content .magento{position:absolute;bottom: -71px;left: 164px;}
 
 #footer-message /* Wrapper for the footer message from Drupal's "Site information"
                    and for any blocks placed in the footer region */ {
 }
 #footer .logo { float:left; margin:10px 0 0 18px;}
-#footer .footer-address { float:right; width:360px; margin-right:10px}
-#footer .footer-address .address1, #footer .footer-address .address2 { color:#ccc; font-size:0.625em; float:left;}
+#footer .footer-address { float:right; width:580px; margin:-27px 10px 0 0;}
+#footer .footer-address .address1, #footer .footer-address .address2 { color:#ccc; font-size:0.625em; float:left;margin-right:15px;}
 #footer .footer-address .address1 span, #footer .footer-address .address2 span { color:#fff;}
 #footer .footer-address .address1 a, #footer .footer-address .address2 a { color:#8CB133;} 
 
