@@ -121,6 +121,9 @@ function block_social_media_like_button() {
       <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
       <fb:like href="http://www.summasolutions.net'.$_SERVER['REQUEST_URI'].'" layout="box_count" show_faces="false" width="450"></fb:like>
     </div>
+	<div class="like-google">
+      <g:plusone size="medium" annotation="inline"></g:plusone>
+    </div>
   ';
 }
 

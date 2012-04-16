@@ -73,6 +73,7 @@ p.social-contact { margin-bottom:10px;}
 #sidebar-tweets-cage .sidebar-tweets-followus a {padding:0px 18px; background-color:#F1F1F1; -moz-border-radius:3px;-webkit-border-radius: 3px;border-radius:3px;color:#666666; padding:3px 9px; display: inline-block; font-size:0.786em; line-height:20px; position:absolute; right:8px; top:16px;}
 .page-portfolio #sidebar-tweets-cage .sidebar-tweets-followus a,
 .page-company #sidebar-tweets-cage .sidebar-tweets-followus a{top:72px;}
+.page-blogposts #sidebar-tweets-cage .sidebar-tweets-followus a{top:0; right:0; position:relative !important;}
 #sidebar-tweets-cage .sidebar-tweets-followus img { margin-right:3px;}
 #header-tweets-cage div.tweets-pulled-listing h2 { padding:0; color:#fff; font-family:Arial, Helvetica, sans-serif; font-size:1.063em; font-weight:bold; float:left; margin:0 0 5px 0;}
 #header-tweets-cage ul, #sidebar-tweets-cage ul { margin:0 0 15px 0; padding:0}
@@ -149,7 +150,10 @@ div#site-name /* The name of the website */ {
 
 /* LIKE BUTTONS */
 .like-twitter { float:right;}
-.like-facebook {float:right; margin:2px 10px 0 0;}
+.like-facebook {float:right; margin:1px 0px 0 0;}
+.like-google {float:right;
+  margin-left:10px;
+  margin-top:42px;}
 
 /* COMMENTS */
 .pane-node-comments h3 { margin-bottom:0; font-size:1em; font-weight: bold;}
@@ -218,7 +222,7 @@ div#site-name /* The name of the website */ {
 
 .pane-blog-posts-tags-list .views-row div { float:left;}
 .pane-blog-posts-tags-list .views-row div.views-field-nid { margin-left:5px; font-weight: bold; background-color:#355F9D;-moz-border-radius:2px;	-webkit-border-radius: 2px;	border-radius:2px; padding:0 3px}
-.pane-blog-posts-tags-list .views-row { -moz-border-radius:3px;	-webkit-border-radius: 3px;	border-radius:3px; background:#517ec4; color:#fff; padding:2px 4px; display: inline-block; margin-top:2px; font-size:1em;}
+.pane-blog-posts-tags-list .views-row { -moz-border-radius:3px;	-webkit-border-radius: 3px;	border-radius:3px; background:#517ec4; color:#fff; padding:2px 4px; display: inline-block; margin-top:2px; font-size:11px;}
 .pane-blog-posts-tags-list .views-row a { color:#fff;}
 
 .pane-blog-posts-tags-list h2.pane-title, 
