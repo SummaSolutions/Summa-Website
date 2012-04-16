@@ -261,7 +261,7 @@ ul.services li {background:transparent url(../images/lines3.png) bottom left rep
 .pane-blog-latest-posts .views-field-title a { color:#517EC4; font-weight:bold; }
 .pane-blog-latest-posts p { margin:0;}
 
-.recent-post { position:absolute; top:440px; left:73px; color:#517EC4; font:normal 1em Georgia, "Times New Roman", Times, serif;}
+.recent-post { position:absolute; top:480px; left:73px; color:#517EC4; font:normal 1em Georgia, "Times New Roman", Times, serif;}
 
 .pane-products .view-products ul{ list-style:none; padding:0;}
 .pane-products .view-products ul li{ float:left; width:146px; margin-right:12px; }
@@ -533,18 +533,19 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
 #footer .section ul.menu li.first { padding-left:0;}
 #footer .section ul.menu li { color:#C8C8C8; font-size:0.75em; float:left; list-style:none; padding-left:40px;}
 #footer .section ul.menu li a { color:#C8C8C8;}
-#footer .content .magento{position:absolute;bottom: -71px;left: 164px;}
+#footer .content .magento{position:relative;bottom: 21px;left: 29px;display:inline-block;}
 
 #footer-message /* Wrapper for the footer message from Drupal's "Site information"
                    and for any blocks placed in the footer region */ {
 }
 #footer .logo { float:left; margin:10px 0 0 18px;}
-#footer .footer-address { float:right; width:580px; margin:-27px 10px 0 0;}
+#footer .footer-address { float:right; width:580px; margin:-120px 10px 0 0;}
 #footer .footer-address .address1, #footer .footer-address .address2 { color:#ccc; font-size:0.625em; float:left;margin-right:15px;}
 #footer .footer-address .address1 span, #footer .footer-address .address2 span { color:#fff;}
 #footer .footer-address .address1 a, #footer .footer-address .address2 a { color:#8CB133;} 
 
-.region-footer {
+.region-footer #block-block-2.block {
+	margin-bottom:0px !important;
 }
 
 /*
