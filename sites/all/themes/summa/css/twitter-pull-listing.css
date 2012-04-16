@@ -29,3 +29,5 @@ div.tweets-pulled-listing  div.tweet-divider {
   
   margin: 5px 0 5px 0;
 }
+
+#sidebar-tweets-cage li span.tweet-author {display:none;}

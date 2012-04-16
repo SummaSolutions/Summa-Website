@@ -1,0 +1,111 @@
+.panels-flexible-region {
+  padding: 0;
+}
+
+.panels-flexible-region-inside {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+.panels-flexible-region-inside-first {
+  padding-left: 0;
+}
+
+.panels-flexible-region-inside-last {
+  padding-right: 0;
+}
+
+.panels-flexible-column {
+  padding: 0;
+}
+
+.panels-flexible-column-inside {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+.panels-flexible-column-inside-first {
+  padding-left: 0;
+}
+
+.panels-flexible-column-inside-last {
+  padding-right: 0;
+}
+
+.panels-flexible-row {
+  padding: 0 0 0.5em 0;
+  margin: 0;
+}
+
+.panels-flexible-row-last {
+  padding-bottom: 0;
+}
+
+.panels-flexible-column-29-1 {
+  float: left;
+  width: 99.0000%;
+}
+
+.panels-flexible-29-inside {
+  padding-right: 0px;
+}
+
+.panels-flexible-29 {
+  width: auto;
+}
+
+.panels-flexible-region-29-slider {
+  float: left;
+  width: 99.0000%;
+}
+
+.panels-flexible-row-29-13-inside {
+  padding-right: 0px;
+}
+
+.panels-flexible-column-29-4 {
+  float: left;
+  width: 81.8056%;
+}
+
+.panels-flexible-column-29-3 {
+  float: left;
+  width: 17.1944%;
+}
+
+.panels-flexible-row-29-2-inside {
+  padding-right: 0px;
+}
+
+.panels-flexible-region-29-servicios {
+  float: left;
+  width: 49.5000%;
+}
+
+.panels-flexible-region-29-why_summa {
+  float: left;
+  width: 49.5000%;
+}
+
+.panels-flexible-row-29-11-inside {
+  padding-right: 0px;
+}
+
+.panels-flexible-region-29-products {
+  float: left;
+  width: 99.0000%;
+}
+
+.panels-flexible-row-29-12-inside {
+  padding-right: 0px;
+}
+
+.panels-flexible-region-29-latest_post_in_blog {
+  float: left;
+  width: 99.0000%;
+}
+
+.panels-flexible-row-29-9-inside {
+  padding-right: 0px;
+}
+
