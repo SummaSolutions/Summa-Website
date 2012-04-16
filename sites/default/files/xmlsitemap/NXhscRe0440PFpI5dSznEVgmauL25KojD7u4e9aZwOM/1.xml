@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>http://summasolutions.net/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>http://summasolutions.net/es/blogposts/como-crear-un-bloque-b%C3%A1sico-en-codigo-en-el-nuevo-drupal-7</loc><lastmod>2011-02-09T20:18Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/content/company</loc><lastmod>2011-01-14T00:05Z</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>http://summasolutions.net/job-posts/quality-assurance-lead</loc><lastmod>2011-02-09T23:17Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/job-posts/php-developers</loc><lastmod>2011-02-09T23:12Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/job-posts/net-developers</loc><lastmod>2011-02-09T23:10Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/job-posts/web-designer</loc><lastmod>2011-02-09T23:04Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/blogposts/implementing-drush-commands</loc><lastmod>2011-02-08T21:02Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/articles/ecommerce-everywhere</loc><lastmod>2011-01-18T17:53Z</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>http://summasolutions.net/services/interactive-design-usability</loc><lastmod>2011-02-09T01:08Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/blogposts/different-transitions-hover-hover</loc><lastmod>2011-02-10T14:03Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/case-studies/guias-clarin</loc><lastmod>2011-02-09T14:30Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/case-studies/provider-dispute-resolution</loc><lastmod>2011-02-09T14:30Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/case-studies/q-musica</loc><lastmod>2011-02-09T21:17Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/blogposts/acceptance-testing-fitnesse-and-net</loc><lastmod>2011-02-07T22:08Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/services/open-source-cms</loc><lastmod>2011-02-09T02:18Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/services/software-development</loc><lastmod>2011-02-07T21:21Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/services/e-commerce</loc><lastmod>2011-02-09T02:21Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/blogposts/getting-started-magento-ecommerce</loc><lastmod>2011-02-07T22:33Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/blogposts/magewiki-how-detect-if-simple-product-configurable-child</loc><lastmod>2011-02-08T16:22Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/services/consulting-services</loc><lastmod>2011-02-07T20:15Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/blogposts/how-hook-magento-event</loc><lastmod>2011-02-08T16:02Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/articles/our-delivery-approach</loc><lastmod>2011-02-07T21:01Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/articles/perfect-blend-scrum-and-lean</loc><lastmod>2011-02-07T21:02Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/blogposts/drawing-paths-finding-paths-and-giving-instructions</loc><lastmod>2011-02-07T22:54Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/blogposts/adding-views-panels-and-handlers-custom-module</loc><lastmod>2011-02-07T23:10Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/blogposts/how-configure-magento-full-page-cache</loc><lastmod>2011-02-08T22:09Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/blogposts/implement-twitter-api-magento</loc><lastmod>2011-02-08T21:40Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/blogposts/how-hide-dom-popup-clicking-outside</loc><lastmod>2011-02-09T12:11Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/blogposts/muddling-meddling-and-getting-it-right-apache-solr</loc><lastmod>2011-02-09T17:41Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/blogposts/low-cost-and-free-development-tools</loc><lastmod>2011-02-09T14:22Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/blogposts/muddling-meddling-and-getting-it-right-apache-solr-part-2-0</loc><lastmod>2011-02-09T21:50Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/blogposts/nerdish-stuff</loc><lastmod>2011-02-09T22:20Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/blogposts/design-patterns-javascript-part-1</loc><lastmod>2011-02-10T14:46Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/blogposts/magento-imagine-conference-notes-day-3</loc><lastmod>2011-02-10T21:24Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/blogposts/how-create-basic-block-code-new-drupal-7</loc><lastmod>2011-02-10T13:20Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/blogposts/which-theme-use-start-new-project-drupal</loc><lastmod>2011-02-10T17:27Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/blogposts/php-server-xdebug-phpunit-netbeans</loc><lastmod>2011-02-10T19:48Z</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>http://summasolutions.net/blogposts/phpunit-netbeans-integration-magento</loc><lastmod>2011-02-13T23:22Z</lastmod><changefreq>daily</changefreq></url>
+<url><loc>http://summasolutions.net/blogposts/how-move-magento-other-domain</loc><lastmod>2011-02-14T16:55Z</lastmod><changefreq>hourly</changefreq></url>
+</urlset>
