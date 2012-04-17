@@ -564,7 +564,11 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
   overflow: hidden;
   margin: 0 auto 0 auto;
 }
-.case-study-slideshow .field-name-field-picture .field-items .field-item {
+.case-study-slideshow .view-case-studies-details1 .views-row {
   height: 400px; width: 618px;
   float: left; 
+}
+.case-study-slideshow .view-case-studies-details1 {
+  height: 400px; width: 618px;
+  overflow: hidden;
 }
