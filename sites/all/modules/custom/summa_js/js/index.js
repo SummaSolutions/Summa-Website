@@ -84,4 +84,7 @@ jQuery(document).ready(function(){
       }
     });
   }
+    if (jQuery(".case-study-slideshow .view-case-studies-details1 .view-content .views-row").length > 1) {
+        jQuery(".case-study-slideshow .view-case-studies-details1 .view-content").jCarrousel({easing: 'easeOutBounce', duration:'2000', playInterval:3000,	playDirection:"right"}).jCarrousel("play");
+    }
 });
