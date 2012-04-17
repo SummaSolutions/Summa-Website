@@ -458,6 +458,37 @@ div.tabs /* See also the tabs.css file. */ {
 
 .region-content /* Wrapper for the actual page content */ {
 }
+.node-type-webform #page-wrapper #page #main-wrapper #content .section .region-content{
+	width:400px !important;
+	float:right !important;
+}
+.node-type-webform #page-wrapper #page #main-wrapper #content .section h1#page-title{
+	width:400px !important;
+	float:right !important;
+	border-left:none !important;
+}
+.node-webform form{margin-top:-15px !important;}
+.node-webform form select{width:400px;}
+.node-webform #comments,
+.node-webform .submitted{display:none;}
+.node-type-webform .region-sidebar-first{
+	width:525px;
+}
+
+.node-type-webform .region-sidebar-first h2.block-title {
+	font-size:1.714em;
+	padding-top:17px;
+	border-left-color:#FFFFFF;
+	border-left-style:solid;
+	border-left-width:1px;
+	padding-left:10px;
+	margin:0;
+}
+.node-type-webform .region-sidebar-first #block-block-6,
+.node-type-webform .region-sidebar-first #block-block-20{padding-left:0px;}
+.node-type-webform .region-sidebar-first #block-block-6 .content{
+	margin-top:25px;
+}
 
 ul.links /* List of links */ {
   margin: 1em 0;
