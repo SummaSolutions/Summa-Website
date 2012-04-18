@@ -131,7 +131,7 @@ div#site-name /* The name of the website */ {
 #views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-entity-id { float:left; width:603px; background:transparent url(../images/bg_slider_arrow.png) top right no-repeat; margin-right:10px; }
 #views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-title a { font:normal 1.5em Georgia, "Times New Roman", Times, serif; color:#000; margin:12px 10px 0 0; display:inline-block; line-height:2em;}
 #views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-entity-id-8 { font-size:1em ; font-weight:bold; color:#999; margin-right:10px; width:945px;}
-#views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-entity-id-1 { position:absolute; bottom:0; left:0; height:119px; width:514px; text-align: right; padding:0 23px; background:transparent url(../images/bg_slider_title.png) top left repeat-x; color:#fff; }
+#views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-entity-id-1 { position:absolute; bottom:0; left:0; height:119px; width:514px; text-align: right; padding:0 23px; /*background:transparent url(../images/bg_slider_title.png) top left repeat-x;*/ color:#fff; }
 #views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-entity-id-1 .field-content { font:normal 2.125em Georgia, "Times New Roman", Times, serif; color:#fff; margin-top:35px;}
 #views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-path {text-align:right; margin-right:10px; width:945px;}
 #views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-path a { font-size:0.875em; color:#8CB133; }
@@ -265,7 +265,7 @@ ul.services li {background:transparent url(../images/lines3.png) bottom left rep
 .pane-blog-latest-posts .views-field-title a { color:#517EC4; font-weight:bold; }
 .pane-blog-latest-posts p { margin:0;}
 
-.recent-post { position:absolute; top:480px; left:73px; color:#517EC4; font:normal 1em Georgia, "Times New Roman", Times, serif;}
+.recent-post { position:absolute; top:521px; left:73px; color:#517EC4; font:normal 1em Georgia, "Times New Roman", Times, serif;}
 
 .pane-products .view-products ul{ list-style:none; padding:0;}
 .pane-products .view-products ul li{ float:left; width:146px; margin-right:12px; }
@@ -633,3 +633,10 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
 .client-list ul li { float:left; width:180px; margin-right:18px; margin-bottom:30px;display:inline-block;}
 .client-list ul li .views-field-body{height:180px;overflow:hidden;}
 .client-list .views-field-title { font:14px Georgia, "Times New Roman", Times, serif !important; color:#999 !important;}
+.page-company-clients .pane-clients .views-field-field-picture{
+	border:1px dotted #ccc;
+	margin:10px 0;
+	width:180px;
+	height:117px;	
+}
+.page-company-clients .pane-clients .views-field-title span{font-size:1.3em;font-style:italic;}
