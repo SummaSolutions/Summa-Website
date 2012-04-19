@@ -661,3 +661,30 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
     margin-bottom: 13px;
     padding-bottom: 8px;
 }
+
+.node-type-service ul.item-list{
+	list-style:none;
+	margin:20px 0;
+	padding:0;	
+}
+.node-type-service ul.item-list li{height:230px;}
+
+.node-type-service ul.item-list h2{
+	color: #666;
+    font: 1.3em Georgia,"Times New Roman",Times,serif;
+	padding-bottom: 17px;
+	display:block;	
+	font-style:italic;
+}
+.node-type-service ul.item-list .right h2{padding-bottom:0;}
+.node-type-service ul.item-list img{display:compact;float:left;}
+.node-type-service ul.item-list li{border-bottom:1px dotted #ccc;}
+.node-type-service ul.item-list .left{padding-bottom:10px;}
+.node-type-service ul.item-list .left img{margin-right:35px;}
+.node-type-service ul.item-list .right img{margin-left:35px;}
+.node-type-service ul.item-list p{
+	float:left;	
+	width:385px;
+	display:block;
+	padding-top:25px;
+}
