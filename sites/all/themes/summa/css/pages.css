@@ -135,7 +135,15 @@ div#site-name /* The name of the website */ {
 #views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-entity-id-1 .field-content { font:normal 2.125em Georgia, "Times New Roman", Times, serif; color:#fff; margin-top:35px;}
 #views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-path {text-align:right; margin-right:10px; width:945px;}
 #views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-path a { font-size:0.875em; color:#8CB133; }
-.views-slideshow-controls-top { /*display:none;*/}
+.views-slideshow-controls-top {
+	position:absolute;
+	width:975px;	
+	top:135px;
+	margin:0 auto;
+}
+.views-slideshow-controls-text-previous{width:19px; height:45px; font-size:0; float:left; display:compact; background:url(../images/slider-arrow-left.png) no-repeat center center; cursor:pointer; margin-left:-30px;}
+.views-slideshow-controls-text-next{width:13px; height:44px; font-size:0;float:right; display:compact; background:url(../images/slider-arrow-right.png) no-repeat center center; cursor:pointer;}
+#views_slideshow_controls_text_pause_hp_slideshow-default{display:none;}
 
 .more {font: normal 0.75em Arial, Helvetica, sans-serif; color:#8CB133; float:right; margin-top:-3px;}
 
@@ -605,25 +613,24 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
 }
 
 #block-block-24{
-	width: 618px;
+	width: 625px;
+	right:0;
+	top:240px;
+	position:absolute;
 }
 #block-block-24 ul{
-	list-style:none;	
+	list-style:none;
+	width:100%;	
 }
-#block-block-24 ul li{display:compact;cursor:pointer;width:26px;height:26px;font-size:0;}
+#block-block-24 ul li{display:compact;cursor:pointer;width:19px;height:45px;font-size:0;background-position:center center;background-repeat:no-repeat;}
 #block-block-24 ul li.slider-arrow-left{
 	float:left;	
-	background:url(../images/ico_minus_on.png) no-repeat center center;
-}
-#block-block-24 ul li.slider-arrow-left:hover{
-	background:url(../images/ico_minus.png) no-repeat center center;
+	background-image:url(../images/slider-arrow-left.png);
+	margin-left:-64px;
 }
 #block-block-24 ul li.slider-arrow-right{
 	float:right;	
-	background:url(../images/ico_plus_on.png) no-repeat center center;
-}
-#block-block-24 ul li.slider-arrow-right:hover{	
-	background:url(../images/ico_plus.png) no-repeat center center;
+	background-image:url(../images/slider-arrow-right.png);
 }
 
 
