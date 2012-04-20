@@ -291,7 +291,7 @@ ul.services li {background:transparent url(../images/lines3.png) bottom left rep
 
 /* PORTFOLIO */
 .page-portfolio .pane-case-studies-features .view-case-studies-features ul {list-style:none !important;padding:0 !important; margin-top:0 !important;}
-.page-portfolio .pane-case-studies-features .view-case-studies-features ul li{ float:left; width:290px; margin-right:30px}
+.page-portfolio .pane-case-studies-features .view-case-studies-features ul li{ float:left; width:290px; margin-right:30px; padding-bottom: 20px; margin-bottom: 30px; border-bottom: 1px dotted #CCCCCC;height: 370px;}
 .page-portfolio .pane-case-studies-features .view-case-studies-features ul li .views-field{position:relative;display:block;}
 .page-portfolio .pane-case-studies-features .view-case-studies-features ul li .views-field-title{font-size:1.5em; background:none;padding-top:0;}
 .page-portfolio .pane-case-studies-features .view-case-studies-features ul li .views-field-field-picture{width:290px; height:190px; margin:10px auto 20px auto;}
@@ -344,10 +344,11 @@ ul.services li {background:transparent url(../images/lines3.png) bottom left rep
 #team-small .view-team ul li .views-field-uid { border:1px dotted #999; padding:4px; height:64px; width:67px;}
 
 /* CAREERS */
-.node-type-job .pane-node-title { font-weight:bold; font-size:1.143em; color:#8Cb133}
+.node-type-job .pane-node-title { font-weight:bold; font-size:1.4em; color:#8Cb133; font-family:Georgia, "Times New Roman", Times, serif;}
 .node-type-job .pane-node-field-job-contactus h2.pane-title { display:inline; font:bold 1em Arial, Helvetica, sans-serif; color:#666;}
 .node-type-job .pane-node-field-job-contactus .field-name-field-job-contactus {color:#8Cb133;}
 .page-company-careers .view-careers .views-field-title{font-weight:bold; font-size:1.143em; margin:15px 0 4px 0;}
+.node-type-job h4{font-family:Georgia, "Times New Roman", Times, serif;}
 
 /* CONTACT */
 
@@ -662,6 +663,7 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
     padding-bottom: 8px;
 }
 
+.node-type-service .get-started{text-align:center;display:block;margin:30px 0;}
 .node-type-service ul.item-list{
 	list-style:none;
 	margin:20px 0;
@@ -673,6 +675,13 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
 	color: #666;
     font: 1.3em Georgia,"Times New Roman",Times,serif;
 	padding-bottom: 17px;
+	display:block;	
+	font-style:italic;
+}
+
+.node-type-service .pane-block-25 .pane-content h2{
+	color: #666;
+    font: 1.4em Georgia,"Times New Roman",Times,serif;
 	display:block;	
 	font-style:italic;
 }
