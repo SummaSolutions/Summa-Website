@@ -579,13 +579,14 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
 #footer .section ul.menu li.first { padding-left:0;}
 #footer .section ul.menu li { color:#C8C8C8; font-size:0.75em; float:left; list-style:none; padding-left:40px;}
 #footer .section ul.menu li a { color:#C8C8C8;}
-#footer .content .magento{position:relative;bottom: 21px;left: 29px;display:inline-block;}
+#footer .content .magento{position:relative;display:inline-block; margin:-1px 11px 0 11px;}
+#footer .content p { display:inline-block;}
 
 #footer-message /* Wrapper for the footer message from Drupal's "Site information"
                    and for any blocks placed in the footer region */ {
 }
 #footer .logo { float:left; margin:10px 0 0 18px;}
-#footer .footer-address { float:right; width:580px; margin:-120px 10px 0 0;}
+#footer .footer-address { float:right; width:580px; margin:0 10px 0 0;}
 #footer .footer-address .address1, #footer .footer-address .address2 { color:#ccc; font-size:0.625em; float:left;margin-right:15px;}
 #footer .footer-address .address1 span, #footer .footer-address .address2 span { color:#fff;}
 #footer .footer-address .address1 a, #footer .footer-address .address2 a { color:#8CB133;} 
