@@ -184,7 +184,7 @@ div#site-name /* The name of the website */ {
 .page-blogposts .pane-blog-posts-full-list .user-picture { float:left; margin-right:10px; border:1px dotted #999; padding:4px; height:64px; width:67px;}
 .page-blogposts .pane-top-blog-posters, .pane-summa-blocks-sidebar-tweets { clear:both;}
 .pane-summa-blocks-sidebar-tweets { /*padding-top:15px;*/}
-.panels-flexible-region-29-why_summa{margin-left:24px; width:44.5% !important;}
+.panels-flexible-region-29-why_summa{margin-left:3.7%; width:44.5% !important;}
 .item-list-small-blogers ul {}
 .page-blogposts .view-top-blog-posters .views-row, .node-type-blog .view-top-blog-posters .views-row { width:93px; margin-left:5px; float:left; text-align:center; margin-bottom:20px;}
 .page-blogposts .view-top-blog-posters .views-field-entity-id, .node-type-blog .view-top-blog-posters .views-field-entity-id  {margin-left:7px; border:1px dotted #999; padding:4px; height:64px; width:67px;}
@@ -265,8 +265,8 @@ ul.services li {background:transparent url(../images/lines3.png) bottom left rep
 .view-services-list .views-row .views-field-path a{ font-size:0.929em; }
 
 /* PANELS HOME */
-.panels-flexible-column-new-4, .page-front .panels-flexible-row .panels-flexible-column-first { width:634px;}
-.panels-flexible-column-new-3, .page-front .panels-flexible-row .panels-flexible-column-last { width:304px; position:relative; float:right;}
+.panels-flexible-column-new-4, .page-front .panels-flexible-row .panels-flexible-column-first { width:66%;}
+.panels-flexible-column-new-3, .page-front .panels-flexible-row .panels-flexible-column-last { width:31.66%; position:relative; float:right;}
 
 .recent-post{display:none !important;}
 
@@ -289,7 +289,7 @@ ul.services li {background:transparent url(../images/lines3.png) bottom left rep
 
 
 .front .pane-case-studies-features .view-case-studies-features ul{ list-style:none; padding:0;}
-.front .pane-case-studies-features .view-case-studies-features ul li{ float:left; width:30%; margin-right:30px; }
+.front .pane-case-studies-features .view-case-studies-features ul li{ float:left; width:30%; margin-right:4.75%; }
 
 /* PORTFOLIO */
 .page-portfolio .pane-case-studies-features .view-case-studies-features ul {list-style:none !important;padding:0 !important; margin-top:0 !important;}
@@ -302,7 +302,7 @@ ul.services li {background:transparent url(../images/lines3.png) bottom left rep
 .pane-case-studies-features .view-case-studies-features ul li.views-row-last{ margin-right:0}
 .pane-case-studies-features .view-case-studies-features ul li .views-field-title { background: transparent url(../images/arrow2.jpg) top center no-repeat; padding:18px 0 10px 0;font:italic 1.125em Georgia, "Times New Roman", Times, serif; color:#999;}
 .pane-case-studies-features .view-case-studies-features ul li .views-field-title a {color:#999;}
-.front .pane-case-studies-features .view-case-studies-features ul li .views-field-field-picture{width:180px; height:117px;}
+.front .pane-case-studies-features .view-case-studies-features ul li .views-field-field-picture{width:100%;} /* 180px / 180px  */
 .front .pane-case-studies-features .view-case-studies-features ul li .views-field-field-picture img{width:180px; height:117px;}
 .pane-case-studies-features .view-case-studies-features ul li .views-field-entity-id { font-size:0.875em; color:#050505;}
 .pane-case-studies-features .view-case-studies-features ul li p { margin:7px 0;}
@@ -908,14 +908,19 @@ ul.nice-menu li {
 
 
 @media screen and (max-width: 768px) {
-	.top-sociamedia .top-elements { width:768px;}
+	#page { max-width:100%;}
+	.top-sociamedia .top-elements { max-width:100%;}
 	#logo { width:22%;}
 	#logo img { width:100%;}
-	#header {width:768px;}
+	#header {max-width:100%;}
 	#header .section {width:100%;}
 	ul.nice-menu li { font-size:0.938em ;}
 	.region-header { margin-top:65px;}
 	#header .section { height:108px;}
 	ul.nice-menu a { padding-left:20% ; padding-right:20% ;}
+	
+	.panels-flexible-column-new-4, .page-front .panels-flexible-row .panels-flexible-column-first {width:100%;}
+	.panels-flexible-column-new-3, .page-front .panels-flexible-row .panels-flexible-column-last {width:100%;}
+}
 	
 }
