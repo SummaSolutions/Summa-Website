@@ -573,7 +573,7 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
  */
 #secondary-menu { margin:0}
 
-#footer { border-top:22px solid #3F3F3F; background:transparent url(../images/bg_header.jpg) 0 0 repeat-x; /*height:157px;*/  text-align:center;}
+#footer { border-top:22px solid #3F3F3F; background:#0C0C0C url(../images/bg_header.jpg) 0 0 repeat-x; /*height:157px;*/  text-align:center;}
 #footer .region-footer {}
 
 #footer .section { width:958px; margin:0 auto; border-left:1px solid #333;border-right:1px solid #333; display:inline-block;}
@@ -940,5 +940,8 @@ ul.nice-menu li {
 	.front .pane-case-studies-features .view-case-studies-features ul li { float:none; width:auto;}
 	#footer .section ul.menu { display:none;}
 	#footer .footer-address .address { display:block; margin:0 0 1em;}
-	
+	.top-sociamedia .top-elements ul.left { width:100%;}
+	.top-sociamedia { position:absolute;}
+	.panel-2col .panel-col-first, .panel-2col .panel-col-last  { float: none; width:100%;}
+	.panel-2col .panel-col-last .inside { margin-left:0;}
 }
