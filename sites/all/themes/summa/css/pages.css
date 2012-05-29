@@ -910,6 +910,8 @@ ul.nice-menu li {
 
 
 @media screen and (max-width: 768px) {
+	.front .pane-hp-slideshow { display:none;}
+	.front #page-wrapper { background:none;}
 	#page { max-width:95%; margin:1em auto 0;}
 	#page-wrapper {background-position: 0 154px;}
 	.top-sociamedia .top-elements { max-width:100%;}
@@ -932,8 +934,6 @@ ul.nice-menu li {
 }
 	
 @media screen and (max-width: 520px) {
-	.front .pane-hp-slideshow { display:none;}
-	.front #page-wrapper { background:none;}
 	.panels-flexible-region-29-servicios,
 	.panels-flexible-region-29-why_summa {float: none; width:auto; margin-left:0;}
 	.panels-flexible-region-inside  { padding-left:0;}
