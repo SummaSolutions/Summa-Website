@@ -908,6 +908,11 @@ ul.nice-menu li {
   background: #ccc url(arrow-right.png) right center no-repeat; /* LTR */
 }
 
+@media screen and (min-width: 960px) {
+	#page { width:960px;}
+	#header .section { width:958px;}
+	.top-sociamedia .top-elements { width:960px;}
+}
 
 @media screen and (max-width: 768px) {
 	.front .pane-hp-slideshow { display:none;}
