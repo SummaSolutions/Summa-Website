@@ -949,4 +949,12 @@ ul.nice-menu li {
 	.top-sociamedia { position:absolute;}
 	.panel-2col .panel-col-first, .panel-2col .panel-col-last  { float: none; width:100%;}
 	.panel-2col .panel-col-last .inside { margin-left:0;}
+	#nice-menu-4 { float:none;}
+	.region-header {clear: both; float:none;margin:0 auto;width:95%; padding-top:1em}
+	ul.nice-menu li { float:none; font-size:1.125em;}
+	#header .section { height:auto;}
+	ul.nice-menu a { padding:8px 0; }
+	ul.nice-menu a.active {background-image:none !important;} 
+	#logo { float:none; display:block; width:50%; margin:1em auto 0;}
+	#block-search-form { display:none;}
 }
