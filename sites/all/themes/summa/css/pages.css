@@ -305,7 +305,7 @@ ul.services li {background:transparent url(../images/lines3.png) bottom left rep
 .pane-case-studies-features .view-case-studies-features ul li .views-field-entity-id { font-size:0.875em; color:#050505;}
 .pane-case-studies-features .view-case-studies-features ul li p { margin:7px 0;}
 .node-type-case-study .panel-2col .panel-col-first { width:304px; float:left;} 
-.section-case-studies .panel-col-last { float:right; width:620px;}
+.section-case-studies .panel-col-last { float:right; width:64.58% /* 620px / 960px */;}
 
 .banner-summa, .banner-summa a{font:italic 1.125em Georgia, "Times New Roman", Times, serif; color:#999;}
 .banner-summa .more a {font: normal 1em Arial, Helvetica, sans-serif; color:#8CB133; float:right; margin-top:-3px;}
@@ -328,16 +328,16 @@ ul.services li {background:transparent url(../images/lines3.png) bottom left rep
 /*.pane-related-content {clear:both; margin-top:10px;}*/
 
 /* TEAM */
-.view-team ul{ list-style:none; padding:0; margin:0 0 20px 0; clear:both}
-.view-team ul li { width:152px; float:left; margin-right:4px; margin-bottom:20px; min-height:200px; }
-.view-team ul li .views-field-uid { border:1px dotted #999; padding:4px; height:136px;}
+.view-team ul{ list-style:none; padding:0; margin:0 0 20px 0; clear:both; display: inline-block;}
+.view-team ul li { width:24% /* 152px / 633px */; float:left; margin-right:0.64%; margin-bottom:20px; min-height:180px; }
+.view-team ul li .views-field-uid { border:1px dotted #999; padding:4px; }
 .view-team ul li .views-field-entity-id-2,.view-id-team .views-field-entity-id-2 { color:#8Cb133; font: italic 1em Georgia, "Times New Roman", Times, serif;}
 .view-team ul li .views-field-entity-id-3,.view-id-team .views-field-entity-id-3 { color:#000; font-size:0.857em;}
-.view-team ul li .views-field-uid-1 img,  .view-id-team .views-field-uid span img { margin-right:6px;}
+.view-team ul li .views-field-uid-1 img,  .view-id-team .views-field-uid span img { /*margin-right:6px;*/ display:block;}
 .view-team ul li .views-field-uid-1, .view-id-team .views-field-uid {margin-top:4px}
 .view-id-team .views-field-entity-id-6 { float:left; border:1px dotted #999; padding:4px; height:136px; width:142px; margin-right:15px;}
 .view-id-team .views-field-entity-id { margin-top:20px}
-.section-team .view-team ul li { width:152px; float:left; margin-right:4px; margin-bottom:10px; min-height:120px; }
+.section-team .view-team ul li { width:24% /* 152px / 633px */; float:left; margin-right:0.64%; margin-bottom:10px; min-height:150px; }
 .section-team .view-team ul li .views-field-uid { border:1px dotted #999; padding:4px; height:64px; width:67px;}
 
 #team-small { clear:both; padding-top:25px;}
@@ -392,7 +392,7 @@ ul.bulets { margin:0 0 0 15px;; padding:0;}
 /* CASE STUDY */
 #casestudy-detail-page { margin-bottom:20px;}
 .node-type-case-study .case-study-testimonial, .node-type-case-study .case-study-realted { float:right; width:285px; clear:right; margin-top:20px; }
-.node-type-case-study .case-study-services { float:left; width:285px;}
+.node-type-case-study .case-study-services {/* float:left; width:285px;*/}
 .node-type-case-study .services{background:transparent url(../images/lines3.png) left bottom repeat-x; height:75px; padding-top:8px;}
 .node-type-case-study .panel-2col .panel-col-last .panel-separator{ display:none;}  
 .node-type-case-study .services div.image { float:left; margin-right:5px;}
@@ -591,6 +591,7 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
 #footer .logo { display:inline; margin:0.6em 0 1.5em 1em;}
 #footer .footer-address { float:right;display:inline-block; width:60.41% /* 580px / 960px  */; margin:0 10px 0 0;}
 #footer .footer-logos { float:left; display:inline-block; width:38%;}
+#footer .footer-logos div.log { display: inline-block;}
 #footer .footer-address .address { color:#ccc; font-size:0.625em; margin-right:15px; vertical-align:top; text-align:left;}
 #footer .footer-address .address.last { margin-right:0;}
 #footer .footer-address .address span { color:#fff;}
@@ -658,7 +659,7 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
 }
 .page-company-clients .pane-clients .views-field-title span{font-size:1.3em;font-style:italic;}
 
-.panel-2col-stacked .panel-col-first{width:285px !important;}
+.panel-2col-stacked .panel-col-first{width:29.68%; /* 285px / 960px */}
 .panel-2col-stacked .panel-col-top, .panel-2col-stacked .panel-col-bottom{padding-top: 40px;line-height: 1.5;}
 
 .pane-case-studies-details1 h2.pane-title{
@@ -943,7 +944,7 @@ ul.nice-menu li {
 	.panels-flexible-region-29-servicios,
 	.panels-flexible-region-29-why_summa {float: none; width:auto; margin-left:0;}
 	.panels-flexible-region-inside  { padding-left:0;}
-	.front .pane-case-studies-features .view-case-studies-features ul li { float:none; width:auto;}
+	.front .pane-case-studies-features .view-case-studies-features ul li { float:none; width:auto; margin:0; display: inline-block; background:transparent url(../images/lines3.png) left bottom repeat-x; margin-bottom:10px; padding-bottom:10px;}
 	#footer .section ul.menu { display:none;}
 	#footer .footer-address .address { display:block; margin:0 0 1em;}
 	.top-sociamedia .top-elements ul.left.social { display:none;}
@@ -951,6 +952,7 @@ ul.nice-menu li {
 	.top-sociamedia .top-elements ul.left.social-mobile li { float:none;}
 	.top-sociamedia { position:absolute;}
 	.panel-2col .panel-col-first, .panel-2col .panel-col-last  { float: none; width:100%;}
+	.panel-2col .panel-col-last {float: none; width:100%;}
 	.panel-2col .panel-col-last .inside { margin-left:0;}
 	#nice-menu-4 { float:none;}
 	.region-header {clear: both; float:none;margin:0 auto;width:95%; padding-top:1em}
@@ -958,9 +960,16 @@ ul.nice-menu li {
 	#header .section { height:auto;}
 	ul.nice-menu a { padding:8px 0; }
 	ul.nice-menu a.active {background-image:none !important;} 
-	#logo { float:none; display:block; width:50%; margin:0 auto; padding-top:0.6em;}
+	#logo { float:none; display:block; width:50%; margin:0 auto; padding-top:1em;}
 	#block-search-form { display:none;}
 	.view-case-studies-features ul li .views-field-field-picture { text-align:center;}
+	#footer .footer-logos div.log { width:30%;}
+	.view-team ul li { width:32%;}
+	h1#page-title { padding-left:0;}
+	.panel-2col-stacked .panel-col-first { float:none; width:100%;}
+	.section-case-studies .panel-col-last { float:none; width:100%;}
+	.node-type-case-study .case-study-slideshow { display:none;}
+	
 	/* Menu */
 	ul.nice-menu li.menuparent ul, #header-region ul.nice-menu li.menuparent ul { width:100%; border:0 !important;}
 	ul.nice-menu ul li { width:100%; border:0;}
