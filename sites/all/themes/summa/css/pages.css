@@ -909,6 +909,7 @@ ul.nice-menu li {
 #header-region ul.nice-menu-down li li.menuparent:hover {
   background: #ccc url(arrow-right.png) right center no-repeat; /* LTR */
 }
+.region-highlight { position:relative;}
 
 @media screen and (min-width: 960px) {
 	#page { width:960px;}
@@ -938,6 +939,10 @@ ul.nice-menu li {
 	.panels-flexible-column-new-3, .page-front .panels-flexible-row .panels-flexible-column-last {width:100%;}
 	#footer .section ul.menu { text-align:center; margin-left:auto; margin-right:auto; width:95%;}
 	#footer .footer-address .address { text-align:center;}
+	.panel-2col-stacked .panel-col-first { float:none; width:100%;}
+	.section-case-studies .panel-col-last { float:none; width:100%;}
+	/* Slideshow on Cases Study page */
+	#block-block-24 { display:none;}
 }
 	
 @media screen and (max-width: 520px) {
@@ -949,13 +954,14 @@ ul.nice-menu li {
 	#footer .footer-address .address { display:block; margin:0 0 1em;}
 	.top-sociamedia .top-elements ul.left.social { display:none;}
 	.top-sociamedia .top-elements ul.left.social-mobile { width:100%; display:block; padding:0;}
-	.top-sociamedia .top-elements ul.left.social-mobile li { float:none;}
+	.top-sociamedia .top-elements ul.left.social-mobile li:first-child { background-image: none;}
+	.top-sociamedia .top-elements ul.left.social-mobile li { float:none; width:19%;}
 	.top-sociamedia { position:absolute;}
 	.panel-2col .panel-col-first, .panel-2col .panel-col-last  { float: none; width:100%;}
 	.panel-2col .panel-col-last {float: none; width:100%;}
 	.panel-2col .panel-col-last .inside { margin-left:0;}
 	#nice-menu-4 { float:none;}
-	.region-header {clear: both; float:none;margin:0 auto;width:95%; padding-top:1em}
+	.region-header {clear: both; float:none;margin:0 auto;width:100%; padding-top:1em;}
 	ul.nice-menu li { float:none; font-size:1.125em;}
 	#header .section { height:auto;}
 	ul.nice-menu a { padding:8px 0; }
@@ -969,9 +975,13 @@ ul.nice-menu li {
 	.panel-2col-stacked .panel-col-first { float:none; width:100%;}
 	.section-case-studies .panel-col-last { float:none; width:100%;}
 	.node-type-case-study .case-study-slideshow { display:none;}
+
 	
 	/* Menu */
+	ul.nice-menu li { background-image:none;}
 	ul.nice-menu li.menuparent ul, #header-region ul.nice-menu li.menuparent ul { width:100%; border:0 !important;}
 	ul.nice-menu ul li { width:100%; border:0;}
 	ul.nice-menu ul, #header-region ul.nice-menu ul { position:static;}
+	ul.nice-menu li a {padding-left:2%;}
+	ul.nice-menu li.active-trail a { background-color:#333 !important; background-image:none !important; }
 }
