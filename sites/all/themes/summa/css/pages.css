@@ -55,10 +55,11 @@ a { text-decoration:none; color:#8CB133}
 .top-sociamedia { background:transparent url(../images/bg_topbar.png) top left repeat-x; height:36px; position:fixed; width:100%; text-align:center; z-index:100;}
 .top-sociamedia .top-elements { width:960px; margin:0 auto; height:36px; margin-top:-16px; position:relative; }
 .top-sociamedia .top-elements img { margin-right:4px}
-.top-sociamedia .top-elements ul.left { margin:0; padding:0; float:left; width:66% ; /* 489px / 960px  + paddings */}
+.top-sociamedia .top-elements ul.left.social { margin:0; padding:0; float:left; width:66% ; /* 489px / 960px  + paddings */}
+.top-sociamedia .top-elements ul.left.social-mobile { display:none;}
 .top-sociamedia .top-elements ul.right { margin:0; padding:0; float:right;}
 .top-sociamedia .top-elements ul.right li { background:transparent url(../images/bg_pipe_top.png) top right no-repeat;}
-.top-sociamedia .top-elements li { float:left; padding:6px 3.65% 0  /*  20px / 489px */;
+.top-sociamedia .top-elements li { display:inline-block; float:left; padding:6px 3.65% 0  /*  20px / 489px */;
 -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;         /* Opera/IE 8+ */
@@ -945,7 +946,9 @@ ul.nice-menu li {
 	.front .pane-case-studies-features .view-case-studies-features ul li { float:none; width:auto;}
 	#footer .section ul.menu { display:none;}
 	#footer .footer-address .address { display:block; margin:0 0 1em;}
-	.top-sociamedia .top-elements ul.left { width:100%;}
+	.top-sociamedia .top-elements ul.left.social { display:none;}
+	.top-sociamedia .top-elements ul.left.social-mobile { width:100%; display:block; padding:0;}
+	.top-sociamedia .top-elements ul.left.social-mobile li { float:none;}
 	.top-sociamedia { position:absolute;}
 	.panel-2col .panel-col-first, .panel-2col .panel-col-last  { float: none; width:100%;}
 	.panel-2col .panel-col-last .inside { margin-left:0;}
@@ -955,6 +958,11 @@ ul.nice-menu li {
 	#header .section { height:auto;}
 	ul.nice-menu a { padding:8px 0; }
 	ul.nice-menu a.active {background-image:none !important;} 
-	#logo { float:none; display:block; width:50%; margin:1em auto 0;}
+	#logo { float:none; display:block; width:50%; margin:0 auto; padding-top:0.6em;}
 	#block-search-form { display:none;}
+	.view-case-studies-features ul li .views-field-field-picture { text-align:center;}
+	/* Menu */
+	ul.nice-menu li.menuparent ul, #header-region ul.nice-menu li.menuparent ul { width:100%; border:0 !important;}
+	ul.nice-menu ul li { width:100%; border:0;}
+	ul.nice-menu ul, #header-region ul.nice-menu ul { position:static;}
 }
