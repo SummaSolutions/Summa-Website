@@ -910,6 +910,7 @@ ul.nice-menu li {
   background: #ccc url(arrow-right.png) right center no-repeat; /* LTR */
 }
 .region-highlight { position:relative;}
+#block-block-26 { display:none;}
 
 @media screen and (min-width: 960px) {
 	#page { width:960px;}
@@ -962,11 +963,11 @@ ul.nice-menu li {
 	.panel-2col .panel-col-last .inside { margin-left:0;}
 	#nice-menu-4 { float:none;}
 	.region-header {clear: both; float:none;margin:0 auto;width:100%; padding-top:1em;}
-	ul.nice-menu li { float:none; font-size:1.125em;}
+	ul.nice-menu li { float:none; font-size:1.125em; text-align:left;}
 	#header .section { height:auto;}
 	ul.nice-menu a { padding:8px 0; }
 	ul.nice-menu a.active {background-image:none !important;} 
-	#logo { float:none; display:block; width:50%; margin:0 auto; padding-top:1em;}
+	#logo { float:left; display:block; width:43%; margin:0  0 0 3%; padding-top:1em;}
 	#block-search-form { display:none;}
 	.view-case-studies-features ul li .views-field-field-picture { text-align:center;}
 	#footer .footer-logos div.log { width:30%;}
@@ -975,6 +976,10 @@ ul.nice-menu li {
 	.panel-2col-stacked .panel-col-first { float:none; width:100%;}
 	.section-case-studies .panel-col-last { float:none; width:100%;}
 	.node-type-case-study .case-study-slideshow { display:none;}
+	#block-block-26 { display:block;}
+	#block-block-26 .menu-mobile { margin:0.7em; display:inline-block; padding:1em;}
+	.region-header  { float:right; clear:none; width:50%; text-align:right;}
+	#footer .footer-address { display:none;}
 
 	
 	/* Menu */
