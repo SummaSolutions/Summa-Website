@@ -997,7 +997,7 @@ ul.nice-menu li {
 	.menu-mobile-bottom li ul { display:none; margin-left:1em; margin-top:0.4em; padding-left:0;}
 	.menu-mobile-bottom li ul li { border-top:0;}
 	.menu-mobile-bottom li.selected ul { display:block;}
-	.menu-mobile-bottom li { padding:0.3em 1em; color:#ccc; cursor:pointer; border-top:1px solid #252525; }
+	.menu-mobile-bottom li { padding:0.7em 1em; color:#ccc; cursor:pointer; border-top:1px solid #252525; font-size:1.125em; }
 	.menu-mobile-bottom li:first-child { border-top:0;}
 	.menu-mobile-bottom li a {color:#ccc;}
 	.menu-mobile-bottom li.arrow { background:transparent url(../images/arrow5.png) right 6px no-repeat;}
