@@ -573,11 +573,21 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
  * Footer
  */
 #secondary-menu { margin:0}
+#footer .view-blog-posts-tags-list ul { padding:0; margin:0;}
+#footer .view-blog-posts-tags-list { background:transparent url(../images/footer_blog.png) left top no-repeat; padding-left:85px; display:inline-block; width:100%;}
+#footer .view-blog-posts-tags-list li.views-row { display:inline-block; float:left; list-style:none; background-color:#A1A1A1; border-radius:4px; margin-left:6px;}
+#footer .view-blog-posts-tags-list li.views-row a { color:#fff; padding:0 6px; font-size:0.9em; line-height:2.3em;}
+#footer .view-blog-posts-tags-list li .views-field-nid { display:none;}
+#footer { background:#0C0C0C url(../images/bg_footer.jpg) 0 0 repeat-x; /*height:157px;*/  text-align:center; padding-top:14px;}
+#footer .gray-box { background-color:#606060; border-radius:6px; display:inline-block; padding:11px; margin-bottom:10px;}
+#footer .partners .left { display:inline-block; float:left; width:70.8% /* 665px / 960px */;-webkit-box-sizing: border-box; -moz-box-sizing: border-box;box-sizing: border-box;}
+#footer .partners .right { display:inline-block; float:right; width:27.81% /* 265px / 960px */;-webkit-box-sizing: border-box; -moz-box-sizing: border-box;box-sizing: border-box;}
+#footer .partners h1 { color:#fff; font-size:1.313em; float:left; width:50%; font-style:italic; line-height:1.2em; padding-top:10px;}
+#footer .partners .col { width:48%; display:inline-block; float:left; text-align:left; margin-left:2%; padding:20px 0;}
+#footer .partners p {color:#F2F2F2; font-style:italic; font-size:0.813em;}
+#footer .partners .right p { font-family:Georgia, "Times New Roman", Times, serif; font-size:0.875em; color:#fff; margin-bottom:0;}
 
-#footer { border-top:22px solid #3F3F3F; background:#0C0C0C url(../images/bg_header.jpg) 0 0 repeat-x; /*height:157px;*/  text-align:center;}
-#footer .region-footer {}
-
-#footer .section { width:958px; margin:0 auto; border-left:1px solid #333;border-right:1px solid #333; display:inline-block;}
+#footer .section { width:958px; margin:0 auto; display:inline-block;}
 #footer .section ul.menu { margin:0 22px; background:transparent url(../images/lines1.png) left bottom repeat-x; height:23px; padding:10px 0 0}
 #footer .section ul.menu li.first { padding-left:0;}
 #footer .section ul.menu li { color:#C8C8C8; font-size:0.75em; display:inline-block; list-style:none; padding-left:40px;}
@@ -588,19 +598,24 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
 #footer-message /* Wrapper for the footer message from Drupal's "Site information"
                    and for any blocks placed in the footer region */ {
 }
-#footer .logo { display:inline; margin:0.6em 0 1.5em 1em;}
-#footer .footer-address { float:right;display:inline-block; width:60.41% /* 580px / 960px  */; margin:0 10px 0 0;}
-#footer .footer-logos { float:left; display:inline-block; width:38%;}
-#footer .footer-logos div.log { display: inline-block;}
-#footer .footer-address .address { color:#ccc; font-size:0.625em; margin-right:15px; vertical-align:top; text-align:left;}
-#footer .footer-address .address.last { margin-right:0;}
-#footer .footer-address .address span { color:#fff;}
-#footer .footer-address .address a { color:#8CB133;} 
+.region-bottom .logo { display:inline; margin:0.6em 0 1em 0;}
+.region-bottom .footer-address { float:right;display:inline-block; width:70.41% /* 580px / 960px  */; margin:0 10px 0 0;}
+.region-bottom .footer-logos { float:left; display:inline-block; width:28%;}
+.region-bottom .footer-logos div.log { display: inline-block;}
+.region-bottom .footer-logos div.log p { font-size:0.750em; margin-left:8px;}
+.region-bottom .footer-address .address { color:#ccc; font-size:0.625em; margin-right:15px; vertical-align:top; text-align:left; float:left; width:31%; margin-top:11px;}
+.region-bottom .footer-address .address.last { margin-right:0;}
+.region-bottom .footer-address .address span { color:#fff;}
+.region-bottom .footer-address .address a { color:#8CB133;} 
+.region-bottom {background:#000 url(../images/bg_header.jpg) top left repeat-x; width:100%; display:inline-block; padding:1.3em 0;}
+.region-bottom #block-block-2 { margin:0 auto; width:960px;}
 
-.region-footer #block-block-2.block {
-	margin-bottom:0px !important;
+.region-bottom .footer-address .address1, .region-bottom .footer-address .address2 {
+    color: #CCCCCC;
+    float: left;
+    font-size: 0.625em;
+    margin-right: 15px;
 }
-
 /*
  * Page bottom
  */
