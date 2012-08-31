@@ -926,7 +926,7 @@ ul.nice-menu li {
   background: #ccc url(arrow-right.png) right center no-repeat; /* LTR */
 }
 .region-highlight { position:relative;}
-#block-block-26 { display:none;}
+.block .menu-mobile { display:none;}
 .menu-mobile-bottom { display:none;}
 
 @media screen and (min-width: 960px) {
@@ -964,7 +964,7 @@ ul.nice-menu li {
 */
 	
 @media screen and (max-width: 520px) {
-	
+	/*for max-with 768 px */
 	.front .pane-hp-slideshow { display:none;}
 	.front #page-wrapper { background:none;}
 	#page { max-width:95%; margin:1em auto 0;}
@@ -989,7 +989,7 @@ ul.nice-menu li {
 	.panel-2col-stacked .panel-col-first { float:none; width:100%;}
 	.section-case-studies .panel-col-last { float:none; width:100%;}
 	#block-block-24 { display:none;}
-	
+	/*end  for max-with 768 px */
 	.panels-flexible-region-29-servicios,
 	.panels-flexible-region-29-why_summa {float: none; width:auto; margin-left:0;}
 	.panels-flexible-region-inside  { padding-left:0;}
@@ -1019,8 +1019,8 @@ ul.nice-menu li {
 	.panel-2col-stacked .panel-col-first { float:none; width:100%;}
 	.section-case-studies .panel-col-last { float:none; width:100%;}
 	.node-type-case-study .case-study-slideshow { display:none;}
-	#block-block-26 { display:block;}
-	#block-block-26 .menu-mobile { margin:0.9em 0.9em 0.7em; display:inline-block; padding:0.6em; border:1px solid #8CB133; 
+	.block .menu-mobile { display:block;}
+	.block .menu-mobile { margin:0.9em 0.9em 0.7em; display:inline-block; padding:0.6em; border:1px solid #8CB133; 
 		border-radius:3px;
 		-moz-border-radius:3px;
 		-webkit-border-radius:3px;
