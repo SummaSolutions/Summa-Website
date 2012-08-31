@@ -1,12 +1,12 @@
 // Mobile bottom menu
-jQuery(document).ready(function(){
+/*jQuery(document).ready(function(){
 	jQuery('.menu-mobile-bottom li').click(function() {
 		jQuery('.menu-mobile-bottom li').removeClass('selected').removeClass('arrow-down');
 		jQuery(this).addClass('selected');
 		jQuery(this).addClass('arrow-down');
 		//jQuery(this).removeClass('arrow');
 	});
-})
+})*/
 
 // Google plus button
 (function() {
