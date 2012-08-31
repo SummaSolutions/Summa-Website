@@ -98,4 +98,15 @@ jQuery(document).ready(function () {
             return false;
         });
     }
+	// Nice Menu for custom width 
+	var size = jQuery('body').width();
+	if (size <= 520){
+		//jQuery('ul.nice-menu ul').css('visibility', 'visible');
+		jQuery('ul.nice-menu li').click(function(){
+			jquery(this).addClass('open');
+		});
+		//jQuery('ul.nice-menu ul').css('display', 'block');
+		
+	};
+	
 });
