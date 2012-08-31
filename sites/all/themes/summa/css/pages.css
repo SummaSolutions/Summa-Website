@@ -935,7 +935,7 @@ ul.nice-menu li {
 	.top-sociamedia .top-elements { width:960px;}
 }
 
-@media screen and (max-width: 768px) {
+/*@media screen and (max-width: 768px) {
 	.front .pane-hp-slideshow { display:none;}
 	.front #page-wrapper { background:none;}
 	#page { max-width:95%; margin:1em auto 0;}
@@ -949,7 +949,7 @@ ul.nice-menu li {
 	.region-header { margin-top:65px;}
 	#header .section { height:108px;}
 	ul.nice-menu a { padding-left:20% ; padding-right:20% ;}
-	#footer .section { width:99.79% ; /* 958px / 960px */}
+	#footer .section { width:99.79% ;}
 	#footer .content .magento { margin-left:2em; margin-right:2em;}
 	#footer .footer-logos, #footer .footer-address { float:none; width:100%; text-align:center;}
 	#footer .footer-address { margin-top:1.2em;background:transparent url(../images/lines1.png) left top repeat-x; padding-top:1.2em;margin-left:auto; margin-right:auto; width:95%;}
@@ -959,11 +959,37 @@ ul.nice-menu li {
 	#footer .footer-address .address { text-align:center;}
 	.panel-2col-stacked .panel-col-first { float:none; width:100%;}
 	.section-case-studies .panel-col-last { float:none; width:100%;}
-	/* Slideshow on Cases Study page */
 	#block-block-24 { display:none;}
 }
+*/
 	
 @media screen and (max-width: 520px) {
+	
+	.front .pane-hp-slideshow { display:none;}
+	.front #page-wrapper { background:none;}
+	#page { max-width:95%; margin:1em auto 0;}
+	#page-wrapper {background-position: 0 154px;}
+	.top-sociamedia .top-elements { max-width:100%;}
+	#logo { width:22%;}
+	#logo img { width:100%;}
+	#header {max-width:100%;}
+	#header .section {width:100%;}
+	ul.nice-menu li { font-size:0.938em ;}
+	.region-header { margin-top:65px;}
+	#header .section { height:108px;}
+	ul.nice-menu a { padding-left:20% ; padding-right:20% ;}
+	#footer .section { width:99.79% ;}
+	#footer .content .magento { margin-left:2em; margin-right:2em;}
+	#footer .footer-logos, #footer .footer-address { float:none; width:100%; text-align:center;}
+	#footer .footer-address { margin-top:1.2em;background:transparent url(../images/lines1.png) left top repeat-x; padding-top:1.2em;margin-left:auto; margin-right:auto; width:95%;}
+	.panels-flexible-column-new-4, .page-front .panels-flexible-row .panels-flexible-column-first {width:100%;}
+	.panels-flexible-column-new-3, .page-front .panels-flexible-row .panels-flexible-column-last {width:100%;}
+	#footer .section ul.menu { text-align:center; margin-left:auto; margin-right:auto; width:95%;}
+	#footer .footer-address .address { text-align:center;}
+	.panel-2col-stacked .panel-col-first { float:none; width:100%;}
+	.section-case-studies .panel-col-last { float:none; width:100%;}
+	#block-block-24 { display:none;}
+	
 	.panels-flexible-region-29-servicios,
 	.panels-flexible-region-29-why_summa {float: none; width:auto; margin-left:0;}
 	.panels-flexible-region-inside  { padding-left:0;}
