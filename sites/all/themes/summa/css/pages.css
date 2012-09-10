@@ -663,7 +663,7 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
 
 .client-list ul, .partner-list ul{ list-style:none !important; display:inline-block; padding:0; margin: 0;}
 .client-list ul li, .partner-list ul li { float:left; width:180px; margin-right:18px; margin-bottom:30px;display:inline-block;}
-.client-list ul li .views-field-body, .partner-list ul li .views-field-body{height:180px;overflow:hidden;}
+.client-list ul li .views-field-body, .partner-list ul li .views-field-entity-id-1{height:180px;overflow:hidden;}
 .client-list .views-field-title, .partner-list .views-field-title { font:14px Georgia, "Times New Roman", Times, serif !important; color:#999 !important; height: 34px;}
 .page-company-clients .pane-clients .views-field-field-picture,
 .partner-list .views-field-entity-id{
