@@ -7,3 +7,4 @@ sites/files
 sites/files/* 
 .idea
 .idea/*
+.idea/web.summa.net.iml
