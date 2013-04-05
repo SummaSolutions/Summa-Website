@@ -25,8 +25,8 @@ ul.nice-menu li {
 /*ul.nice-menu li:hover {background-color:#2E2E2E;}*/
 
 ul.nice-menu a {display: block;}
-ul.nice-menu li.active-trail a {background: transparent url(../images/menu_active.png) center bottom no-repeat;}
-ul.nice-menu a.active{color:#8CB133;}
+ul.nice-menu li.active-trail > a { color: #85CC2B;}
+ul.nice-menu a.active{color:#85CC2B;}
 
 ul.nice-menu ul,
 /* For Garland header. */
@@ -42,7 +42,7 @@ ul.nice-menu li.over ul {
 ul.nice-menu ul li {
   display: block;
 }
-ul.nice-menu ul li:hover { background-color:#2E2E2E;}
+ul.nice-menu ul li:hover a { color:#ffffff;}
 
 ul.nice-menu:after {
   content: ".";
@@ -108,7 +108,7 @@ ul.nice-menu li.over li.over li.over ul ul ul,
 ul.nice-menu li.menuparent ul,
 /* For Garland header. */
 #header-region ul.nice-menu li.menuparent ul {
-	overflow: visible !important; background-color:#000; margin-top:12px; border-top:7px solid #8CB133;
+	overflow: visible !important; background-color:#000; padding: 10px; 
 	/* overflow: hidden; */
 }
 
