@@ -58,9 +58,9 @@ input.form-submit {background-color:#aaa; border:0; color:#fff; font-size:0.9em;
  * Search (search-block-form.tpl.php)
  */
 #block-search-form  { float:right; margin-right:20px; margin-top:6px;}
-#block-search-form #edit-search-block-form--2 { background-color:#eaeaea; height:21px; width:146px; border:0; float:left; color:#000; font-size:0.813em;}
+#block-search-form #edit-search-block-form--2 { background:none; height:30px; width:200px; border-width:1px; float:left; color:#999; font-size:0.813em; padding-left: 5px; padding-right: 30px; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; box-shadow: 1px 1px 0 #000000 inset; border-style: solid; border-color: #000000 #000000 #222222;}
 .form-item-search-block-form { }
-#block-search-form .form-actions input.form-submit {background-color:#ccc; border:0; border-right:1px solid #b5b5b5; color:#fff; font-size:0.75em; height:21px !important; float:right; padding:0 6px;-moz-border-radius-topleft:0;-webkit-border-top-left-radius:0;border-top-left-radius:0;-moz-border-radius-bottomleft:0;-webkit-border-bottom-left-radius:0;border-bottom-left-radius:0; cursor:pointer;}
+#block-search-form .form-actions input.form-submit {background:url(../images/ico_search.png) no-repeat center center; border:none; height:31px !important; float:right; cursor:pointer; padding: 0 9px; font-size: 0; margin-left: -30px;}
 
 
 /*
@@ -124,6 +124,6 @@ form tbody th {
 }
 
 input.ghostText{
-  color:#b5b5b5 !important;
+  color:#333333 !important;
   font-size:0.75em !important;
 }

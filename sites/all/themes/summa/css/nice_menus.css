@@ -26,7 +26,7 @@ ul.nice-menu li {
 
 ul.nice-menu a {display: block;}
 ul.nice-menu li.active-trail a {background: transparent url(../images/menu_active.png) center bottom no-repeat;}
-ul.nice-menu a.active{background: transparent url(../images/menu_active.png) center bottom no-repeat; color:#fff;}
+ul.nice-menu a.active{color:#8CB133;}
 
 ul.nice-menu ul,
 /* For Garland header. */
