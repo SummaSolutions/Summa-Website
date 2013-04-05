@@ -110,11 +110,11 @@ function block_header_tweets() {
 function block_social_media() {
   return '
   <ul class="left social">
-    <li ><a href="/blog" id="blog-suckerfish"><img src="/sites/all/themes/summa/images/ico_blogs.png" align="absmiddle" />Blogs</a></li>
-    <li><a href="http://www.facebook.com/summasolutions" target="_blank"><img src="/sites/all/themes/summa/images/ico_fb.png" align="absmiddle" />Fan Page</a></li>
-	<li><a href="https://plus.google.com/u/0/106660552440793124620/posts" target="_blank"><img src="/sites/all/themes/summa/images/ico_google+.png" align="absmiddle" />Google+</a></li>
-    <li><a href="http://www.twitter.com/summasolutions" target="_blank" id="twitter-suckerfish"><img src="/sites/all/themes/summa/images/ico_tw.png" align="absmiddle" />Twitter</a></li>
-    <li><a href="http://www.linkedin.com/company/summa-solutions" target="_blank"><img src="/sites/all/themes/summa/images/ico_in.png" align="absmiddle" />Linkedin</a></li>
+    <!--li ><a href="/blog" id="blog-suckerfish"><img src="/sites/all/themes/summa/images/ico_blogs.png" align="absmiddle" />Blogs</a></li-->
+    <li><a href="http://www.facebook.com/summasolutions" target="_blank"><img src="/sites/all/themes/summa/images/ico_fb.png" align="absmiddle" /></a></li>
+	<li><a href="https://plus.google.com/u/0/106660552440793124620/posts" target="_blank"><img src="/sites/all/themes/summa/images/ico_google+.png" align="absmiddle" /></a></li>
+    <li><a href="http://www.twitter.com/summasolutions" target="_blank" id="twitter"><img src="/sites/all/themes/summa/images/ico_tw.png" align="absmiddle" /></a></li>
+    <li><a href="http://www.linkedin.com/company/summa-solutions" target="_blank"><img src="/sites/all/themes/summa/images/ico_in.png" align="absmiddle" /></a></li>
   </ul>
   ';
 }
