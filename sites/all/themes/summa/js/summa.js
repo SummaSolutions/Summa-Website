@@ -14,3 +14,7 @@
 	po.src = 'https://apis.google.com/js/plusone.js';
 	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 })();
+
+jQuery(document).ready(function(){
+    jQuery("#search-block-form #edit-submit").attr("value", '');
+});
