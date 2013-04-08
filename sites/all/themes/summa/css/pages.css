@@ -12,6 +12,11 @@ a { text-decoration:none; color:#8CB133}
 .page-blog a, .node-type-blog a { color:#517EC4;}
 
 #page-wrapper { width:auto;background:transparent url(../images/bg_section_title.png) 0 120px repeat-x;}
+.node-type-service.page-node-51 #page-wrapper { background:transparent url(../images/bg_section_title_ecommerce.png) 0 120px repeat-x;}
+.node-type-service.page-node-123 #page-wrapper { background:transparent url(../images/bg_section_title_mobile.png) 0 120px repeat-x;}
+.node-type-service.page-node-5 #page-wrapper { background:transparent url(../images/bg_section_title_cms.png) 0 120px repeat-x;}
+.node-type-service.page-node-50 #page-wrapper { background:transparent url(../images/bg_section_title_soft.png) 0 120px repeat-x;}
+.node-type-service.page-node-41 #page-wrapper { background:transparent url(../images/bg_section_title_design.png) 0 120px repeat-x;}
 .front #page-wrapper{ background:transparent url(../images/bg_slideshow.jpg) 0 120px repeat-x;}
 .front #page-wrapper .view-hp-slideshow { height: 385px; margin-top: -5px;}
 
@@ -237,7 +242,7 @@ div#site-name /* The name of the website */ {
 .pane-blog-posts-tags-list h2.pane-title, 
 .pane-top-blog-posters h2.pane-title, 
 .panel-col-last h2.pane-title
-{ background:transparent url(../images/lines2.png) bottom left repeat-x; padding-bottom:8px; margin-bottom:0; margin-bottom:13px; font:normal 1.571em Georgia, "Times New Roman", Times, serif; color:#000;}
+{ background:transparent url(../images/lines2.png) bottom left repeat-x; padding-bottom:8px; margin-bottom:0; margin-bottom:13px; font:normal 1.571em Georgia, "Times New Roman", Times, serif; color:#000; font-style: italic;}
 .page-company .pane-blog-posts-tags-list h2.pane-title, 
 .page-company .pane-top-blog-posters h2.pane-title, 
 .page-company .panel-col-last h2.pane-title{margin-top:0;}
