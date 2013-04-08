@@ -48,6 +48,7 @@ function summa_blocks_block_info() {
  */
 function summa_blocks_block_view($delta='') {
   $block = array();
+  //  drupal_set_message($delta);
   switch ($delta) {
     case 'header-tweets':
       $block['subject'] = t('Summa Tweets Suckerfish');

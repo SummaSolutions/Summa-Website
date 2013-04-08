@@ -148,3 +148,37 @@ function summa_preprocess_block(&$vars, $hook) {
   $vars['sample_variable'] = t('Lorem ipsum.');
 }
 // */
+
+function summa_preprocess_page(&$variables){
+    // Suggest page template by node type
+    if (!empty($variables['node']))
+    {
+        $variables['theme_hook_suggestions'][] = 'page__node_' . $variables['node']->type;
+    }
+    // Suggest page templates by path ("page--pathalias.tpl.php")
+    if (module_exists('path'))
+    {
+        $alias = drupal_get_path_alias(str_replace('/edit', '', $_GET['q']));
+        if ($alias != $_GET['q'])
+        {
+            $template_filename = 'page';
+            foreach (explode('/', $alias) as $path_part)
+            {
+                $template_filename = $template_filename . '__' . $path_part;
+            }
+            $variables['theme_hook_suggestions'][] = $template_filename;
+        }
+    }
+
+}
+
+function summa_get_homepage_blocks(){
+    for($i = 1; $i < 30; $i++){
+        $block = block_load('block', $i);
+        $key = explode(' ', strtolower($block-> title));
+        $content[$key[0]] = block_custom_block_get($i);
+    }
+    $content['hp_slideshow'] = views_embed_view('hp_slideshow');
+    $content['services_list'] = views_embed_view('services_list');
+    $pause = null;
+}
