@@ -69,13 +69,14 @@
 ?>
 
 <div id="page-wrapper">
-	<div class="top-sociamedia">
-		<div class="top-elements">
-		<?php print render($page['socialmedia']); ?>
-		</div>
-	</div>
  <!-- header -->
-  <div id="header"><div class="section clearfix">
+  <div id="header">
+    <div class="section clearfix">
+        <div class="top-sociamedia">
+            <div class="top-elements">
+            <?php print render($page['socialmedia']); ?>
+            </div>
+        </div>
 
     <?php if ($logo): ?>
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
