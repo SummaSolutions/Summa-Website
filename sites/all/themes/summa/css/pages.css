@@ -261,11 +261,11 @@ ul.services li {background:transparent url(../images/lines3.png) bottom left rep
 .exclamation img { float:left; margin-left:-15px;}
 
 /*------ servicies page */
-.view-services-list .views-row { clear:both; background:transparent url(../images/lines3.png) left bottom repeat-x; padding-bottom:18px; margin-top:15px; min-height:16px;}
+.view-services-list .views-row { background:#ebebeb; padding:2%; margin-top:15px; min-height:16px; width: 15%; box-shadow: 0 1px 0 #787878; vertical-align: top; border-top: 5px solid; height: 170px; display: inline-block;}
 .fornt .view-services-list .views-row {margin-top:10px;}
 .view-services-list .views-row .views-field-title{ float:left;}
-.view-services-list .views-row .views-field-title a {font:italic 1.125em Georgia, "Times New Roman", Times, serif; color:#999;}
-.view-services-list .views-row .views-field-path{ float: right;}
+.view-services-list .views-row .views-field-title a {font:italic bold 1.25em Georgia,"Times New Roman",Times,serif; color:#000;}
+.view-services-list .views-row .views-field-path{ float: right; display: none;}
 .view-services-list .views-row .views-field-path a{ font-size:0.929em; }
 
 /* PANELS HOME */
@@ -274,14 +274,17 @@ ul.services li {background:transparent url(../images/lines3.png) bottom left rep
 
 .recent-post{display:none !important;}
 
-.pane-blog-latest-posts { position:relative; background:transparent url(../images/bg_blog.png) 0 0 no-repeat;}
-.pane-blog-latest-posts .view-blog-latest-posts { padding-top:6px; font-size:0.875em;	}
-.pane-blog-latest-posts h2.pane-title { margin-top: 16px; background:transparent url(../images/lines4.png) bottom left repeat-x; padding-bottom:8px; margin-bottom:0; color:#fff; padding-left:8px; font:normal 1.571em Georgia, "Times New Roman", Times, serif;}
+.pane-blog-latest-posts .view-blog-latest-posts { padding-top:6px; font-size:0.875em;}
 .pane-blog-latest-posts .views-field-title { margin-top:6px;}
 .pane-blog-latest-posts .views-field-title a { color:#517EC4; font-weight:bold; }
 .pane-blog-latest-posts p { margin:0;}
 
 .recent-post { position:absolute; top:521px; left:73px; color:#517EC4; font:normal 1em Georgia, "Times New Roman", Times, serif;}
+
+.front .panel-3col-stacked .panel-separator { margin: 0 0 3em;}
+.front .panel-3col-stacked .panel-col-first,
+.front .panel-3col-stacked .panel-col,
+.front .panel-3col-stacked .panel-col-last { width: 32%; padding-right: 1%;}
 
 .pane-products .view-products ul{ list-style:none; padding:0;}
 .pane-products .view-products ul li{ float:left; width:146px; margin-right:12px; }
@@ -292,8 +295,8 @@ ul.services li {background:transparent url(../images/lines3.png) bottom left rep
 .pane-products .view-products ul li p { margin:7px 0;}
 
 
-.front .pane-case-studies-features .view-case-studies-features ul{ list-style:none; padding:0;}
-.front .pane-case-studies-features .view-case-studies-features ul li{ float:left; width:30%; margin-right:4.75%; }
+.front .pane-case-studies-features .view-case-studies-features ul{ list-style:none; padding:0; display: inline-block;}
+.front .pane-case-studies-features .view-case-studies-features ul li{ float:left; width:30%; margin-right:4.75%;}
 
 /* PORTFOLIO */
 .page-portfolio .pane-case-studies-features .view-case-studies-features ul {list-style:none !important;padding:0 !important; margin-top:0 !important;}
@@ -304,10 +307,10 @@ ul.services li {background:transparent url(../images/lines3.png) bottom left rep
 
 
 .pane-case-studies-features .view-case-studies-features ul li.views-row-last{ margin-right:0}
-.pane-case-studies-features .view-case-studies-features ul li .views-field-title { background: transparent url(../images/arrow2.jpg) top center no-repeat; padding:18px 0 10px 0;font:italic 1.125em Georgia, "Times New Roman", Times, serif; color:#999;}
-.pane-case-studies-features .view-case-studies-features ul li .views-field-title a {color:#999;}
-.front .pane-case-studies-features .view-case-studies-features ul li .views-field-field-picture{width:100%;} /* 180px / 180px  */
-.front .pane-case-studies-features .view-case-studies-features ul li .views-field-field-picture img{width:180px; height:117px;}
+.pane-case-studies-features .view-case-studies-features ul li .views-field-title { padding:10px 0;font:italic 1.125em Georgia, "Times New Roman", Times, serif; color:#000;}
+.pane-case-studies-features .view-case-studies-features ul li .views-field-title a {color:#000; font-weight: bold;}
+.front .pane-case-studies-features .view-case-studies-features ul li .views-field-field-picture{width:100%; border: 1px solid #ACACAC;} /* 180px / 180px  */
+.front .pane-case-studies-features .view-case-studies-features ul li .views-field-field-picture img{width:305px; height:180px;}
 .pane-case-studies-features .view-case-studies-features ul li .views-field-entity-id { font-size:0.875em; color:#050505;}
 .pane-case-studies-features .view-case-studies-features ul li p { margin:7px 0;}
 .node-type-case-study .panel-2col .panel-col-first { width:304px; float:left;} 
@@ -570,7 +573,7 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
 .region-sidebar-second { padding-top:60px}
 .region-content { padding-top:30px}
 .front .region-content { padding-top:0;}
-.region-sidebar-second h2, .region-content h2 { font:bold 1.143em Arial, Helvetica, sans-serif; color:#8Cb133; margin-bottom:4px;}
+.region-sidebar-second h2, .region-content h2 { font:bold 1.875em 'Montserrat',Arial,Helvetica,sans-serif; color:#000000; margin-bottom:4px; text-transform: uppercase;}
 
 .region-sidebar-second .section {
 }
