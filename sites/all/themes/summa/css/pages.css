@@ -262,6 +262,11 @@ ul.services li {background:transparent url(../images/lines3.png) bottom left rep
 
 /*------ servicies page */
 .view-services-list .views-row { background:#ebebeb; padding:2%; margin-top:15px; min-height:16px; width: 15%; box-shadow: 0 1px 0 #787878; vertical-align: top; border-top: 5px solid; height: 170px; display: inline-block;}
+.view-services-list .views-row.views-row-1{ border-top: 9px solid #159; }
+.view-services-list .views-row.views-row-2{ border-top: 9px solid #753; }
+.view-services-list .views-row.views-row-3{ border-top: 9px solid #654; }
+.view-services-list .views-row.views-row-4{ border-top: 9px solid #456; }
+.view-services-list .views-row.views-row-5{ border-top: 9px solid #951; }
 .fornt .view-services-list .views-row {margin-top:10px;}
 .view-services-list .views-row .views-field-title{ float:left;}
 .view-services-list .views-row .views-field-title a {font:italic bold 1.25em Georgia,"Times New Roman",Times,serif; color:#000;}
