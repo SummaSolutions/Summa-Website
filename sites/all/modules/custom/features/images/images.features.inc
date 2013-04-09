@@ -123,8 +123,8 @@ function images_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '560',
-          'height' => '294',
+          'width' => '270',
+          'height' => '297',
         ),
         'weight' => '1',
       ),
