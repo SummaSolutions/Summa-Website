@@ -1961,7 +1961,8 @@ function views_ui_import_validate($form, &$form_state) {
 
   $test = views_get_view($view->name);
   if ($test && $test->type != t('Default')) {
-    form_set_error('', t('A view by that name already exists; please choose a different name'));
+      drupal_set_message('<b>Attention!!! if you continue, you will rewrite this view</b>', 'warning');
+    //form_set_error('', t('A view by that name already exists; please choose a different name'));
   }
 
   // Make sure base table gets set properly if it got moved.
