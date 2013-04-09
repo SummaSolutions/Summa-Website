@@ -149,7 +149,7 @@ function block_social_media_like_button() {
 
 function block_sidebar_tweets() {
   $return = '<div id="sidebar-tweets-cage">';
-  if (function_exists('twitter_pull_render')) { $return .= twitter_pull_render('@summasolutions', '', 5); }
+  if (function_exists('twitter_pull_render')) { $return .= twitter_pull_render('@summasolutions', '', 2); }
   $return .= '
       <div class="sidebar-tweets-followus"><a href="http://twitter.com/summasolutions" target="_blank"><img align="absmiddle" src="/sites/all/themes/summa/images/ico_tw2.png">Follow Us</a></div>
     </div>
