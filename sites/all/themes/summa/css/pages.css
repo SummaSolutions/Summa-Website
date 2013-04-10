@@ -271,6 +271,7 @@ ul.services li {background:transparent url(../images/lines3.png) bottom left rep
 .fornt .view-services-list .views-row {margin-top:10px;}
 .view-services-list .views-row .views-field-title{ float:left;}
 .view-services-list .views-row .views-field-title a {font:italic bold 1.25em Georgia,"Times New Roman",Times,serif; color:#000;}
+.page-services .view-services-list .views-row .views-field-title a { font-size: 1em;}
 .view-services-list .views-row .views-field-path{ float: right; display: none;}
 .view-services-list .views-row .views-field-path a{ font-size:0.929em; }
 
@@ -721,8 +722,8 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
 .node-type-service ul.item-list li{height:230px;}
 
 .node-type-service ul.item-list h2{
-	color: #666;
-    font: 1.3em Georgia,"Times New Roman",Times,serif;
+	color: #141414;
+    font: 1.3em 'Montserrat',Arial, Helvetica, sans-serif;
 	padding-bottom: 17px;
 	display:block;
 	font-style:italic;
