@@ -57,7 +57,7 @@
   <?php print $styles; ?>
   <?php print $scripts; ?>
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
   <div id="skip-link">
@@ -75,6 +75,31 @@
       cookie : true, // enable cookies to allow the server to access the session
       xfbml  : true  // parse XFBML
     });
+  </script>
+  <script type="text/javascript">
+      /*
+       * Slideshow
+       */
+      jQuery(document).ready(function($) {
+
+          /* slides images */
+          $("#views_slideshow_cycle_main_hp_slideshow-default").css("overflow", "hidden");
+          $("#views_slideshow_cycle_main_hp_slideshow-default > div").cycle({
+              fx: 'fade',
+              timeout: 3000,
+              //pause: 10,
+              speed: 1000,
+              prev: '#prev',
+              next: '#next'
+          });
+          $("#home_slider").hover(function() {
+                  $("ul#arrows").fadeIn();
+              },
+              function() {
+                  $("ul#arrows").fadeOut();
+              });
+
+      });
   </script>
 </body>
 </html>

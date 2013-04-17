@@ -70,8 +70,7 @@
 
 <div id="page-wrapper">
  <!-- header -->
-  <div id="header">
-    <div class="section clearfix">
+  <div id="header"><div class="section clearfix">
         <div class="top-sociamedia">
             <div class="top-elements">
             <?php print render($page['socialmedia']); ?>
