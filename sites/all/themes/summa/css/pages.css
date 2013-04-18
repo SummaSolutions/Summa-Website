@@ -22,7 +22,11 @@ a { text-decoration:none; color:#8CB133}
 
 
 #page { width:960px; margin:17px auto 0 auto; min-height:400px}
-.front #page{ margin-top:0;}
+.front #page{ margin-top:0; width: 100%;}
+.front .pane-services-list,
+.front .pane-case-studies-features,
+.front .center-wrapper { width: 960px; display: inline-block; text-align: left;}
+#frontpage-panel { text-align: center;}
 
 /*
  * The skip-link link will be completely hidden until a user tabs to the link.
@@ -137,21 +141,21 @@ div#site-name /* The name of the website */ {
 
 /* SLIDESHOW */
 .views-slideshow-controls-bottom { margin-top:8px; display: none;}
-#views_slideshow_cycle_main_hp_slideshow-default { height:385px;overflow:hidden;}
+#views_slideshow_cycle_main_hp_slideshow-default { display: inline-block; height: 385px; text-align: left; width: 960px;}
 #views_slideshow_cycle_teaser_section_hp_slideshow-default .views-slideshow-cycle-main-frame-row { height:350px !important; position:relative;}
 #views_slideshow_cycle_teaser_section_hp_slideshow-default .views-slideshow-cycle-main-frame-row .views-slideshow-cycle-main-frame-row-item { padding: 40px;}
 #views_slideshow_cycle_teaser_section_hp_slideshow-default { width:100% !important;}
 #views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-entity-id { float:right; width:27.9581%; /* 603px / 955px  */ }
 #views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-title { display: inline-block; width: 72%; float: left;}
-#views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-title a { font:bold 4em/1em 'Montserrat',Arial,sans-serif; color:#000; margin:12px 10px 15px 0; display:inline-block; line-height:1.1em; width:73%; text-transform: uppercase;}
-#views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-entity-id-8 { font-size:1em ; font-weight:bold; color:#141414; margin-right:10px; width:55%; font-family: Georgia; display:inline-block;}
-#views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-entity-id-1 { position:absolute; bottom:0; left:0; height:119px; width:53.82% /* 514px / 955px */; text-align: right; padding:0 23px; /*background:transparent url(../images/bg_slider_title.png) top left repeat-x;*/ color:#fff; }
-#views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-entity-id-1 .field-content { font:normal 2.125em Georgia, "Times New Roman", Times, serif; color:#fff; margin-top:35px;}
+#views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-title a { font:bold 4em/1em 'Montserrat',Arial,sans-serif; color:#000; margin:12px 10px 15px 0; display:inline-block; line-height:1.1em; width:90%; text-transform: uppercase;}
+#views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-entity-id-8 { font-size:1em ; font-weight:bold; color:#141414; margin-right:10px; width:61%; font-family: Georgia; display:inline-block;}
+#views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-entity-id-1 { position:absolute; bottom:0; left:0; height:119px; width:53.82% /* 514px / 955px */; text-align: right; padding:0 23px; display: none; /*background:transparent url(../images/bg_slider_title.png) top left repeat-x;*/ color:#fff; }
+#views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-entity-id-1 .field-content { font:italic 2.125em Georgia,"Times New Roman",Times,serif; color:#141414; margin-top:35px;}
 #views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-path {text-align:left; margin-top:20px;}
 #views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-path a { font-size:0.875em; color:#8CB133; }
-.views-slideshow-controls-top {position:absolute;width:100% /* 975px / 960px  */;	top:135px;margin:0 auto;}
-.views-slideshow-controls-text-previous{width:67px; height:55px; font-size:0; float:left; display:compact; background:url(../images/slider-arrow-left.png) no-repeat center center; cursor:pointer; margin-left:-82px;}
-.views-slideshow-controls-text-next{width:67px; height:55px; font-size:0;float:right; display:compact; background:url(../images/slider-arrow-right.png) no-repeat center center; cursor:pointer; margin-right: -82px;}
+.views-slideshow-controls-top {position:absolute;width:100% /* 975px / 960px  */;	top:135px;margin:0 auto; z-index: 100;}
+.views-slideshow-controls-text-previous{width:67px; height:55px; font-size:0; float:left; display:compact; background:url(../images/slider-arrow-left.png) no-repeat center center; cursor:pointer;}
+.views-slideshow-controls-text-next{width:67px; height:55px; font-size:0;float:right; display:compact; background:url(../images/slider-arrow-right.png) no-repeat center center; cursor:pointer;}
 #views_slideshow_controls_text_pause_hp_slideshow-default{display:none;}
 .slider-more { background: url(../images/read_more.png) no-repeat center center; width: 175px; height: 37px; display: inline-block;}
 .more {font: normal 0.75em Arial, Helvetica, sans-serif; color:#8CB133; float:right; margin-top:-3px;}
@@ -271,6 +275,7 @@ ul.services li {background:transparent url(../images/lines3.png) bottom left rep
 .fornt .view-services-list .views-row {margin-top:10px;}
 .view-services-list .views-row .views-field-title{ float:left;}
 .view-services-list .views-row .views-field-title a {font:italic bold 1.25em Georgia,"Times New Roman",Times,serif; color:#000;}
+.page-services .view-services-list .views-row .views-field-title a { font-size: 1em;}
 .view-services-list .views-row .views-field-path{ float: right; display: none;}
 .view-services-list .views-row .views-field-path a{ font-size:0.929em; }
 
@@ -721,8 +726,8 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
 .node-type-service ul.item-list li{height:230px;}
 
 .node-type-service ul.item-list h2{
-	color: #666;
-    font: 1.3em Georgia,"Times New Roman",Times,serif;
+	color: #141414;
+    font: 1.3em 'Montserrat',Arial, Helvetica, sans-serif;
 	padding-bottom: 17px;
 	display:block;
 	font-style:italic;
@@ -990,6 +995,7 @@ ul.nice-menu li {
 
 @media screen and (max-width: 520px) {
 	/*for max-with 768 px */
+  body { overflow-x: hidden;}
 	.view-services-list .views-row { width: 96%; height: 90px;}
 	.front .panel-3col-stacked .panel-col-first, .front .panel-3col-stacked .panel-col, .front .panel-3col-stacked .panel-col-last { width: 100%; padding: 0;}
 	.front .pane-hp-slideshow { display:none;}
@@ -1087,5 +1093,9 @@ ul.nice-menu li {
 	.menu-mobile-bottom li a {color:#ccc; font-family: Georgia,serif; font-style: italic;}
 	.menu-mobile-bottom li.arrow { background:transparent url(../images/arrow5.png) right 6px no-repeat;}
 	.menu-mobile-bottom li.arrow-down{background:transparent url(../images/arrow6.png) right 6px no-repeat;}
+
+  .front .pane-services-list,
+  .front .pane-case-studies-features,
+  .front .center-wrapper { width: 100%; display: inline-block; text-align: left;}
 
 }
