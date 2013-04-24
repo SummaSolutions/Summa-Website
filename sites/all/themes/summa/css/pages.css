@@ -21,7 +21,7 @@ a { text-decoration:none; color:#8CB133}
 .front #page-wrapper .view-hp-slideshow { height: 385px; margin-top: -5px;}
 
 
-#page { width:960px; margin:17px auto 0 auto; min-height:400px}
+#page { width:960px; margin:13px auto 0 auto; min-height:400px}
 .front #page{ margin-top:0; width: 100%;}
 .front .pane-services-list,
 .front .pane-case-studies-features,
@@ -345,7 +345,7 @@ ul.services li {background:transparent url(../images/lines3.png) bottom left rep
 .pane-testimonials .views-row { margin-bottom:15px; }
 
 /* MISSION */
-#company-id .panel-col-first h2.pane-title { font:bold 1.143em Arial, Helvetica, sans-serif;color:#8Cb133; margin:15px 0 4px 0;}
+#company-id .panel-col-first h2.pane-title { font:bold 1.143em 'Montserrat', Arial, Helvetica, sans-serif;color:#8Cb133; margin:0 0 4px 0;}
 /*.pane-related-content {clear:both; margin-top:10px;}*/
 
 /* TEAM */
@@ -499,30 +499,32 @@ div.tabs /* See also the tabs.css file. */ {
 	float:right !important;
 	border-left:none !important;*/
 }
-.section-contact-us .region-sidebar-first {width:54.97%; /*  525px / 955px */}
+.section-contact-us .region-sidebar-first {width:54.97%; margin-top: 90px; /*  525px / 955px */}
 .section-contact-us #main #content { float:right; width:42%;}
 
-.node-webform form{margin-top:-15px !important;}
+
 .node-webform form select{width:100%;}
 .node-webform #comments,
 .node-webform .submitted{display:none;}
 .webform-client-form input { width:100%;}
 
 
-.node-type-webform .region-sidebar-first h2.block-title {
-	font-size:1.714em;
-	line-height:2em;
-	border-left-color:#FFFFFF;
-	border-left-style:solid;
-	border-left-width:1px;
-	padding-left:10px;
-	margin:0;
-}
 .node-type-webform .region-sidebar-first #block-block-6,
 .node-type-webform .region-sidebar-first #block-block-20{padding-left:0px;}
 .node-type-webform .region-sidebar-first #block-block-6 .content{
 	margin-top:25px;
 }
+
+.section-contact-us #main { position: relative;}
+.section-contact-us #main h1#page-title { position: absolute; left: 0; height: auto; margin-top: -7px;}
+.section-contact-us .region-sidebar-first h2 {
+    color: #000000;
+    font: bold 1.875em 'Montserrat',Arial,Helvetica,sans-serif;
+    margin-bottom: 4px;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+.section-contact-us .region-content { padding-top: 130px;}
 
 ul.links /* List of links */ {
   margin: 1em 0;
@@ -710,9 +712,8 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
 .panel-2col-stacked .panel-col-top, .panel-2col-stacked .panel-col-bottom{padding-top: 40px;line-height: 1.5;}
 
 .pane-case-studies-details1 h2.pane-title{
-	background: url("/sites/all/themes/summa/images/lines2.png") repeat-x scroll left bottom transparent;
     color: #000000;
-    font: 1.571em Georgia,"Times New Roman",Times,serif;
+    font: bold 1.125em 'Montserrat',Arial,sans-serif;
     margin-bottom: 13px;
     padding-bottom: 8px;
 }
@@ -1098,4 +1099,7 @@ ul.nice-menu li {
   .front .pane-case-studies-features,
   .front .center-wrapper { width: 100%; display: inline-block; text-align: left;}
 
+  .section-contact-us #main #content { float: none; width: 100%;}
+  .section-contact-us .region-sidebar-first { width: 100%; margin-top: 20px;}
+  .section-contact-us #main h1#page-title { margin-top: -2px;}
 }
