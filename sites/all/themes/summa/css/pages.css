@@ -311,10 +311,10 @@ ul.services li {background:transparent url(../images/lines3.png) bottom left rep
 
 /* PORTFOLIO */
 .page-portfolio .pane-case-studies-features .view-case-studies-features ul {list-style:none !important;padding:0 !important; margin-top:0 !important;}
-.page-portfolio .pane-case-studies-features .view-case-studies-features ul li{ float:left; width:30.20% /* 290px / 960px */; margin-right:3.125% /* 30px / 960px */; padding-bottom: 20px; margin-bottom: 30px; border-bottom: 1px dotted #CCCCCC;height: 370px;}
+.page-portfolio .pane-case-studies-features .view-case-studies-features ul li{ float:left; width:30.20% /* 290px / 960px */; margin-right:3.125% /* 30px / 960px */; padding-bottom: 20px; margin-bottom: 30px; height: 370px;}
 .page-portfolio .pane-case-studies-features .view-case-studies-features ul li .views-field{position:relative;display:block;}
 .page-portfolio .pane-case-studies-features .view-case-studies-features ul li .views-field-title{font-size:1.5em; background:none;padding-top:0;}
-.page-portfolio .pane-case-studies-features .view-case-studies-features ul li .views-field-field-picture{width:100%; height:190px; margin:0.96% auto 2.083% auto; /* 20px / 960px */}
+.page-portfolio .pane-case-studies-features .view-case-studies-features ul li .views-field-field-picture{width:100%; height:190px; margin:0.96% auto 2.083% auto; border: 1px solid #ACACAC; /* 20px / 960px */}
 
 
 .pane-case-studies-features .view-case-studies-features ul li.views-row-last{ margin-right:0}
@@ -326,7 +326,8 @@ ul.services li {background:transparent url(../images/lines3.png) bottom left rep
 .pane-case-studies-features .view-case-studies-features ul li p { margin:7px 0;}
 .node-type-case-study .panel-2col .panel-col-first { width:304px; float:left;}
 .section-case-studies .panel-col-last { float:right; width:64.58% /* 620px / 960px */;}
-.front .pane-case-studies-features .view-case-studies-features ul li .views-field-path .more { width: 134px; height: 135px; display: inline-block; background: url(../images/studies_more_bg.png) no-repeat center center; position: absolute; right: -1px; top: 49px;}
+.view-case-studies-features ul li .views-field-path .more { width: 134px; height: 135px; display: inline-block; background: url(../images/studies_more_bg.png) no-repeat center center; position: absolute; right: -1px; top: 49px; z-index: 10;}
+.section-portfolio .view-case-studies-features ul li .views-field-path .more { top: 62px;}
 
 .banner-summa, .banner-summa a{font:italic 1.125em Georgia, "Times New Roman", Times, serif; color:#999;}
 .banner-summa .more a {font: normal 1em Arial, Helvetica, sans-serif; color:#8CB133; float:right; margin-top:-3px;}
@@ -351,7 +352,7 @@ ul.services li {background:transparent url(../images/lines3.png) bottom left rep
 /* TEAM */
 .view-team ul{ list-style:none; padding:0; margin:0 0 20px 0; clear:both; display: inline-block;}
 .view-team ul li { width:24% /* 152px / 633px */; float:left; margin-right:0.64%; margin-bottom:20px; min-height:180px; }
-.view-team ul li .views-field-uid { border:1px dotted #999; padding:4px; }
+.view-team ul li .views-field-uid { border:1px solid #ACACAC; padding:4px; }
 .view-team ul li .views-field-entity-id-2,.view-id-team .views-field-entity-id-2 { color:#8Cb133; font: italic 1em Georgia, "Times New Roman", Times, serif;}
 .view-team ul li .views-field-entity-id-3,.view-id-team .views-field-entity-id-3 { color:#000; font-size:0.857em;}
 .view-team ul li .views-field-uid-1 img,  .view-id-team .views-field-uid span img { /*margin-right:6px;*/ display:block;}
@@ -700,7 +701,7 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
 .client-list .views-field-title, .partner-list .views-field-title { font:14px Georgia, "Times New Roman", Times, serif !important; color:#999 !important; height: 34px;}
 .page-company-clients .pane-clients .views-field-field-picture,
 .partner-list .views-field-entity-id{
-	border:1px dotted #ccc;
+	border:1px solid #ACACAC;
 	margin:10px 0;
 	width:180px;
 	height:117px;
@@ -1102,4 +1103,6 @@ ul.nice-menu li {
   .section-contact-us #main #content { float: none; width: 100%;}
   .section-contact-us .region-sidebar-first { width: 100%; margin-top: 20px;}
   .section-contact-us #main h1#page-title { margin-top: -2px;}
+
+  .page-portfolio .pane-case-studies-features .view-case-studies-features ul li { width: 100%; margin: 0 0 20px; height: auto;}
 }
