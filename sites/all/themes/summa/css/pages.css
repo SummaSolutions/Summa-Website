@@ -95,12 +95,12 @@ p.social-contact { margin-bottom:10px;}
 #header-tweets-cage ul, #sidebar-tweets-cage ul { margin:0 0 15px 0; padding:0}
 #header-tweets-cage li, #sidebar-tweets-cage li { float:none; clear:both;height: auto; margin:0 0 15px 0; padding:0; background:none;}
 #header-tweets-cage li span { font-size:12px; color:#ccc}
-#sidebar-tweets-cage li span { font-size:12px; color:#666}
+#sidebar-tweets-cage li span { font-size:12px; color:#141414}
 #header-tweets-cage li a, #sidebar-tweets-cage li a {font-size:12px; color:#8CB133}
 #header-tweets-cage ul .tweet-authorphoto, #sidebar-tweets-cage ul .tweet-authorphoto { display:none;}
 #header-tweets-cage ul .tweet-text {}
-#header-tweets-cage ul .tweet-time,  #sidebar-tweets-cage ul .tweet-time {text-align:right; margin-top:-5px; }
-#header-tweets-cage ul .tweet-time a,  #sidebar-tweets-cage ul .tweet-time a  { color:#999; font-size:11px;}
+#header-tweets-cage ul .tweet-time,  #sidebar-tweets-cage ul .tweet-time {text-align:left;}G637
+#header-tweets-cage ul .tweet-time a,  #sidebar-tweets-cage ul .tweet-time a  { color:#141414; font-size:11px;}
 
 #logo /* Wrapping link for logo */ {
   float: left; /* LTR */
@@ -258,8 +258,8 @@ div#site-name /* The name of the website */ {
 .panels-flexible-row h2.pane-title { background:transparent url(../images/lines2.png) bottom left repeat-x; padding-bottom:8px; margin-bottom:0; margin-bottom:13px; font:normal 1.571em Georgia, "Times New Roman", Times, serif; color:#000;}
 
 ul.services  { list-style:none; padding:0;}
-ul.services a { color:#999;}
-ul.services li {background:transparent url(../images/lines3.png) bottom left repeat-x; padding:10px 0 14px 0;  color:#999}
+ul.services a { color:#141414;}
+ul.services li {padding:10px 0 14px 0; color:#999; border-bottom: 1px solid #DDDDDD;}
 .title-italic { font:italic 1.125em Georgia, "Times New Roman", Times, serif}
 .exclamation { margin-left:20px; margin-top: 15px;}
 .exclamation p { float:left; margin-right:25px; margin-bottom:10px; color: #141414;}
@@ -415,11 +415,11 @@ ul.bulets { margin:0 0 0 15px; padding:0;}
 #casestudy-detail-page { margin-bottom:20px;}
 .node-type-case-study .case-study-testimonial, .node-type-case-study .case-study-realted { float:right; width:285px; clear:right; margin-top:20px; }
 .node-type-case-study .case-study-services {/* float:left; width:285px;*/}
-.node-type-case-study .services{background:transparent url(../images/lines3.png) left bottom repeat-x; height:75px; padding-top:8px;}
+.node-type-case-study .services{ border-bottom: 1px solid #DDDDDD; height:75px; padding-top:8px;}
 .node-type-case-study .panel-2col .panel-col-last .panel-separator{ display:none;}
 .node-type-case-study .services div.image { float:left; margin-right:5px;}
 .node-type-case-study .services div.title { padding-top:8px;}
-.node-type-case-study .services div.title a{font:italic 1.125em Georgia, "Times New Roman", Times, serif; color:#999;}
+.node-type-case-study .services div.title a{font:italic 1.125em Georgia, "Times New Roman", Times, serif; color:#141414;}
 
 .testimonials { margin-bottom:15px;}
 .testimonials p{ display: inline;}
@@ -633,14 +633,20 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
 #footer-message /* Wrapper for the footer message from Drupal's "Site information"
                    and for any blocks placed in the footer region */ {
 }
-.region-bottom .logo { display:inline; margin:0.6em 0 1em 0;}
-.region-bottom .footer-address { float:right;display:inline-block; width:67.41% /* 580px / 960px  */; margin:0;}
+.region-bottom .content > p { display: block; clear: both; color: #d9d7d7; font-size: 0.688em; margin-top: 1em;}
+.region-bottom .logo { display:inline; margin:0.6em 0; max-height: 55px; width: auto;}
+.region-bottom .footer-address { float:right;display:inline-block; width:30.5% /* 580px / 960px  */; margin:0;}
+.region-bottom .footer-links { width: 66.5%; display: inline-block;}
+.region-bottom .footer-links ul { list-style: none; padding: 0; margin: 0.5em 0; vertical-align: top; display: inline-block; width: 33%;}
+.region-bottom .footer-links ul .title { font-family: Georgia,serif; font-size: 1.125em; font-style: italic; color: #FFFFFF; margin-bottom: 15px;}
+.region-bottom .footer-links ul a { color: #a3a3a3; font-size: 0.75em;}
+.region-bottom .footer-links ul a:hover { color: #FFFFFF;}
 .region-bottom .footer-logos { float:left; display:inline-block; width:28%;}
 .region-bottom .footer-logos div.log { display: inline-block;}
 .region-bottom .footer-logos div.log p { font-size:0.750em; margin-left:8px;}
-.region-bottom .footer-address .address { color:#ccc; font-size:0.688em; margin-right:15px; vertical-align:top; text-align:left; float:left; width:31%; margin-top:11px;}
+.region-bottom .footer-address .address { color:#ccc; font-size:0.75em; margin-right:15px; vertical-align:top; text-align:left; float:left; width:80%; margin-top:11px;}
 .region-bottom .footer-address .address.last { margin-right:0;}
-.region-bottom .footer-address .address span { color: #59E6FF; display: block; font-family: Georgia,serif; font-size: 1.636em; font-style: italic; padding-bottom: 0;}
+.region-bottom .footer-address .address span { color: #59E6FF; display: block; font-family: Georgia,serif; font-size: 1.333em; font-style: italic; padding-bottom: 0;}
 .region-bottom .footer-address .address a { color:#85cc2b;}
 .region-bottom {background:#1e1e1e; width:100%; display:inline-block; padding:1.3em 0;}
 .region-bottom #block-block-2 { margin:0 auto; width:960px;}
@@ -784,7 +790,8 @@ ul.nice-menu ul {
 ul.nice-menu li {font-size:1em;border-top: 0;float: left; font-weight:normal;}
 ul.nice-menu li.last { background:none;}
 
-ul.nice-menu a { color:#a3a3a3; padding: 10px 5px 0 30px; text-decoration:none; font-family: Georgia, serif; font-style: italic;}
+ul.nice-menu a { color:#a3a3a3; padding: 5px 10px; text-decoration:none; font-family: Georgia, serif; font-style: italic;}
+ul.nice-menu li.menu-path-contact-us a { background: url("../images/ico_nav_plus.png") no-repeat scroll right top transparent;}
 
 ul.nice-menu ul {
   top: 52px;
@@ -875,7 +882,7 @@ ul.nice-menu-down li li {
 }
 
 ul.nice-menu-down ul {
-  left: 15px; /* LTR */
+  left: 0; /* LTR */
 }
 
 ul.nice-menu-down ul li {
@@ -888,8 +895,10 @@ ul.nice-menu-down li ul li ul {
 }
 
 ul.nice-menu-down .menuparent a {
-  padding-right: 0; /* LTR */
+  /* LTR */
 }
+
+ul.nice-menu-down > .menuparent > a { padding-bottom: 31px;}
 
 ul.nice-menu-down li.menuparent {
 }
@@ -914,6 +923,8 @@ ul.nice-menu li {
   margin: 0;
   padding-left: 0; /* LTR */
 }
+ul.nice-menu > li { margin: 0 0 0 20px;}
+ul.nice-menu ul li:hover { background-color: #333333;}
 
 #header-region ul.nice-menu li {
   margin: 0;
@@ -998,7 +1009,8 @@ ul.nice-menu li {
 @media screen and (max-width: 520px) {
 	/*for max-with 768 px */
   body { overflow-x: hidden;}
-	.view-services-list .views-row { width: 96%; height: 90px;}
+  .not-front #page-wrapper { background-position: 0 93px !important;}
+	.view-services-list .views-row { width: 96%; height: 50px;}
 	.front .panel-3col-stacked .panel-col-first, .front .panel-3col-stacked .panel-col, .front .panel-3col-stacked .panel-col-last { width: 100%; padding: 0;}
 	.front .pane-hp-slideshow { display:none;}
 	.front #page-wrapper { background:none;}
@@ -1105,4 +1117,15 @@ ul.nice-menu li {
   .section-contact-us #main h1#page-title { margin-top: -2px;}
 
   .page-portfolio .pane-case-studies-features .view-case-studies-features ul li { width: 100%; margin: 0 0 20px; height: auto;}
+
+  .region-bottom .footer-links { display: none;}
+  .region-bottom .content > p { text-align: right; margin-right: 1em;}
+  .region-content h2 .read-services, .region-content h2 .read-work { display: block; clear: both; margin-left: 0; margin-top: 5px;}
+  .node-type-service ul.item-list li{ clear: both; display: inline-block; margin-bottom: 20px; text-align: center; height: auto;}
+  .node-type-service ul.item-list p { width: 100% !important; float: none; text-align: left; clear: both;}
+  .node-type-service ul.item-list .left img { margin: 0; float: none;}
+  .node-type-service ul.item-list h2 { text-align: left;}
+
+  .client-list ul li, .partner-list ul li { float: none; width: 100%; margin-right: 0;}
+  .client-list ul li .views-field-body, .partner-list ul li .views-field-entity-id-1 { height: auto;}
 }
