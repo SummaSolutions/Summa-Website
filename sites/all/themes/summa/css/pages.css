@@ -12,11 +12,11 @@ a { text-decoration:none; color:#8CB133}
 .page-blog a, .node-type-blog a { color:#517EC4;}
 
 #page-wrapper { width:auto;background:transparent url(../images/bg_section_title.png) 0 120px repeat-x;}
-.node-type-service.page-node-51 #page-wrapper { background:transparent url(../images/bg_section_title_ecommerce.png) 0 120px repeat-x;}
+.node-type-service.page-node-51 #page-wrapper { background:transparent url(../images/bg_section_title_design.png) 0 120px repeat-x;}
 .node-type-service.page-node-123 #page-wrapper { background:transparent url(../images/bg_section_title_mobile.png) 0 120px repeat-x;}
 .node-type-service.page-node-5 #page-wrapper { background:transparent url(../images/bg_section_title_cms.png) 0 120px repeat-x;}
 .node-type-service.page-node-50 #page-wrapper { background:transparent url(../images/bg_section_title_soft.png) 0 120px repeat-x;}
-.node-type-service.page-node-41 #page-wrapper { background:transparent url(../images/bg_section_title_design.png) 0 120px repeat-x;}
+.node-type-service.page-node-41 #page-wrapper { background:transparent url(../images/bg_section_title_ecommerce.png) 0 120px repeat-x;}
 .front #page-wrapper{ background:transparent url(../images/bg_slideshow.jpg) 0 120px repeat-x;}
 .front #page-wrapper .view-hp-slideshow { height: 385px; margin-top: -5px;}
 
@@ -142,13 +142,13 @@ div#site-name /* The name of the website */ {
 /* SLIDESHOW */
 .views-slideshow-controls-bottom { margin-top:8px; display: none;}
 #views_slideshow_cycle_main_hp_slideshow-default { display: inline-block; height: 385px; text-align: left; width: 960px;}
-#views_slideshow_cycle_teaser_section_hp_slideshow-default .views-slideshow-cycle-main-frame-row { height:350px !important; position:relative;}
-#views_slideshow_cycle_teaser_section_hp_slideshow-default .views-slideshow-cycle-main-frame-row .views-slideshow-cycle-main-frame-row-item { padding: 40px;}
+#views_slideshow_cycle_teaser_section_hp_slideshow-default .views-slideshow-cycle-main-frame-row { height:350px !important; position:relative; background: none !important;}
+#views_slideshow_cycle_teaser_section_hp_slideshow-default .views-slideshow-cycle-main-frame-row .views-slideshow-cycle-main-frame-row-item { padding: 40px 20px;}
 #views_slideshow_cycle_teaser_section_hp_slideshow-default { width:100% !important;}
-#views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-entity-id { float:right; width:27.9581%; /* 603px / 955px  */ }
-#views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-title { display: inline-block; width: 72%; float: left;}
-#views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-title a { font:bold 4em/1em 'Montserrat',Arial,sans-serif; color:#000; margin:12px 10px 15px 0; display:inline-block; line-height:1.1em; width:90%; text-transform: uppercase;}
-#views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-entity-id-8 { font-size:1em ; font-weight:bold; color:#141414; margin-right:10px; width:61%; font-family: Georgia; display:inline-block;}
+#views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-entity-id { float:right; width:370px; /* 603px / 955px  */ }
+#views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-title { display: inline-block; width: 56%; float: left;}
+#views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-title a { font:bold 4em/1em 'Montserrat',Arial,sans-serif; color:#000; margin:12px 0 15px; display:inline-block; line-height:1.1em; width:117%; text-transform: uppercase; z-index: 10; position: relative;}
+#views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-entity-id-8 { font-size:1em ; font-weight:bold; color:#141414; margin-right:10px; width:58%; font-family: Georgia; display:inline-block;}
 #views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-entity-id-1 { position:absolute; bottom:0; left:0; height:119px; width:53.82% /* 514px / 955px */; text-align: right; padding:0 23px; display: none; /*background:transparent url(../images/bg_slider_title.png) top left repeat-x;*/ color:#fff; }
 #views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-entity-id-1 .field-content { font:italic 2.125em Georgia,"Times New Roman",Times,serif; color:#141414; margin-top:35px;}
 #views_slideshow_cycle_teaser_section_hp_slideshow-default .views-field-path {text-align:left; margin-top:20px;}
@@ -159,6 +159,7 @@ div#site-name /* The name of the website */ {
 #views_slideshow_controls_text_pause_hp_slideshow-default{display:none;}
 .slider-more { background: url(../images/read_more.png) no-repeat center center; width: 175px; height: 37px; display: inline-block;}
 .more {font: normal 0.75em Arial, Helvetica, sans-serif; color:#8CB133; float:right; margin-top:-3px;}
+#views_slideshow_cycle_teaser_section_hp_slideshow-default .views-row-2 .views-field-entity-id-1 { display: inline-block; width: 440px; height: 64px; background: url(../images/banner_ecommerce.png) no-repeat left top; position: relative; margin-top: 20px; padding: 0;}
 
 /* BLOG SUKERFISH */
 #header-categories-blog { position:absolute; background:transparent url(../images/green_opacity.png) top left; padding:10px 6px 6px 6px; width:270px; top:35px; left:5px; z-index:10; text-align:left;}
@@ -267,11 +268,11 @@ ul.services li {padding:10px 0 14px 0; color:#999; border-bottom: 1px solid #DDD
 
 /*------ servicies page */
 .view-services-list .views-row { background:#ebebeb; padding:2%; margin-top:15px; min-height:16px; width: 15%; box-shadow: 0 1px 0 #787878; vertical-align: top; border-top: 5px solid; height: 170px; display: inline-block; *border-bottom:1px solid #787878; border-bottom:1px solid #787878\9;}
-.view-services-list .views-row.views-row-1{ border-top: 9px solid #6b6bff; }
+.view-services-list .views-row.views-row-1{ border-top: 9px solid #ff910f; }
 .view-services-list .views-row.views-row-2{ border-top: 9px solid #17b5ff; }
 .view-services-list .views-row.views-row-3{ border-top: 9px solid #49d817; }
 .view-services-list .views-row.views-row-4{ border-top: 9px solid #ffd11a; }
-.view-services-list .views-row.views-row-5{ border-top: 9px solid #ff910f; }
+.view-services-list .views-row.views-row-5{ border-top: 9px solid #6b6bff; }
 .fornt .view-services-list .views-row {margin-top:10px;}
 .view-services-list .views-row .views-field-title{ float:left;}
 .view-services-list .views-row .views-field-title a {font:italic bold 1.25em Georgia,"Times New Roman",Times,serif; color:#000;}
