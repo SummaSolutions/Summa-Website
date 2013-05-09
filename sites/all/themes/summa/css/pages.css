@@ -82,7 +82,7 @@ a { text-decoration:none; color:#8CB133}
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;         /* Opera/IE 8+ */
  list-style:none;}
-.top-sociamedia .top-elements li a{ color:#C8C8C8; font-size:0; background: url("../images/ico_social_bg.png") no-repeat scroll left top transparent; display: inline-block; width: 28px; height: 29px; margin-left: 5px; margin-top: 1px; vertical-align: top;}
+.top-sociamedia .top-elements li a{ color:#C8C8C8; font-size:0; background: url("../images/ico_social_bg.png") no-repeat scroll left top transparent; display: inline-block; width: 28px; height: 28px; margin-left: 5px; margin-top: 1px; vertical-align: top;}
 .top-sociamedia .top-elements li a:hover { height: 28px;}
 .top-sociamedia .top-elements li a#fb:hover { background-position: 0 -28px;}
 .top-sociamedia .top-elements li a#gplus:hover { background-position: -28px -28px;}
@@ -380,11 +380,13 @@ ul.services li {padding:10px 0 14px 0; color:#999; border-bottom: 1px solid #DDD
 .view-team ul li { width:24% /* 152px / 633px */; float:left; margin-right:0.64%; margin-bottom:20px; min-height:180px; }
 .view-team ul li .views-field-uid { border:1px solid #ACACAC; padding:4px; }
 .view-team ul li .views-field-entity-id-2,.view-id-team .views-field-entity-id-2 { color:#8Cb133; font: italic 1em Georgia, "Times New Roman", Times, serif;}
+.pane-team .views-field-entity-id-2 { color:#141414; font: italic bold 1.5em Georgia, "Times New Roman", Times, serif;}
 .view-team ul li .views-field-entity-id-3,.view-id-team .views-field-entity-id-3 { color:#000; font-size:0.857em;}
 .view-team ul li .views-field-uid-1 img,  .view-id-team .views-field-uid span img { /*margin-right:6px;*/ display:block;}
 .view-team ul li .views-field-uid-1, .view-id-team .views-field-uid {margin-top:4px}
+.view-team ul li .views-field-uid-1 a, .view-id-team .views-field-uid a { display: inline-block; float: left;}
 .view-id-team .views-field-entity-id-6 { float:left; border:1px solid #ACACAC; padding:4px; height:136px; width:142px; margin-right:15px;}
-.view-id-team .views-field-entity-id { margin-top:20px}
+.view-id-team .views-field-entity-id { clear: both; display: inline-block; margin-top: 20px; width: 100%;}
 .section-team .view-team ul li { width:24% /* 152px / 633px */; float:left; margin-right:0.64%; margin-bottom:10px; min-height:150px; }
 .section-team .view-team ul li .views-field-uid { border:1px solid #ACACAC; padding:4px; height:64px; width:67px;}
 
@@ -431,6 +433,7 @@ p.small { font-size:0.875em}
 /* PANELS SECTION */
 .panel-2col .panel-col-first { width:62.38%; /* 634px / 955px */}
 .panel-2col .panel-col-last { width:31.83%; float:right;/* 304px / 955px */margin-top: 50px;}
+.panel-col-last .pane-block .pane-content { font-size: 0.918em;}
 .node-type-case-study .panel-2col .panel-col-last { width:635px; float:right;}
 .node-type-blog .panel-2col .panel-col-last { margin-top: 20px;}
 .bulets li{ margin-top:10px;}
@@ -442,7 +445,8 @@ ul.bulets { margin:0 0 0 15px; padding:0;}
 .page-blogposts .panel-2col .panel-col-first { margin-top: 40px;}
 .page-blogposts .panel-2col .panel-col-last { margin-top: 25px;}
 .node-type-service.page-node-123 .panel-2col .panel-col-last { margin-top: 0;}
-.node-type-service.page-node-123 .panel-2col .panel-col-first { margin-top: 20px;}
+.node-type-service.page-node-123 .panel-2col .panel-col-first,
+.node-type-job .panel-2col .panel-col-first { margin-top: 20px;}
 
 /* CASE STUDY */
 #casestudy-detail-page { margin-bottom:20px;}
@@ -751,10 +755,12 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
 }
 
 
-.client-list ul, .partner-list ul{ list-style:none !important; display:inline-block; padding:0; margin: 0;}
-.client-list ul li, .partner-list ul li { float:left; width:180px; margin-right:18px; margin-bottom:30px;display:inline-block;}
-.client-list ul li .views-field-body, .partner-list ul li .views-field-entity-id-1{height:180px;overflow:hidden;}
-.client-list .views-field-title, .partner-list .views-field-title { font:14px Georgia, "Times New Roman", Times, serif !important; color:#999 !important; height: 34px;}
+.client-list ul, .partner-list ul{ list-style:none !important; display:table-row; padding:0; margin: 0;}
+.client-list ul li, .partner-list ul li { width:29%; margin-right:18px; margin-bottom:30px;display:inline-block; vertical-align: top;}
+.client-list ul li .views-field-body, .partner-list ul li .views-field-entity-id-1{overflow:hidden; font-size: 0.918em;}
+.client-list .views-field-title, .partner-list .views-field-title { font:14px Georgia, "Times New Roman", Times, serif !important; color:#999 !important;}
+.client-list .views-field-title a, .partner-list .views-field-title a { color: #141414;}
+.client-list .views-field-title {height: 43px;}
 .page-company-clients .pane-clients .views-field-field-picture,
 .partner-list .views-field-entity-id{
 	border:1px solid #ACACAC;
@@ -763,7 +769,7 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
 	height:117px;
 }
 .page-company-clients .pane-clients .views-field-title span,
-.partner-list .views-field-title span{font-size:1.3em;font-style:italic; color: #141414;}
+.partner-list .views-field-title span{font-size:1.3em;font-style:italic; color: #141414; font-weight: bold;}
 
 .panel-2col-stacked .panel-col-first{width:29.68%; /* 285px / 960px */}
 .panel-2col-stacked .panel-col-top, .panel-2col-stacked .panel-col-bottom{padding-top: 40px;line-height: 1.5;}
@@ -1176,7 +1182,7 @@ ul.nice-menu ul li:hover { background-color: #333333;}
   .node-type-service ul.item-list .left img { margin: 0; float: none;}
   .node-type-service ul.item-list h2 { text-align: left;}
 
-  .client-list ul li, .partner-list ul li { float: none; width: 100%; margin-right: 0; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #CCCCCC;}
+  .client-list ul li, .partner-list ul li { float: none; width: 100%; margin-right: 0; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #CCCCCC; height: auto;}
   .client-list ul li .views-field-body, .partner-list ul li .views-field-entity-id-1 { height: auto;}
 
   .node-type-blog h1#page-title { width: 100%;}
