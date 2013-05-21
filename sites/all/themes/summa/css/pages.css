@@ -377,12 +377,12 @@ ul.services li {padding:10px 0 14px 0; color:#999; border-bottom: 1px solid #DDD
 
 /* TEAM */
 .view-team ul{ list-style:none; padding:0; margin:0 0 20px 0; clear:both; display: inline-block;}
-.view-team ul li { width:24% /* 152px / 633px */; float:left; margin-right:0.64%; margin-bottom:20px; min-height:180px; }
-.view-team ul li .views-field-uid { border:1px solid #ACACAC; padding:4px; display: inline-block;}
+.view-team ul li { width:23% /* 152px / 633px */; float:left; margin-right:0.64%; margin-bottom:20px; min-height:200px; }
+.view-team ul li .views-field-uid { border:1px solid #ACACAC; padding:4px; display: inline-block; width: 90%;}
 .view-team ul li .views-field-entity-id-2,.view-id-team .views-field-entity-id-2 { color:#8Cb133; font: italic 1em Georgia, "Times New Roman", Times, serif;}
 .pane-team .views-field-entity-id-2 { color:#141414; font: italic bold 1.5em Georgia, "Times New Roman", Times, serif;}
 .view-team ul li .views-field-entity-id-3,.view-id-team .views-field-entity-id-3 { color:#000; font-size:0.857em;}
-.view-team ul li .views-field-uid-1 img,  .view-id-team .views-field-uid span img { /*margin-right:6px;*/ display:block;}
+.view-team ul li .views-field-uid-1 img,  .view-id-team .views-field-uid span img { /*margin-right:6px;*/ display:block; width: 100%;}
 .view-team ul li .views-field-uid-1, .view-id-team .views-field-uid {margin-top:4px}
 .view-team ul li .views-field-uid-1 a, .view-id-team .views-field-uid a { display: inline-block; float: left;}
 .view-id-team .views-field-entity-id-6 { float:left; border:1px solid #ACACAC; padding:4px; height:136px; width:142px; margin-right:15px;}
