@@ -2,8 +2,25 @@
 * { margin:0; padding:0}
 
 body { margin: 0; padding: 0; font:normal 100% 'Noto Sans',Arial, Helvetica, sans-serif; color:#666;}
+body,
+caption,
+th,
+td,
+input,
+textarea,
+select,
+option,
+legend,
+fieldset {font-family: 'Noto Sans',Arial, Helvetica, sans-serif;}
 h1, h2, h3 { font-family:Georgia, "Times New Roman", Times, serif; font-weight:normal;}
 h2 { font-size:1.5em ; color:#000;}
+.recaptchatable #recaptcha_image { width: 250px !important; float: left;}
+.recaptchatable .recaptcha_image_cell center img { height: auto !important;}
+.recaptchatable #recaptcha_response_field { width: 250px !important; font-size: 12px !important;}
+fieldset.captcha,
+.webform-client-form input,
+.webform-client-form textarea,
+.webform-client-form select { font-size: 12px;}
 .panel-col-last h2 { padding-bottom:10px;}
 /*.not-front .content h2 { font-size:1.286em; margin-bottom:0.2em; font-family:Arial, Helvetica, sans-serif }*/
 #main { padding-bottom: 30px;}
@@ -104,7 +121,7 @@ p.social-contact { margin-bottom:10px;}
 .page-company #sidebar-tweets-cage .sidebar-tweets-followus a{top:72px;}
 .page-blogposts #sidebar-tweets-cage .sidebar-tweets-followus a{top:0; right:0; position:relative !important;}
 #sidebar-tweets-cage .sidebar-tweets-followus img { margin-right:3px;}
-#header-tweets-cage div.tweets-pulled-listing h2 { padding:0; color:#fff; font-family:Arial, Helvetica, sans-serif; font-size:1.063em; font-weight:bold; float:left; margin:0 0 5px 0;}
+#header-tweets-cage div.tweets-pulled-listing h2 { padding:0; color:#fff; font-family:'Noto Sans',Arial, Helvetica, sans-serif; font-size:1.063em; font-weight:bold; float:left; margin:0 0 5px 0;}
 #header-tweets-cage ul, #sidebar-tweets-cage ul { margin:0 0 15px 0; padding:0}
 #header-tweets-cage li, #sidebar-tweets-cage li { float:none; clear:both;height: auto; margin:0 0 15px 0; padding:0; background:none;}
 #header-tweets-cage li span { font-size:12px; color:#ccc}
@@ -196,7 +213,7 @@ div#site-name /* The name of the website */ {
 .pane-node-comments {background:transparent url(../images/lines4.png) left bottom repeat-x; padding-bottom:20px;}
 
 /* BLOG */
-.page-taxonomy h2.node-title, .page-blog h2.node-title { font-family:Arial, Helvetica, sans-serif; font-size:1.286em; }
+.page-taxonomy h2.node-title, .page-blog h2.node-title { font-family:'Noto Sans',Arial, Helvetica, sans-serif; font-size:1.286em; }
 .page-taxonomy .node-blog, .page-blog .node-blog{ margin-bottom:22px;}
 .page-taxonomy .node-blog .links, .page-blog .node-blog .links { font-size:0.857em;}
 .page-taxonomy .node-blog .links li, .page-blog .node-blog .links li { margin-right:15px;}
@@ -333,8 +350,8 @@ ul.services li {padding:10px 0 14px 0; color:#999; border-bottom: 1px solid #DDD
 .front .pane-case-studies-features .view-case-studies-features ul li{ float:left; width:30%; margin-right:4.75%; position: relative;}
 
 /* PORTFOLIO */
-.page-portfolio .pane-case-studies-features .view-case-studies-features ul {list-style:none !important;padding:0 !important; margin-top:0 !important;}
-.page-portfolio .pane-case-studies-features .view-case-studies-features ul li{ float:left; width:30.20% /* 290px / 960px */; margin-right:3.125% /* 30px / 960px */; padding-bottom: 20px; margin-bottom: 30px; height: 370px;}
+.page-portfolio .pane-case-studies-features .view-case-studies-features ul {list-style:none !important;padding:0 !important; margin-top:0 !important; display: inline-table;}
+.page-portfolio .pane-case-studies-features .view-case-studies-features ul li{ width:30.20% /* 290px / 960px */; margin-right:2.125% /* 30px / 960px */; padding-bottom: 20px; margin-bottom: 30px; display: inline-table; vertical-align: top;}
 .page-portfolio .pane-case-studies-features .view-case-studies-features ul li .views-field{position:relative;display:block;}
 .page-portfolio .pane-case-studies-features .view-case-studies-features ul li .views-field-title{font-size:1.5em; background:none;padding-top:0;}
 .page-portfolio .pane-case-studies-features .view-case-studies-features ul li .views-field-field-picture{width:100%; height:190px; margin:0.96% auto 2.083% auto; border: 1px solid #ACACAC; /* 20px / 960px */}
@@ -348,15 +365,17 @@ ul.services li {padding:10px 0 14px 0; color:#999; border-bottom: 1px solid #DDD
 .front .pane-case-studies-features .view-case-studies-features ul li .views-field-field-picture{width:100%; border: 1px solid #ACACAC;} /* 180px / 180px  */
 .front .pane-case-studies-features .view-case-studies-features ul li .views-field-field-picture img{width:305px; height:180px; display: inline-block; margin-bottom: -4px;}
 .pane-case-studies-features .view-case-studies-features ul li .views-field-entity-id { font-size:0.938em; color:#050505;}
-.pane-case-studies-features .view-case-studies-features ul li p { margin:7px 0;}
+.pane-case-studies-features .view-case-studies-features ul li p { margin:7px 0; font-family: 'Noto Sans',Arial, Helvetica, sans-serif !important;}
+.pane-case-studies-features .view-case-studies-features ul li p span { font-family: 'Noto Sans',Arial, Helvetica, sans-serif !important;}
 .node-type-case-study .panel-2col .panel-col-first { width:304px; float:left;}
-.section-case-studies .panel-col-last { float:right; width:64.58% /* 620px / 960px */;}
+.section-case-studies .panel-col-last { float:right; width:65.625% /* 630px / 960px */;}
+.section-case-studies .panel-col-last .inside { margin: 0;}
 .view-case-studies-features ul li .views-field-path .more { width: 134px; height: 135px; display: inline-block; background: url(../images/studies_more_bg.png) no-repeat center center; position: absolute; right: -1px; top: 44px; z-index: 10;}
 .section-portfolio .view-case-studies-features ul li .views-field-path .more { top: 55px;}
 .search-results .title { font-size: 1em; margin-bottom: 10px;}
 
 .banner-summa, .banner-summa a{font:italic 1em Georgia, "Times New Roman", Times, serif; color:#999; padding: 5px 0 5px 30px;}
-.banner-summa .more a {font: normal 1em Arial, Helvetica, sans-serif; color:#8CB133; float:right; margin-top:-3px;}
+.banner-summa .more a {font: normal 1em 'Noto Sans',Arial, Helvetica, sans-serif; color:#8CB133; float:right; margin-top:-3px;}
 .banner-summa p { }
 .panel-2col .panel-separator {clear: both;}
 
@@ -395,7 +414,7 @@ ul.services li {padding:10px 0 14px 0; color:#999; border-bottom: 1px solid #DDD
 
 /* CAREERS */
 .node-type-job .pane-node-title { color: #141414; font-family: 'Montserrat',Arial,Helvetica,sans-serif; font-size: 2em; font-weight: bold; line-height: normal; text-transform: uppercase;}
-.node-type-job .pane-node-field-job-contactus h2.pane-title { display:inline; font:bold 1em Arial, Helvetica, sans-serif; color:#666;}
+.node-type-job .pane-node-field-job-contactus h2.pane-title { display:inline; font:bold 1em 'Noto Sans',Arial, Helvetica, sans-serif; color:#666;}
 .node-type-job .pane-node-field-job-contactus .field-name-field-job-contactus {color:#8Cb133;}
 .page-company-careers .view-careers .views-field-title{font-weight:bold; font-size:1.143em; margin:15px 0 4px 0;}
 .node-type-job h4{font-family:Georgia, "Times New Roman", Times, serif;}
@@ -424,7 +443,7 @@ p.small { font-size:0.875em}
 .pane-hp-jobs .views-row a { color:#FFFFFF; font-size: 0.938em;}
 
 /* MANIFIEST */
-.pane-manifiest .ui-accordion-content span { font-size:1em !important; font-family:Arial, Helvetica, sans-serif !important;}
+.pane-manifiest .ui-accordion-content span { font-size:1em !important; font-family:'Noto Sans', Arial, Helvetica, sans-serif !important;}
 .pane-manifiest .ui-accordion-content p { margin-bottom:1em;}
 
 /* SEARCH RESULTS */
@@ -464,7 +483,7 @@ ul.bulets { margin:0 0 0 15px; padding:0;}
 .testimonials div.name { display:inline; font-weight:bold; font-size:0.875em}
 .testimonials div.position {display:inline; font-style:italic;font-size:0.875em}
 .testimonials div.company {font-size:0.875em; color:#8CB133;}
-.node-type-case-study .case-study-slideshow { border:3px solid #f4f4f4; width:618px;}
+.node-type-case-study .case-study-slideshow { border:3px solid #dddddd; width:618px;}
 
 #content .section {}
 #mission /* The mission statement of the site (displayed on homepage) */ {}
@@ -733,9 +752,9 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
 }
 
 #block-block-24{
-	width: 625px;
+	width: 630px;
 	right:0;
-	top:240px;
+	top:265px;
 	position:absolute;
 }
 #block-block-24 ul{
@@ -766,8 +785,11 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
 	border:1px solid #ACACAC;
 	margin:10px 0;
 	width:180px;
-	height:117px;
+	height:auto;
+  display: inline-block;
 }
+.page-company-clients .pane-clients .views-field-field-picture img,
+.partner-list .views-field-entity-id img { display: inline-block; float: left;}
 .page-company-clients .pane-clients .views-field-title span,
 .partner-list .views-field-title span{font-size:1.3em;font-style:italic; color: #141414; font-weight: bold;}
 
@@ -850,7 +872,7 @@ ul.nice-menu a { color:#a3a3a3; padding: 5px 10px; text-decoration:none; font-fa
 ul.nice-menu li.menu-path-contact-us a { background: url("../images/ico_nav_plus.png") no-repeat scroll right top transparent;}
 
 ul.nice-menu ul {
-  top: 51px;
+  top: 52px;
   left: -1px; /* LTR */
   border: 0;
   margin-right: 0; /* LTR */
@@ -859,7 +881,7 @@ ul.nice-menu ul {
 ul.nice-menu ul li {
   width: 166px; font-size:15px; border:none;
 }
-ul.nice-menu ul li a { font-family: Arial; font-size: 12px; font-style: normal; margin: 0; padding: 5px; text-align: left; background:none !important;}
+ul.nice-menu ul li a { font-family: 'Noto Sans',Arial; font-size: 12px; font-style: normal; margin: 0; padding: 5px; text-align: left; background:none !important;}
 
 /******************************
  VERTICAL (left/right) menus
@@ -1028,6 +1050,25 @@ ul.nice-menu ul li:hover { background-color: #333333;}
 .region-highlight { position:relative;}
 .block .menu-mobile { display:none;}
 .menu-mobile-bottom { display:none;}
+
+
+.client-list ul li .views-field-body p,
+.client-list ul li .views-field-body p strong,
+.client-list ul li .views-field-body p span,
+.client-list ul li .views-field-body p span strong,
+.partner-list ul li .views-field-entity-id-1 p,
+.partner-list ul li .views-field-entity-id-1 p strong,
+.partner-list ul li .views-field-entity-id-1 p span,
+.partner-list ul li .views-field-entity-id-1 p span strong,
+.views-field-body p,
+.views-field-body p span,
+.views-field-body p span strong,
+.views-field-body p strong,
+.field-content p,
+.field-content p span,
+.field-content p span strong,
+.field-content p strong { font-family: 'Noto Sans',Arial, Helvetica, sans-serif !important;}
+
 
 @media screen and (min-width: 960px) {
 	#page { width:960px;}
