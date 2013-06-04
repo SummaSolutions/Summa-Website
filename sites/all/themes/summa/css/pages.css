@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700);
 * { margin:0; padding:0}
 
-body { margin: 0; padding: 0; font:normal 100% 'Noto Sans',Arial, Helvetica, sans-serif; color:#666;}
+body { margin: 0; padding: 0; font:normal 100% 'Noto Sans',Arial, Helvetica, sans-serif; color:#333;}
 body,
 caption,
 th,
@@ -152,7 +152,7 @@ div#site-name /* The name of the website */ {
   font-size: 2em;
   line-height: 1.3em;
 }
-.node-type-blog h1#page-title { height: auto; line-height: normal; color: #666666; font-size: 1.5em; width: 62.38%; margin-top: 40px; float: left; margin-bottom: 20px;}
+.node-type-blog h1#page-title { height: auto; line-height: normal; color: #333; font-size: 1.5em; width: 62.38%; margin-top: 40px; float: left; margin-bottom: 20px;}
 
 #site-name a:link,
 #site-name a:visited {
@@ -391,7 +391,7 @@ ul.services li {padding:10px 0 14px 0; color:#999; border-bottom: 1px solid #DDD
 .pane-testimonials .views-row { margin-bottom:15px; }
 
 /* MISSION */
-#company-id .panel-col-first h2.pane-title { font:bold 1.5em 'Montserrat', Arial, Helvetica, sans-serif;color:#666666; margin:0 0 4px 0;}
+#company-id .panel-col-first h2.pane-title { font:bold 1.5em 'Montserrat', Arial, Helvetica, sans-serif;color:#333; margin:0 0 4px 0;}
 /*.pane-related-content {clear:both; margin-top:10px;}*/
 
 /* TEAM */
@@ -414,9 +414,10 @@ ul.services li {padding:10px 0 14px 0; color:#999; border-bottom: 1px solid #DDD
 
 /* CAREERS */
 .node-type-job .pane-node-title { color: #141414; font-family: 'Montserrat',Arial,Helvetica,sans-serif; font-size: 2em; font-weight: bold; line-height: normal; text-transform: uppercase;}
-.node-type-job .pane-node-field-job-contactus h2.pane-title { display:inline; font:bold 1em 'Noto Sans',Arial, Helvetica, sans-serif; color:#666;}
+.node-type-job .pane-node-field-job-contactus h2.pane-title { display:inline; font:bold 1em 'Noto Sans',Arial, Helvetica, sans-serif; color:#333;}
 .node-type-job .pane-node-field-job-contactus .field-name-field-job-contactus {color:#8Cb133;}
 .page-company-careers .view-careers .views-field-title{font-weight:bold; font-size:1.143em; margin:15px 0 4px 0;}
+.page-company-careers .panel-col-first { font-size: 13px;}
 .node-type-job h4{font-family:Georgia, "Times New Roman", Times, serif;}
 
 /* CONTACT */
@@ -443,8 +444,9 @@ p.small { font-size:0.875em}
 .pane-hp-jobs .views-row a { color:#FFFFFF; font-size: 0.938em;}
 
 /* MANIFIEST */
-.pane-manifiest .ui-accordion-content span { font-size:1em !important; font-family:'Noto Sans', Arial, Helvetica, sans-serif !important;}
-.pane-manifiest .ui-accordion-content p { margin-bottom:1em;}
+.pane-manifiest .ui-accordion-content span { font-size:13px !important; font-family:'Noto Sans', Arial, Helvetica, sans-serif !important;}
+.pane-manifiest .ui-accordion-content p { margin-bottom:1em; font-size:13px !important;}
+.pane-manifiest .ui-accordion-content ul { font-size:13px !important;}
 
 /* SEARCH RESULTS */
 .search-results { padding:0; margin:15px 0;}
@@ -647,7 +649,7 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
 .region-sidebar-second h2,
 .region-content h2,
 .region-content h3,
-.page-blogposts .view-blog-posts-full-list .views-field-title a { font:bold 1.5em 'Montserrat',Arial,Helvetica,sans-serif; color:#666; margin-bottom:20px; text-transform: uppercase; margin-top: 20px;}
+.page-blogposts .view-blog-posts-full-list .views-field-title a { font:bold 1.5em 'Montserrat',Arial,Helvetica,sans-serif; color:#333; margin-bottom:20px; text-transform: uppercase; margin-top: 20px;}
 .front .region-content h2 { color: #000000; margin-top: 0; font-size: 1.875em; margin-bottom: 10px;}
 .pane-hp-jobs h2.pane-title {
     color: #FFFFFF;
@@ -812,7 +814,7 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
 .node-type-service ul.item-list li{ display: inline-block;}
 
 .node-type-service ul.item-list h2{
-	color: #666;
+	color: #333;
     font: bold 1.3em 'Montserrat',Arial, Helvetica, sans-serif;
 	padding-bottom: 17px;
 	display:block;
@@ -820,7 +822,7 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
 }
 
 .node-type-service .pane-block-25 .pane-content h2{
-	color: #666;
+	color: #333;
     font: 1.4em Georgia,"Times New Roman",Times,serif;
 	display:block;
 	font-style:italic;
@@ -838,7 +840,8 @@ ul.pager li { background-image:url(../images/pipe1.gif) !important ; background-
 	padding-top:25px;
 }
 .node-type-service ul.item-list .left p { float: right;}
-
+.node-type-service .pane-node-body,
+.node-type-service .pane-content p span, .node-type-service  .pane-content p { font-size: 13px !important;}
 
 
 
@@ -1067,7 +1070,10 @@ ul.nice-menu ul li:hover { background-color: #333333;}
 .field-content p,
 .field-content p span,
 .field-content p span strong,
-.field-content p strong { font-family: 'Noto Sans',Arial, Helvetica, sans-serif !important;}
+.field-content p strong,
+.pane-content p span { font-family: 'Noto Sans',Arial, Helvetica, sans-serif !important;}
+.pane-content p span,
+.pane-content p { font-size: 12px !important; color: #333333 !important;}
 
 
 @media screen and (min-width: 960px) {
