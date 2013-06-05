@@ -1115,6 +1115,7 @@ ul.nice-menu ul li:hover { background-color: #333333;}
   body { overflow-x: hidden;}
   .not-front #page-wrapper { background-position: 0 90px !important;}
 	.view-services-list .views-row { width: 96%; height: auto; padding-bottom: 30px;}
+  .page-services .view-services-list .views-row { height: auto;}
 	.front .panel-3col-stacked .panel-col-first, .front .panel-3col-stacked .panel-col, .front .panel-3col-stacked .panel-col-last { width: 100%; padding: 0;}
 	.front .pane-hp-slideshow { display:none;}
 	.front #page-wrapper { background:none;}
