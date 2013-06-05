@@ -304,7 +304,7 @@ ul.services li {padding:10px 0 14px 0; color:#999; border-bottom: 1px solid #DDD
 .exclamation img { float:left; margin-left:-20px; margin-top: 4px;}
 
 /*------ servicies page */
-.view-services-list .views-row { background:#ebebeb; padding:2%; margin-top:15px; min-height:16px; width: 15%; box-shadow: 0 1px 0 #787878; vertical-align: top; border-top: 5px solid; height: 170px; display: inline-block; *border-bottom:1px solid #787878; border-bottom:1px solid #787878\9;}
+.view-services-list .views-row { background:#ebebeb; padding:2%; margin-top:15px; min-height:16px; width: 15%; box-shadow: 0 1px 0 #787878; vertical-align: top; border-top: 5px solid; height: 215px; display: inline-block; *border-bottom:1px solid #787878; border-bottom:1px solid #787878\9;}
 .view-services-list .views-row.views-row-1{ border-top: 9px solid #ff910f; }
 .view-services-list .views-row.views-row-2{ border-top: 9px solid #FFD11A; }
 .view-services-list .views-row.views-row-3{ border-top: 9px solid #39a91f; }
@@ -317,6 +317,7 @@ ul.services li {padding:10px 0 14px 0; color:#999; border-bottom: 1px solid #DDD
 .page-services .view-services-list .views-row .views-field-title a { font-size: 1em;}
 .view-services-list .views-row .views-field-path{ float: right; display: none;}
 .view-services-list .views-row .views-field-path a{ font-size:0.929em; }
+.page-services .view-services-list .views-row { height: 325px;}
 
 /* PANELS HOME */
 .panels-flexible-column-new-4, .page-front .panels-flexible-row .panels-flexible-column-first { width:66%;}
@@ -1113,7 +1114,7 @@ ul.nice-menu ul li:hover { background-color: #333333;}
 	/*for max-with 768 px */
   body { overflow-x: hidden;}
   .not-front #page-wrapper { background-position: 0 90px !important;}
-	.view-services-list .views-row { width: 96%; height: 50px;}
+	.view-services-list .views-row { width: 96%; height: auto; padding-bottom: 30px;}
 	.front .panel-3col-stacked .panel-col-first, .front .panel-3col-stacked .panel-col, .front .panel-3col-stacked .panel-col-last { width: 100%; padding: 0;}
 	.front .pane-hp-slideshow { display:none;}
 	.front #page-wrapper { background:none;}
