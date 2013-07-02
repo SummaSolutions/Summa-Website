@@ -1254,3 +1254,10 @@ ul.nice-menu ul li:hover { background-color: #333333;}
   #footer .partners .right .small p { font-size: 0.875em;}
   #footer .partners .right .small img { width: 41%;}
 }
+
+#block-locale-language{ margin: -70px 0 0 -65px; position: absolute;}
+#block-locale-language .language-switcher-locale-session{ text-align: left;}
+#block-locale-language .language-switcher-locale-session li{ float: left; list-style-image: none; list-style-type: none; padding: 0; width: 75px;}
+#block-locale-language .language-switcher-locale-session li a{ color: #ccc;}
+#block-locale-language .language-switcher-locale-session li a:hover{ color: #fff;}
+#block-locale-language .language-switcher-locale-session li a.active{ color: #eee;}
