@@ -1,3 +1,17 @@
 <?php
 
 include_once('views_features.features.inc');
+
+function views_features_views_query_alter(&$view, &$query){
+    if($view->name == 'hp_slideshow'){
+        $conditions = $query->where[0]['conditions'];
+        foreach ($conditions as $key => $condition) {
+            if($condition['field'] == 'node.language'){
+                global $language;
+                //$query->where[0]['conditions'][$key]['value'][0] = $language->language;
+            }
+        }
+
+        //$pause = null;
+    }
+}
