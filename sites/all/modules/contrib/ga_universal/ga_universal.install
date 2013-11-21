@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * Implements hook_uninstall().
+ */
+function ga_universal_uninstall() {
+  variable_del('ga_universal_ua');
+  variable_del('ga_universal_domain');
+}

@@ -1,0 +1,4 @@
+name = Google Analytics Universal
+description = Adds Universal Google Analytics script so the site.
+core = 7.x
+package = Statistics
