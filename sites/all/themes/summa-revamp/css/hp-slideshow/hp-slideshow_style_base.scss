@@ -1,0 +1,49 @@
+$slideshow-green: #97ac24;
+
+#header #header-bottom {
+  text-align: center;
+  min-height: 408px;
+
+  .views-field-title {
+    font-size: 70px;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    padding: 0 0 28px 0;
+  }
+  /* Subtile & Content */
+  .views-field-entity-id-1, .views-field-entity-id-8 {
+    line-height: 40px;
+    font-family: "Roboto";
+    font-weight: lighter;
+    font-size: 34px;
+  }
+
+  /* Image */
+  .views-field-entity-id {
+    margin: 20px 0;
+  }
+
+  /* Read More link */
+  .views-field-path {
+    margin: 20px auto;
+    width: 100%;
+
+    a {
+      -moz-border-radius: 7px;
+      -webkit-border-radius: 7px;
+      border-radius: 7px;
+      border: 1px solid $slideshow-green;
+      background: #fff;
+      width: 100%;
+      display: block;
+      padding: 45px 0;
+      text-transform: uppercase;
+      font-family: Arial;
+      color: $slideshow-green;
+      text-decoration: none;
+    }
+  }
+
+}

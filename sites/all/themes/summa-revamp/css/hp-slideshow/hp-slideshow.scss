@@ -1,0 +1,10 @@
+@import "../global";
+@import "hp-slideshow_style_base";
+
+@media only screen and (min-width: $mobile-portrait) {
+  @import "hp-slideshow_style_320up";
+}
+
+@media only screen and (min-width: $hdi-mobile-portrait) {
+  @import "hp-slideshow_style_640up";
+}

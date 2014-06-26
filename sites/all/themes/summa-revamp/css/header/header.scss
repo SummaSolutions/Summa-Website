@@ -1,0 +1,10 @@
+@import "../global";
+@import "header_style_base";
+
+@media only screen and (min-width: $mobile-portrait) {
+  @import "header_style_320up";
+}
+
+@media only screen and (min-width: $hdi-mobile-portrait) {
+  @import "header_style_640up";
+}

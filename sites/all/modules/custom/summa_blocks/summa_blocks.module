@@ -8,120 +8,140 @@
 /**
  * Implementation of hook_block_info().
  */
-function summa_blocks_block_info() {
-  $blocks['header-tweets'] = array(
-    'info' => t('Summa Tweets Suckerfish'),
-  );
-  $blocks['social-media'] = array(
-    'info' => t('Summa Social Media'),
-  );
-  $blocks['social-media-mobile'] = array(
-    'info' => t('Summa Social Media Mobile'),
-  );
-  $blocks['social-media-like'] = array(
-    'info' => t('Summa Social Media Like Button'),
-  );
-  $blocks['sidebar-tweets'] = array(
-    'info' => t('Summa Tweets Sidebar Block'),
-  );
-  $blocks['blog-add-content-button'] = array(
-    'info' => t('Summa Blog Add Content Button'),
-  );
-  $blocks['banner-magento'] = array(
-    'info' => t('E-Commerce Store'),
-  );
-  $blocks['banner-drupal'] = array(
-    'info' => t('Content Manager System'),
-  );
-  $blocks['banner-design'] = array(
-    'info' => t('Interactive Design'),
-  );
-  $blocks['blog-top-posters-code'] = array(
-    'info' => t('Summa Blog Top Posters By Code'),
-  );
+function summa_blocks_block_info()
+{
+    $blocks['header-tweets'] = array(
+        'info' => t('Summa Tweets Suckerfish'),
+    );
+    $blocks['social-media'] = array(
+        'info' => t('Summa Social Media'),
+    );
+    $blocks['social-media-mobile'] = array(
+        'info' => t('Summa Social Media Mobile'),
+    );
+    $blocks['social-media-like'] = array(
+        'info' => t('Summa Social Media Like Button'),
+    );
+    $blocks['sidebar-tweets'] = array(
+        'info' => t('Summa Tweets Sidebar Block'),
+    );
+    $blocks['blog-add-content-button'] = array(
+        'info' => t('Summa Blog Add Content Button'),
+    );
+    $blocks['banner-magento'] = array(
+        'info' => t('E-Commerce Store'),
+    );
+    $blocks['banner-drupal'] = array(
+        'info' => t('Content Manager System'),
+    );
+    $blocks['banner-design'] = array(
+        'info' => t('Interactive Design'),
+    );
+    $blocks['blog-top-posters-code'] = array(
+        'info' => t('Summa Blog Top Posters By Code'),
+    );
 
-  return $blocks;
+    return $blocks;
 }
 
 /**
  * Implementation of hook_block_view().
  */
-function summa_blocks_block_view($delta='') {
-  $block = array();
-  //  drupal_set_message($delta);
-  switch ($delta) {
-    case 'header-tweets':
-      $block['subject'] = t('Summa Tweets Suckerfish');
-      $block['content'] = block_header_tweets();
-      break;
-    case 'social-media':
-      $block['subject'] = t('Summa Social Media');
-      $block['content'] = block_social_media();
-      break;
-	case 'social-media-mobile':
-      $block['subject'] = t('Summa Social Media Mobile');
-      $block['content'] = block_social_media_mobile();
-      break; 
-    case 'social-media-like':
-      $block['subject'] = t('Summa Social Media Like Button');
-      $block['content'] = block_social_media_like_button();
-      break;
-    case 'sidebar-tweets':
-      $block['subject'] = t('Summa Tweets Sidebar Block');
-      $block['content'] = block_sidebar_tweets();
-      break;
-    case 'blog-add-content-button':
-      $block['subject'] = t('Summa Blog Add Content Button');
-      $block['content'] = block_blog_add_content_button();
-      break;
-	case 'banner-magento':
-      $block['subject'] = t('E-Commerce Store');
-      $block['content'] = block_banner_magento();
-      break;
-	case 'banner-drupal':
-      $block['subject'] = t('Content Manager System');
-      $block['content'] = block_banner_drupal();
-      break;
-	case 'banner-design':
-      $block['subject'] = t('Interactive Design');
-      $block['content'] = block_banner_design();
-      break;
-	case 'blog-top-posters-code':
-      $block['subject'] = t('');
-      $block['content'] = block_blog_top_posters();
-      break;
-  }
-  return $block;
+function summa_blocks_block_view($delta = '')
+{
+    $block = array();
+    //  drupal_set_message($delta);
+    switch ($delta) {
+        case 'header-tweets':
+            $block['subject'] = t('Summa Tweets Suckerfish');
+            $block['content'] = block_header_tweets();
+            break;
+        case 'social-media':
+            $block['subject'] = t('Summa Social Media');
+            $block['content'] = block_social_media();
+            break;
+        case 'social-media-mobile':
+            $block['subject'] = t('Summa Social Media Mobile');
+            $block['content'] = block_social_media_mobile();
+            break;
+        case 'social-media-like':
+            $block['subject'] = t('Summa Social Media Like Button');
+            $block['content'] = block_social_media_like_button();
+            break;
+        case 'sidebar-tweets':
+            $block['subject'] = t('Summa Tweets Sidebar Block');
+            $block['content'] = block_sidebar_tweets();
+            break;
+        case 'blog-add-content-button':
+            $block['subject'] = t('Summa Blog Add Content Button');
+            $block['content'] = block_blog_add_content_button();
+            break;
+        case 'banner-magento':
+            $block['subject'] = t('E-Commerce Store');
+            $block['content'] = block_banner_magento();
+            break;
+        case 'banner-drupal':
+            $block['subject'] = t('Content Manager System');
+            $block['content'] = block_banner_drupal();
+            break;
+        case 'banner-design':
+            $block['subject'] = t('Interactive Design');
+            $block['content'] = block_banner_design();
+            break;
+        case 'blog-top-posters-code':
+            $block['subject'] = t('');
+            $block['content'] = block_blog_top_posters();
+            break;
+    }
+    return $block;
 }
 
 /**
  * created "blogs tags" block for blog sidebar
  * @return string
  */
-function block_header_tweets() {
-  $return = '<div id="header-tweets-cage">';
-  if (function_exists('twitter_pull_render')) { $return .= twitter_pull_render('@summasolutions', 'Latest Tweets', 4); }
-  $return .= '
+function block_header_tweets()
+{
+    $return = '<div id="header-tweets-cage">';
+    if (function_exists('twitter_pull_render')) {
+        $return .= twitter_pull_render('@summasolutions', 'Latest Tweets', 4);
+    }
+    $return .= '
       <div class="header-tweets-followus"><a href="http://twitter.com/summasolutions" target="_blank"><img align="absmiddle" src="/sites/all/themes/summa/images/ico_tw2.png">Follow Us</a></div>
     </div>
     ';
-  return $return;
+    return $return;
 }
 
-function block_social_media() {
-  return '
-  <ul class="left social">
-    <!--li ><a href="/blog" id="blog-suckerfish"><img src="/sites/all/themes/summa/images/ico_blogs.png" align="absmiddle" />Blogs</a></li-->
-    <li><a href="http://www.facebook.com/summasolutions" target="_blank" id="fb"><img src="/sites/all/themes/summa/images/ico_fb.png" align="absmiddle" /></a></li>
-	<li><a href="https://plus.google.com/u/0/106660552440793124620/posts" target="_blank" id="gplus"><img src="/sites/all/themes/summa/images/ico_google+.png" align="absmiddle" /></a></li>
-    <li><a href="http://www.twitter.com/summasolutions" target="_blank" id="twitter"><img src="/sites/all/themes/summa/images/ico_tw.png" align="absmiddle" /></a></li>
-    <li><a href="http://www.linkedin.com/company/summa-solutions" target="_blank" id="lkn"><img src="/sites/all/themes/summa/images/ico_in.png" align="absmiddle" /></a></li>
-  </ul>
-  ';
+function block_social_media()
+{
+    // Deprecated
+    /*
+   return '
+ <ul class="left social">
+   <!--li ><a href="/blog" id="blog-suckerfish"><img src="/sites/all/themes/summa/images/ico_blogs.png" align="absmiddle" />Blogs</a></li-->
+   <li><a href="http://www.facebook.com/summasolutions" target="_blank" id="fb"><img src="/sites/all/themes/summa/images/ico_fb.png" align="absmiddle" /></a></li>
+   <li><a href="https://plus.google.com/u/0/106660552440793124620/posts" target="_blank" id="gplus"><img src="/sites/all/themes/summa/images/ico_google+.png" align="absmiddle" /></a></li>
+   <li><a href="http://www.twitter.com/summasolutions" target="_blank" id="twitter"><img src="/sites/all/themes/summa/images/ico_tw.png" align="absmiddle" /></a></li>
+   <li><a href="http://www.linkedin.com/company/summa-solutions" target="_blank" id="lkn"><img src="/sites/all/themes/summa/images/ico_in.png" align="absmiddle" /></a></li>
+ </ul>
+ ';
+   */
+
+    return '
+      <ul class="social">
+        <!--li ><a href="/blog" id="blog-suckerfish"><img src="/sites/all/themes/summa/images/ico_blogs.png" align="absmiddle" />Blogs</a></li-->
+        <li class="hide-text icon-facebook"><a href="http://www.facebook.com/summasolutions" target="_blank" id="fb"></a></li>
+        <li class="hide-text icon-google_plus"><a href="https://plus.google.com/u/0/106660552440793124620/posts" target="_blank" id="gplus"></a></li>
+        <li class="hide-text icon-twitter"><a href="http://www.twitter.com/summasolutions" target="_blank" id="twitter"></a></li>
+        <li class="hide-text icon-linkedin"><a href="http://www.linkedin.com/company/summa-solutions" target="_blank" id="lkn"></a></li>
+      </ul>
+    ';
 }
 
-function block_social_media_mobile() {
-  return '
+function block_social_media_mobile()
+{
+    return '
   <ul class="left social-mobile">
     <li><a href="/blogposts"><img src="/sites/all/themes/summa/images/ico_blogs.png" align="absmiddle" /></a></li>
     <li><a href="http://www.facebook.com/summasolutions" target="_blank"><img src="/sites/all/themes/summa/images/ico_fb.png" align="absmiddle" /></a></li>
@@ -132,14 +152,15 @@ function block_social_media_mobile() {
   ';
 }
 
-function block_social_media_like_button() {
-  return '
+function block_social_media_like_button()
+{
+    return '
     <div class="like-twitter">
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="summasolutions" data-lang="es">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </div>
     <div class="like-facebook">
       <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
-      <fb:like href="http://www.summasolutions.net'.$_SERVER['REQUEST_URI'].'" layout="box_count" show_faces="false" width="450"></fb:like>
+      <fb:like href="http://www.summasolutions.net' . $_SERVER['REQUEST_URI'] . '" layout="box_count" show_faces="false" width="450"></fb:like>
     </div>
 	<div class="like-google">
       <g:plusone size="medium" annotation="inline"></g:plusone>
@@ -147,26 +168,31 @@ function block_social_media_like_button() {
   ';
 }
 
-function block_sidebar_tweets() {
-  $return = '<div id="sidebar-tweets-cage">';
-  if (function_exists('twitter_pull_render')) { $return .= twitter_pull_render('@summasolutions', '', 2); }
-  $return .= '
+function block_sidebar_tweets()
+{
+    $return = '<div id="sidebar-tweets-cage">';
+    if (function_exists('twitter_pull_render')) {
+        $return .= twitter_pull_render('@summasolutions', '', 2);
+    }
+    $return .= '
       <div class="sidebar-tweets-followus"><a href="http://twitter.com/summasolutions" target="_blank"><img align="absmiddle" src="/sites/all/themes/summa/images/ico_tw2.png">Follow Us</a></div>
     </div>
     ';
-  return $return;
+    return $return;
 }
 
-function block_blog_add_content_button() {
-  if (user_access('Administer content') || user_access('Create new content')) {
-    return '
-      <a href="/node/add/blog">'.t('Add new entry').'</a>
+function block_blog_add_content_button()
+{
+    if (user_access('Administer content') || user_access('Create new content')) {
+        return '
+      <a href="/node/add/blog">' . t('Add new entry') . '</a>
     ';
-  }
+    }
 }
 
-function block_banner_magento() {
-  return '
+function block_banner_magento()
+{
+    return '
   <img src="/sites/all/themes/summa/images/ticket_magento.jpg" />
 <div class="banner-summa">
 <p>Magento Open Source eCommerce.<br />
@@ -176,8 +202,9 @@ We can advise, develop and implement your store.</p>
   ';
 }
 
-function block_banner_drupal() {
-  return '
+function block_banner_drupal()
+{
+    return '
   <img src="/sites/all/themes/summa/images/ticket_drupal.jpg" />
 <div class="banner-summa">
 <p>Drupal Open Source CMS.<br />
@@ -188,8 +215,9 @@ Convert your custom design into Drupal.</p>
   ';
 }
 
-function block_banner_design() {
-  return '
+function block_banner_design()
+{
+    return '
   <img src="/sites/all/themes/summa/images/ticket_design.jpg" />
 <div class="banner-summa">
 <p>Full-service user interface design to facilitate and encourage efficient and effective human-computer interactions.</p>
@@ -198,19 +226,23 @@ function block_banner_design() {
   ';
 }
 
-function block_blog_top_posters() {
-  $rows = array(); $rows[] = array();
-  $toHtml = ""; $record = ""; $row = "";
-  $result = db_query("SELECT COUNT(node_users.nid) AS total, users.uid AS uid, users.uid AS users_uid, 'user' AS field_data_field_profile_picture_user_entity_type
+function block_blog_top_posters()
+{
+    $rows = array();
+    $rows[] = array();
+    $toHtml = "";
+    $record = "";
+    $row = "";
+    $result = db_query("SELECT COUNT(node_users.nid) AS total, users.uid AS uid, users.uid AS users_uid, 'user' AS field_data_field_profile_picture_user_entity_type
 FROM 
 users users
 INNER JOIN node node_users ON users.uid = node_users.uid
 WHERE (( (users.status <> '0') AND (node_users.type IN  ('blog')) AND (node_users.language IN  ('en')) AND (node_users.status = '1') ))
 GROUP BY users.uid ORDER BY total DESC, users.name ASC");
-  foreach ($result as $record) {
-    $toHtml .= views_embed_view('top_blog_posters', 'user_data', $record->users_uid);
-    $toHtml = preg_replace("/\<span class\=\"field-content\"\>\<a href\=\"(.+)\"\>(.+)\<\/a\>\<\/span\>/is", "<a href=\"/blogposts/$2\">$2 ($record->total)</a>", $toHtml);
-  }
-  
-  return $toHtml;
+    foreach ($result as $record) {
+        $toHtml .= views_embed_view('top_blog_posters', 'user_data', $record->users_uid);
+        $toHtml = preg_replace("/\<span class\=\"field-content\"\>\<a href\=\"(.+)\"\>(.+)\<\/a\>\<\/span\>/is", "<a href=\"/blogposts/$2\">$2 ($record->total)</a>", $toHtml);
+    }
+
+    return $toHtml;
 }

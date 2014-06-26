@@ -14,7 +14,6 @@ core       = 7.x
 base theme = zen
 
 
-regions[socialmedia]    = Social Media  
 regions[help]           = Help
 regions[sidebar_first]  = First sidebar
 regions[sidebar_second] = Second sidebar
@@ -37,3 +36,9 @@ settings[zen_breadcrumb_title]     = 0
 settings[zen_rebuild_registry]     = 1
 settings[zen_wireframes]           = 0
 ;settings[shortcut_module_link]    = 1
+
+
+stylesheets[all][]   = css/header/header.css
+stylesheets[all][]   = css/page/page.css
+
+scripts[] = js/skin.js

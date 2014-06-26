@@ -1,0 +1,38 @@
+
+#header {
+  #header-top {
+    #logo {
+      background: url('../../images/logo-tablet.png') no-repeat top left;
+      width: 197px;
+      height: 57px;
+    }
+
+    .menu-mobile {
+      display: none;
+      a {
+      }
+    }
+  }
+
+  #header-middle {
+
+    #block-menu-menu-summa-options {
+      .block-title {
+      }
+      ul {
+
+        li {
+
+          a {
+          }
+
+          //:last-child{
+          &.last {
+          }
+        }
+      }
+
+    }
+  }
+
+}

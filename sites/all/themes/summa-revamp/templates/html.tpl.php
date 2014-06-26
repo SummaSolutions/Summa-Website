@@ -48,30 +48,33 @@
  */
 ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language; ?>" version="XHTML+RDFa 1.0" dir="<?php print $language->dir; ?>"
-  <?php print $rdf_namespaces; ?>>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language; ?>" version="XHTML+RDFa 1.0"
+      dir="<?php print $language->dir; ?>"
+    <?php print $rdf_namespaces; ?>>
 
 <head profile="<?php print $grddl_profile; ?>">
-  <?php print $head; ?>
-  <title><?php print $head_title; ?></title>
-  <?php print $styles; ?>
-  <?php print $scripts; ?>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
+
+    <?php print $head; ?>
+    <title><?php print $head_title; ?></title>
+    <?php print $styles; ?>
+    <?php print $scripts; ?>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <link href='http://fonts.googleapis.com/css?family=Ruda:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
 </head>
-<body class="<?php print $classes; ?>" <?php print $attributes;?>>
-  <?php print $page_top; ?>
-  <?php print $page; ?>
-  <?php print $page_bottom; ?>
-  <div id="fb-root"></div>
-  <script src="http://connect.facebook.net/en_US/all.js"></script>
-  <script>
+<body class="<?php print $classes; ?>" <?php print $attributes; ?>>
+<?php print $page_top; ?>
+<?php print $page; ?>
+<?php print $page_bottom; ?>
+<div id="fb-root"></div>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
     FB.init({
-      appId  : '125429814196408',
-      status : true, // check login status
-      cookie : true, // enable cookies to allow the server to access the session
-      xfbml  : true  // parse XFBML
+        appId: '125429814196408',
+        status: true, // check login status
+        cookie: true, // enable cookies to allow the server to access the session
+        xfbml: true  // parse XFBML
     });
-  </script>
+</script>
 </body>
 </html>
