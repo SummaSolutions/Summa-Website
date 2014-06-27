@@ -3,6 +3,8 @@ $slideshow-green: #97ac24;
 #header #header-bottom {
   text-align: center;
   min-height: 408px;
+  position: relative;
+  width: 100%;
 
   .views-field-title {
     font-size: 70px;

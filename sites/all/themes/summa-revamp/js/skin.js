@@ -1,8 +1,22 @@
+var headerElement;
+var headerMiddleElement;
+
 jQuery(document).ready(function () {
+    headerElement = jQuery("#header");
+    headerMiddleElement = jQuery("#header-middle")
+
     jQuery(".menu-mobile a").click(function (e) {
         e.preventDefault();
-        jQuery("#header-middle").slideToggle();
-        var headElement = jQuery("#header");
-        headElement.toggleClass("expanded");
+        headerMiddleElement.slideToggle();
+        headerElement.toggleClass("expanded");
     });
 });
+
+jQuery(window).bind("enterBreakpoint641", function () {
+    // Styles clean
+    headerElement.removeClass("expanded");
+    headerMiddleElement.show();
+});
+
+
+

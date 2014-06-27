@@ -1,10 +1,25 @@
 
 #header {
+  background: none;
+
+  &.expanded {
+    #header-bottom {
+      margin: 0;
+      padding: 0;
+      background: none;
+      clear: both;
+    }
+  }
+
   #header-top {
+    background: none;
+    width: auto;
+    float: left;
     #logo {
       background: url('../../images/logo-tablet.png') no-repeat top left;
       width: 197px;
       height: 57px;
+      margin: 12px 6px;
     }
 
     .menu-mobile {
@@ -15,24 +30,92 @@
   }
 
   #header-middle {
+    display: block;
+    float: right;
+    padding: 17px 0 0 0;
+    margin: 6px 0;
+    width: auto;
 
     #block-menu-menu-summa-options {
       .block-title {
       }
       ul {
+        margin-top: 12px;
+        background: none;
+        width: auto;
 
         li {
+          width: auto;
+          background: none;
+          display: inline;
+          border: 0;
+          font-size: 14px;
+          padding: 0;
+          line-height: normal;
+          margin-right: 13px;
 
           a {
+            padding: 5px 14px;
+
+            &:hover, &:nth-child(2), &.active {
+              border-radius: 9px;
+              background: #fff;
+              width: auto;
+              padding: 9px 14px;
+              color: #000;
+            }
           }
 
           //:last-child{
           &.last {
+            border: 0;
           }
         }
       }
 
     }
+
+    #block-summa-blocks-social-media {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      width: auto;
+      background: none;
+
+      ul {
+        padding: 0;
+        margin: -50% auto;
+        min-width: unset;
+
+        li {
+          display: block;
+          padding: 0;
+          &:last-child {
+          }
+          a {
+            background: url('../../images/social-tablet-sprites.png') no-repeat top left;
+
+            width: 32px;
+            height: 32px;
+            display: block;
+
+          }
+          &.icon-twitter a {
+            background-position: 0 0;
+          }
+          &.icon-facebook a {
+            background-position: 0 -32px;
+          }
+          &.icon-google_plus a {
+            background-position: 0 -64px;
+          }
+          &.icon-linkedin a {
+            background-position: 0 -96px;
+          }
+        }
+      }
+    }
+
   }
 
 }

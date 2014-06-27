@@ -7,18 +7,19 @@ $header-top-height: 122px;
 #header {
   color: #fff;
   background: url('../../images/menu-background-mobile.jpg') no-repeat left top;
+  width: 100%;
 
   &.expanded {
     #header-bottom {
-      margin: -158px 0 0 0;
-      padding: 158px 0 0 0;
+      margin: -151px 0 0 0;
+      padding: (151px + 96px) 0 0 0; //96 px inherited
       background: url('../../images/menu-background-mobile.jpg') no-repeat left (0-$header-top-height);
     }
   }
   #header-top {
     height: $header-top-height;
     padding: $header-padding-vertical $header-padding-horizontal;
-    width: $hdi-mobile-portrait;
+    width: 100%;
     z-index: 21;
     position: relative;
     background: url('../../images/menu-background-mobile.jpg') no-repeat left top;
@@ -46,7 +47,7 @@ $header-top-height: 122px;
   #header-middle {
 
     height: auto;
-    width: auto;
+    width: 100%;
     display: none;
     z-index: 20;
     position: relative;
@@ -72,7 +73,7 @@ $header-top-height: 122px;
           line-height: 122px;
           border-top: 1px solid #fff;
 
-          background: url('../../images/menu-list-sprites.png') no-repeat $header-padding-horizontal top;
+          background: url('../../images/menu-list-mobile-sprites.png') no-repeat $header-padding-horizontal top;
 
           &:nth-child(1) {
             background-position: $header-padding-horizontal 0;
@@ -125,7 +126,7 @@ $header-top-height: 122px;
             padding: 0;
           }
           a {
-            background: url('../../images/menu-icons-mobile.png') no-repeat top left;
+            background: url('../../images/social-mobile-sprites.png') no-repeat top left;
 
             width: 98px;
             height: 98px;
@@ -154,6 +155,7 @@ $header-top-height: 122px;
     position: relative;
     padding: 96px 49px 0 49px;
     height: auto;
+    width: 100%;
 
     //hp-slideshow
   }

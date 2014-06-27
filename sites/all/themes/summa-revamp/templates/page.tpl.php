@@ -96,7 +96,7 @@
                     <?php print render($page['highlight']); ?>
                 </div>
 
-                <?php print $breadcrumb; ?>
+                <?php //print $breadcrumb; ?>
 
             </div>
         </div>
