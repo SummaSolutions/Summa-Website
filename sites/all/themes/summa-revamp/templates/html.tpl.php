@@ -47,8 +47,6 @@
  * @see template_process()
  */
 
-drupal_add_js(drupal_get_path("theme", "summa_revamp") . "/js/skin.js");
-drupal_add_js(drupal_get_path("theme", "summa_revamp") . "/js/breakpoints.js");
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language; ?>" version="XHTML+RDFa 1.0"

@@ -1,21 +1,18 @@
-var headerElement;
-var headerMiddleElement;
+var headerSelector = "#header";
+var headerMiddleSelector = "#header-middle";
 
 jQuery(document).ready(function () {
-    headerElement = jQuery("#header");
-    headerMiddleElement = jQuery("#header-middle")
-
     jQuery(".menu-mobile a").click(function (e) {
         e.preventDefault();
-        headerMiddleElement.slideToggle();
-        headerElement.toggleClass("expanded");
+        jQuery(headerMiddleSelector).slideToggle();
+        jQuery(headerSelector).toggleClass("expanded");
     });
 });
 
 jQuery(window).bind("enterBreakpoint641", function () {
     // Styles clean
-    headerElement.removeClass("expanded");
-    headerMiddleElement.show();
+    jQuery(headerSelector).removeClass("expanded");
+    jQuery(headerMiddleSelector).show();
 });
 
 

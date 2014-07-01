@@ -1,0 +1,55 @@
+#services-list-container {
+  text-align: left;
+
+  .views-row {
+    width: 200px;
+    display: block;
+    float: left;
+    background: none;
+    text-align: center;
+  }
+  .views-row-first {
+  }
+
+  .pane-title {
+    font-size: 64px;
+  }
+  .pane-content {
+    .views-field-title {
+      font-size: 18px;
+      position: absolute;
+      top: 0;
+      text-align: inherit;
+      width: 100%;
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+    .views-field-field-subtitle {
+      display: block;
+      font-size: 16px;
+      position: absolute;
+      top: 222px;
+      line-height: 23px;
+      height: 135px;
+      overflow: hidden;
+    }
+    .views-field-field-picture {
+      position: static;
+      top: 180px;
+      margin: 85px auto 0;
+      height: auto;
+      width: auto;
+      img {
+        max-height: 83px;
+      }
+    }
+
+    .views-field-path {
+      a {
+        left: 50%;
+      }
+    }
+  }
+}
