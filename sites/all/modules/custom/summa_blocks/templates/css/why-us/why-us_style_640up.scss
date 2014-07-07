@@ -1,0 +1,94 @@
+.pane-summa-blocks-why-us {
+  background: url(../../images/why-us-background-tablet.png) no-repeat 85px 117px;
+  padding: 76px 85px 0 389px;
+  width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+  min-height: 455px;
+
+  h2.pane-title {
+    font-size: 32px;
+    text-align: left;
+    margin: 0 0 32px;
+    //font-weight: normal;
+  }
+  .container {
+    //width: 100%;
+
+    span {
+      //font-family: Roboto;
+      //font-weight: lighter;
+      font-size: 16px;
+      line-height: 18px;
+    }
+
+    .path {
+      color: #fff;
+      //left: 0;
+      //right: 0;
+      //bottom: 23px + 74px;// Himself padding-bottom + navigation area
+      position: static;
+      clear: both;
+      margin: 4px auto;
+      padding: 18px 0;
+      a {
+        //font-family: Arial;
+        //border-radius: 4px;
+        //border: 1px solid #999;
+        //background: transparent;
+        padding: 18px 25px;
+        margin: 0;
+        //width: auto;
+        //display: inline;
+        //text-transform: uppercase;
+        font-size: 10px;
+        //text-decoration: none;
+        //color: inherit;
+        letter-spacing: 2px;
+      }
+    }
+
+    .slider {
+      //position: relative;
+      width: auto;
+      height: auto;
+
+      .slides {
+
+        .slide {
+          float: none;
+          text-align: left;
+          width: auto;
+          height: auto;
+          padding: 0 0 18px;
+          clear: both;
+          //display: block;
+          //position: relative;
+
+        }
+      }
+      .navigation-container {
+        //clear: both;
+        //width: auto;
+        //bottom: 0;
+        //text-align: center;
+        //height: 15px;
+        //position: absolute;
+        display: none;
+
+        //$spriteSize : 27px;
+        a.slider-nav__item {
+          //width: $spriteSize;
+          //height: $spriteSize;
+          //background: url(../../images/glid-big-bullets-sprites.png) no-repeat left top;
+          //display: inline-block;
+          //margin: 0 7px 0 6px;
+          &.slider-nav__item--current, &:hover {
+            //background: url(../../images/glid-big-bullets-sprites.png) no-repeat (0-$spriteSize) top;
+          }
+        }
+      }
+    }
+  }
+
+}

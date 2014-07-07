@@ -1,0 +1,12 @@
+$mobile-portrait: 321px;
+$hdi-mobile-portrait: 641px;
+
+@import "why-us_style_base";
+
+@media only screen and (min-width: $mobile-portrait) {
+  @import "why-us_style_320up";
+}
+
+@media only screen and (min-width: $hdi-mobile-portrait) {
+  @import "why-us_style_640up";
+}

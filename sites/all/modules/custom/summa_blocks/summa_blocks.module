@@ -5,6 +5,19 @@
  * specifics blcoks and functions for Summa
  */
 
+
+/**
+ *  Implementation of hook_theme().
+ */
+function summa_blocks_theme()
+{
+    $themes = array();
+    $themes["why-us"] = array(
+        "template" => "templates/why-us"
+    );
+    return $themes;
+}
+
 /**
  * Implementation of hook_block_info().
  */
@@ -39,6 +52,9 @@ function summa_blocks_block_info()
     );
     $blocks['blog-top-posters-code'] = array(
         'info' => t('Summa Blog Top Posters By Code'),
+    );
+    $blocks['why-us'] = array(
+        'info' => t('Why Summa Solutions?'),
     );
 
     return $blocks;
@@ -91,6 +107,10 @@ function summa_blocks_block_view($delta = '')
         case 'blog-top-posters-code':
             $block['subject'] = t('');
             $block['content'] = block_blog_top_posters();
+            break;
+        case 'why-us':
+            $block['subject'] = t('');
+            $block['content'] = theme("why-us", array());
             break;
     }
     return $block;
