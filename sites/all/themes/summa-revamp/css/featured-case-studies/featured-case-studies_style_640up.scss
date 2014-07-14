@@ -1,0 +1,117 @@
+$green: #9fb335;
+$title-height: 114px;
+
+#featured-case-studies-container {
+  padding: 23px 0 0 0;
+  text-align: left;
+
+  .pane-title {
+    margin: 0;
+    font-size: 70px;
+    font-weight: normal;
+    text-align: center;
+  }
+  .pane-content {
+
+    .slider {
+      overflow: hidden;
+      //height: 854px - $title-height;
+    }
+    .slide {
+      width: 1000px;
+      height: 907px - $title-height;
+      position: relative;
+      float: left;
+    }
+    $spriteSize: 15px;
+    .navigation-container {
+      clear: both;
+      width: auto;
+      bottom: 0;
+      text-align: center;
+      height: $spriteSize;
+      position: absolute;
+
+      a.slider-nav__item {
+        width: $spriteSize;
+        height: $spriteSize;
+        background: url(../../images/glid-bullets-sprites.png) no-repeat left top;
+        display: inline-block;
+        margin: 0 12px; //24px of spacing
+        &.slider-nav__item--current, &:hover {
+          background: url(../../images/glid-bullets-sprites.png) no-repeat (0-$spriteSize) top;
+        }
+      }
+    }
+
+    .views-field-title {
+      position: absolute;
+      right: 0;
+      padding: 0 28px;
+      top: 200px - $title-height;
+      font-size: 39px;
+      font-weight: bold;
+    }
+    .views-field-field-picture {
+      text-align: right;
+      position: absolute;
+      right: 453px;
+      top: 212px - $title-height;
+    }
+    .views-field-entity-id {
+      //float: right;
+      position: absolute;
+      right: 0;
+      top: 280px - $title-height;
+      padding: 0 28px;
+      height: 224px;
+      width: 384px;
+      span {
+        font-size: 16px !important;
+        line-height: 23px !important;
+      }
+      color: #fff !important;
+      overflow: hidden;
+    }
+
+    .views-field-path {
+      color: #fff;
+      left: unset;
+      right: 0;
+      //position: absolute;
+      //bottom: 0;
+      padding: 0 28px;
+      top: 534px - $title-height;
+      width: 384px;
+      text-align: center;
+      height: auto;
+      a {
+        //border-radius: 4px;
+        border: 1px solid #fff;
+        background: transparent;
+        //padding: 22px 35px;
+        margin: 0;
+        width: 100%;
+        display: block;
+        //text-transform: uppercase;
+        //font-size: 14px;
+        //text-decoration: none;
+        //color: inherit;
+      }
+    }
+
+    .views-field-field-picture-1 {
+      display: block;
+      float: left;
+      bottom: 0;
+      width: 497px;
+      height: 222px;
+      position: absolute;
+      img {
+        height: 65px;
+        float: left;
+      }
+
+    }
+  }
+}

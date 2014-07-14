@@ -1,14 +1,14 @@
-var wuSliderSelector = ".pane-summa-blocks-why-us .slider";
+var lpSliderSelector = "#latest-posts-container .slider";
 
 jQuery(window).bind("enterBreakpoint641", function () {
-    var glideApi = jQuery(wuSliderSelector).data("api_glide");
+    var glideApi = jQuery(lpSliderSelector).data("api_glide");
 
     if (glideApi)
         glideApi.destroy();
 });
 
 jQuery(window).bind("exitBreakpoint641", function () {
-    jQuery(wuSliderSelector).glide({
+    jQuery(lpSliderSelector).glide({
         arrows: false,
         navigation: true,
         navigationClass: "navigation-container"

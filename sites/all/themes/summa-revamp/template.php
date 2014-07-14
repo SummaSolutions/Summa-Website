@@ -64,14 +64,15 @@
 /**
  * Implementation of HOOK_theme().
  */
-function summa_revamp_theme(&$existing, $type, $theme, $path) {
-  $hooks = zen_theme($existing, $type, $theme, $path);
-  // Add your theme hooks like this:
-  /*
-  $hooks['hook_name_here'] = array( // Details go here );
-  */
-  // @TODO: Needs detailed comments. Patches welcome!
-  return $hooks;
+function summa_revamp_theme( &$existing, $type, $theme, $path )
+{
+    $hooks = zen_theme( $existing, $type, $theme, $path );
+    // Add your theme hooks like this:
+    /*
+    $hooks['hook_name_here'] = array( // Details go here );
+    */
+    // @TODO: Needs detailed comments. Patches welcome!
+    return $hooks;
 }
 
 /**
@@ -149,21 +150,18 @@ function summa_preprocess_block(&$vars, $hook) {
 }
 // */
 
-function summa_revamp_preprocess_page(&$variables){
+function summa_revamp_preprocess_page( &$variables )
+{
     // Suggest page template by node type
-    if (!empty($variables['node']))
-    {
+    if ( !empty( $variables['node'] ) ) {
         $variables['theme_hook_suggestions'][] = 'page__node_' . $variables['node']->type;
     }
     // Suggest page templates by path ("page--pathalias.tpl.php")
-    if (module_exists('path'))
-    {
-        $alias = drupal_get_path_alias(str_replace('/edit', '', $_GET['q']));
-        if ($alias != $_GET['q'])
-        {
+    if ( module_exists( 'path' ) ) {
+        $alias = drupal_get_path_alias( str_replace( '/edit', '', $_GET['q'] ) );
+        if ( $alias != $_GET['q'] ) {
             $template_filename = 'page';
-            foreach (explode('/', $alias) as $path_part)
-            {
+            foreach ( explode( '/', $alias ) as $path_part ) {
                 $template_filename = $template_filename . '__' . $path_part;
             }
             $variables['theme_hook_suggestions'][] = $template_filename;
@@ -172,13 +170,30 @@ function summa_revamp_preprocess_page(&$variables){
 
 }
 
-function summa_revamp_get_homepage_blocks(){
-    for($i = 1; $i < 30; $i++){
-        $block = block_load('block', $i);
-        $key = explode(' ', strtolower($block-> title));
-        $content[$key[0]] = block_custom_block_get($i);
+function summa_revamp_get_homepage_blocks()
+{
+    for ( $i = 1; $i < 30; $i++ ) {
+        $block = block_load( 'block', $i );
+        $key = explode( ' ', strtolower( $block->title ) );
+        $content[$key[0]] = block_custom_block_get( $i );
     }
-    $content['hp_slideshow'] = views_embed_view('hp_slideshow');
-    $content['services_list'] = views_embed_view('services_list');
+    $content['hp_slideshow'] = views_embed_view( 'hp_slideshow' );
+    $content['services_list'] = views_embed_view( 'services_list' );
     $pause = null;
+}
+
+function summa_revamp_js_alter( &$javascript )
+{
+    //We define the path of our new jquery core file
+    //assuming we are using the minified version 1.8.3
+    $jquery_path = drupal_get_path( 'theme', 'summa_revamp' ) . '/js/jquery-1.8.3.min.js';
+
+    //We duplicate the important information from the Drupal one
+    $javascript[$jquery_path] = $javascript['misc/jquery.js'];
+    //..and we update the information that we care about
+    $javascript[$jquery_path]['version'] = '2.1.1';
+    $javascript[$jquery_path]['data'] = $jquery_path;
+
+    //Then we remove the Drupal core version
+    unset( $javascript['misc/jquery.js'] );
 }

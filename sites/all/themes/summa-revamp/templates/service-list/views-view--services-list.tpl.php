@@ -14,6 +14,9 @@
  * $feed_icon: Feed icon to display, if any
  * $more: A link to view more, if any
  */
-drupal_add_css(drupal_get_path("theme", "summa_revamp") . "/css/service-list/service-list.css");
+drupal_add_css( drupal_get_path( "theme", "summa_revamp" ) . "/css/service-list/service-list.css" );
+?>
 
-print $rows;
+<?php if ( $rows ): ?>
+    <?php print $rows; ?>
+<?php endif; ?>

@@ -2,7 +2,7 @@
   background: url(../../images/why-us-background-tablet.png) no-repeat 85px 117px;
   padding: 76px 85px 0 389px;
   width: 1000px;
-  margin: 0 auto;
+  margin: 0 auto 78px;
   text-align: left;
   min-height: 455px;
 
@@ -54,6 +54,7 @@
       height: auto;
 
       .slides {
+        width: auto !important;
 
         .slide {
           float: none;

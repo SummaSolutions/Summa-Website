@@ -13,6 +13,7 @@ jQuery(window).bind("enterBreakpoint641", function () {
     // Styles clean
     jQuery(headerSelector).removeClass("expanded");
     jQuery(headerMiddleSelector).show();
+
 });
 
 

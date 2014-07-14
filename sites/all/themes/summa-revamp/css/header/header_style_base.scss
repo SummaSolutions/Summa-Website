@@ -12,7 +12,7 @@ $header-top-height: 122px;
   &.expanded {
     #header-bottom {
       margin: -151px 0 0 0;
-      padding: (151px + 96px) 0 0 0; //96 px inherited
+      padding: (151px + 96px) 49px 0; //96 px inherited
       background: url('../../images/menu-background-mobile.jpg') no-repeat left (0-$header-top-height);
     }
   }
@@ -153,9 +153,11 @@ $header-top-height: 122px;
   #header-bottom {
     z-index: 19;
     position: relative;
-    padding: 96px 49px 0 49px;
+    padding: 96px 49px 0;
     height: auto;
     width: 100%;
+    text-align: center;
+    min-height: 408px;
 
     //hp-slideshow
   }

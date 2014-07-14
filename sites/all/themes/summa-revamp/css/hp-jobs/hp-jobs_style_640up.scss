@@ -1,0 +1,148 @@
+$grayBorder: #fff;
+
+#hp-jobs-container {
+  background: url(../../images/hp-jobs-background-tablet.png) no-repeat 84px 70px;
+  height: auto;
+  margin: 0 auto 70px;
+  //  text-align: center;
+  padding: 0 85px 0 377px;
+  width: 1000px;
+
+  h2.pane-title {
+    font-size: 32px;
+    //    margin: 0;
+    //    font-weight: normal;
+    //    padding: 0 36px;
+  }
+
+  .views-field-field-ico {
+    float: left;
+    //    width: auto;
+    //    height: auto;
+    //    text-align: center;
+    //
+    $maskDiameter: 70px;
+    $imageSide: 43px; //sqrt( pow($maskDiameter-4-8,2) /2 );
+    .mask {
+      background: none;
+      width: auto;
+      margin: 0 21px 0 0;
+      position: static;
+      //      z-index: 30;
+      .rounded-mask {
+        //        margin: 0 auto;
+        //        border-radius: 50%;
+        border: 2px solid $grayBorder;
+        width: $maskDiameter;
+        height: $maskDiameter;
+        //        overflow: hidden;
+        img {
+          margin: 12px;
+          width: $imageSide;
+          height: $imageSide;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .frame {
+    float: left;
+    position: static;
+    //    z-index: 20;
+    border: 0;
+    border-radius: none;
+    margin-top: 0;
+    padding: 0;
+    height: auto;
+    text-align: left;
+    width: 276px;
+    .title {
+      //      font-family: roboto;
+      //      //font-weight: bold;
+      font-size: 16px;
+      max-height: none;
+      //      overflow: hidden;
+    }
+
+    .body {
+      //      font-family: roboto;
+      //      font-weight: lighter;
+      font-size: 16px;
+      max-height: none;
+      //      overflow: hidden;
+    }
+  }
+
+  .views-field-path {
+    color: #fff;
+    //    z-index: 40;
+    background: none;
+    position: static;
+    clear: none;
+    margin: 19px auto 15px;
+    padding: 18px 0;
+    float: right;
+    width: auto;
+    a {
+      //      font-family: Arial;
+      //      border-radius: 4px;
+      //      border: 1px solid #999;
+      //      background: transparent;
+      padding: 18px 25px;
+      margin: 0;
+      //      width: auto;
+      //      text-transform: uppercase;
+      font-size: 10px;
+      //      text-decoration: none;
+      //      color: inherit;
+      letter-spacing: 2px;
+      //      display: inline;
+    }
+  }
+  .slider {
+    //    position: relative;
+    //    width: 100%;
+    height: auto;
+
+    .slides {
+      height: auto;
+      //      -webkit-backface-visibility: hidden;
+      //      -webkit-transform-style: preserve-3d;
+      //      overflow:hidden;
+
+      .slide {
+        text-align: inherit;
+        float: none;
+        clear: both;
+        height: auto;
+        width: auto !important;
+        //
+        padding: 0;
+        //        display: block;
+        //        position: relative;
+
+      }
+    }
+    .navigation-container {
+      display: none;
+      //      clear: both;
+      //      width: auto;
+      //      bottom: 0;
+      //      text-align: center;
+      //      height: 15px;
+      //      position: absolute;
+
+      //      $spriteSize: 27px;
+      a.slider-nav__item {
+        //        width: $spriteSize;
+        //        height: $spriteSize;
+        //        background: url(../../images/glid-big-bullets-sprites.png) no-repeat left (0-$spriteSize);
+        //        display: inline-block;
+        //        margin: 0 7px 0 6px;
+        &.slider-nav__item--current, &:hover {
+          //          background: url(../../images/glid-big-bullets-sprites.png) no-repeat (0-$spriteSize) (0-$spriteSize);
+        }
+      }
+    }
+  }
+}
