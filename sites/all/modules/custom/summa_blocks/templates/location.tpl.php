@@ -8,7 +8,6 @@ drupal_add_js( drupal_get_path( "module", "summa_blocks" ) . "/templates/js/loca
     <div class="slider">
         <div class="slides">
             <div class="slide" data-background_class="map-bsas">
-                <div class="background-map map-bsas"></div>
                 <div class="tablet-left">
                     <div class="pointer">
                     </div>
@@ -28,7 +27,6 @@ drupal_add_js( drupal_get_path( "module", "summa_blocks" ) . "/templates/js/loca
                 </div>
             </div>
             <div class="slide" data-background_class="map-tandil">
-                <div class="background-map map-tandil"></div>
                 <div class="tablet-left">
                     <div class="pointer">
                     </div>
@@ -49,4 +47,6 @@ drupal_add_js( drupal_get_path( "module", "summa_blocks" ) . "/templates/js/loca
             </div>
         </div>
     </div>
+    <div class="background-map map-bsas active" style="z-index:3"></div>
+    <div class="background-map map-tandil" style="z-index: 1"></div>
 </div>

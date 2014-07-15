@@ -1,9 +1,11 @@
 .location-container {
   //  color: #fff;
+  height: 568px;
 
-  .background-container {
+  .background-map {
     background: #444;
     width: 100%;
+    height: 568px;
 
     &.map-bsas {
       background: url(../../images/map-bsas-tablet.jpg);
@@ -17,7 +19,7 @@
     width: 1000px;
     overflow: hidden;
     margin: 0 auto;
-    height: 567px;
+    height: 568px;
     .slides {
       //      height: 100%;
       .slide {

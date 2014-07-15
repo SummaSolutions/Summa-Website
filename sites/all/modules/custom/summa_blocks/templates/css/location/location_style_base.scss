@@ -5,13 +5,13 @@
   height: 766px;
 
   .background-map {
-    background-position: center top;
+    background-position: center center;
     width: 100%; //635px;
     height: 766px;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 20;
+    z-index: 15;
     &.map-bsas {
       background-image: url(../../images/map-bsas-mobile.jpg);
     }
@@ -19,10 +19,12 @@
       background-image: url(../../images/map-tandil-mobile.jpg);
     }
   }
-  .slider {
 
+  .slider {
     width: 100%; //635px;
     height: 766px;
+    z-index: 30;
+    position: relative;
     .slides {
       height: 100%;
       .slide {
@@ -55,6 +57,7 @@
       }
     }
   }
+
   .pointer {
     margin: 0 auto 46px;
     width: 100%;
