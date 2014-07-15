@@ -15,6 +15,9 @@ function summa_blocks_theme()
     $themes["why-us"] = array(
         "template" => "templates/why-us"
     );
+    $themes["location"] = array(
+        "template" => "templates/location"
+    );
     return $themes;
 }
 
@@ -24,37 +27,40 @@ function summa_blocks_theme()
 function summa_blocks_block_info()
 {
     $blocks['header-tweets'] = array(
-        'info' => t('Summa Tweets Suckerfish'),
+        'info' => t( 'Summa Tweets Suckerfish' ),
     );
     $blocks['social-media'] = array(
-        'info' => t('Summa Social Media'),
+        'info' => t( 'Summa Social Media' ),
     );
     $blocks['social-media-mobile'] = array(
-        'info' => t('Summa Social Media Mobile'),
+        'info' => t( 'Summa Social Media Mobile' ),
     );
     $blocks['social-media-like'] = array(
-        'info' => t('Summa Social Media Like Button'),
+        'info' => t( 'Summa Social Media Like Button' ),
     );
     $blocks['sidebar-tweets'] = array(
-        'info' => t('Summa Tweets Sidebar Block'),
+        'info' => t( 'Summa Tweets Sidebar Block' ),
     );
     $blocks['blog-add-content-button'] = array(
-        'info' => t('Summa Blog Add Content Button'),
+        'info' => t( 'Summa Blog Add Content Button' ),
     );
     $blocks['banner-magento'] = array(
-        'info' => t('E-Commerce Store'),
+        'info' => t( 'E-Commerce Store' ),
     );
     $blocks['banner-drupal'] = array(
-        'info' => t('Content Manager System'),
+        'info' => t( 'Content Manager System' ),
     );
     $blocks['banner-design'] = array(
-        'info' => t('Interactive Design'),
+        'info' => t( 'Interactive Design' ),
     );
     $blocks['blog-top-posters-code'] = array(
-        'info' => t('Summa Blog Top Posters By Code'),
+        'info' => t( 'Summa Blog Top Posters By Code' ),
     );
     $blocks['why-us'] = array(
-        'info' => t('Why Summa Solutions?'),
+        'info' => t( 'Why Summa Solutions?' ),
+    );
+    $blocks['location'] = array(
+        'info' => t( 'Summa Location' ),
     );
 
     return $blocks;
@@ -63,54 +69,58 @@ function summa_blocks_block_info()
 /**
  * Implementation of hook_block_view().
  */
-function summa_blocks_block_view($delta = '')
+function summa_blocks_block_view( $delta = '' )
 {
     $block = array();
     //  drupal_set_message($delta);
-    switch ($delta) {
+    switch ( $delta ) {
         case 'header-tweets':
-            $block['subject'] = t('Summa Tweets Suckerfish');
+            $block['subject'] = t( 'Summa Tweets Suckerfish' );
             $block['content'] = block_header_tweets();
             break;
         case 'social-media':
-            $block['subject'] = t('Summa Social Media');
+            $block['subject'] = t( 'Summa Social Media' );
             $block['content'] = block_social_media();
             break;
         case 'social-media-mobile':
-            $block['subject'] = t('Summa Social Media Mobile');
+            $block['subject'] = t( 'Summa Social Media Mobile' );
             $block['content'] = block_social_media_mobile();
             break;
         case 'social-media-like':
-            $block['subject'] = t('Summa Social Media Like Button');
+            $block['subject'] = t( 'Summa Social Media Like Button' );
             $block['content'] = block_social_media_like_button();
             break;
         case 'sidebar-tweets':
-            $block['subject'] = t('Summa Tweets Sidebar Block');
+            $block['subject'] = t( 'Summa Tweets Sidebar Block' );
             $block['content'] = block_sidebar_tweets();
             break;
         case 'blog-add-content-button':
-            $block['subject'] = t('Summa Blog Add Content Button');
+            $block['subject'] = t( 'Summa Blog Add Content Button' );
             $block['content'] = block_blog_add_content_button();
             break;
         case 'banner-magento':
-            $block['subject'] = t('E-Commerce Store');
+            $block['subject'] = t( 'E-Commerce Store' );
             $block['content'] = block_banner_magento();
             break;
         case 'banner-drupal':
-            $block['subject'] = t('Content Manager System');
+            $block['subject'] = t( 'Content Manager System' );
             $block['content'] = block_banner_drupal();
             break;
         case 'banner-design':
-            $block['subject'] = t('Interactive Design');
+            $block['subject'] = t( 'Interactive Design' );
             $block['content'] = block_banner_design();
             break;
         case 'blog-top-posters-code':
-            $block['subject'] = t('');
+            $block['subject'] = t( '' );
             $block['content'] = block_blog_top_posters();
             break;
         case 'why-us':
-            $block['subject'] = t('');
-            $block['content'] = theme("why-us", array());
+            $block['subject'] = t( '' );
+            $block['content'] = theme( "why-us", array() );
+            break;
+        case 'location':
+            $block['subject'] = t( '' );
+            $block['content'] = theme( "location", array() );
             break;
     }
     return $block;
@@ -123,8 +133,8 @@ function summa_blocks_block_view($delta = '')
 function block_header_tweets()
 {
     $return = '<div id="header-tweets-cage">';
-    if (function_exists('twitter_pull_render')) {
-        $return .= twitter_pull_render('@summasolutions', 'Latest Tweets', 4);
+    if ( function_exists( 'twitter_pull_render' ) ) {
+        $return .= twitter_pull_render( '@summasolutions', 'Latest Tweets', 4 );
     }
     $return .= '
       <div class="header-tweets-followus"><a href="http://twitter.com/summasolutions" target="_blank"><img align="absmiddle" src="/sites/all/themes/summa/images/ico_tw2.png">Follow Us</a></div>
@@ -191,8 +201,8 @@ function block_social_media_like_button()
 function block_sidebar_tweets()
 {
     $return = '<div id="sidebar-tweets-cage">';
-    if (function_exists('twitter_pull_render')) {
-        $return .= twitter_pull_render('@summasolutions', '', 2);
+    if ( function_exists( 'twitter_pull_render' ) ) {
+        $return .= twitter_pull_render( '@summasolutions', '', 2 );
     }
     $return .= '
       <div class="sidebar-tweets-followus"><a href="http://twitter.com/summasolutions" target="_blank"><img align="absmiddle" src="/sites/all/themes/summa/images/ico_tw2.png">Follow Us</a></div>
@@ -203,9 +213,9 @@ function block_sidebar_tweets()
 
 function block_blog_add_content_button()
 {
-    if (user_access('Administer content') || user_access('Create new content')) {
+    if ( user_access( 'Administer content' ) || user_access( 'Create new content' ) ) {
         return '
-      <a href="/node/add/blog">' . t('Add new entry') . '</a>
+      <a href="/node/add/blog">' . t( 'Add new entry' ) . '</a>
     ';
     }
 }
@@ -253,15 +263,15 @@ function block_blog_top_posters()
     $toHtml = "";
     $record = "";
     $row = "";
-    $result = db_query("SELECT COUNT(node_users.nid) AS total, users.uid AS uid, users.uid AS users_uid, 'user' AS field_data_field_profile_picture_user_entity_type
+    $result = db_query( "SELECT COUNT(node_users.nid) AS total, users.uid AS uid, users.uid AS users_uid, 'user' AS field_data_field_profile_picture_user_entity_type
 FROM 
 users users
 INNER JOIN node node_users ON users.uid = node_users.uid
 WHERE (( (users.status <> '0') AND (node_users.type IN  ('blog')) AND (node_users.language IN  ('en')) AND (node_users.status = '1') ))
-GROUP BY users.uid ORDER BY total DESC, users.name ASC");
-    foreach ($result as $record) {
-        $toHtml .= views_embed_view('top_blog_posters', 'user_data', $record->users_uid);
-        $toHtml = preg_replace("/\<span class\=\"field-content\"\>\<a href\=\"(.+)\"\>(.+)\<\/a\>\<\/span\>/is", "<a href=\"/blogposts/$2\">$2 ($record->total)</a>", $toHtml);
+GROUP BY users.uid ORDER BY total DESC, users.name ASC" );
+    foreach ( $result as $record ) {
+        $toHtml .= views_embed_view( 'top_blog_posters', 'user_data', $record->users_uid );
+        $toHtml = preg_replace( "/\<span class\=\"field-content\"\>\<a href\=\"(.+)\"\>(.+)\<\/a\>\<\/span\>/is", "<a href=\"/blogposts/$2\">$2 ($record->total)</a>", $toHtml );
     }
 
     return $toHtml;

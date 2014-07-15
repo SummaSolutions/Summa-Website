@@ -1,7 +1,7 @@
 $hdi-mobile-portrait: 641px;
 
-@import "why-us_style_base";
+@import "location_style_base";
 
 @media only screen and (min-width: $hdi-mobile-portrait) {
-  @import "why-us_style_640up";
+  @import "location_style_640up";
 }

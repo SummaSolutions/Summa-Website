@@ -1,10 +1,6 @@
 @import "../global";
 @import "featured-case-studies_style_base";
 
-@media only screen and (min-width: $mobile-portrait) {
-  @import "featured-case-studies_style_320up";
-}
-
 @media only screen and (min-width: $hdi-mobile-portrait) {
   @import "featured-case-studies_style_640up";
 }

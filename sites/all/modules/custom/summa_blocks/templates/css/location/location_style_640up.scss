@@ -1,0 +1,81 @@
+.location-container {
+  //  color: #fff;
+
+  .background-container {
+    background: #444;
+    width: 100%;
+
+    &.map-bsas {
+      background: url(../../images/map-bsas-tablet.jpg);
+    }
+    &.map-tandil {
+      background: url(../../images/map-tandil-tablet.jpg);
+    }
+  }
+  .slider {
+    //    position: relative;
+    width: 1000px;
+    overflow: hidden;
+    margin: 0 auto;
+    height: 567px;
+    .slides {
+      //      height: 100%;
+      .slide {
+        width: 1000px !important;
+        //        height: 100%;
+        //        float: left;
+        //        text-align: center;
+        padding: 175px 0;
+      }
+    }
+  }
+
+  .tablet-left {
+    float: left;
+    width: 324px;
+  }
+  .tablet-right {
+    float: left;
+    width: auto;
+    text-align: left;
+    padding: 14px 0;
+  }
+  .navigation-container {
+    //    clear: both;
+    //    width: auto;
+    //    bottom: 57px;
+    //    text-align: center;
+    //    height: 15px;
+    //    position: absolute;
+
+    $spriteSize: 15px;
+    a.slider-nav__item {
+      width: $spriteSize;
+      height: $spriteSize;
+      background: url(../../images/glid-bullets-sprites.png) no-repeat left top;
+      //      display: inline-block;
+      //      margin: 0 7px 0 6px;
+      &.slider-nav__item--current, &:hover {
+        background: url(../../images/glid-bullets-sprites.png) no-repeat (0-$spriteSize) top;
+      }
+    }
+  }
+  .pointer {
+    margin: 0 auto;
+    width: 121px;
+    height: 182px;
+    background: url(../../images/location-pointer-tablet.png) no-repeat center center;
+  }
+  .title {
+    //    font-family: Ruda;
+    font-size: 44px;
+    //    font-weight: bold;
+    margin: 0 0 22px;
+  }
+  .body {
+    //    font-family: Roboto;
+    //    font-weight: lighter;
+    line-height: 33px;
+    font-size: 28px;
+  }
+}

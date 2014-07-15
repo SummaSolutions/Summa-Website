@@ -1,10 +1,6 @@
 @import "../global";
 @import "latest-posts_style_base";
 
-@media only screen and (min-width: $mobile-portrait) {
-  @import "latest-posts_style_320up";
-}
-
 @media only screen and (min-width: $hdi-mobile-portrait) {
   @import "latest-posts_style_640up";
 }

@@ -1,0 +1,63 @@
+.footer-green-row {
+  color: #fff;
+  padding: 0 0 68px;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  :nth-child(2n) {
+    clear: right;
+  }
+  :nth-child(2n-1) {
+    clear: left;
+  }
+
+  ul {
+    margin: 0;
+    &, .logo-footer {
+      width: 50%;
+      float: left;
+      padding: 0 0 0 42px;
+      margin: 68px 0 0 0;
+    }
+    li {
+      font-family: Roboto;
+      font-weight: lighter;
+      list-style: none;
+      font-size: 22px;
+      padding: 0 0 0 4px;
+      &:not(.title) {
+        line-height: 37px;
+      }
+
+      &.title {
+        font-weight: bold;
+        font-size: 30px;
+        padding: 22px 0 0 80px;
+        margin: 0 0 20px;
+        overflow: visible;
+        background: url(../../images/footer-ico-sprites-mobile.png) no-repeat left top;
+
+        &.label-company {
+          background: url(../../images/footer-ico-sprites-mobile.png) no-repeat left top;
+        }
+        &.label-more {
+          background: url(../../images/footer-ico-sprites-mobile.png) no-repeat left -63px;
+        }
+        &.label-services {
+          background: url(../../images/footer-ico-sprites-mobile.png) no-repeat left -126px;
+        }
+      }
+    }
+  }
+
+  .logo-footer {
+    background: url('../../images/logo-tablet.png') no-repeat top left;
+    width: 197px;
+    height: 57px;
+    margin: 93px 0 0 38px;
+    float: left;
+  }
+}

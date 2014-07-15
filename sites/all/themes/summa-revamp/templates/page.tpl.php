@@ -134,6 +134,7 @@ drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/hp-slideshow/sl
                         <?php print $feed_icons; ?>
                     </div>
                 </div>
+                <?php /*
                 <!-- /.section, /#content -->
 
                 <?php if ( $page['navigation'] || $main_menu ): ?>
@@ -162,7 +163,8 @@ drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/hp-slideshow/sl
                 <?php print render( $page['sidebar_first'] ); ?>
 
                 <?php print render( $page['sidebar_second'] ); ?>
-
+*/
+                ?>
             </div>
         </div>
         <!-- /#main, /#main-wrapper -->

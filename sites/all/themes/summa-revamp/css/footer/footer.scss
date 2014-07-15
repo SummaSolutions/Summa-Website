@@ -1,6 +1,6 @@
 @import "../global";
-@import "hp-slideshow_style_base";
+@import "footer_style_base";
 
 @media only screen and (min-width: $hdi-mobile-portrait) {
-  @import "hp-slideshow_style_640up";
+  @import "footer_style_640up";
 }

@@ -39,4 +39,5 @@ settings[zen_wireframes]           = 0
 
 
 stylesheets[all][]   = css/header/header.css
+stylesheets[all][]   = css/footer/footer.css
 stylesheets[all][]   = css/page/page.css

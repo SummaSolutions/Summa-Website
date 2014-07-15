@@ -1,0 +1,75 @@
+.location-container {
+  color: #fff;
+  position: relative;
+  width: 100%; //635px;
+  height: 766px;
+
+  .background-map {
+    background-position: center top;
+    width: 100%; //635px;
+    height: 766px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    &.map-bsas {
+      background-image: url(../../images/map-bsas-mobile.jpg);
+    }
+    &.map-tandil {
+      background-image: url(../../images/map-tandil-mobile.jpg);
+    }
+  }
+  .slider {
+
+    width: 100%; //635px;
+    height: 766px;
+    .slides {
+      height: 100%;
+      .slide {
+        width: 635px !important;
+        height: 100%;
+        float: left;
+        text-align: center;
+        padding: 64px 36px 57px;
+      }
+    }
+  }
+  .navigation-container {
+    clear: both;
+    width: auto;
+    bottom: 57px;
+    text-align: center;
+    height: 15px;
+    position: absolute;
+    z-index: 30;
+
+    $spriteSize: 27px;
+    a.slider-nav__item {
+      width: $spriteSize;
+      height: $spriteSize;
+      background: url(../../images/glid-big-bullets-sprites.png) no-repeat left top;
+      display: inline-block;
+      margin: 0 7px 0 6px;
+      &.slider-nav__item--current, &:hover {
+        background: url(../../images/glid-big-bullets-sprites.png) no-repeat (0-$spriteSize) top;
+      }
+    }
+  }
+  .pointer {
+    margin: 0 auto 46px;
+    width: 100%;
+    height: 289px;
+    background: url(../../images/location-pointer-mobile.png) no-repeat center center;
+  }
+  .title {
+    font-family: Ruda;
+    font-size: 64px;
+    font-weight: bold;
+  }
+  .body {
+    font-family: Roboto;
+    font-weight: lighter;
+    line-height: 41px;
+    font-size: 34px;
+  }
+}

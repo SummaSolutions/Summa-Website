@@ -1,0 +1,76 @@
+.footer-green-row {
+  //  color:#fff;
+  //  padding: 0 0 68px;
+
+  a {
+    //    color:inherit;
+    //    text-decoration:none;
+  }
+
+  :nth-child(2n) {
+    clear: none;
+  }
+  :nth-child(2n-1) {
+    clear: none;
+  }
+
+  ul {
+    //    margin: 0;
+    &, .logo-footer {
+      width: 33.3%;
+      float: left;
+      padding: 0 0 0 (12px + 116px);
+      background: url(../../images/footer-dashed.gif) repeat-y 5px center;
+      height: 223px;
+      //      margin: 68px 0 0 0;
+    }
+    &:first-child {
+      background: none;
+      padding: 0 0 0 105px;
+    }
+    &:nth-child(2) {
+      float: right;
+    }
+    li {
+      //      font-family: Roboto;
+      //      font-weight: lighter;
+      //      list-style: none;
+      font-style: italic;
+      font-size: 14px;
+      //      padding: 0 0 0 4px;
+      &:not(.title) {
+        line-height: 25px;
+      }
+
+      &.title {
+        //      font-weight: bold;
+        height: 50px;
+        font-style: normal;
+        font-size: 16px;
+        padding: 14px 0 0 82px;
+        margin: 0px 0 0 -76px;
+        //      overflow: visible;
+        background: url(../../images/footer-ico-sprites-tablet.png) no-repeat left top;
+
+        &.label-company {
+          background: url(../../images/footer-ico-sprites-tablet.png) no-repeat left top;
+        }
+        &.label-more {
+          background: url(../../images/footer-ico-sprites-tablet.png) no-repeat left -63px;
+        }
+        &.label-services {
+          background: url(../../images/footer-ico-sprites-tablet.png) no-repeat left -126px;
+        }
+      }
+    }
+  }
+
+  .logo-footer {
+    background: url(../../images/footer-logo-tablet.png) no-repeat top left;
+    width: 149px;
+    height: 43px;
+    margin: -68px 131px 0 0;
+    float: right;
+    position: relative;
+  }
+}
