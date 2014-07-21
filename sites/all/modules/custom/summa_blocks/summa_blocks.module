@@ -66,6 +66,13 @@ function summa_blocks_block_info()
     return $blocks;
 }
 
+function summa_blocks_views_api()
+{
+    return array(
+        'api' => 3
+    );
+}
+
 /**
  * Implementation of hook_block_view().
  */

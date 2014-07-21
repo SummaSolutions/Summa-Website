@@ -7,4 +7,5 @@ jQuery(document).ready(function () {
         navigation: true,
         navigationClass: "navigation-container"
     });
+
 });

@@ -1,35 +1,53 @@
 #services-list-container {
-  color: #5d5e5e;
-  text-align: center; }
-  #services-list-container .views-row {
+    color: #5d5e5e;
+    text-align: center;
+}
+
+#services-list-container .views-row {
     width: 100%;
     height: 480px;
     background: url(../../images/service-list-vertical-dashed-background-mobile.gif) center top repeat-y;
-    position: relative; }
-  #services-list-container .views-row-first {
-    background-position: center 50px; }
-  #services-list-container .pane-title {
-    font-size: 70px; }
-  #services-list-container .pane-content .views-field-title {
+    position: relative;
+}
+
+#services-list-container .views-row-first {
+    background-position: center 50px;
+}
+
+#services-list-container .pane-title {
+    font-size: 70px;
+}
+
+#services-list-container .pane-content .views-field-title {
     font-size: 36px;
     font-weight: bold;
-    background: #fff; }
-    #services-list-container .pane-content .views-field-title a {
-      color: inherit;
-      text-decoration: none; }
-  #services-list-container .pane-content .views-field-field-subtitle {
-    display: none; }
-  #services-list-container .pane-content .views-field-field-picture {
+    background: #fff;
+}
+
+#services-list-container .pane-content .views-field-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#services-list-container .pane-content .views-field-field-subtitle {
+    display: none;
+}
+
+#services-list-container .pane-content .views-field-field-picture {
     width: 100%;
     height: 50%;
     text-align: center;
     margin: auto;
     position: absolute;
     top: 0;
-    bottom: 0; }
-    #services-list-container .pane-content .views-field-field-picture img {
-      max-height: 229px; }
-  #services-list-container .pane-content .views-field-path a {
+    bottom: 0;
+}
+
+#services-list-container .pane-content .views-field-field-picture img {
+    max-height: 229px;
+}
+
+#services-list-container .pane-content .views-field-path a {
     border-radius: 4px;
     border: 1px solid #959595;
     background: #fff;
@@ -42,43 +60,66 @@
     text-transform: uppercase;
     font-size: 14px;
     text-decoration: none;
-    color: inherit; }
+    color: inherit;
+}
 
 @media only screen and (min-width: 641px) {
-  #services-list-container {
-    text-align: left; }
+    #services-list-container {
+        text-align: left;
+    }
+
     #services-list-container .views-row {
-      width: 200px;
-      display: block;
-      float: left;
-      background: none;
-      text-align: center; }
+        width: 200px;
+        display: block;
+        float: left;
+        background: none;
+        text-align: center;
+    }
+
     #services-list-container .pane-title {
-      font-size: 64px; }
+        font-size: 64px;
+    }
+
     #services-list-container .pane-content .views-field-title {
-      font-size: 18px;
-      position: absolute;
-      top: 0;
-      text-align: inherit;
-      width: 100%; }
-      #services-list-container .pane-content .views-field-title a {
+        font-size: 18px;
+        position: absolute;
+        top: 0;
+        text-align: inherit;
+        width: 100%;
+    }
+
+    #services-list-container .pane-content .views-field-title a {
         color: inherit;
-        text-decoration: none; }
+        text-decoration: none;
+    }
+
     #services-list-container .pane-content .views-field-field-subtitle {
-      display: block;
-      font-size: 16px;
-      position: absolute;
-      top: 222px;
-      line-height: 23px;
-      height: 135px;
-      overflow: hidden; }
+        display: block;
+        font-size: 16px;
+        position: absolute;
+        top: 222px;
+        line-height: 23px;
+        height: 135px;
+        overflow: hidden;
+    }
+
+    #services-list-container .pane-content .views-field-field-subtitle .field-content {
+        max-height: 145px;
+    }
+
     #services-list-container .pane-content .views-field-field-picture {
-      position: static;
-      top: 180px;
-      margin: 85px auto 0;
-      height: auto;
-      width: auto; }
-      #services-list-container .pane-content .views-field-field-picture img {
-        max-height: 83px; }
+        position: static;
+        top: 180px;
+        margin: 85px auto 0;
+        height: auto;
+        width: auto;
+    }
+
+    #services-list-container .pane-content .views-field-field-picture img {
+        max-height: 83px;
+    }
+
     #services-list-container .pane-content .views-field-path a {
-      left: 50%; } }
+        left: 50%;
+    }
+}

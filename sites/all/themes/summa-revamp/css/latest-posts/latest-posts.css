@@ -28,6 +28,11 @@
     overflow: hidden;
 }
 
+#latest-posts-container .views-field-entity-id .field-content {
+    display: block;
+    max-height: 344px;
+}
+
 #latest-posts-container .views-field-path {
     color: #999;
     left: 0;

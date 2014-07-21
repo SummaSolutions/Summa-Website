@@ -18,6 +18,8 @@ drupal_add_css( drupal_get_path( "theme", "summa_revamp" ) . "/css/featured-case
 
 drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.glide.js" );
 drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/featured-case-studies/sliderControl.js" );
+drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.dotdotdot.min.js" );
+drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/featured-case-studies/skin.js" );
 ?>
 <div class="slider safe-container">
     <div class="slides">

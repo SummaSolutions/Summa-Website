@@ -48,32 +48,39 @@ $leftPadding: 33px;
   }
 
   .views-field-title {
+    float: left;
     text-align: left;
-    left: 0;
+    //    left: 0;
     font-size: 52px;
     width: 534px;
-    position: absolute;
+    margin-bottom: 16px;
+    //    position: relative;
     z-index: 31;
-    top: 60px;
+    //    top: 60px;
     padding: 0 0 0 $leftPadding;
-    //a {
-    //  color: #fff;
-    //  text-decoration: none;
-    //}
+    .field-content {
+      display: block;
+      max-height: 128px;
+      //      a {
+      //        color: #fff;
+      //        text-decoration: none;
+      //      }
+    }
     //padding: 0 0 28px 0;
   }
   /* Subtile & Content */
   .views-field-entity-id-1, .views-field-entity-id-8 {
     text-align: left;
-    left: 0;
-    position: absolute;
+    float: left;
+    //    left: 0;
+    //    top: 0;
+    //    position: relative;
     z-index: 31;
     line-height: 29px;
     //font-family: "Roboto";
     //font-weight: lighter;
     font-size: 24px;
     width: 534px;
-    top: 140px;
     padding: 0 0 0 $leftPadding;
   }
 

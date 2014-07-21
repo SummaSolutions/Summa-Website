@@ -14,3 +14,14 @@ jQuery(window).bind("exitBreakpoint641", function () {
         navigationClass: "navigation-container"
     });
 });
+
+
+jQuery(document).ready(function () {
+
+    if (!jQuery("body").hasClass("breakpoint-641"))
+        jQuery(wuSliderSelector).glide({
+            arrows: false,
+            navigation: true,
+            navigationClass: "navigation-container"
+        });
+})

@@ -1,5 +1,6 @@
 var hpjSliderSelector = "#hp-jobs-container .slider";
 
+
 jQuery(window).bind("enterBreakpoint641", function () {
     var glideApi = jQuery(hpjSliderSelector).data("api_glide");
 
@@ -7,6 +8,16 @@ jQuery(window).bind("enterBreakpoint641", function () {
         glideApi.destroy();
 
 });
+
+jQuery(document).ready(function () {
+
+    if (!jQuery("body").hasClass("breakpoint-641"))
+        jQuery(hpjSliderSelector).glide({
+            arrows: false,
+            navigation: true,
+            navigationClass: "navigation-container"
+        });
+})
 
 jQuery(window).bind("exitBreakpoint641", function () {
     jQuery(hpjSliderSelector).glide({

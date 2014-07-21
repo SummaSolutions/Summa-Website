@@ -40,11 +40,15 @@ $slideshow-green: #97ac24;
 
   .views-field-title {
     font-size: 70px;
-    a {
-      color: #fff;
-      text-decoration: none;
-    }
     padding: 0 0 28px 0;
+    .field-content {
+      display: block;
+      max-height: 86px;
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
   }
   /* Subtile & Content */
   .views-field-entity-id-1, .views-field-entity-id-8 {
@@ -52,9 +56,13 @@ $slideshow-green: #97ac24;
     font-family: "Roboto";
     font-weight: lighter;
     font-size: 34px;
+    overflow: hidden;
+    .field-content {
+      display: block;
+      max-height: 166px;
+    }
   }
 
-  /* Image */
   .views-field-entity-id {
     margin: 20px 0;
   }

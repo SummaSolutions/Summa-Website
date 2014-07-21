@@ -26,6 +26,10 @@
     font-size: 34px;
     max-height: 142px;
     overflow: hidden;
+    .field-content {
+      display: block;
+      max-height: 344px;
+    }
   }
 
   .views-field-path {

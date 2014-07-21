@@ -33,6 +33,9 @@
       top: 222px;
       line-height: 23px;
       height: 135px;
+      .field-content {
+        max-height: 145px;
+      }
       overflow: hidden;
     }
     .views-field-field-picture {
