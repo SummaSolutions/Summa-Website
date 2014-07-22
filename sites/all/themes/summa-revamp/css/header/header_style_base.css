@@ -1,0 +1,81 @@
+/*
+Syntax error: Undefined variable: "$hdi-mobile-portrait".
+        on line 15 of hp-slideshow_style_base.scss
+
+10:   #header-top {
+11: 
+12:     background: url('../../images/menu-background-mobile.jpg') repeat-x center top;
+13:     height: 122px;
+14:     padding: $header-padding-vertical $header-padding-horizontal;
+15:     width: $hdi-mobile-portrait;
+16: 
+17:     #logo {
+18:       background: url('../../images/logo-mobile.png') no-repeat top left;
+19:       width: 372px;
+20:       height: 34px;
+
+Backtrace:
+hp-slideshow_style_base.scss:15
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/script/tree/variable.rb:49:in `_perform'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/script/tree/node.rb:50:in `perform'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:366:in `visit_prop'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/stack.rb:121:in `with_frame'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:152:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:389:in `block (2 levels) in visit_rule'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:389:in `map'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:389:in `block in visit_rule'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:387:in `visit_rule'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/stack.rb:121:in `with_frame'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:152:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:389:in `block (2 levels) in visit_rule'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:389:in `map'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:389:in `block in visit_rule'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:387:in `visit_rule'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/stack.rb:121:in `with_frame'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:152:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/base.rb:52:in `map'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:161:in `block in visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:160:in `visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:180:in `visit_root'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:151:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/root_node.rb:36:in `css_tree'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/tree/root_node.rb:20:in `render'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/engine.rb:274:in `render'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:378:in `update_stylesheet'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:189:in `block in update_stylesheets'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:186:in `each'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:186:in `update_stylesheets'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/plugin.rb:82:in `update_stylesheets'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/exec.rb:489:in `watch_or_update'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/exec.rb:346:in `process_result'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/exec.rb:43:in `parse'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/lib/sass/exec.rb:22:in `parse!'
+/var/lib/gems/1.9.1/gems/sass-3.3.8/bin/scss:13:in `<top (required)>'
+/usr/local/bin/scss:19:in `load'
+/usr/local/bin/scss:19:in `<main>'
+*/
+body:before {
+    white-space: pre;
+    font-family: monospace;
+    content: "Syntax error: Undefined variable: \"$hdi-mobile-portrait\".\A         on line 15 of hp-slideshow_style_base.scss\A \A 10:   #header-top {\A 11: \A 12:     background: url('../../images/menu-background-mobile.jpg') repeat-x center top;\A 13:     height: 122px;\A 14:     padding: $header-padding-vertical $header-padding-horizontal;\A 15:     width: $hdi-mobile-portrait;\A 16: \A 17:     #logo {\A 18:       background: url('../../images/logo-mobile.png') no-repeat top left;\A 19:       width: 372px;\A 20:       height: 34px;";
+}

@@ -1,0 +1,40 @@
+#page-wrapper {
+  width: 100%;
+  background: url(../../images/header-background-tablet.jpg) no-repeat center top;
+}
+
+.full-wrapper {
+  width: 100%;
+  clear: both;
+  text-align: center;
+}
+
+.safe-container {
+  width: 1000px;
+  clear: both;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.only-tablet {
+  display: block;
+}
+
+.only-mobile {
+  display: none;
+}
+
+/** LAYOUTS **/
+
+.dashed-row {
+  background: url(../../images/service-list-horizontal-dashed-background-mobile.gif) repeat-x left 315px;
+}
+
+.green-row {
+  background: url(../../images/layout-green-background-tablet.gif) repeat-x center top #fff;
+  height: 1032px;
+}
+
+.white-row {
+  height: 1090px;
+}
