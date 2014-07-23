@@ -39,3 +39,8 @@ drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.dotdotdo
         </div>
     </div>
 <?php endif; ?>
+<div class="center-mask only-tablet">
+    <?php
+    echo $view->display["default"]->display_options["title"];
+    ?>
+</div>

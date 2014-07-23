@@ -81,11 +81,12 @@ $region-height: 1245px;
     font-weight: lighter;
     padding: 0 36px;
     font-size: 34px;
+    font-family: Roboto;
     .field-content {
       max-height: 172px;
     }
   }
-  .views-field-field-image-right {
+  .views-field-field-image-right, .views-field-field-image-right-1 {
     .image-container {
       width: auto;
       margin: 0 auto;
@@ -109,7 +110,6 @@ $region-height: 1245px;
       font-family: Arial;
       border-radius: 4px;
       border: 1px solid #999;
-      background: transparent;
       padding: 35px 48px;
       margin: 0;
       width: auto;

@@ -881,10 +881,12 @@
         this.wrapper.unbind('clearTransition');
         this.slide(0, true);
         this.pause();
+        this.options.autoplay = false;
         this.disableEvents();
         this.firstClone.remove();
         this.lastClone.remove();
         this.wrapper.removeAttr("style");
+        this.slides.removeAttr("style");
     };
 
     /**

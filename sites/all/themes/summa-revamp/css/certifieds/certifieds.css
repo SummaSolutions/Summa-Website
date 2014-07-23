@@ -86,18 +86,19 @@
     font-weight: lighter;
     padding: 0 36px;
     font-size: 34px;
+    font-family: Roboto;
 }
 
 #certifieds-container .views-field-body .field-content {
     max-height: 172px;
 }
 
-#certifieds-container .views-field-field-image-right .image-container {
+#certifieds-container .views-field-field-image-right .image-container, #certifieds-container .views-field-field-image-right-1 .image-container {
     width: auto;
     margin: 0 auto;
 }
 
-#certifieds-container .views-field-field-image-right .image-container img {
+#certifieds-container .views-field-field-image-right .image-container img, #certifieds-container .views-field-field-image-right-1 .image-container img {
     display: inline-block;
     margin: 0 23px;
 }
@@ -117,7 +118,6 @@
     font-family: Arial;
     border-radius: 4px;
     border: 1px solid #999;
-    background: transparent;
     padding: 35px 48px;
     margin: 0;
     width: auto;
@@ -127,4 +127,145 @@
     color: inherit;
     letter-spacing: 3px;
     display: inline;
+}
+
+@media only screen and (min-width: 641px) {
+    #certifieds-container {
+        background: url(../../images/certifieds-background-tablet.gif) no-repeat left top;
+        height: 1090px;
+        position: relative;
+        width: 1000px;
+        margin: 0 auto;
+    }
+
+    #certifieds-container h2 {
+        display: none;
+    }
+
+    #certifieds-container .slider {
+        height: auto;
+        position: static;
+    }
+
+    #certifieds-container .slider .slides .slide {
+        position: absolute;
+        float: none;
+        height: 355px;
+        width: 447px;
+        margin: auto;
+    }
+
+    #certifieds-container .slider .slides .slide.position-top {
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    #certifieds-container .slider .slides .slide.position-right {
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin-right: -65px;
+    }
+
+    #certifieds-container .slider .slides .slide.position-bottom {
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    #certifieds-container .slider .slides .slide.position-left {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        margin-left: -65px;
+    }
+
+    #certifieds-container .slider .navigation-container {
+        display: none;
+    }
+
+    #certifieds-container .views-field-field-image-top {
+        position: static;
+        margin-top: 36px;
+    }
+
+    #certifieds-container .views-field-title {
+        font-size: 32px;
+        padding: 0;
+    }
+
+    #certifieds-container .views-field-title .title-container {
+        padding: 0 47px;
+        display: inline-block;
+        background: url(../../images/certifieds-title-background-mobile.gif) repeat-x left 20px;
+    }
+
+    #certifieds-container .views-field-title .title-container .title-mask {
+        padding: 0 20px;
+        width: auto;
+        max-height: 80px;
+    }
+
+    #certifieds-container .views-field-body {
+        color: #333;
+        padding: 0 88px;
+        font-size: 16px;
+    }
+
+    #certifieds-container .views-field-body .field-content {
+        max-height: 88px;
+    }
+
+    #certifieds-container .views-field-field-image-right .image-container, #certifieds-container .views-field-field-image-right-1 .image-container {
+        width: 100%;
+        position: relative;
+        top: 76px;
+        margin-top: -76px;
+    }
+
+    #certifieds-container .views-field-field-image-right .image-container img, #certifieds-container .views-field-field-image-right-1 .image-container img {
+        margin: 0;
+        width: 63px;
+    }
+
+    #certifieds-container .views-field-field-image-right .image-container img:first-child, #certifieds-container .views-field-field-image-right-1 .image-container img:first-child {
+        float: left;
+    }
+
+    #certifieds-container .views-field-field-image-right .image-container img:last-child, #certifieds-container .views-field-field-image-right-1 .image-container img:last-child {
+        float: right;
+    }
+
+    #certifieds-container .views-field-path {
+        position: static;
+        padding: 18px 0;
+    }
+
+    #certifieds-container .views-field-path a {
+        padding: 18px 25px;
+        margin: 0;
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    #certifieds-container .center-mask {
+        background: #fff;
+        width: 233px;
+        height: 233px;
+        border: 4px solid #8db234;
+        color: #8db234;
+        border-radius: 50%;
+        background: url(../../images/certifieds-center-background.png) no-repeat center 107px;
+        font-weight: bold;
+        font-size: 32px;
+        padding: 21px;
+        text-align: center;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
 }
