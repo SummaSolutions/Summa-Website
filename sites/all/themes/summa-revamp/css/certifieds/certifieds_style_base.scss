@@ -1,0 +1,124 @@
+$region-height: 1245px;
+
+#certifieds-container {
+  background: url(../../images/certifieds-background-mobile.gif) no-repeat right 43px top;
+  text-align: center;
+  height: $region-height;
+
+  h2 {
+    margin: 0;
+    font-family: Ruda;
+    font-size: 64px;
+    color: #8db234;
+    font-weight: normal;
+    width: 300px;
+    padding: 25px 0 0 72px;
+    text-align: left;
+  }
+
+  .slider {
+    height: $region-height - 183px;
+    position: relative;
+    .slides {
+      height: 100%;
+      width: 100%;
+      .slide {
+        height: 100%;
+        position: relative;
+        float: left;
+      }
+    }
+    .navigation-container {
+      clear: both;
+      width: auto;
+      bottom: 64px;
+      text-align: center;
+      height: 15px;
+      position: absolute;
+
+      $spriteSize: 27px;
+      a.slider-nav__item {
+        width: $spriteSize;
+        height: $spriteSize;
+        background: url(../../images/glid-big-bullets-sprites.png) no-repeat left top;
+        display: inline-block;
+        margin: 0 7px 0 6px;
+        &.slider-nav__item--current, &:hover {
+          background: url(../../images/glid-big-bullets-sprites.png) no-repeat (0-$spriteSize) top;
+        }
+      }
+    }
+  }
+
+  .views-field-field-image-top {
+    position: absolute;
+    top: 28px;
+    left: 0;
+    right: 0;
+  }
+
+  .views-field-title {
+    font-size: 64px;
+    font-weight: normal;
+    font-family: Ruda;
+    color: #999;
+    padding: 135px 0 0 0;
+    .title-container {
+      margin: 0 65px;
+      background: #000;
+      background: url(../../images/certifieds-title-background-mobile.gif) repeat-x left center;
+      .title-mask {
+        background: #fff;
+        padding: 0 30px;
+        width: 315px;
+        margin: 0 auto;
+        max-height: 158px;
+      }
+    }
+  }
+  .views-field-body {
+    color: #999;
+    font-weight: lighter;
+    padding: 0 36px;
+    font-size: 34px;
+    .field-content {
+      max-height: 172px;
+    }
+  }
+  .views-field-field-image-right {
+    .image-container {
+      width: auto;
+      margin: 0 auto;
+      img {
+        display: inline-block;
+        margin: 0 23px;
+      }
+    }
+  }
+
+  .views-field-path {
+    color: #999;
+    position: absolute;
+    bottom: 200px;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    padding: 36px;
+    a {
+      background: #fff;
+      font-family: Arial;
+      border-radius: 4px;
+      border: 1px solid #999;
+      background: transparent;
+      padding: 35px 48px;
+      margin: 0;
+      width: auto;
+      text-transform: uppercase;
+      font-size: 20px;
+      text-decoration: none;
+      color: inherit;
+      letter-spacing: 3px;
+      display: inline;
+    }
+  }
+}

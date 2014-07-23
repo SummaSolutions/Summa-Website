@@ -8,28 +8,28 @@ drupal_add_js( drupal_get_path( "module", "summa_blocks" ) . "/templates/js/why-
         <div class="slides">
             <div class="slide">
                 <span>
-                    <?php echo t( "Something that we're proude to share with you" ); ?>
+                    <?php echo t( "Slide 1" ); ?>
                 </span>
 
                 <div class="path only-mobile"><a href="#"><?php echo t( "READ MORE" ); ?></a></div>
             </div>
             <div class="slide">
                 <span>
-                    <?php echo t( "And i could always tell when some-one i holding a gru-udge" ); ?>
+                    <?php echo t( "Slide 2" ); ?>
                 </span>
 
                 <div class="path only-mobile"><a href="#"><?php echo t( "READ MORE" ); ?></a></div>
             </div>
             <div class="slide">
                 <span>
-                    <?php echo t( "When i see the five'clock news, i dont wanna grow up" ); ?>
+                    <?php echo t( "Slide 3" ); ?>
                 </span>
 
                 <div class="path only-mobile"><a href="#"><?php echo t( "READ MORE" ); ?></a></div>
             </div>
             <div class="slide">
                 <span>
-                    <?php echo t( "We're a happy Family, me, mom and daddy!" ); ?>
+                    <?php echo t( "Slide 4" ); ?>
                 </span>
 
                 <div class="path only-mobile"><a href="#"><?php echo t( "READ MORE" ); ?></a></div>
