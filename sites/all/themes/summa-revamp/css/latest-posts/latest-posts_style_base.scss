@@ -54,48 +54,21 @@
       letter-spacing: 3px;
     }
   }
-  .slider {
+  .bxslider {
     position: relative;
     width: 100%;
     height: 994px - 79px - 455px; // Full height - <h2> height - top padding
 
-    .slides {
-      height: 100%;
-      -webkit-backface-visibility: hidden;
-      -webkit-transform-style: preserve-3d;
-      overflow: hidden;
-
-      .slide {
-        text-align: center;
-        float: left;
-        clear: none;
-        height: 100%;
-        width: 640px !important; // The fluid row makes this of 635px
-
-        padding: 36px;
-        display: block;
-        position: relative;
-      }
-    }
-    .navigation-container {
-      clear: both;
-      width: auto;
-      bottom: 0;
+    .slide {
       text-align: center;
-      height: 15px;
-      position: absolute;
+      float: left;
+      clear: none;
+      height: 100%;
+      width: 640px !important; // The fluid row makes this of 635px
 
-      $spriteSize: 27px;
-      a.slider-nav__item {
-        width: $spriteSize;
-        height: $spriteSize;
-        background: url(../../images/glid-big-bullets-sprites.png) no-repeat left (0-$spriteSize);
-        display: inline-block;
-        margin: 0 7px 0 6px;
-        &.slider-nav__item--current, &:hover {
-          background: url(../../images/glid-big-bullets-sprites.png) no-repeat (0-$spriteSize) (0-$spriteSize);
-        }
-      }
+      padding: 36px;
+      display: block;
+      position: relative;
     }
   }
 }

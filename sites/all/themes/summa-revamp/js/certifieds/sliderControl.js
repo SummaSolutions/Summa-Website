@@ -1,28 +1,29 @@
-var cerSliderSelector = "#certifieds-container .slider";
+var cerSliderSelector = "#certifieds-container .bxslider";
+var cerSliderControl;
+
+jQuery(document).ready(function () {
+    if (!jQuery("body").hasClass("breakpoint-641"))
+        cerSliderControl = jQuery(cerSliderSelector).bxSlider({
+            wrapperClass: 'bx-wrapper bx-wrapper-green',
+            controls: false,
+            speed: 300,
+            auto: true,
+            preventDefaultSwipeX: true
+        });
+});
+
+jQuery(window).bind("exitBreakpoint641", function () {
+    cerSliderControl = jQuery(cerSliderSelector).bxSlider({
+        wrapperClass: 'bx-wrapper bx-wrapper-green',
+        controls: false,
+        speed: 300,
+        auto: true,
+        preventDefaultSwipeX: true
+    });
+});
 
 
 jQuery(window).bind("enterBreakpoint641", function () {
-    var glideApi = jQuery(cerSliderSelector).data("api_glide");
-
-    if (glideApi)
-        glideApi.destroy();
-
-});
-
-jQuery(document).ready(function () {
-
-    if (!jQuery("body").hasClass("breakpoint-641"))
-        jQuery(cerSliderSelector).glide({
-            arrows: false,
-            navigation: true,
-            navigationClass: "navigation-container"
-        });
-})
-
-jQuery(window).bind("exitBreakpoint641", function () {
-    jQuery(cerSliderSelector).glide({
-        arrows: false,
-        navigation: true,
-        navigationClass: "navigation-container"
-    });
+    if (typeof(cerSliderControl) != "undefined")
+        cerSliderControl.destroySlider();
 });

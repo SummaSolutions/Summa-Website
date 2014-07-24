@@ -1,26 +1,29 @@
-var lpSliderSelector = "#latest-posts-container .slider";
+var lpSliderSelector = "#latest-posts-container .bxslider";
+var lpSliderControl;
 
-jQuery(window).bind("enterBreakpoint641", function () {
-    var glideApi = jQuery(lpSliderSelector).data("api_glide");
-
-    if (glideApi)
-        glideApi.destroy();
-});
+jQuery(document).ready(function () {
+    if (!jQuery("body").hasClass("breakpoint-641"))
+        lpSliderControl = jQuery(lpSliderSelector).bxSlider({
+            wrapperClass: 'bx-wrapper',
+            controls: false,
+            speed: 300,
+            auto: true,
+            preventDefaultSwipeX: true
+        });
+})
 
 jQuery(window).bind("exitBreakpoint641", function () {
-    jQuery(lpSliderSelector).glide({
-        arrows: false,
-        navigation: true,
-        navigationClass: "navigation-container"
+    lpSliderControl = jQuery(lpSliderSelector).bxSlider({
+        wrapperClass: 'bx-wrapper',
+        controls: false,
+        speed: 300,
+        auto: true,
+        preventDefaultSwipeX: true
     });
 });
 
-jQuery(document).ready(function () {
 
-    if (!jQuery("body").hasClass("breakpoint-641"))
-        jQuery(lpSliderSelector).glide({
-            arrows: false,
-            navigation: true,
-            navigationClass: "navigation-container"
-        });
-})
+jQuery(window).bind("enterBreakpoint641", function () {
+    if (typeof(lpSliderControl) != "undefined")
+        lpSliderControl.destroySlider();
+});

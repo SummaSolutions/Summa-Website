@@ -19,41 +19,21 @@ $title-height: 119px + 23px;
   }
   .pane-content {
 
-    .slider {
+    .bxslider {
       overflow: hidden;
       width: 100%;
       //height: 854px - $title-height;
-    }
-    .slide {
-      width: 100%;
-      height: 907px - $title-height;
-      text-align: center;
-      .container {
-        position: relative;
-        width: 1000px;
+      .slide {
+        width: 100%;
         height: 907px - $title-height;
-        margin: 0 auto;
-      }
-      float: left;
-    }
-    $spriteSize: 15px;
-    .navigation-container {
-      clear: both;
-      width: auto;
-      bottom: 0;
-      text-align: center;
-      height: $spriteSize;
-      position: absolute;
-
-      a.slider-nav__item {
-        width: $spriteSize;
-        height: $spriteSize;
-        background: url(../../images/glid-bullets-sprites.png) no-repeat left top;
-        display: inline-block;
-        margin: 0 12px; //24px of spacing
-        &.slider-nav__item--current, &:hover {
-          background: url(../../images/glid-bullets-sprites.png) no-repeat (0-$spriteSize) top;
+        text-align: center;
+        .container {
+          position: relative;
+          width: 1000px;
+          height: 907px - $title-height;
+          margin: 0 auto;
         }
+        float: left;
       }
     }
 

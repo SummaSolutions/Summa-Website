@@ -20,63 +20,39 @@ $region-height: 1090px;
     display: none;
   }
 
-  .slider {
+  .bxslider {
     height: auto;
     position: static;
-    .slides {
-      //      height: 100%;
-      //      width: 100%;
-      .slide {
-        position: absolute;
-        float: none;
-        height: 355px;
-        width: 447px;
-        margin: auto;
+    .slide {
+      position: absolute;
+      float: none;
+      height: 355px;
+      width: 447px;
+      margin: auto;
 
-        &.position-top {
-          top: 0;
-          left: 0;
-          right: 0;
-        }
-        &.position-right {
-          top: 0;
-          bottom: 0;
-          right: 0;
-          margin-right: -65px;
-        }
-        &.position-bottom {
-          bottom: 0;
-          left: 0;
-          right: 0;
-        }
-        &.position-left {
-          top: 0;
-          left: 0;
-          bottom: 0;
-          margin-left: -65px;
-        }
+      &.position-top {
+        top: 0;
+        left: 0;
+        right: 0;
       }
-    }
-    .navigation-container {
-      display: none;
-      //      clear: both;
-      //      width: auto;
-      //      bottom: 64px;
-      //      text-align: center;
-      //      height: 15px;
-      //      position: absolute;
+      &.position-right {
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin-right: -65px;
+      }
+      &.position-bottom {
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+      &.position-left {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        margin-left: -65px;
+      }
 
-      //      $spriteSize: 27px;
-      a.slider-nav__item {
-        //        width: $spriteSize;
-        //        height: $spriteSize;
-        //        background: url(../../images/glid-big-bullets-sprites.png) no-repeat left top;
-        //        display: inline-block;
-        //        margin: 0 7px 0 6px;
-        &.slider-nav__item--current, &:hover {
-          //          background: url(../../images/glid-big-bullets-sprites.png) no-repeat (0-$spriteSize) top;
-        }
-      }
     }
   }
 
@@ -141,7 +117,7 @@ $region-height: 1090px;
     }
   }
 
-  .views-field-path {
+  .views-field-field-external-link {
     //    color: #999;
     position: static;
     //    bottom: 200px;

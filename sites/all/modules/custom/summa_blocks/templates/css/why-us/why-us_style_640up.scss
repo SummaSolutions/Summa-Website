@@ -48,46 +48,21 @@
       }
     }
 
-    .slider {
+    .bxslider {
       //position: relative;
       width: auto;
       height: auto;
 
-      .slides {
-        width: auto !important;
+      .slide {
+        float: none;
+        text-align: left;
+        width: auto;
+        height: auto;
+        padding: 0 0 18px;
+        clear: both;
+        //display: block;
+        //position: relative;
 
-        .slide {
-          float: none;
-          text-align: left;
-          width: auto;
-          height: auto;
-          padding: 0 0 18px;
-          clear: both;
-          //display: block;
-          //position: relative;
-
-        }
-      }
-      .navigation-container {
-        //clear: both;
-        //width: auto;
-        //bottom: 0;
-        //text-align: center;
-        //height: 15px;
-        //position: absolute;
-        display: none;
-
-        //$spriteSize : 27px;
-        a.slider-nav__item {
-          //width: $spriteSize;
-          //height: $spriteSize;
-          //background: url(../../images/glid-big-bullets-sprites.png) no-repeat left top;
-          //display: inline-block;
-          //margin: 0 7px 0 6px;
-          &.slider-nav__item--current, &:hover {
-            //background: url(../../images/glid-big-bullets-sprites.png) no-repeat (0-$spriteSize) top;
-          }
-        }
       }
     }
   }

@@ -1,28 +1,30 @@
-var hpjSliderSelector = "#hp-jobs-container .slider";
+var hpjSliderSelector = "#hp-jobs-container .bxslider";
+var hpSliderControl;
 
-
-jQuery(window).bind("enterBreakpoint641", function () {
-    var glideApi = jQuery(hpjSliderSelector).data("api_glide");
-
-    if (glideApi)
-        glideApi.destroy();
-
-});
 
 jQuery(document).ready(function () {
-
     if (!jQuery("body").hasClass("breakpoint-641"))
-        jQuery(hpjSliderSelector).glide({
-            arrows: false,
-            navigation: true,
-            navigationClass: "navigation-container"
+        hpSliderControl = jQuery(hpjSliderSelector).bxSlider({
+            wrapperClass: 'bx-wrapper',
+            controls: false,
+            speed: 300,
+            auto: true,
+            preventDefaultSwipeX: true
         });
 })
 
 jQuery(window).bind("exitBreakpoint641", function () {
-    jQuery(hpjSliderSelector).glide({
-        arrows: false,
-        navigation: true,
-        navigationClass: "navigation-container"
+    hpSliderControl = jQuery(hpjSliderSelector).bxSlider({
+        wrapperClass: 'bx-wrapper',
+        controls: false,
+        speed: 300,
+        auto: true,
+        preventDefaultSwipeX: true
     });
+});
+
+
+jQuery(window).bind("enterBreakpoint641", function () {
+    if (typeof(hpSliderControl) != "undefined")
+        hpSliderControl.destroySlider();
 });

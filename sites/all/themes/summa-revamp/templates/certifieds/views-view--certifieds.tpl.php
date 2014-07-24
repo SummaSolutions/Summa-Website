@@ -27,16 +27,15 @@
  */
 drupal_add_css( drupal_get_path( "theme", "summa_revamp" ) . "/css/certifieds/certifieds.css" );
 
-drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.glide.js" );
+drupal_add_css( drupal_get_path( "theme", "summa_revamp" ) . "/css/jquery.bxslider.css" );
+drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.bxslider.min.js" );
 drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/certifieds/sliderControl.js" );
 drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/certifieds/skin.js" );
 drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.dotdotdot.min.js" );
 ?>
 <?php if ( $rows ): ?>
-    <div class="slider clearfix">
-        <div class="slides">
-            <?php print $rows; ?>
-        </div>
+    <div class="bxslider clearfix">
+        <?php print $rows; ?>
     </div>
 <?php endif; ?>
 <div class="center-mask only-tablet">

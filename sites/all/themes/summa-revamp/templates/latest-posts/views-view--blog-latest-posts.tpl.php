@@ -27,14 +27,13 @@
  */
 
 drupal_add_css( drupal_get_path( "theme", "summa_revamp" ) . "/css/latest-posts/latest-posts.css" );
-drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.glide.js" );
+drupal_add_css( drupal_get_path( "theme", "summa_revamp" ) . "/css/jquery.bxslider.css" );
+drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.bxslider.min.js" );
 drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/latest-posts/sliderControl.js" );
 ?>
 
-<div class="slider">
-    <div class="slides">
-        <?php if ( $rows ): ?>
-            <?php print $rows; ?>
-        <?php endif; ?>
-    </div>
+<div class="bxslider">
+    <?php if ( $rows ): ?>
+        <?php print $rows; ?>
+    <?php endif; ?>
 </div>

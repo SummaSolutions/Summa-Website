@@ -53,48 +53,19 @@
       letter-spacing: 2px;
     }
   }
-  .slider {
-    //    position: relative;
-    //    width: 100%;
-    //    overflow:hidden;
+  .bxslider {
     height: auto;
 
-    .slides {
+    .slide {
+      text-align: inherit;
+      float: none;
+      //        clear: none;
       height: auto;
-      //      -webkit-backface-visibility: hidden;
-      //      -webkit-transform-style: preserve-3d;
-      .slide {
-        text-align: inherit;
-        float: none;
-        //        clear: none;
-        height: auto;
-        width: auto !important;
-        //
-        padding: 0;
-        //        display: block;
-        //        position: relative;
-      }
-    }
-    .navigation-container {
-      display: none;
-      //      clear: both;
-      //      width: auto;
-      //      bottom: 0;
-      //      text-align: center;
-      //      height: 15px;
-      //      position: absolute;
-
-      //      $spriteSize: 27px;
-      a.slider-nav__item {
-        //        width: $spriteSize;
-        //        height: $spriteSize;
-        //        background: url(../../images/glid-big-bullets-sprites.png) no-repeat left (0-$spriteSize);
-        //        display: inline-block;
-        //        margin: 0 7px 0 6px;
-        &.slider-nav__item--current, &:hover {
-          //          background: url(../../images/glid-big-bullets-sprites.png) no-repeat (0-$spriteSize) (0-$spriteSize);
-        }
-      }
+      width: auto !important;
+      //
+      padding: 0;
+      //        display: block;
+      //        position: relative;
     }
   }
 }

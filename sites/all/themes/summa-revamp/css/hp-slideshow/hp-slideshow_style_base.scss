@@ -8,33 +8,13 @@ $slideshow-green: #97ac24;
     padding-bottom: 111px;
   }
 
-  .slider {
+  .bxslider {
     overflow: hidden;
     height: 1262px;
-  }
-  // same as .views-row
-  .slide {
-    width: 100%;
-    float: left;
-  }
-  .navigation-container {
-    display: none;
-    clear: both;
-    width: auto;
-    bottom: 0;
-    text-align: center;
-    height: 15px;
-    position: absolute;
-
-    a.slider-nav__item {
-      width: 15px;
-      height: 15px;
-      background: url(../../images/glid-bullets-sprites.png) no-repeat left top;
-      display: inline-block;
-      margin: 0 7px 0 6px;
-      &.slider-nav__item--current, &:hover {
-        background: url(../../images/glid-bullets-sprites.png)  no-repeat -15px top;
-      }
+    // same as .views-row
+    .slide {
+      width: 100%;
+      float: left;
     }
   }
 

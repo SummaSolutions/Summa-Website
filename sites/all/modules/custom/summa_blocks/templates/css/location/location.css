@@ -3,6 +3,7 @@
     position: relative;
     width: 100%;
     height: 766px;
+    background: #555;
 }
 
 .location-container .background-map {
@@ -12,7 +13,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 15;
+    z-index: 10;
 }
 
 .location-container .background-map.map-bsas {
@@ -23,45 +24,27 @@
     background-image: url(../../images/map-tandil-mobile.jpg);
 }
 
-.location-container .slider {
+.location-container .bx-viewport {
+    overflow: visible !important;
+}
+
+.location-container .bxslider {
     width: 100%;
-    height: 766px;
-    z-index: 30;
+    height: 680px;
     position: relative;
 }
 
-.location-container .slider .slides {
-    height: 100%;
-}
-
-.location-container .slider .slides .slide {
-    width: 635px !important;
+.location-container .bxslider .slide {
+    width: 100%;
     height: 100%;
     float: left;
     text-align: center;
-    padding: 64px 36px 57px;
 }
 
-.location-container .navigation-container {
-    clear: both;
-    width: auto;
-    bottom: 57px;
-    text-align: center;
-    height: 15px;
-    position: absolute;
+.location-container .bxslider .slide .container {
+    position: relative;
     z-index: 30;
-}
-
-.location-container .navigation-container a.slider-nav__item {
-    width: 27px;
-    height: 27px;
-    background: url(../../images/glid-big-bullets-sprites.png) no-repeat left top;
-    display: inline-block;
-    margin: 0 7px 0 6px;
-}
-
-.location-container .navigation-container a.slider-nav__item.slider-nav__item--current, .location-container .navigation-container a.slider-nav__item:hover {
-    background: url(../../images/glid-big-bullets-sprites.png) no-repeat -27px top;
+    padding: 64px 36px 57px;
 }
 
 .location-container .pointer {
@@ -93,6 +76,10 @@
         background: #444;
         width: 100%;
         height: 568px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
     }
 
     .location-container .background-map.map-bsas {
@@ -103,15 +90,15 @@
         background: url(../../images/map-tandil-tablet.jpg);
     }
 
-    .location-container .slider {
-        width: 1000px;
-        overflow: hidden;
+    .location-container .bxslider {
         margin: 0 auto;
-        height: 568px;
+        height: 482px;
     }
 
-    .location-container .slider .slides .slide {
-        width: 1000px !important;
+    .location-container .bxslider .slide .container {
+        width: 1000px;
+        margin: 0 auto;
+        height: 568px;
         padding: 175px 0;
     }
 
@@ -125,16 +112,6 @@
         width: auto;
         text-align: left;
         padding: 14px 0;
-    }
-
-    .location-container .navigation-container a.slider-nav__item {
-        width: 15px;
-        height: 15px;
-        background: url(../../images/glid-bullets-sprites.png) no-repeat left top;
-    }
-
-    .location-container .navigation-container a.slider-nav__item.slider-nav__item--current, .location-container .navigation-container a.slider-nav__item:hover {
-        background: url(../../images/glid-bullets-sprites.png) no-repeat -15px top;
     }
 
     .location-container .pointer {

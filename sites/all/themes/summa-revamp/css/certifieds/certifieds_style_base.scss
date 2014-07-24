@@ -16,37 +16,14 @@ $region-height: 1245px;
     text-align: left;
   }
 
-  .slider {
-    height: $region-height - 183px;
+  .bxslider {
+    //height: $region-height - 183px;
+    height: 1000px;
     position: relative;
-    .slides {
+    .slide {
       height: 100%;
-      width: 100%;
-      .slide {
-        height: 100%;
-        position: relative;
-        float: left;
-      }
-    }
-    .navigation-container {
-      clear: both;
-      width: auto;
-      bottom: 64px;
-      text-align: center;
-      height: 15px;
-      position: absolute;
-
-      $spriteSize: 27px;
-      a.slider-nav__item {
-        width: $spriteSize;
-        height: $spriteSize;
-        background: url(../../images/glid-big-bullets-sprites.png) no-repeat left top;
-        display: inline-block;
-        margin: 0 7px 0 6px;
-        &.slider-nav__item--current, &:hover {
-          background: url(../../images/glid-big-bullets-sprites.png) no-repeat (0-$spriteSize) top;
-        }
-      }
+      position: relative;
+      float: left;
     }
   }
 
@@ -55,6 +32,10 @@ $region-height: 1245px;
     top: 28px;
     left: 0;
     right: 0;
+    text-align: center;
+    img {
+      margin: 0 auto;
+    }
   }
 
   .views-field-title {
@@ -97,7 +78,7 @@ $region-height: 1245px;
     }
   }
 
-  .views-field-path {
+  .views-field-field-external-link {
     color: #999;
     position: absolute;
     bottom: 200px;

@@ -1,27 +1,30 @@
-var wuSliderSelector = ".pane-summa-blocks-why-us .slider";
+var wuSliderSelector = ".pane-summa-blocks-why-us .bxslider";
+var wuSliderControl;
 
-jQuery(window).bind("enterBreakpoint641", function () {
-    var glideApi = jQuery(wuSliderSelector).data("api_glide");
 
-    if (glideApi)
-        glideApi.destroy();
+jQuery(document).ready(function () {
+    if (!jQuery("body").hasClass("breakpoint-641"))
+        wuSliderControl = jQuery(wuSliderSelector).bxSlider({
+            wrapperClass: 'bx-wrapper',
+            controls: false,
+            speed: 300,
+            auto: true,
+            preventDefaultSwipeX: true
+        });
 });
 
 jQuery(window).bind("exitBreakpoint641", function () {
-    jQuery(wuSliderSelector).glide({
-        arrows: false,
-        navigation: true,
-        navigationClass: "navigation-container"
+    wuSliderControl = jQuery(wuSliderSelector).bxSlider({
+        wrapperClass: 'bx-wrapper',
+        controls: false,
+        speed: 300,
+        auto: true,
+        preventDefaultSwipeX: true
     });
 });
 
 
-jQuery(document).ready(function () {
-
-    if (!jQuery("body").hasClass("breakpoint-641"))
-        jQuery(wuSliderSelector).glide({
-            arrows: false,
-            navigation: true,
-            navigationClass: "navigation-container"
-        });
-})
+jQuery(window).bind("enterBreakpoint641", function () {
+    if (typeof(wuSliderControl) != "undefined")
+        wuSliderControl.destroySlider();
+});

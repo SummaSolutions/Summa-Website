@@ -1,13 +1,14 @@
 <?php
 drupal_add_css( drupal_get_path( "module", "summa_blocks" ) . "/templates/css/location/location.css" );
-drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.glide.js" );
+drupal_add_css( drupal_get_path( "theme", "summa_revamp" ) . "/css/jquery.bxSlider.css" );
+drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.bxSlider.min.js" );
 drupal_add_js( drupal_get_path( "module", "summa_blocks" ) . "/templates/js/location/sliderControl.js" );
 ?>
 
 <div class="location-container">
-    <div class="slider">
-        <div class="slides">
-            <div class="slide" data-background_class="map-bsas">
+    <div class="bxslider">
+        <div class="slide">
+            <div class="container">
                 <div class="tablet-left">
                     <div class="pointer">
                     </div>
@@ -26,7 +27,10 @@ drupal_add_js( drupal_get_path( "module", "summa_blocks" ) . "/templates/js/loca
                     </div>
                 </div>
             </div>
-            <div class="slide" data-background_class="map-tandil">
+            <div class="background-map map-bsas bottom"></div>
+        </div>
+        <div class="slide">
+            <div class="container">
                 <div class="tablet-left">
                     <div class="pointer">
                     </div>
@@ -37,16 +41,15 @@ drupal_add_js( drupal_get_path( "module", "summa_blocks" ) . "/templates/js/loca
                     </div>
                     <div class="body">
                         <?php echo t( "Av. Santamarina 876
-                            <br>
-                            Tandil, Buenos Aires
-                            <br>
-                            argentina@summasolutions.net" );
+                        <br>
+                        Tandil, Buenos Aires
+                        <br>
+                        argentina@summasolutions.net" );
                         ?>
                     </div>
                 </div>
             </div>
+            <div class="background-map map-tandil bottom"></div>
         </div>
     </div>
-    <div class="background-map map-bsas active" style="z-index:3"></div>
-    <div class="background-map map-tandil" style="z-index: 1"></div>
 </div>

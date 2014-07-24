@@ -3,6 +3,7 @@
   position: relative;
   width: 100%; //635px;
   height: 766px;
+  background: #555;
 
   .background-map {
     background-position: center center;
@@ -11,7 +12,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 15;
+    z-index: 10;
+
     &.map-bsas {
       background-image: url(../../images/map-bsas-mobile.jpg);
     }
@@ -19,41 +21,24 @@
       background-image: url(../../images/map-tandil-mobile.jpg);
     }
   }
-
-  .slider {
-    width: 100%; //635px;
-    height: 766px;
-    z-index: 30;
-    position: relative;
-    .slides {
-      height: 100%;
-      .slide {
-        width: 635px !important;
-        height: 100%;
-        float: left;
-        text-align: center;
-        padding: 64px 36px 57px;
-      }
-    }
+  .bx-viewport {
+    overflow: visible !important;
   }
-  .navigation-container {
-    clear: both;
-    width: auto;
-    bottom: 57px;
-    text-align: center;
-    height: 15px;
-    position: absolute;
-    z-index: 30;
 
-    $spriteSize: 27px;
-    a.slider-nav__item {
-      width: $spriteSize;
-      height: $spriteSize;
-      background: url(../../images/glid-big-bullets-sprites.png) no-repeat left top;
-      display: inline-block;
-      margin: 0 7px 0 6px;
-      &.slider-nav__item--current, &:hover {
-        background: url(../../images/glid-big-bullets-sprites.png) no-repeat (0-$spriteSize) top;
+  .bxslider {
+    width: 100%; //635px;
+    height: 680px;
+    position: relative;
+    .slide {
+      width: 100%;
+      height: 100%;
+      float: left;
+      text-align: center;
+
+      .container {
+        position: relative;
+        z-index: 30;
+        padding: 64px 36px 57px;
       }
     }
   }

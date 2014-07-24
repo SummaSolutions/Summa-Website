@@ -28,33 +28,13 @@ $green: #9fb335;
 
   .pane-content {
 
-    .slider {
+    .bxslider {
       overflow: hidden;
       //height: 854px - $title-height;
-    }
-    // same as .views-row
-    .slide {
-      width: 100%;
-      float: left;
-    }
-    $spriteSize: 27px;
-    .navigation-container {
-      clear: both;
-      width: auto;
-      bottom: 0;
-      text-align: center;
-      height: $spriteSize;
-      position: absolute;
-
-      a.slider-nav__item {
-        width: $spriteSize;
-        height: $spriteSize;
-        background: url(../../images/glid-big-bullets-sprites.png) no-repeat left top;
-        display: inline-block;
-        margin: 0 12px; //24px of spacing
-        &.slider-nav__item--current, &:hover {
-          background: url(../../images/glid-big-bullets-sprites.png) no-repeat (0-$spriteSize) top;
-        }
+      // same as .views-row
+      .slide {
+        width: 100%;
+        float: left;
       }
     }
 

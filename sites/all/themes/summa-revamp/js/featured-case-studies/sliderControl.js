@@ -1,10 +1,11 @@
-var fcsSliderSelector = "#featured-case-studies-container .slider";
-
+var fcsSliderSelector = "#featured-case-studies-container .bxslider";
 
 jQuery(document).ready(function () {
-    jQuery(fcsSliderSelector).glide({
-        arrows: false,
-        navigation: true,
-        navigationClass: "navigation-container"
+    jQuery(fcsSliderSelector).bxSlider({
+        wrapperClass: 'bx-wrapper bx-wrapper-green',
+        controls: false,
+        speed: 300,
+        auto: true,
+        preventDefaultSwipeX: true
     });
 });

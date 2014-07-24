@@ -27,14 +27,13 @@
  */
 
 drupal_add_css( drupal_get_path( "theme", "summa_revamp" ) . "/css/hp-jobs/hp-jobs.css" );
-drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.glide.js" );
+drupal_add_css( drupal_get_path( "theme", "summa_revamp" ) . "/css/jquery.bxslider.css" );
+drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.bxslider.min.js" );
 drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/hp-jobs/sliderControl.js" );
 ?>
 
-<div class="slider">
-    <div class="slides">
-        <?php if ( $rows ): ?>
-            <?php print $rows; ?>
-        <?php endif; ?>
-    </div>
+<div class="bxslider">
+    <?php if ( $rows ): ?>
+        <?php print $rows; ?>
+    <?php endif; ?>
 </div>
