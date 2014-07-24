@@ -21,11 +21,12 @@ drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.dotdotdo
 drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/hp-slideshow/skin.js" );
 drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/hp-slideshow/sliderControl.js" );
 ?>
-<div class="bxslider">
-    <?php if ( $rows ): ?>
-        <?php print $rows; ?>
-    <?php endif; ?>
+<div class="bxSlider-container">
+    <div class="bxslider">
+        <?php if ( $rows ): ?>
+            <?php print $rows; ?>
+        <?php endif; ?>
+    </div>
 </div>
-
 
 <div style="clear:both;"></div>

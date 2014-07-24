@@ -6,7 +6,8 @@
     padding-bottom: 111px; }
   #header #header-bottom .bxslider {
     overflow: hidden;
-    height: 1262px; }
+    height: 1262px;
+    width: 100%; }
     #header #header-bottom .bxslider .slide {
       width: 100%;
       float: left; }
@@ -63,15 +64,23 @@
       left: 0;
       height: 613px; }
       #header #header-bottom .bxslider .slide {
-        width: 100%;
         height: 613px;
         margin: 0 auto; }
-        #header #header-bottom .bxslider .slide .slide-safe-container {
-          position: relative;
-          width: 1000px;
-          margin: 0 auto; }
+        #header #header-bottom .bxslider .slide .slide-wrapper {
+          width: 1500px;
+          height: 613px;
+          margin: 0; }
+          #header #header-bottom .bxslider .slide .slide-wrapper .slide-safe-container {
+            width: 1000px !important;
+            float: left;
+            margin: 0 auto; }
+    #header #header-bottom .bxSlider-container {
+      width: 2000px;
+      text-align: left; }
     #header #header-bottom .bx-wrapper .bx-pager, #header #header-bottom .bx-wrapper .bx-controls-auto {
       bottom: 96px; }
+    #header #header-bottom .bx-wrapper .bx-pager {
+      width: 1000px; }
     #header #header-bottom .views-field-title {
       float: left;
       text-align: left;
@@ -92,8 +101,8 @@
       width: 534px;
       padding: 0 0 0 33px; }
     #header #header-bottom .views-field-entity-id {
-      right: 0;
-      width: 492px;
+      left: 508px;
+      width: auto;
       overflow: visible;
       position: absolute;
       z-index: 30;
