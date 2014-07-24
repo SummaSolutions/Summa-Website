@@ -127,8 +127,8 @@
         line-height: 23px !important; }
     #featured-case-studies-container .pane-content .views-field-path {
       color: #fff;
-      left: unset;
-      right: 0;
+        left: initial;
+        right: 0;
       padding: 0 28px;
       top: 392px;
       width: 384px;

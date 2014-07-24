@@ -1,9 +1,0 @@
-#header #header-top #logo {
-    background: url("../../images/logo-tablet.png") no-repeat top left;
-    width: 197px;
-    height: 57px;
-}
-
-#header #header-top .menu-mobile {
-    display: none;
-}

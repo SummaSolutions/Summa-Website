@@ -81,11 +81,13 @@
       right: 0;
       width: auto;
       background: none;
+      -webkit-backface-visibility: hidden;
+      -webkit-transform: translateZ(0);
 
       ul {
         padding: 0;
         margin: -50% auto;
-        min-width: unset;
+        min-width: initial;
 
         li {
           display: block;

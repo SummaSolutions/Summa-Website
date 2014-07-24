@@ -40,6 +40,7 @@ $region-height: 1090px;
         bottom: 0;
         right: 0;
         margin-right: -65px;
+        padding-top: 50px;
       }
       &.position-bottom {
         bottom: 0;
@@ -51,8 +52,16 @@ $region-height: 1090px;
         left: 0;
         bottom: 0;
         margin-left: -65px;
+        padding-top: 50px;
       }
 
+      &.position-left, &.position-right {
+        .views-field-field-image-top {
+          position: absolute;
+          top: auto;
+          bottom: 310px;
+        }
+      }
     }
   }
 
