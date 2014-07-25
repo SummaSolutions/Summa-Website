@@ -119,7 +119,7 @@ $title-height: 119px + 23px;
       }
     }
 
-    .views-field-field-picture-1 {
+    .views-field-field-picture-whyus {
       display: block;
       bottom: 0;
       left: 0;
@@ -128,21 +128,15 @@ $title-height: 119px + 23px;
       position: absolute;
       background: url(../../images/latest-dashed-background.gif) no-repeat right top;
       text-align: center;
-      .views-label-field-picture-1 {
+      .views-label-field-picture-whyus {
         color: #5d5e5e;
         font-size: 16px;
         font-weight: bold;
       }
-      ol {
-        padding: 0;
+      img {
+        height: 65px;
+        display: inline-block;
         margin: 23px 0;
-        li {
-          display: inline-block;
-          img {
-            height: 65px;
-          }
-
-        }
       }
     }
 
