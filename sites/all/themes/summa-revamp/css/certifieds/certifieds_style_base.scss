@@ -18,7 +18,7 @@ $region-height: 1245px;
 
   .bxslider {
     //height: $region-height - 183px;
-    height: 1000px;
+    height: 983px;
     position: relative;
     .slide {
       height: 100%;
@@ -29,7 +29,7 @@ $region-height: 1245px;
 
   .views-field-field-image-top {
     position: absolute;
-    top: 28px;
+    bottom: 875px;
     left: 0;
     right: 0;
     text-align: center;
@@ -39,7 +39,7 @@ $region-height: 1245px;
   }
 
   .views-field-title {
-    font-size: 64px;
+    font-size: 60px;
     font-weight: normal;
     font-family: Ruda;
     color: #999;
@@ -48,14 +48,22 @@ $region-height: 1245px;
       margin: 0 65px;
       background: #000;
       background: url(../../images/certifieds-title-background-mobile.gif) repeat-x left center;
+      padding: 0 36px;
       .title-mask {
         background: #fff;
         padding: 0 30px;
-        width: 315px;
-        margin: 0 auto;
-        max-height: 158px;
+        max-height: 237px;
+        display: inline-block;
+        max-width: 100%;
       }
     }
+  }
+  .views-field-field-subtitle {
+    color: #999;
+    font-weight: lighter;
+    padding: 0 72px;
+    font-size: 36px;
+    font-family: Roboto;
   }
   .views-field-body {
     color: #999;
@@ -64,7 +72,7 @@ $region-height: 1245px;
     font-size: 34px;
     font-family: Roboto;
     .field-content {
-      max-height: 172px;
+      max-height: 230px;
     }
   }
   .views-field-field-image-right, .views-field-field-image-right-1 {
@@ -81,7 +89,7 @@ $region-height: 1245px;
   .views-field-field-external-link {
     color: #999;
     position: absolute;
-    bottom: 200px;
+    bottom: 107px;
     left: 0;
     right: 0;
     z-index: 40;

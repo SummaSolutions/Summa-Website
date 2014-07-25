@@ -65,13 +65,13 @@ $region-height: 1090px;
   }
 
   .views-field-title {
-    font-size: 32px;
+    font-size: 28px;
     //    font-weight: normal;
     //    font-family: Ruda;
     //    color: #999;
     padding: 0;
     .title-container {
-      padding: 0 47px;
+      padding: 0 27px;
       display: inline-block;
       //      margin: 0 65px;
       //      background: #000;
@@ -79,11 +79,18 @@ $region-height: 1090px;
       .title-mask {
         //        background: #fff;
         padding: 0 20px;
-        width: auto;
+        //        max-width: 100%;
         //        margin: 0 auto;
         max-height: 80px;
       }
     }
+  }
+  .views-field-field-subtitle {
+    color: #333;
+    //    font-weight: lighter;
+    padding: 0 88px;
+    font-size: 18px;
+    //    font-family: Roboto;
   }
   .views-field-body {
     color: #333;
@@ -102,7 +109,7 @@ $region-height: 1090px;
       //      margin: 0 auto;
       position: relative;
       top: 76px;
-      margin-top: -76px;
+      //      margin-top: -76px;
       img {
         //        display: inline-block;
         margin: 0;
