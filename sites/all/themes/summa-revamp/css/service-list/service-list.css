@@ -86,6 +86,7 @@
         top: 0;
         text-align: inherit;
         width: 100%;
+        padding: 0 28px;
     }
 
     #services-list-container .pane-content .views-field-title a {
