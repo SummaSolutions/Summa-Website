@@ -79,6 +79,7 @@
     #services-list-container .pane-title {
         font-size: 64px;
         font-weight: normal;
+        margin-top: 27px;
     }
 
     #services-list-container .subtitle {
