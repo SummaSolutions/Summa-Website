@@ -78,6 +78,14 @@
 
     #services-list-container .pane-title {
         font-size: 64px;
+        font-weight: normal;
+    }
+
+    #services-list-container .subtitle {
+        width: 375px;
+        font-size: 18px;
+        margin: 0 0 80px;
+        height: 69px;
     }
 
     #services-list-container .pane-content .views-field-title {

@@ -17,7 +17,10 @@
 drupal_add_css( drupal_get_path( "theme", "summa_revamp" ) . "/css/service-list/service-list.css" );
 drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/service-list/skin.js" );
 ?>
-
+    <div class="subtitle"><?php
+        echo t( 'The biggest key to success in e-commerce is through an effective website. Let´s work together on creating the best!' );
+        ?>
+    </div>
 <?php if ( $rows ): ?>
     <?php print $rows; ?>
 <?php endif; ?>

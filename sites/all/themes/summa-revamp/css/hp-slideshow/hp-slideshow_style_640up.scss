@@ -1,7 +1,6 @@
 $leftPadding: 33px;
 #header #header-bottom {
   padding: 0 !important;
-  min-height: 755px !important;
   position: unset !important;
 
   .bxslider {
@@ -36,6 +35,9 @@ $leftPadding: 33px;
   }
   .bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
     bottom: 96px;
+  }
+  .bx-wrapper {
+    margin: 0;
   }
   .bx-wrapper .bx-pager {
     width: 1000px;
