@@ -96,10 +96,15 @@ drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/breakpoints.js"
                         print render( $page['header'] );
                         ?>
                     </div>
-                    <div id="header-bottom">
-                        <?php print render( $page['highlight'] ); ?>
-                    </div>
-
+                    <?php
+                    if ( $page['highlight'] ) :
+                        ?>
+                        <div id="header-bottom">
+                            <?php print render( $page['highlight'] ); ?>
+                        </div>
+                    <?php
+                    endif;
+                    ?>
                     <?php //print $breadcrumb; ?>
 
                 </div>

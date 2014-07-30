@@ -1,0 +1,23 @@
+@media only screen and (min-width: 319px) {
+    #header {
+        background: red;
+    }
+}
+
+@media only screen and (min-width: 479px) {
+    #header {
+        background: blue;
+    }
+}
+
+@media only screen and (min-width: 767px) {
+    #header {
+        background: green;
+    }
+}
+
+@media only screen and (min-width: 1023px) {
+    #header {
+        background: orange;
+    }
+}

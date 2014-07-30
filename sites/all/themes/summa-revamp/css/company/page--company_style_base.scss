@@ -1,0 +1,28 @@
+.canvas-company {
+  .row-description {
+    background: url(../../images/company-description-bakcround.jpg) no-repeat center bottom #5e5e5e;
+    height: 637px;
+    width: 100%;
+    text-align: center;
+    .panels-flexible-row-inside {
+      width: 640px;
+      margin: 0 auto;
+    }
+
+    .anchor-next {
+      display: block;
+      width: 40px;
+      height: 48px;
+      margin: 0 auto;
+      background-repeat: no-repeat;
+      background-position: -40px top;
+      background: url(../../images/anchor-next-sprites.png);
+      &.anchor-next-white {
+        background-position: -40px top;
+      }
+      &.anchor-next-gray {
+        background-position: left top;
+      }
+    }
+  }
+}
