@@ -5,7 +5,7 @@
 }
 
 #header.expanded #header-bottom {
-    margin: -151px 0 0 0;
+    margin: -192px 0 0 0;
     padding: 247px 49px 0;
     background: url("../../images/menu-background-mobile.jpg") no-repeat left -122px;
 }
@@ -45,6 +45,7 @@
     display: none;
     z-index: 20;
     position: relative;
+    margin-bottom: 41px;
 }
 
 #header #header-middle #block-menu-menu-summa-options .block-title {

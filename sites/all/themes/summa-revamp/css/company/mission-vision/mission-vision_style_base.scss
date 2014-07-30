@@ -1,0 +1,47 @@
+.canvas-company {
+  .row-mission-vision {
+    .col-left {
+      width: 100%;
+      float: none;
+      padding: 0;
+      margin: 0px 0px 1em;
+    }
+    .col-right {
+      width: 100%;
+      float: none;
+      .panels-flexible-region-inside {
+        padding-left: 0;
+      }
+    }
+    .about-us-container, .vision-container, .mission-container {
+      width: 100%;
+      padding: 0 46px;
+      text-align: left;
+      h2.pane-title {
+        font-family: Roboto;
+        font-size: 21px;
+        color: #666;
+        margin: 0 0 9px;
+        text-transform: uppercase;
+      }
+      .pane-content {
+        font-family: Roboto;
+        font-size: 16px;
+        font-weight: lighter;
+        color: #333;
+        p {
+          margin: 0;
+        }
+        a {
+          text-decoration: none;
+          font-weight: normal;
+          color: inherit;
+          &:hover {
+            text-decoration: underline;
+
+          }
+        }
+      }
+    }
+  }
+}

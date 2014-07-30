@@ -11,7 +11,7 @@ $header-top-height: 122px;
 
   &.expanded {
     #header-bottom {
-      margin: -151px 0 0 0;
+      margin: -192px 0 0 0;
       padding: (151px + 96px) 49px 0; //96 px inherited
       background: url('../../images/menu-background-mobile.jpg') no-repeat left (0-$header-top-height);
     }
@@ -51,6 +51,7 @@ $header-top-height: 122px;
     display: none;
     z-index: 20;
     position: relative;
+    margin-bottom: 41px;
 
     #block-menu-menu-summa-options {
 
