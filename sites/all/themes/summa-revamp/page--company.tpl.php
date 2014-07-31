@@ -6,7 +6,7 @@
  * Time: 12:00 PM
  */
 
-/* Layout style */
+/* Layout */
 drupal_add_js( drupal_get_path( 'theme', 'summa_revamp' ) . '/js/jquery.dotdotdot.min.js' );
 drupal_add_css( drupal_get_path( 'theme', 'summa_revamp' ) . '/css/company/page--company.css' );
 /* Company Description Block */
@@ -14,5 +14,7 @@ drupal_add_css( drupal_get_path( 'theme', 'summa_revamp' ) . '/css/company/compa
 drupal_add_js( drupal_get_path( 'theme', 'summa_revamp' ) . '/js/company/company-description/skin.js' );
 /* Mission & Vision */
 drupal_add_css( drupal_get_path( 'theme', 'summa_revamp' ) . '/css/company/mission-vision/mission-vision.css' );
+/* Manifesto */
+drupal_add_css( drupal_get_path( 'theme', 'summa_revamp' ) . '/css/company/manifesto/manifesto.css' );
 
 include( 'templates/page.tpl.php' );
