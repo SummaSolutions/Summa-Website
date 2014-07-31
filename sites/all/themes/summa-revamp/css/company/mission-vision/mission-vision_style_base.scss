@@ -24,24 +24,6 @@
         margin: 0 0 9px;
         text-transform: uppercase;
       }
-      .pane-content {
-        font-family: Roboto;
-        font-size: 16px;
-        font-weight: lighter;
-        color: #333;
-        p {
-          margin: 0;
-        }
-        a {
-          text-decoration: none;
-          font-weight: normal;
-          color: inherit;
-          &:hover {
-            text-decoration: underline;
-
-          }
-        }
-      }
     }
   }
 }
