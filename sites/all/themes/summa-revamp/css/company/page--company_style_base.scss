@@ -28,21 +28,21 @@
       width: 640px;
       margin: 0 auto;
     }
+  }
 
-    .anchor-next {
-      display: block;
-      width: 40px;
-      height: 48px;
-      margin: 0 auto;
-      background-repeat: no-repeat;
+  .anchor-next {
+    display: block;
+    width: 40px;
+    height: 48px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: -40px top;
+    background: url(../../images/anchor-next-sprites.png);
+    &.anchor-next-white {
       background-position: -40px top;
-      background: url(../../images/anchor-next-sprites.png);
-      &.anchor-next-white {
-        background-position: -40px top;
-      }
-      &.anchor-next-gray {
-        background-position: left top;
-      }
+    }
+    &.anchor-next-gray {
+      background-position: left top;
     }
   }
   .row-white, .row-mission-vision {
@@ -52,6 +52,7 @@
       text-align: center;
       font-size: 41px;
       font-weight: normal;
+      margin: 41px auto;
     }
   }
 }

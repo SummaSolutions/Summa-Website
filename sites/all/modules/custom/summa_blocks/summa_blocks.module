@@ -18,7 +18,77 @@ function summa_blocks_theme()
     $themes["location"] = array(
         "template" => "templates/location"
     );
+    $themes["clients-grid"] = array(
+        "function" => "summa_blocks_clients_grid"
+    );
+    $themes["clients-grid-block"] = array(
+        "template" => "templates/clients"
+    );
+    $themes["clients-grid-ajax"] = array(
+        "function" => "summa_blocks_clients_grid_ajax"
+    );
     return $themes;
+}
+
+function summa_blocks_menu()
+{
+    $items['ajax/views/clients'] = array(
+        'page callback' => 'theme',
+        'page arguments' => array( 'clients-grid-ajax' ),
+        'access callback' => true,
+        'type' => MENU_CALLBACK,
+    );
+    return $items;
+}
+
+function summa_blocks_clients_grid()
+{
+
+    $end = false;
+    $offset = 0;
+    $render = _clients_get_grid( $end, $offset );
+
+    return theme( "clients-grid-block", array( "view_result" => $render, "isEnd" => $end ) );
+}
+
+function _clients_get_grid( &$end, $offset = 0, $itemsPerPage = 9 )
+{
+    $view = views_get_view( "clients" );
+    $view->set_display( "grid" );
+    $view->set_items_per_page( $itemsPerPage );
+    $view->set_offset( $offset );
+    $view->execute();
+
+    $view_result = $view->render();
+
+
+    // Next page
+    $view = views_get_view( "clients" );
+    $view->set_display( "grid" );
+    $view->set_items_per_page( $itemsPerPage );
+    $view->set_offset( $offset + $itemsPerPage );
+    $view->execute();
+
+    $end = ( count( $view->result ) == 0 );
+
+    return $view_result;
+}
+
+function summa_blocks_clients_grid_ajax()
+{
+
+    $offset = ( isset( $_GET["offset"] ) ) ? (int)$_GET["offset"] : 0;
+    $itemsPerPage = ( isset( $_GET["itemsPerPage"] ) ) ? (int)$_GET["itemsPerPage"] : 15;
+
+    $end = false;
+    $view_result = _clients_get_grid( $end, $offset, $itemsPerPage );
+
+
+    $json["html"] = $view_result;
+    $json["end"] = $end;
+
+    echo json_encode( $json );
+
 }
 
 /**
@@ -61,6 +131,9 @@ function summa_blocks_block_info()
     );
     $blocks['location'] = array(
         'info' => t( 'Summa Location' ),
+    );
+    $blocks['clients-grid'] = array(
+        'info' => t( 'Clients Grid' ),
     );
 
     return $blocks;
@@ -128,6 +201,10 @@ function summa_blocks_block_view( $delta = '' )
         case 'location':
             $block['subject'] = t( '' );
             $block['content'] = theme( "location", array() );
+            break;
+        case 'clients-grid':
+            $block['subject'] = t( '' );
+            $block['content'] = theme( "clients-grid", array() );
             break;
     }
     return $block;
