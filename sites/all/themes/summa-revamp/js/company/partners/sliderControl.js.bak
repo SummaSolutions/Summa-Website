@@ -1,0 +1,87 @@
+var parSliderSelector = ".partners-container .bxslider";
+ */
+
+//(function(){
+
+    var groupEach = 3;
+
+/*
+    function _readjustDomSlides(){
+        var slides = jQuery(parSliderSelector + ":not(.bx-clone) .group-container");
+        var parent = jQuery(parSliderSelector + ":not(.bx-clone) .group-container").parent();
+        slides.detach();
+
+        for( var i = 0; i < slides.length; i++){
+            parent.append(slides.children(i));
+        }
+
+
+    }
+*/
+    function _adjustDomSlides(){
+        var slides = jQuery(".partners-container .jquery-only-tablet .bxslider .views-row");
+        var parent = jQuery(".partners-container .jquery-only-tablet .bxslider .views-row").parent();
+        slides.detach();
+        slides.removeAttr("style");
+
+
+        for( var i = 0; i < (slides.length/groupEach); i++){
+
+            var container = jQuery("<div></div>").addClass("group-container");
+            container.append(slides.slice(i*groupEach, i*groupEach+groupEach));
+            container.appendTo(parent);
+        }
+
+    }
+
+    var slider;
+
+    function _initSlider(){
+        slider = jQuery(parSliderSelector).bxSlider({
+            wrapperClass: 'bx-wrapper bx-wrapper-green',
+            speed: 300,
+            auto: true,
+            preventDefaultSwipeX: true,
+            pager : false
+        });
+    }
+/*
+    function _destroySlider(){
+        jQuery(parSliderSelector).bxSlider().destroySlider();
+
+        var slider = jQuery(parSliderSelector);
+        var wrapper = jQuery(parSliderSelector).parent().parent();
+        var parent = wrapper.parent();
+        parent.html("");
+        parent.append(slider);
+
+    }
+*/
+
+function _mobile(){
+    jQuery(".jquery-only-tablet").hide();
+    jQuery(".jquery-only-mobile").show();
+    slider.reloadSlider();
+}
+function _tablet(){
+    jQuery(".jquery-only-tablet").show();
+    jQuery(".jquery-only-mobile").hide();
+    slider.reloadSlider();
+}
+
+
+    jQuery(document).ready(function(){
+        _adjustDomSlides();
+        _initSlider();
+        if( jQuery("body").hasClass("breakpoint-641") ){
+            _tablet();
+        }else{
+            _mobile();
+        }
+
+        jQuery(window).bind("enterBreakpoint641", _tablet);
+        jQuery(window).bind("exitBreakpoint641", _mobile);
+    });
+
+
+//})();
