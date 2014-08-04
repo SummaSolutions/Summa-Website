@@ -45,7 +45,11 @@
       background-position: left top;
     }
   }
-  .row-white, .row-mission-vision {
+
+  .row-dashed {
+    background: url(../../images/dashed-horizonal-background.png) repeat-x center 231px;
+  }
+  .row-white, .row-mission-vision, .row-dashed {
     h1 {
       font-family: Ruda;
       color: #333;
