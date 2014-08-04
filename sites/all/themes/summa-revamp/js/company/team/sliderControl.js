@@ -17,8 +17,8 @@
 
     function _adjustDomSlides(groupEach) {
 
-        var slides = jQuery(teamSliderSelector + " .views-row:not(.bx-clone)");
-        var parent = jQuery(teamSliderSelector + " .views-row:not(.bx-clone)").parent();
+        var slides = jQuery(teamSliderSelector + " > .views-row");
+        var parent = jQuery(teamSliderSelector + " > .views-row").parent();
         slides.detach();
         slides.removeAttr("style");
 
