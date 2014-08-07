@@ -78,4 +78,12 @@
       font-size: 17px;
     }
   }
+  .footer-green-row {
+    a, .title {
+      color: #fff;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
 }
