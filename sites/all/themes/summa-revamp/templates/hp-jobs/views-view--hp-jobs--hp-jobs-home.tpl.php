@@ -26,7 +26,7 @@
  * @ingroup views_templates
  */
 
-drupal_add_css( drupal_get_path( "theme", "summa_revamp" ) . "/css/hp-jobs/hp-jobs.css" );
+drupal_add_css( drupal_get_path( "theme", "summa_revamp" ) . "/css/hp-jobs-home/hp-jobs.css" );
 drupal_add_css( drupal_get_path( "theme", "summa_revamp" ) . "/css/jquery.bxslider.css" );
 drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.bxslider.min.js" );
 drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/hp-jobs/sliderControl.js" );

@@ -49,7 +49,7 @@
   .row-dashed {
     background: url(../../images/dashed-horizonal-background.png) repeat-x center 231px;
   }
-  .row-white, .row-mission-vision, .row-dashed {
+  .row-white, .row-mission-vision, .row-dashed, .row-current-openings {
     h1 {
       font-family: Ruda;
       color: #333;
@@ -64,6 +64,18 @@
       font-size: 20px;
       text-align: center;
       margin: 58px auto;
+    }
+    h2.pane-title {
+      font-family: Roboto;
+      font-size: 21px;
+      color: #666;
+      margin: 0 0 9px;
+      text-transform: uppercase;
+    }
+  }
+  .row-current-openings {
+    h2.pane-title {
+      font-size: 17px;
     }
   }
 }

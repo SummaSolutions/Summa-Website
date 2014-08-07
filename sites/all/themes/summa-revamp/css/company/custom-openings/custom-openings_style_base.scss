@@ -1,0 +1,43 @@
+.canvas-company {
+  .row-current-openings {
+    .col-left {
+      width: 100%;
+      float: none;
+      padding: 0;
+      margin: 0px 0px 1em;
+    }
+    .col-right {
+      width: 100%;
+      float: none;
+      .panels-flexible-region-inside {
+        padding-left: 0;
+      }
+    }
+    .benefits-container {
+      width: 100%;
+      padding: 0 46px;
+      text-align: left;
+    }
+    h2 {
+      margin: 0;
+    }
+    p {
+      margin: 0 0 28px;
+    }
+    ul {
+      padding: 0;
+      margin: 0 0 56px 0;
+      list-style: none;
+
+      li {
+        line-height: 36px;
+        &:before {
+          font-family: Arial;
+          content: "· ";
+          vertical-align: middle;
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}
