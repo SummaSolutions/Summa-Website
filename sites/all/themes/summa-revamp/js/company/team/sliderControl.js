@@ -1,6 +1,6 @@
-(function () {
+//(function () {
 
-    var groupEachMobile = 3;
+var groupEachMobile = 3;
     var groupEachTablet = 5;
     var slider;
     var teamSliderSelector = ".team-container .bxslider";
@@ -67,4 +67,4 @@
     });
 
 
-})();
+//})();
