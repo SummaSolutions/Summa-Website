@@ -1,4 +1,7 @@
-  ; The name and description of the theme used on the admin/build/themes page.
+  ; The name and description of (this).find(".position-container").slideUp({
+                    duration: 100,
+                    easing: "linear"
+                });the theme used on the admin/build/themes page.
 name        = Summa Solutions (revamp)
 description = Site Version 2014
 
@@ -14,17 +17,17 @@ core       = 7.x
 base theme = zen
 
 
-regions[help]           = Help
-regions[sidebar_first]  = First sidebar
-regions[sidebar_second] = Second sidebar
-regions[navigation]     = Navigation bar
+;regions[help]           = Help
+;regions[sidebar_first]  = First sidebar
+;regions[sidebar_second] = Second sidebar
+;regions[navigation]     = Navigation bar
 regions[highlight]      = Highlighted content
 regions[content]        = Content
 regions[header]         = Header
-regions[footer]         = Footer
-regions[bottom]         = Page bottom
-regions[page_top]       = Page top
-regions[page_bottom]    = Page bottom
+;regions[footer]         = Footer
+;regions[bottom]         = Page bottom
+;regions[page_top]       = Page top
+;regions[page_bottom]    = Page bottom
 
 
   ; Set the default settings to be used in theme-settings.php

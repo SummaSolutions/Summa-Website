@@ -133,11 +133,11 @@
     display: inline-block;
 }
 
-#header #header-middle #block-summa-blocks-social-media ul li.icon-twitter a {
+#header #header-middle #block-summa-blocks-social-media ul li.icon-facebook a {
     background-position: 0 0;
 }
 
-#header #header-middle #block-summa-blocks-social-media ul li.icon-facebook a {
+#header #header-middle #block-summa-blocks-social-media ul li.icon-twitter a {
     background-position: -99px 0;
 }
 

@@ -246,8 +246,8 @@ function block_social_media()
       <ul class="social">
         <!--li ><a href="/blog" id="blog-suckerfish"><img src="/sites/all/themes/summa/images/ico_blogs.png" align="absmiddle" />Blogs</a></li-->
         <li class="hide-text icon-facebook"><a href="http://www.facebook.com/summasolutions" target="_blank" id="fb"></a></li>
-        <li class="hide-text icon-google_plus"><a href="https://plus.google.com/u/0/106660552440793124620/posts" target="_blank" id="gplus"></a></li>
         <li class="hide-text icon-twitter"><a href="http://www.twitter.com/summasolutions" target="_blank" id="twitter"></a></li>
+        <li class="hide-text icon-google_plus"><a href="https://plus.google.com/u/0/106660552440793124620/posts" target="_blank" id="gplus"></a></li>
         <li class="hide-text icon-linkedin"><a href="http://www.linkedin.com/company/summa-solutions" target="_blank" id="lkn"></a></li>
       </ul>
     ';
