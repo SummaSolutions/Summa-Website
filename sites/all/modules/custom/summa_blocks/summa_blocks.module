@@ -27,6 +27,9 @@ function summa_blocks_theme()
     $themes["clients-grid-ajax"] = array(
         "function" => "summa_blocks_clients_grid_ajax"
     );
+    $themes["contact-form"] = array(
+        "template" => "templates/contact_form"
+    );
     return $themes;
 }
 
@@ -37,6 +40,13 @@ function summa_blocks_menu()
         'page arguments' => array( 'clients-grid-ajax' ),
         'access callback' => true,
         'type' => MENU_CALLBACK,
+    );
+    $items['ajax/contact'] = array(
+        'page callback' => 'summa_blocks_ajax_contact',
+        'delivery callback' => 'drupal_json_output',
+        'access callback' => true,
+        'type' => MENU_CALLBACK,
+        'file' => 'summa_blocks_ajax_callback.inc'
     );
     return $items;
 }
@@ -135,6 +145,9 @@ function summa_blocks_block_info()
     $blocks['clients-grid'] = array(
         'info' => t( 'Clients Grid' ),
     );
+    $blocks['contact-form'] = array(
+        'info' => t( 'Contact form' ),
+    );
 
     return $blocks;
 }
@@ -205,6 +218,10 @@ function summa_blocks_block_view( $delta = '' )
         case 'clients-grid':
             $block['subject'] = t( '' );
             $block['content'] = theme( "clients-grid", array() );
+            break;
+        case 'contact-form':
+            $block['subject'] = t( '' );
+            $block['content'] = theme( "contact-form", array() );
             break;
     }
     return $block;

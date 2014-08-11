@@ -45,6 +45,21 @@
       background-position: left top;
     }
   }
+  .anchor-prev {
+    display: block;
+    width: 40px;
+    height: 48px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: -40px top;
+    background: url(../../images/anchor-prev-sprites.png);
+    &.anchor-prev-white {
+      background-position: -40px top;
+    }
+    &.anchor-prev-gray {
+      background-position: left top;
+    }
+  }
 
   .row-dashed {
     background: url(../../images/dashed-horizonal-background.png) repeat-x center 231px;
@@ -79,6 +94,12 @@
     }
   }
   .footer-green-row {
+
+    .pane-content {
+      a {
+        font-weight: lighter;
+      }
+    }
     a, .title {
       color: #fff;
       &:hover {

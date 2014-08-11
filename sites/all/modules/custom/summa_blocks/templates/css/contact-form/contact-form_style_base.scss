@@ -1,0 +1,76 @@
+#contact-form-container {
+  text-align: center;
+  padding: 0 116px;
+  .anchor-prev {
+    margin: 12px auto 44px;
+  }
+  .subtitle {
+    margin: 0;
+  }
+  form {
+    margin: 19px 0 0 0;
+    transition: visibility 2s;
+    visibility: visible;
+
+    input[type=text], textarea {
+      background-color: #ebebeb;
+      color: #333;
+      border: 1px solid #999;
+      border-radius: 4px;
+      width: 100%;
+      font-family: Arial;
+      font-size: 10px;
+      padding: 18px 24px;
+      margin: 0 0 13px;
+      resize: vertical;
+
+      &.error {
+        color: #f00;
+      }
+    }
+    input[type=reset] {
+      font-family: Arial;
+      font-size: 10px;
+      color: #999;
+      border: none;
+      background: none;
+      text-decoration: underline;
+      margin: 19px 0 0 48px;
+      padding: 0;
+      outline: none;
+      float: left;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+    input[type=submit] {
+      float: right;
+      font-family: Arial;
+      font-size: 10px;
+      color: #999;
+      border-radius: 4px;
+      border: 1px solid #999;
+      background: none;
+      outline: 0px;
+      padding: 18px 104px;
+      cursor: pointer;
+    }
+
+  }
+  .msg {
+    width: 100%;
+    color: #fff;
+    font-family: Roboto;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 14px;
+    padding: 12px;
+    margin: 20px auto;
+    display: none;
+    &.msg-ok {
+      background: #8db234;
+    }
+    &.msg-error {
+      background: #eb5e4c;
+    }
+  }
+}
