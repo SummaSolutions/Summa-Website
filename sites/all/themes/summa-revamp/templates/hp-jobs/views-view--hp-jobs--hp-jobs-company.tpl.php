@@ -28,7 +28,10 @@
 
 drupal_add_css( drupal_get_path( "theme", "summa_revamp" ) . "/css/hp-jobs-company/hp-jobs.css" );
 ?>
-
-<?php if ( $rows ): ?>
-    <?php print $rows; ?>
-<?php endif; ?>
+<div id="hp-jobs-container">
+    <div class="pane-content">
+        <?php if ( $rows ): ?>
+            <?php print $rows; ?>
+        <?php endif; ?>
+    </div>
+</div>

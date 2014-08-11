@@ -32,10 +32,12 @@ drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/company/team/sl
 drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/company/team/skin.js" );
 drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.dotdotdot.min.js" );
 ?>
-<div class="bxslider safe-container">
-    <?php
-    print $rows;
-    ?>
+<div class="team-container">
+    <div class="bxslider safe-container">
+        <?php
+        print $rows;
+        ?>
+    </div>
+    <div class="subtitle clearfix"><?php echo t( 'take a look to our current openings...' ); ?></div>
+    <a class="anchor-next anchor-next-gray"></a>
 </div>
-<div class="subtitle clearfix"><?php echo t( 'take a look to our current openings...' ); ?></div>
-<a class="anchor-next anchor-next-gray"></a>
