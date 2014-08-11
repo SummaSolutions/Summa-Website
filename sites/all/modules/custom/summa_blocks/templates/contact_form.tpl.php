@@ -15,7 +15,7 @@ drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.form-val
     </span>
 
     <div class="msg msg-ok">
-        <?php echo t( 'Message sent.' ); ?>
+        <?php echo t( 'Your message was sent successfully. Thanks.' ); ?>
     </div>
     <div class="msg msg-error">
         <?php echo t( 'An error ocurred, please try again.' ); ?>
