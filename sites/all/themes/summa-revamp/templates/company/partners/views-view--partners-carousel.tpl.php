@@ -21,9 +21,9 @@ drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/company/partner
 drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.dotdotdot.min.js" );
 drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/company/partners/skin.js" );
 ?>
-<div class="slider-container">
-    <div class="bxslider safe-container">
-        <?php
+<div class="slider-container safe-container">
+    <div class="bxslider">
+    <?php
         print $rows;
         ?>
     </div>
