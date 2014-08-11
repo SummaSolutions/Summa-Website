@@ -30,6 +30,9 @@
     margin: 0 auto;
     font-size: 20px;
     font-weight: lighter;
+    color: #333;
+    line-height: 29px;
+    text-decoration: none;
 }
 
 .clients-wrapper .more-container a.more:hover {
