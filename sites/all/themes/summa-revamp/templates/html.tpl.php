@@ -64,6 +64,7 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes; ?>>
+<a name="top" class="anchor-target"></a>
 <?php print $page_top; ?>
 <?php print $page; ?>
 <?php print $page_bottom; ?>

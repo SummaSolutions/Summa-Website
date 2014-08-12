@@ -43,5 +43,5 @@ $pad = '<div class="views-row views-row-pad">
     <?php
     endif;
     ?>
-    <a class="anchor-next anchor-next-gray"></a>
+    <a class="anchor-next anchor-next-gray" href="#partners"></a>
 </div>

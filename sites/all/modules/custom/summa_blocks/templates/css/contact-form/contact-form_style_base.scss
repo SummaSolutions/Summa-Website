@@ -22,11 +22,13 @@
       font-size: 10px;
       padding: 18px 24px;
       margin: 0 0 13px;
-      resize: vertical;
 
       &.error {
         color: #f00;
       }
+    }
+    textarea {
+      resize: vertical;
     }
     input[type=reset] {
       font-family: Arial;

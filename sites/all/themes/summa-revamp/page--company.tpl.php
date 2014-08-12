@@ -8,6 +8,7 @@
 
 /* Layout */
 drupal_add_js( drupal_get_path( 'theme', 'summa_revamp' ) . '/js/jquery.dotdotdot.min.js' );
+drupal_add_js( drupal_get_path( 'theme', 'summa_revamp' ) . '/js/company/skin.js' );
 drupal_add_css( drupal_get_path( 'theme', 'summa_revamp' ) . '/css/company/page--company.css' );
 /* Company Description Block */
 drupal_add_css( drupal_get_path( 'theme', 'summa_revamp' ) . '/css/company/company-description/company-description.css' );

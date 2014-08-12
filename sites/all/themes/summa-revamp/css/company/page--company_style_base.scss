@@ -120,4 +120,12 @@
     height: 876px;
     margin: -240px  0 -140px;
   }
+
+  .panel-pane {
+    //    position: relative;
+  }
+  a.anchor-target {
+    position: absolute;
+    top: 0;
+  }
 }
