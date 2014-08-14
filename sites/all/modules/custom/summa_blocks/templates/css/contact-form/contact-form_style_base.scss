@@ -13,7 +13,7 @@
     visibility: visible;
 
     input[type=text], textarea {
-      background-color: #ebebeb;
+      background: #ebebeb;
       color: #333;
       border: 1px solid #999;
       border-radius: 4px;
@@ -21,7 +21,11 @@
       font-family: Arial;
       font-size: 10px;
       padding: 18px 24px;
-      margin: 0 0 13px;
+      &:not(.scombobox-display) {
+        margin: 0 0 13px;
+      }
+      box-shadow: none;
+      height: auto;
 
       &.error {
         color: #f00;
@@ -73,6 +77,32 @@
     }
     &.msg-error {
       background: #eb5e4c;
+    }
+  }
+}
+
+.combobox-container {
+  height: 51px;
+  width: 100%;
+  .scombobox {
+    margin: 0;
+    .scombobox-dropdown-background {
+      background: none;
+      border: 0;
+    }
+    .scombobox-list {
+      background: #ebebeb;
+      font-family: Arial;
+      font-size: 10px;
+      color: #000;
+      text-align: left;
+
+      p {
+        padding: 10px 25px 9px;
+        &:hover, &.scombobox-hovered {
+          background: #e3e3e3;
+        }
+      }
     }
   }
 }

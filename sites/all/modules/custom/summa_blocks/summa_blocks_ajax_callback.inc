@@ -4,7 +4,6 @@
  */
 function summa_blocks_ajax_contact()
 {
-
     global $user;
 
     $name = ( isset( $_POST["name"] ) ? $_POST["name"] : "" );
@@ -46,5 +45,5 @@ function summa_blocks_ajax_contact()
 
     webform_submission_send_mail( $node, $submission );
 
-    return array( "hola" );
+    return;
 }

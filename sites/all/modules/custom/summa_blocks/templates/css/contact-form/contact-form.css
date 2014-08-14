@@ -18,7 +18,7 @@
 }
 
 #contact-form-container form input[type=text], #contact-form-container form textarea {
-    background-color: #ebebeb;
+    background: #ebebeb;
     color: #333;
     border: 1px solid #999;
     border-radius: 4px;
@@ -26,6 +26,11 @@
     font-family: Arial;
     font-size: 10px;
     padding: 18px 24px;
+    box-shadow: none;
+    height: auto;
+}
+
+#contact-form-container form input[type=text]:not(.scombobox-display), #contact-form-container form textarea:not(.scombobox-display) {
     margin: 0 0 13px;
 }
 
@@ -83,6 +88,36 @@
 
 #contact-form-container .msg.msg-error {
     background: #eb5e4c;
+}
+
+.combobox-container {
+    height: 51px;
+    width: 100%;
+}
+
+.combobox-container .scombobox {
+    margin: 0;
+}
+
+.combobox-container .scombobox .scombobox-dropdown-background {
+    background: none;
+    border: 0;
+}
+
+.combobox-container .scombobox .scombobox-list {
+    background: #ebebeb;
+    font-family: Arial;
+    font-size: 10px;
+    color: #000;
+    text-align: left;
+}
+
+.combobox-container .scombobox .scombobox-list p {
+    padding: 10px 25px 9px;
+}
+
+.combobox-container .scombobox .scombobox-list p:hover, .combobox-container .scombobox .scombobox-list p.scombobox-hovered {
+    background: #e3e3e3;
 }
 
 @media only screen and (min-width: 641px) {

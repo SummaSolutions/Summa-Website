@@ -1,4 +1,14 @@
 jQuery(document).ready(function () {
+
+    jQuery("select").scombobox({ highlight: false, empty: true, invalidAsValue: true });
+
+    jQuery(".scombobox").each(function () {
+        jQuery(this).find("input.scombobox-display").attr("data-validation", jQuery(this).find("select").attr("data-validation"));
+        jQuery(this).find("input.scombobox-display").attr("placeholder", jQuery(this).find("select").attr("placeholder"));
+        jQuery(this).find("input.scombobox-display").attr("name", jQuery(this).find("select").attr("name"));
+        jQuery(this).find("select").attr("name", "");
+    });
+
     jQuery.validate({
         form: "#contact-form",
         showHelpOnFocus: false,
