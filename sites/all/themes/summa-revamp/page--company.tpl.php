@@ -19,4 +19,11 @@ drupal_add_css( drupal_get_path( 'theme', 'summa_revamp' ) . '/css/company/missi
 drupal_add_css( drupal_get_path( 'theme', 'summa_revamp' ) . '/css/company/manifesto/manifesto.css' );
 /* Are you looking for a change? */
 drupal_add_css( drupal_get_path( 'theme', 'summa_revamp' ) . '/css/company/custom-openings/custom-openings.css' );
+
+
+?>
+    <div class="fixed-anchor">
+        <a class="anchor-prev anchor-prev-gray" href="#top"></a>
+    </div>
+<?php
 include( 'templates/page.tpl.php' );

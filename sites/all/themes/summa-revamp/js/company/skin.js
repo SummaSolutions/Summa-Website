@@ -14,8 +14,17 @@ jQuery(document).ready(function () {
         e.preventDefault();
         return _scroll(this, 1000);
     });
+
     jQuery("a.anchor-prev").click(function (e) {
         e.preventDefault();
         return _scroll(this, 1000);
     });
+});
+
+
+jQuery(window).scroll(function () {
+    if (jQuery("html").scrollTop() > 285)
+        jQuery(".fixed-anchor").fadeIn("fast");
+    else
+        jQuery(".fixed-anchor").fadeOut("fast");
 });

@@ -11,10 +11,16 @@
     border: 1px solid #c2c2c2;
     float: left;
     margin: 0 12px 12px 0;
+    position: relative;
 }
 
 .clients-wrapper .clients-container .views-field-field-picture img {
-    height: 100%;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
 }
 
 .clients-wrapper .more-container {
