@@ -87,6 +87,7 @@
     #latest-posts-container h2.pane-title {
         font-size: 34px;
         margin: 0 0 31px;
+        padding: 0;
     }
 
     #latest-posts-container .views-field-title {

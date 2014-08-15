@@ -80,12 +80,13 @@
         font-size: 64px;
         font-weight: normal;
         margin-top: 27px;
+        padding: 0 46px;
     }
 
     #services-list-container .subtitle {
         width: 375px;
         font-size: 18px;
-        margin: 0 0 80px;
+        margin: 0 46px 80px;
         height: 69px;
     }
 

@@ -4,15 +4,15 @@ $grayBorder: #fff;
   background: url(../../images/hp-jobs-background-tablet.png) no-repeat 84px 70px;
   height: auto;
   margin: 0 auto 70px;
-  //  text-align: center;
+  text-align: left;
   padding: 0 85px 0 377px;
   width: 1000px;
 
   h2.pane-title {
     font-size: 32px;
-    //    margin: 0;
+    margin: 0px 0px 31px;
     //    font-weight: normal;
-    //    padding: 0 36px;
+    padding: 0;
   }
 
   .views-field-field-ico {
@@ -51,14 +51,14 @@ $grayBorder: #fff;
     //    z-index: 20;
     border: 0;
     border-radius: none;
-    margin-top: 0;
+    margin: 0 0 22px;
     padding: 0;
     height: auto;
     text-align: left;
     width: 276px;
     .title {
       //      font-family: roboto;
-      //      //font-weight: bold;
+      font-weight: bold;
       font-size: 16px;
       max-height: none;
       //      overflow: hidden;
