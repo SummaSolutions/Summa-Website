@@ -59,6 +59,23 @@ a:focus {
     background: #8db234;
 }
 
+.fixed-anchor {
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 999;
+}
+
+.fixed-anchor .anchor-prev {
+    display: block;
+    width: 44px;
+    height: 53px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background: url(../../images/anchor-prev-fixed.png);
+}
+
 @media only screen and (min-width: 641px) {
     #page-wrapper {
         width: 100%;
@@ -89,7 +106,7 @@ a:focus {
 
     /** LAYOUTS **/
     .dashed-row {
-        background: url(../../images/service-list-horizontal-dashed-background-mobile.gif) repeat-x left 464px;
+        background: url(../../images/service-list-horizontal-dashed-background-mobile.gif) repeat-x left 441px;
     }
 
     .green-row {

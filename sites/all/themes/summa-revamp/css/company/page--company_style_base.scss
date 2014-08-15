@@ -128,22 +128,3 @@
     top: 0;
   }
 }
-
-.fixed-anchor {
-  display: none;
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-}
-
-.fixed-anchor {
-
-  .anchor-prev {
-    display: block;
-    width: 44px;
-    height: 53px;
-    margin: 0 auto;
-    background-repeat: no-repeat;
-    background: url(../../images/anchor-prev-fixed.png);
-  }
-}

@@ -70,6 +70,9 @@
 drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/skin.js" );
 drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/breakpoints.js" );
 ?>
+<div class="fixed-anchor">
+    <a class="anchor-prev anchor-prev-gray" href="#top"></a>
+</div>
 <div id="page-wrapper">
     <div class="full-wrapper">
         <div class="safe-container">
