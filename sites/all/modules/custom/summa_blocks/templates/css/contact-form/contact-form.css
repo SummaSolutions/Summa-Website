@@ -25,7 +25,7 @@
     border-radius: 4px;
     width: 100%;
     font-family: Arial;
-    font-size: 10px;
+    font-size: 12px;
     padding: 18px 24px;
     box-shadow: none;
     height: auto;
@@ -45,7 +45,7 @@
 
 #contact-form-container form input[type=reset] {
     font-family: Arial;
-    font-size: 10px;
+    font-size: 11px;
     color: #999;
     border: none;
     background: none;
@@ -61,7 +61,7 @@
 #contact-form-container form input[type=submit] {
     float: right;
     font-family: Arial;
-    font-size: 10px;
+    font-size: 11px;
     color: #999;
     border-radius: 4px;
     border: 1px solid #999;
