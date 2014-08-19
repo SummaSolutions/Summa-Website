@@ -54,7 +54,7 @@ jQuery(document).ready(function () {
 
 
 jQuery(window).scroll(function () {
-    if (jQuery("html").scrollTop() > 285)
+    if (jQuery(jQuery.browser.webkit ? "body" : "html").scrollTop() > 285)
         jQuery(".fixed-anchor").fadeIn("fast");
     else
         jQuery(".fixed-anchor").fadeOut("fast");
