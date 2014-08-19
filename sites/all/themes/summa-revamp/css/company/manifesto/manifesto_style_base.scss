@@ -29,16 +29,10 @@
           }
         }
         li {
-          //          list-style: url(../../../images/accordion-collapsed.gif);
-          //          padding: 0 0 0 4px;
           &.gv-accordion-active {
-            //            list-style: url(../../../images/accordion-expanded.gif);
             .views-field-title {
-              //              border: none;
+              border: none;
             }
-          }
-          li {
-            //            list-style-image: none;
           }
           .views-field-title {
             cursor: pointer;
