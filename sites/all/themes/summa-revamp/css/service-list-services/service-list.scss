@@ -1,0 +1,6 @@
+@import "../global";
+@import "service-list_style_base";
+
+@media only screen and (min-width: $hdi-mobile-portrait) {
+  @import "service-list_style_640up";
+}

@@ -56,7 +56,7 @@
 }
 
 .canvas-company .row-description {
-    background: url(../../images/company-description-bakcround.jpg) no-repeat center bottom #5e5e5e;
+    background: url(../../images/company-description-background.jpg) no-repeat center bottom #5e5e5e;
     height: 637px;
     width: 100%;
     text-align: center;
@@ -124,11 +124,6 @@
     width: 100%;
     height: 876px;
     margin: -240px 0 -140px;
-}
-
-.canvas-company a.anchor-target {
-    position: absolute;
-    top: 0;
 }
 
 @media only screen and (min-width: 641px) {

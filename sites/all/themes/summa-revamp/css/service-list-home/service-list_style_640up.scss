@@ -1,6 +1,10 @@
 #services-list-container {
   text-align: left;
 
+  .subtitle {
+    padding: 0 0 73px 46px;
+    width: 456px;
+  }
   .views-row {
     width: 200px;
     display: block;
@@ -16,12 +20,6 @@
     font-weight: normal;
     margin-top: 27px;
     padding: 0 46px;
-  }
-  .subtitle {
-    width: 375px;
-    font-size: 18px;
-    margin: 0 46px 80px;
-    height: 69px;
   }
   .pane-content {
     .views-field-title {

@@ -1,21 +1,30 @@
 #services-list-container {
   color: #5d5e5e;
   text-align: center;
+  position: relative;
 
-  .views-row {
-    width: 100%;
-    height: 480px;
-    background: url(../../images/service-list-vertical-dashed-background-mobile.gif) center top repeat-y;
-    position: relative;
-  }
-  .views-row-first {
-    background-position: center 50px;
+  .subtitle {
+    padding: 0 36px 73px;
+    text-align: left;
+    font-size: 18px;
+    line-height: 24px;
   }
 
   .pane-title {
     font-size: 70px;
   }
-  .pane-content {
+
+  .path-container {
+    .views-row {
+      width: 100%;
+      height: 480px;
+      background: url(../../images/service-list-vertical-dashed-background-mobile.gif) center top repeat-y;
+      position: relative;
+    }
+    .views-row-first {
+      background-position: center 50px;
+    }
+
     .views-field-title {
       font-size: 36px;
       font-weight: bold;
@@ -26,6 +35,9 @@
       }
     }
     .views-field-field-subtitle {
+      display: none;
+    }
+    .views-field-body {
       display: none;
     }
     .views-field-field-picture-whyus {
@@ -60,5 +72,4 @@
       }
     }
   }
-
 }

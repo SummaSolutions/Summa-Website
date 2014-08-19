@@ -76,6 +76,11 @@ a:focus {
     background: url(../../images/anchor-prev-fixed.png);
 }
 
+a.anchor-target {
+    position: absolute;
+    top: 0;
+}
+
 @media only screen and (min-width: 641px) {
     #page-wrapper {
         width: 100%;
