@@ -11,6 +11,38 @@
     }
   }
 
+  .pane-content {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: lighter;
+    color: #333;
+    p {
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+      font-weight: normal;
+      color: inherit;
+      &:hover {
+        text-decoration: underline;
+
+      }
+    }
+  }
+  .footer-green-row {
+
+    .pane-content {
+      a {
+        font-weight: lighter;
+      }
+    }
+    a, .title {
+      color: #fff;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
   .anchor-next {
     display: block;
     width: 40px;

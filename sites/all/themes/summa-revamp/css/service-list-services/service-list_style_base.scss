@@ -62,7 +62,8 @@
         padding: 22px 35px;
         margin: 0 -71px; // left 50% at center
         width: auto;
-        display: inline;
+        display: inline-block;
+        height: auto;
         position: absolute;
         bottom: 49px;
         text-transform: uppercase;
