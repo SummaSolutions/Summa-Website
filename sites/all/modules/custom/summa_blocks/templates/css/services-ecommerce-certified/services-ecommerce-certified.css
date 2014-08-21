@@ -1,0 +1,91 @@
+@charset "UTF-8";
+.ecommerce-certified {
+    padding: 0 36px;
+    position: relative;
+}
+
+.ecommerce-certified .features-container {
+    float: left;
+    width: 283px;
+    padding: 0 0 136px;
+}
+
+.ecommerce-certified .features-container ul {
+    padding: 0;
+    margin: 12px 0 56px 0;
+    list-style: none;
+}
+
+.ecommerce-certified .features-container ul li {
+    line-height: 24px;
+    margin: 0px 0px 12px;
+}
+
+.ecommerce-certified .features-container ul li:before {
+    font-family: Arial;
+    content: "· ";
+    vertical-align: middle;
+    font-size: 25px;
+}
+
+.ecommerce-certified .certified-container {
+    text-align: center;
+    float: right;
+    width: 264px;
+}
+
+.ecommerce-certified .certified-container .row .certified-item {
+    margin: 15px 0 14px;
+}
+
+.ecommerce-certified .certified-container .row .certified-item.certified-left {
+    position: absolute;
+    left: 36px;
+    bottom: 0;
+}
+
+@media only screen and (min-width: 641px) {
+    .ecommerce-certified {
+        padding: 0 84px 72px;
+    }
+
+    .ecommerce-certified .features-container {
+        width: 324px;
+        padding: 0;
+    }
+
+    .ecommerce-certified .features-container ul {
+        margin: 0;
+    }
+
+    .ecommerce-certified .middle-line {
+        background: url(../../images/certified-line-background.gif) repeat-x left center;
+        width: 100%;
+    }
+
+    .ecommerce-certified .middle-line .white-mask {
+        background: #fff;
+        width: auto;
+        display: inline;
+        padding: 0 12px;
+    }
+
+    .ecommerce-certified .certified-container {
+        width: 495px;
+    }
+
+    .ecommerce-certified .certified-container .row {
+        padding: 13px 0 0 0;
+        height: auto;
+    }
+
+    .ecommerce-certified .certified-container .row .certified-item {
+        display: inline;
+        margin: 0 29px 0 29px;
+    }
+
+    .ecommerce-certified .certified-container .row .certified-item.certified-left {
+        position: static;
+        display: inline-block;
+    }
+}

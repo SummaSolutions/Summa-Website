@@ -1,0 +1,44 @@
+.ecommerce-certified {
+  padding: 0 36px;
+  position: relative;
+  .features-container {
+    float: left;
+    width: 283px;
+    padding: 0 0 136px;
+
+    ul {
+      padding: 0;
+      margin: 12px 0 56px 0;
+      list-style: none;
+
+      li {
+        line-height: 24px;
+        margin: 0px 0px 12px;
+        &:before {
+          font-family: Arial;
+          content: "· ";
+          vertical-align: middle;
+          font-size: 25px;
+        }
+      }
+    }
+
+  }
+
+  .certified-container {
+    text-align: center;
+    float: right;
+    width: 264px;
+    .row {
+      .certified-item {
+        margin: 15px 0 14px;
+        &.certified-left {
+          position: absolute;
+          left: 36px;
+          bottom: 0;
+        }
+      }
+    }
+  }
+
+}

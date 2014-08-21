@@ -30,6 +30,9 @@ function summa_blocks_theme()
     $themes["contact-form"] = array(
         "template" => "templates/contact_form"
     );
+    $themes["services-ecommerce-certified"] = array(
+        "template" => "templates/services--e-commerce--certified"
+    );
     return $themes;
 }
 
@@ -148,6 +151,9 @@ function summa_blocks_block_info()
     $blocks['contact-form'] = array(
         'info' => t( 'Contact form' ),
     );
+    $blocks['services-ecommerce-certified'] = array(
+        'info' => t( 'E-commerce Certifieds' ),
+    );
 
     return $blocks;
 }
@@ -222,6 +228,10 @@ function summa_blocks_block_view( $delta = '' )
         case 'contact-form':
             $block['subject'] = t( '' );
             $block['content'] = theme( "contact-form", array() );
+            break;
+        case 'services-ecommerce-certified':
+            $block['subject'] = t( '' );
+            $block['content'] = theme( "services-ecommerce-certified", array() );
             break;
     }
     return $block;

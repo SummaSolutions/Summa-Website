@@ -162,7 +162,7 @@ function summa_revamp_preprocess_page( &$variables )
         if ( $alias != $_GET['q'] ) {
             $template_filename = 'page';
             foreach ( explode( '/', $alias ) as $path_part ) {
-                $template_filename = $template_filename . '__' . $path_part;
+                $template_filename = $template_filename . '__' . str_replace( '-', '_', $path_part );
             }
             $variables['theme_hook_suggestions'][] = $template_filename;
         }

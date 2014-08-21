@@ -1,0 +1,38 @@
+.row-description {
+  .region-description-container {
+    text-align: center;
+    width: 640px;
+    padding: 0 60px;
+    margin: 0 auto;
+    h2.pane-title {
+      color: #fff;
+      font-family: Ruda;
+      font-size: 60px;
+      font-weight: bold;
+      margin: 71px 0 23px;
+    }
+
+    .pane-content {
+      font-family: Roboto;
+      color: #fff;
+      height: 432px;
+      padding: 0 0 68px;
+      font-size: 20px;
+      text-align: left;
+      .field {
+        max-height: 383px;
+      }
+    }
+    h3 {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+  }
+}
+
+.field-name-field-image-background {
+  display: none;
+}
