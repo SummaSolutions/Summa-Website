@@ -1,14 +1,10 @@
 .canvas-services {
 
-  .row-description {
-    background: url(../../images/services-description-background.jpg) no-repeat center bottom #5e5e5e;
+  .row-description .panels-flexible-region-canvas-services-center {
+    background: url(../../../images/services-description-background.jpg) no-repeat center bottom #5e5e5e;
     height: 637px;
     width: 100%;
     text-align: center;
-    .panels-flexible-row-inside {
-      width: 640px;
-      margin: 0 auto;
-    }
   }
 
   .pane-content {
@@ -17,7 +13,7 @@
     font-weight: lighter;
     color: #333;
     p {
-      margin: 0;
+      margin: 0 0 32px;
     }
     a {
       text-decoration: none;
@@ -28,7 +24,19 @@
 
       }
     }
+    h2, h3 {
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0 0 5px;
+    }
   }
+
+  .region-body-container {
+    margin: 33px auto 0;
+    padding: 38px 46px;
+  }
+
   .footer-green-row {
 
     .pane-content {
@@ -50,7 +58,7 @@
     margin: 0 auto;
     background-repeat: no-repeat;
     background-position: -40px top;
-    background: url(../../images/anchor-next-sprites.png);
+    background: url(../../../images/anchor-next-sprites.png);
     &.anchor-next-white {
       background-position: -40px top;
     }
@@ -65,7 +73,7 @@
     margin: 0 auto;
     background-repeat: no-repeat;
     background-position: -40px top;
-    background: url(../../images/anchor-prev-sprites.png);
+    background: url(../../../images/anchor-prev-sprites.png);
     &.anchor-prev-white {
       background-position: -40px top;
     }

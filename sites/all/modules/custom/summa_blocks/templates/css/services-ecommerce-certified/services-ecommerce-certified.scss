@@ -1,0 +1,7 @@
+$hdi-mobile-portrait: 641px;
+
+@import "services-ecommerce-certified_style_base";
+
+@media only screen and (min-width: $hdi-mobile-portrait) {
+  @import "services-ecommerce-certified_style_640up";
+}
