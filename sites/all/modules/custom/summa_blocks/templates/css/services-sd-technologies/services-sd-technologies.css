@@ -1,0 +1,55 @@
+.technologies-container {
+  padding: 0 46px 64px;
+  font-size: 16px; }
+  .technologies-container h3 {
+    font-size: 14px !important; }
+  .technologies-container .ul-container {
+    padding: 50px 0 0; }
+    .technologies-container .ul-container .row {
+      clear: both; }
+      .technologies-container .ul-container .row .col {
+        float: left;
+        width: 50%;
+        margin: 0px 0px 32px;
+        font-size: 14px; }
+        .technologies-container .ul-container .row .col:nth-child(2n+1) {
+          padding: 0 18px 0 0; }
+        .technologies-container .ul-container .row .col:nth-child(2n) {
+          padding: 0 0 0 18px; }
+  .technologies-container ul {
+    padding: 0;
+    margin: 0; }
+    .technologies-container ul li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      line-height: 25px; }
+
+@media only screen and (min-width: 641px) {
+  .technologies-container {
+    padding: 0 84px 64px; }
+    .technologies-container .ul-container .row {
+      clear: none;
+      float: left; }
+      .technologies-container .ul-container .row:nth-child(2n+1) {
+        width: 324px;
+        padding: 0 46px 0 0; }
+        .technologies-container .ul-container .row:nth-child(2n+1) .col {
+          width: 100%;
+          float: none; }
+      .technologies-container .ul-container .row:nth-child(2n) {
+        width: 495px;
+        padding: 0 12px; }
+        .technologies-container .ul-container .row:nth-child(2n) .col {
+          font-size: 14px; }
+          .technologies-container .ul-container .row:nth-child(2n) .col:nth-child(2n+1) {
+            width: 288px; }
+          .technologies-container .ul-container .row:nth-child(2n) .col:nth-child(2n) {
+            float: right;
+            width: 161px; }
+      .technologies-container .ul-container .row .col {
+        font-size: 14px; }
+        .technologies-container .ul-container .row .col:nth-child(2n+1) {
+          padding: 0; }
+        .technologies-container .ul-container .row .col:nth-child(2n) {
+          padding: 0; } }

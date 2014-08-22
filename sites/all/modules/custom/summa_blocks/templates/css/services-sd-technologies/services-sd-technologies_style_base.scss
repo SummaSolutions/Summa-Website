@@ -1,0 +1,37 @@
+.technologies-container {
+  padding: 0 46px 64px;
+  font-size: 16px;
+
+  h3 {
+    font-size: 14px !important;
+  }
+  .ul-container {
+    padding: 50px 0 0;
+    .row {
+      clear: both;
+      .col {
+        float: left;
+        width: 50%;
+        margin: 0px 0px 32px;
+        &:nth-child(2n+1) {
+          padding: 0 18px 0 0;
+        }
+        &:nth-child(2n) {
+          padding: 0 0 0 18px;
+        }
+
+        font-size: 14px;
+      }
+    }
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      line-height: 25px;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+.canvas-services .pane-content {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: lighter;
+    color: #333;
+}
+
+.canvas-services .pane-content p {
+    margin: 0 0 32px;
+}
+
+.canvas-services .pane-content a {
+    text-decoration: none;
+    font-weight: normal;
+    color: inherit;
+}
+
+.canvas-services .pane-content a:hover {
+    text-decoration: underline;
+}
+
+.canvas-services .pane-content h2, .canvas-services .pane-content h3 {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 5px;
+}
+
+.canvas-services .region-body-container {
+    margin: 33px auto 0;
+    padding: 38px 46px;
+}
+
+.canvas-services .footer-green-row .pane-content a {
+    font-weight: lighter;
+}
+
+.canvas-services .footer-green-row a, .canvas-services .footer-green-row .title {
+    color: #fff;
+}
+
+.canvas-services .footer-green-row a:hover, .canvas-services .footer-green-row .title:hover {
+    text-decoration: none;
+}
+
+.canvas-services .anchor-next {
+    display: block;
+    width: 40px;
+    height: 48px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: -40px top;
+    background: url(../../../images/anchor-next-sprites.png);
+}
+
+.canvas-services .anchor-next.anchor-next-white {
+    background-position: -40px top;
+}
+
+.canvas-services .anchor-next.anchor-next-gray {
+    background-position: left top;
+}
+
+.canvas-services .anchor-prev {
+    display: block;
+    width: 40px;
+    height: 48px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: -40px top;
+    background: url(../../../images/anchor-prev-sprites.png);
+}
+
+.canvas-services .anchor-prev.anchor-prev-white {
+    background-position: -40px top;
+}
+
+.canvas-services .anchor-prev.anchor-prev-gray {
+    background-position: left top;
+}
+
+@media only screen and (min-width: 641px) {
+    .canvas-services .region-body-container {
+        padding: 0 84px;
+    }
+}

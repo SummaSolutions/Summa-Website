@@ -30,8 +30,11 @@ function summa_blocks_theme()
     $themes["contact-form"] = array(
         "template" => "templates/contact_form"
     );
-    $themes["services-ecommerce-certified"] = array(
+    $themes["services-e-commerce-certified"] = array(
         "template" => "templates/services--e-commerce--certified"
+    );
+    $themes["services-sd-technologies"] = array(
+        "template" => "templates/services--software-development--technologies"
     );
     return $themes;
 }
@@ -151,8 +154,11 @@ function summa_blocks_block_info()
     $blocks['contact-form'] = array(
         'info' => t( 'Contact form' ),
     );
-    $blocks['services-ecommerce-certified'] = array(
+    $blocks['services-e-commerce-certified'] = array(
         'info' => t( 'E-commerce Certifieds' ),
+    );
+    $blocks['services-sd-technologies'] = array(
+        'info' => t( 'Technologies and Disciplines' ),
     );
 
     return $blocks;
@@ -229,9 +235,13 @@ function summa_blocks_block_view( $delta = '' )
             $block['subject'] = t( '' );
             $block['content'] = theme( "contact-form", array() );
             break;
-        case 'services-ecommerce-certified':
+        case 'services-e-commerce-certified':
             $block['subject'] = t( '' );
-            $block['content'] = theme( "services-ecommerce-certified", array() );
+            $block['content'] = theme( "services-e-commerce-certified", array() );
+            break;
+        case 'services-sd-technologies':
+            $block['subject'] = t( '' );
+            $block['content'] = theme( "services-sd-technologies", array() );
             break;
     }
     return $block;

@@ -3,8 +3,6 @@ global $base_url;
 $resource_path = "sites/all/modules/custom/summa_blocks/templates/images";
 
 drupal_add_css( drupal_get_path( "module", "summa_blocks" ) . "/templates/css/services-ecommerce-certified/services-ecommerce-certified.css" );
-drupal_add_css( drupal_get_path( "theme", "summa_revamp" ) . "/css/jquery.bxSlider.css" );
-drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.bxslider.min.js" );
 drupal_add_js( drupal_get_path( "module", "summa_blocks" ) . "/templates/js/services-ecommerce-certified/skin.js" );
 ?>
 

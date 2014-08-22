@@ -1,0 +1,56 @@
+.technologies-container {
+  padding: 0 84px 64px;
+  //  font-size: 16px;
+
+  h3 {
+    //    font-size: 14px!important;
+  }
+  .ul-container {
+    //    margin: 50px 0 0;
+    .row {
+      clear: none;
+      float: left;
+      &:nth-child(2n+1) {
+        width: 324px;
+        padding: 0 46px 0 0;
+        .col {
+          width: 100%;
+          float: none;
+        }
+      }
+      &:nth-child(2n) {
+        width: 495px;
+        padding: 0 12px;
+        .col {
+          &:nth-child(2n+1) {
+            width: 495px - 161px - 46px;
+          }
+          &:nth-child(2n) {
+            float: right;
+            width: 161px;
+          }
+          font-size: 14px;
+        }
+      }
+      .col {
+        &:nth-child(2n+1) {
+          padding: 0;
+        }
+        &:nth-child(2n) {
+          padding: 0;
+        }
+
+        font-size: 14px;
+      }
+    }
+  }
+  ul {
+    //    padding: 0;
+    //    margin: 0;
+    li {
+      //      padding: 0;
+      //      margin: 0;
+      //      list-style: none;
+    }
+  }
+}

@@ -57,6 +57,10 @@ a:focus {
   padding: 0;
 }
 
+.row-white {
+  background: #fff;
+}
+
 .panels-flexible-region-home_layout-white {
   width: 100%;
 }
@@ -71,9 +75,6 @@ a:focus {
   bottom: 10px;
   right: 10px;
   z-index: 999;
-}
-
-.fixed-anchor {
 
   .anchor-prev {
     display: block;
