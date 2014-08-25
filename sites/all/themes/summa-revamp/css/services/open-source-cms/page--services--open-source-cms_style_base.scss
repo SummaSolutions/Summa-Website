@@ -1,0 +1,52 @@
+.canvas-services {
+  .region-body-container {
+    padding: 0 46px;
+    margin: 0 auto;
+    ul {
+      padding: 5px 0 0;
+      margin: 0;
+      line-height: 19px;
+      li {
+        list-style: none;
+        margin: 0 0 10px;
+      }
+    }
+    .col-left {
+      width: 254px;
+      float: left;
+      word-wrap: break-word;
+      strong::after {
+        content: "\a";
+        display: block;
+      }
+    }
+    .col-right {
+      width: 239px;
+      float: right;
+      font-size: 18px;
+      p {
+        color: #5d5e5e;
+        font-weight: normal;
+        margin: 44px 0 0;
+      }
+      img {
+        vertical-align: middle;
+        margin: 0 25px 0 0;
+      }
+
+    }
+  }
+  .region-overview-container {
+    padding: 38px 46px 0;
+    font-size: 20px !important;
+    line-height: 27px;
+  }
+  h1 {
+    font-family: Ruda;
+    font-weight: normal;
+    font-size: 45px;
+    color: #5d5e5e;
+    text-align: center;
+    margin: 0 0 48px;
+  }
+}
