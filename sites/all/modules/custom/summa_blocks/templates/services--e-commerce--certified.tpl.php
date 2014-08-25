@@ -3,7 +3,6 @@ global $base_url;
 $resource_path = "sites/all/modules/custom/summa_blocks/templates/images";
 
 drupal_add_css( drupal_get_path( "module", "summa_blocks" ) . "/templates/css/services-ecommerce-certified/services-ecommerce-certified.css" );
-drupal_add_js( drupal_get_path( "module", "summa_blocks" ) . "/templates/js/services-ecommerce-certified/skin.js" );
 ?>
 
 <div class="ecommerce-certified clearfix safe-container">
@@ -12,7 +11,7 @@ drupal_add_js( drupal_get_path( "module", "summa_blocks" ) . "/templates/js/serv
         <ul>
             <li><?php echo t( 'Integrated with Google Analytics' ); ?></li>
             <li><?php echo t( 'Multiple Images with Zoom' ); ?></li>
-            <li><?php echo t( 'Magento Solr intergation' ); ?></li>
+            <li><?php echo t( 'Magento Solr integration' ); ?></li>
             <li><?php echo t( 'Udropship' ); ?></li>
             <li><?php echo t( 'Add to Wishlist' ); ?></li>
             <li><?php echo t( 'Send to a Friend' ); ?></li>

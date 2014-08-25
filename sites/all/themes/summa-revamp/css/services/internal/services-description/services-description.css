@@ -16,14 +16,10 @@
 .row-description .region-description-container .pane-content {
     font-family: Roboto;
     color: #fff;
-    height: 432px;
     padding: 0 0 68px;
     font-size: 20px;
     text-align: left;
-}
-
-.row-description .region-description-container .pane-content .field {
-    max-height: 383px;
+    height: 442px;
 }
 
 .row-description .region-description-container h3 {
