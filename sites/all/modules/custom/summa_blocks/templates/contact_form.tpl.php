@@ -8,7 +8,7 @@ drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.form-val
 ?>
 <div id="contact-form-container" class="safe-container">
     <span class="subtitle">
-        <?php echo t( "that´s all folk..." ); ?>
+        <?php echo t( "that´s all folks..." ); ?>
     </span>
     <a class="anchor-prev anchor-prev-gray" href="#top"></a>
     <span class="subtitle">
