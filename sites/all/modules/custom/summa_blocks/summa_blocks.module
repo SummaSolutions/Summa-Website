@@ -36,6 +36,9 @@ function summa_blocks_theme()
     $themes["services-sd-technologies"] = array(
         "template" => "templates/services--software-development--technologies"
     );
+    $themes["services-id-quote"] = array(
+        "template" => "templates/services--interaction-design--quote"
+    );
     return $themes;
 }
 
@@ -160,6 +163,9 @@ function summa_blocks_block_info()
     $blocks['services-sd-technologies'] = array(
         'info' => t( 'Technologies and Disciplines' ),
     );
+    $blocks['services-id-quote'] = array(
+        'info' => t( 'Interaction desing Quote' ),
+    );
 
     return $blocks;
 }
@@ -242,6 +248,10 @@ function summa_blocks_block_view( $delta = '' )
         case 'services-sd-technologies':
             $block['subject'] = t( '' );
             $block['content'] = theme( "services-sd-technologies", array() );
+            break;
+        case 'services-id-quote':
+            $block['subject'] = t( '' );
+            $block['content'] = theme( "services-id-quote", array() );
             break;
     }
     return $block;

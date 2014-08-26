@@ -1,0 +1,72 @@
+.quote-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  overflow: visible;
+  position: relative;
+  margin-top: -133px;
+  height: 474px; }
+  .quote-wrapper .quote-region {
+    height: 100%;
+    width: 354px;
+    float: left;
+    position: relative;
+    z-index: 20;
+    padding: 0 0 0 10px; }
+    .quote-wrapper .quote-region .quote-container {
+      height: auto;
+      position: absolute;
+      bottom: 0; }
+      .quote-wrapper .quote-region .quote-container .padding-quote {
+        vertical-align: top;
+        overflow: visible;
+        float: left; }
+      .quote-wrapper .quote-region .quote-container blockquote {
+        float: left;
+        width: 300px;
+        font-size: 24px;
+        font-family: Roboto;
+        margin: 0;
+        padding: 24px 0 0 4px; }
+    .quote-wrapper .quote-region .double-prime {
+      height: 75px;
+      font-family: Georgia;
+      font-size: 85px;
+      font-weight: bold;
+      vertical-align: top;
+      display: inline-block; }
+  .quote-wrapper .image-left-container {
+    display: none;
+    width: 243px;
+    float: left;
+    position: relative;
+    padding: 31px 0 0;
+    height: 100%; }
+    .quote-wrapper .image-left-container .image-left {
+      position: absolute;
+      right: 0; }
+  .quote-wrapper .image-right-container {
+    left: -44px;
+    width: 286px;
+    float: right;
+    position: relative;
+    height: 100%;
+    z-index: 10; }
+    .quote-wrapper .image-right-container .image-right {
+      position: absolute;
+      left: 0; }
+  .quote-wrapper .image-left, .quote-wrapper .image-right {
+    vertical-align: bottom; }
+
+@media only screen and (min-width: 641px) {
+  .quote-wrapper {
+    width: 1000px; }
+    .quote-wrapper .quote-region {
+      width: 377px;
+      padding: 0 28px 0 20px; }
+      .quote-wrapper .quote-region .quote-container blockquote {
+        width: 285px; }
+    .quote-wrapper .image-left-container {
+      display: block; }
+    .quote-wrapper .image-right-container {
+      left: auto;
+      width: 379px; } }
