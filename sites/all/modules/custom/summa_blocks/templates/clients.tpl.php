@@ -26,6 +26,8 @@ $pad = '<div class="views-row views-row-pad">
 ?>
 <div class="clients-wrapper safe-container ">
     <div class="clients-container clearfix">
+        <a class="anchor-target" name="clients"></a>
+
         <h1><?php echo t( 'Clients' ); ?></h1>
 
         <div class="view">

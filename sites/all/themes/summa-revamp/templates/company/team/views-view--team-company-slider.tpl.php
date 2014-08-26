@@ -39,5 +39,5 @@ drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.dotdotdo
         ?>
     </div>
     <div class="subtitle clearfix"><?php echo t( 'take a look to our current openings...' ); ?></div>
-    <a class="anchor-next anchor-next-gray" href="#current-openings"></a>
+    <a class="anchor-next anchor-next-gray" href="#careers"></a>
 </div>
