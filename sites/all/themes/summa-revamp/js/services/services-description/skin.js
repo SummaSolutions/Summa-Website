@@ -12,6 +12,6 @@ jQuery(document).ready(function () {
     if (jQuery(source).length > 0) {
         var backgroundImage = jQuery(source).attr("src");
 
-        jQuery(target).css("background", "url(" + backgroundImage + ") no-repeat center bottom");
+        jQuery(target).css("background-image", "url(" + backgroundImage + ")").css("background-repeat", "no-repeat").css("background-position", "center bottom");
     }
 });
