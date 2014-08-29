@@ -63,7 +63,7 @@
     <link href='http://fonts.googleapis.com/css?family=Ruda:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
 </head>
-<body class="<?php print $classes; ?>" <?php print $attributes; ?>>
+<body class="<?php print $classes; ?> breakpoint-641" <?php print $attributes; ?>>
 <a name="top" class="anchor-target"></a>
 <?php print $page_top; ?>
 <?php print $page; ?>
