@@ -27,6 +27,9 @@ function summa_blocks_theme()
     $themes["clients-grid-ajax"] = array(
         "function" => "summa_blocks_clients_grid_ajax"
     );
+    $themes["case-studies-grid-ajax"] = array(
+        "function" => "summa_blocks_case_studies_grid_ajax",
+    );
     $themes["contact-form"] = array(
         "template" => "templates/contact_form"
     );
@@ -50,6 +53,13 @@ function summa_blocks_menu()
         'access callback' => true,
         'type' => MENU_CALLBACK,
     );
+    $items['ajax/views/case-studies'] = array(
+        'page callback' => 'theme',
+        'delivery callback' => 'drupal_json_output',
+        'page arguments' => array( 'case-studies-grid-ajax' ),
+        'access callback' => true,
+        'type' => MENU_CALLBACK,
+    );
     $items['ajax/contact'] = array(
         'page callback' => 'summa_blocks_ajax_contact',
         'delivery callback' => 'drupal_json_output',
@@ -70,6 +80,22 @@ function summa_blocks_clients_grid()
     return theme( "clients-grid-block", array( "view_result" => $render, "isEnd" => $end ) );
 }
 
+function summa_blocks_clients_grid_ajax()
+{
+
+    $offset = ( isset( $_GET["offset"] ) ) ? (int)$_GET["offset"] : 0;
+    $itemsPerPage = ( isset( $_GET["itemsPerPage"] ) ) ? (int)$_GET["itemsPerPage"] : 15;
+
+    $end = false;
+    $view_result = _clients_get_grid( $end, $offset, $itemsPerPage );
+
+
+    $json["html"] = $view_result;
+    $json["end"] = $end;
+
+    echo json_encode( $json );
+
+}
 function _clients_get_grid( &$end, $offset = 0, $itemsPerPage = 9 )
 {
     $view = views_get_view( "clients" );
@@ -92,15 +118,38 @@ function _clients_get_grid( &$end, $offset = 0, $itemsPerPage = 9 )
 
     return $view_result;
 }
+function _case_studies_get_grid( &$end, $offset = 0, $itemsPerPage = 6 )
+{
 
-function summa_blocks_clients_grid_ajax()
+    $view = views_get_view( "case_studies_grid" );
+    $view->set_display( "case_studies_landing_ajax" );
+    $view->set_items_per_page( $itemsPerPage );
+    $view->set_offset( $offset );
+    $view->execute();
+
+    $view_result = $view->render();
+
+    // Next page
+    $view = views_get_view( "case_studies_grid" );
+    $view->set_display( "case_studies_landing_ajax" );
+    $view->set_items_per_page( $itemsPerPage );
+    $view->set_offset( $offset + $itemsPerPage );
+    $view->display['case_studies_landing_ajax']->display_options['pager']['options']['offset'] = $offset + $itemsPerPage;
+    $view->execute();
+
+    $end = ( count( $view->result ) == 0 );
+
+    return $view_result;
+}
+
+function summa_blocks_case_studies_grid_ajax()
 {
 
     $offset = ( isset( $_GET["offset"] ) ) ? (int)$_GET["offset"] : 0;
-    $itemsPerPage = ( isset( $_GET["itemsPerPage"] ) ) ? (int)$_GET["itemsPerPage"] : 15;
+    $itemsPerPage = ( isset( $_GET["itemsPerPage"] ) ) ? (int)$_GET["itemsPerPage"] : 6;
 
     $end = false;
-    $view_result = _clients_get_grid( $end, $offset, $itemsPerPage );
+    $view_result = _case_studies_get_grid( $end, $offset, $itemsPerPage );
 
 
     $json["html"] = $view_result;
