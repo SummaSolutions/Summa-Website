@@ -2,6 +2,12 @@
   .row-white{
     color: #666;
 
+    h1{
+      display: none;
+    }
+    span.subtitle{
+      display: none;
+    }
     .bx-wrapper{
       padding: 0 46px 38px 0;
     }

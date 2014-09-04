@@ -2,6 +2,16 @@
   .row-white{
     margin: 0 auto;
 
+    h1{
+      display: block;
+      margin: 56px 0 10px 200px;
+    }
+    span.subtitle{
+      display: block;
+      margin: 0 0 0 200px;
+      font-family: Roboto;
+      font-size: 16px;
+    }
     .inside{
       width: 1259px;
       height: 1977px;
