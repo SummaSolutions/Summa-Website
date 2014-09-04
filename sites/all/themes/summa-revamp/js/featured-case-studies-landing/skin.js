@@ -52,4 +52,18 @@ jQuery(document).ready(function () {
     );
 
     jQuery(".case-studies-grid-wrapper .views-field-body").dotdotdot({watch:true});
+
+    jQuery(".case-studies-grid-wrapper .views-row").hover(
+        function(){
+            var a = jQuery(this).find(".views-field-title a");
+            a.data("saved_html", a.html() );
+            a.html("READ MORE");
+        }
+        ,
+        function(){
+            var a = jQuery(this).find(".views-field-title a");
+            a.html(a.data("saved_html") );
+        }
+    );
+
 });
