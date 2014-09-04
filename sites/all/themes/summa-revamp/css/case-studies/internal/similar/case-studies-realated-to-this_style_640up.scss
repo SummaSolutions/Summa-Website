@@ -4,7 +4,7 @@
 
     h1{
       display: block;
-      margin: 0 0 10px 200px;
+      margin: 56px 0 10px 200px;
     }
     span.subtitle{
       display: block;
@@ -12,14 +12,11 @@
       font-family: Roboto;
       font-size: 16px;
     }
-
-    .panels-flexible-region-canvas-case-studies-internal-white-inside{
+    .inside{
       width: 1259px;
       height: 1977px;
       margin: 0 auto;
-      padding: 56px 0 0;
       position: relative;
-      left:-130px;
       background: url("../../../images/case-studies-internal-path-background.gif") no-repeat center top #fff;
     }
 
@@ -117,9 +114,5 @@
     background: #d7d7d7;
     height: 338px;
     text-align: center;
-    h2.pane-title{
-      color: #5d5e5e;
-      text-transform: uppercase;
-    }
   }
 }

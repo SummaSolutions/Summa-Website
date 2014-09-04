@@ -1,0 +1,15 @@
+.similar-container{
+
+  .views-row{
+    width: auto;
+    display: inline;
+    .views-field-field-picture{
+      border-radius: 50%;
+      overflow: hidden;
+      width: 232px;
+      height: 232px;
+      display: inline-block;
+      margin: 0 30px;
+    }
+  }
+}
