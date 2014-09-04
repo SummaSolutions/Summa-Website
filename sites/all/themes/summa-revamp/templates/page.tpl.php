@@ -69,6 +69,8 @@
 
 drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/skin.js" );
 drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/breakpoints.js" );
+/* Case studies */
+drupal_add_css(drupal_get_path( "theme", "summa_revamp" ) . "");
 ?>
 <div class="fixed-anchor">
     <a class="anchor-prev anchor-prev-gray" href="#top"></a>

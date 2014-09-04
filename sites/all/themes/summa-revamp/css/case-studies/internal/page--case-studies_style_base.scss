@@ -1,0 +1,45 @@
+.canvas-case-studies-internal{
+  .row-white{
+    color: #666;
+
+    .bx-wrapper{
+      padding: 0 46px 38px 0;
+    }
+    h2.pane-title{
+      background: url("../../../images/icon-star.gif") no-repeat left center;
+      height: 72px;
+      line-height: 72px;
+      padding: 0 0 0 87px;
+      margin: 0 0 26px -16px;
+
+    }
+
+    .pane-node-field-overview{
+      h2.pane-title{
+        background: url("../../../images/icon-folder.gif") no-repeat left center;
+      }
+    }
+
+    .pane-node-field-overview, .pane-node-field-challenge, .pane-node-field-solution{
+      padding: 0 0 0 46px;
+    }
+    .panel-separator{
+      margin: 0 0 64px;
+    }
+
+    .field-name-field-overview-image, .field-name-field-challenge-image, .field-name-field-solution-image{
+      display: none;
+      width: 583px;
+      height: 478px;
+      overflow: hidden;
+      text-align: center;
+      img{
+        max-width: 100%;
+      }
+    }
+
+    .contact-us-button-container{
+      padding: 0 46px;
+    }
+  }
+}

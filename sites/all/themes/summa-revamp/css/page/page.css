@@ -13,11 +13,6 @@ html, body {
   font-family: Ruda;
   margin: 0 auto; }
 
-a:focus {
-  width: 0px;
-  height: 0px;
-  outline: 0px; }
-
 .hide-text {
   text-indent: 100%;
   white-space: nowrap;
@@ -69,6 +64,21 @@ a.anchor-target {
   position: absolute;
   top: 0; }
 
+a.contact-us {
+  width: 100%;
+  display: block;
+  padding: 35px 48px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 15px;
+  font-family: Arial;
+  letter-spacing: 3px;
+  color: #999;
+  border-radius: 5px;
+  border: 1px solid #999;
+  background: #fff; }
+
 @media only screen and (min-width: 641px) {
   #page-wrapper {
     width: 100%;
@@ -98,6 +108,11 @@ a.anchor-target {
 
   .green-row {
     background: url(../../images/layout-green-background-tablet.gif) repeat-x center top #fff;
-    height: 1032px; } }
+    height: 1032px; }
+
+  a.contact-us {
+    width: 366px;
+    padding: 17px 0;
+    font-size: 10px; } }
 
 /*# sourceMappingURL=page.css.map */
