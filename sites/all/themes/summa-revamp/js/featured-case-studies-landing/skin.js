@@ -20,8 +20,10 @@ var csController = {
             type: 'GET',
             dataType: 'JSON',
             success: function (data) {
-                jQuery(_this.SELECTOR).append(data.html);
 
+                var dataParsed = jQuery(data.html);
+                jQuery(_this.SELECTOR).append(dataParsed);
+                dataParsed.hover( gridOver, gridBlur );
                 _this.offset += itemsPerPage;
 
                 _this.pad();
@@ -43,7 +45,16 @@ var csController = {
 
     }
 };
+function gridOver(){
+    var a = jQuery(this).find(".views-field-title a");
+    a.data("saved_html", a.html() );
+    a.html("READ MORE");
+}
+function gridBlur(){
+    var a = jQuery(this).find(".views-field-title a");
+    a.html(a.data("saved_html") );
 
+}
 jQuery(document).ready(function () {
     jQuery(".case-studies-grid-wrapper .see-more").click(function (e) {
             e.preventDefault();
@@ -53,17 +64,6 @@ jQuery(document).ready(function () {
 
     jQuery(".case-studies-grid-wrapper .views-field-body").dotdotdot({watch:true});
 
-    jQuery(".case-studies-grid-wrapper .views-row").hover(
-        function(){
-            var a = jQuery(this).find(".views-field-title a");
-            a.data("saved_html", a.html() );
-            a.html("READ MORE");
-        }
-        ,
-        function(){
-            var a = jQuery(this).find(".views-field-title a");
-            a.html(a.data("saved_html") );
-        }
-    );
+    jQuery(".case-studies-grid-wrapper .views-row").hover( gridOver, gridBlur );
 
 });
