@@ -1,10 +1,9 @@
 $green: #9fb335;
 $title-height: 119px + 23px;
 
-#featured-case-studies-container {
+.featured-case-studies-wrapper{
   padding: 23px 0 0 0;
-  text-align: left;
-  min-width: 1000px;
+
 
   .pane-title {
     margin: 0;
@@ -12,12 +11,18 @@ $title-height: 119px + 23px;
     font-weight: normal;
     text-align: center;
     .subtitle {
+      margin: 0;
       font-size: 24px;
       display: block;
       font-weight: lighter;
       font-family: Roboto;
     }
   }
+}
+#featured-case-studies-container {
+  text-align: left;
+  min-width: 1000px;
+
   .pane-content {
 
     .bxslider {
@@ -27,7 +32,7 @@ $title-height: 119px + 23px;
       .slide {
         width: 100%;
         height: 907px - $title-height;
-        text-align: center;
+        text-align: left;
         margin-right: 300px;
         .container {
           position: relative;
@@ -48,6 +53,7 @@ $title-height: 119px + 23px;
       font-size: 39px;
       font-weight: bold;
       height: auto;
+      width: 384px;
     }
     .views-field-field-picture {
       text-align: right;
@@ -73,31 +79,36 @@ $title-height: 119px + 23px;
       overflow: hidden;
     }
 
+
+
     .views-field-path {
-      color: #fff;
-      left: initial;
-      right: 0;
-      //position: absolute;
-      //bottom: 0;
-      padding: 0 28px;
-      top: 534px - $title-height;
       width: 384px;
+      position: absolute;
+      right: 0;
+      top: 534px - $title-height;
+      bottom: initial;
+      left: initial;
+      padding: 0 28px;
       text-align: center;
       height: auto;
+
       a {
-        //border-radius: 4px;
+//        -moz-border-radius: 7px;
+//        -webkit-border-radius: 7px;
+//        border-radius: 7px;
         border: 1px solid #fff;
         background: transparent;
-        //padding: 22px 35px;
-        margin: 0;
-        width: 100%;
+//        width: 100%;
         display: block;
-        //text-transform: uppercase;
-        //font-size: 14px;
-        //text-decoration: none;
-        //color: inherit;
+        padding: 22px 0;
+//        text-transform: uppercase;
+//        font-family: Arial;
+        color: #fff;
+//        text-decoration: none;
       }
     }
+
+
 
     .views-field-body {
       display: block;
