@@ -1,6 +1,7 @@
 .canvas-case-studies-internal{
   .row-white{
     margin: 0 auto;
+    padding: 0;
 
     h1{
       display: block;
@@ -19,7 +20,7 @@
       margin: 0 auto;
        > .inside{
         width: 1259px;
-        height: 1977px;
+        height: 2017px;
         margin: 0 auto;
         padding: 56px 0 0;
         position: relative;
@@ -50,6 +51,7 @@
     .pane-node-field-overview, .pane-node-field-challenge, .pane-node-field-solution{
       padding: 0 0 0 16px;
       position: absolute;
+      text-align: left;
       .pane-content{
         padding: 0 0 0 73px;
       }
@@ -101,6 +103,7 @@
       width: 415px;
     }
     .contact-us-button-container{
+      margin: 0;
 //      padding: 0 46px;
     }
 

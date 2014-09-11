@@ -27,8 +27,10 @@
     }
 
     .pane-node-field-overview, .pane-node-field-challenge, .pane-node-field-solution{
-      padding: 0 0 0 46px;
+      padding: 0 46px 0 46px;
+      text-align: justify;
     }
+
     .panel-separator{
       margin: 0 0 64px;
     }
@@ -46,6 +48,7 @@
 
     .contact-us-button-container{
       padding: 0 46px;
+      margin: 0 0 64px;
     }
   }
 
