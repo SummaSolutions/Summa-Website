@@ -33,6 +33,9 @@ function summa_blocks_theme()
     $themes["contact-form"] = array(
         "template" => "templates/contact_form"
     );
+    $themes["contact-maps"] = array(
+        "template" => "templates/contact_maps"
+    );
     $themes["services-e-commerce-certified"] = array(
         "template" => "templates/services--e-commerce--certified"
     );
@@ -206,6 +209,9 @@ function summa_blocks_block_info()
     $blocks['contact-form'] = array(
         'info' => t( 'Contact form' ),
     );
+    $blocks['contact-maps'] = array(
+        'info' => t( 'Contact Maps' ),
+    );
     $blocks['services-e-commerce-certified'] = array(
         'info' => t( 'E-commerce Certifieds' ),
     );
@@ -289,6 +295,10 @@ function summa_blocks_block_view( $delta = '' )
         case 'contact-form':
             $block['subject'] = t( '' );
             $block['content'] = theme( "contact-form", array() );
+            break;
+        case 'contact-maps':
+            $block['subject'] = t( '' );
+            $block['content'] = theme( "contact-maps", array() );
             break;
         case 'services-e-commerce-certified':
             $block['subject'] = t( '' );

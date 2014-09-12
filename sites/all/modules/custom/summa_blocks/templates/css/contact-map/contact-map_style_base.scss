@@ -1,0 +1,43 @@
+.contact-map-container{
+  .panels-flexible-region-inside-first {
+    padding-right: 0px;
+  }
+  ul{
+    margin: 0;
+    padding: 0;
+    li{
+      margin: 0 0 46px;
+      padding: 0;
+      list-style: none;
+
+      .label{
+        .country{
+          font-weight: normal;
+          display: block;
+        }
+        .address{
+          display: block;
+        }
+        .city{
+          display: block;
+        }
+        .email{
+          display: block;
+          a{
+            color: inherit;
+          }
+        }
+      }
+      .map-container{
+        margin: 10px 0 0;
+
+        border: 1px solid #999;
+
+        .map{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
