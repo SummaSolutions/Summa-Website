@@ -1,0 +1,221 @@
+.canvas-team {
+  font-weight: lighter;
+  font-family: Roboto;
+
+  .anchor-next {
+    display: block;
+    width: 40px;
+    height: 48px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: -40px top;
+    background: url(../../images/anchor-next-sprites.png);
+    &.anchor-next-white {
+      background-position: -40px top;
+    }
+    &.anchor-next-gray {
+      background-position: left top;
+    }
+  }
+
+  .anchor-prev {
+    display: block;
+    width: 40px;
+    height: 48px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: -40px top;
+    background: url(../../images/anchor-prev-sprites.png);
+    &.anchor-prev-white {
+      background-position: -40px top;
+    }
+    &.anchor-prev-gray {
+      background-position: left top;
+    }
+  }
+
+  .row-top{
+    background: #fff;
+    .region-main{
+      width: 100%;
+      .view-empty{
+        font-style: italic;
+        margin: 80px 0 0;
+      }
+      .pane-blog-posts-full-list{
+        font-weight: lighter;
+        font-size: 16px;
+        padding: 0 46px;
+
+        .views-row{
+          margin: 0 0 62px;
+          width: 544px;
+
+          .views-field-created{
+            display: inline-block;
+            margin: 0 0 18px;
+          }
+
+          .views-field-title{
+            margin: 0 0 13px;
+
+            color: inherit;
+            font-weight: bold;
+
+            text-decoration: none;
+            text-transform: uppercase;
+
+            font-size: 18px;
+            a{
+              color: inherit;
+              font-weight: inherit;
+
+              text-decoration: inherit;
+              text-transform: inherit;
+
+              font-size: inherit;
+            }
+          }
+
+          .views-field-name{
+            display: inline-block;
+            margin: 0 0 18px;
+            text-decoration: none;
+            a{
+              color: inherit;
+              text-decoration: inherit;
+            }
+          }
+          .views-field-field-picture{
+            width: 547px;
+            max-height: 218px;
+            overflow: hidden;
+            margin: 0 0 14px;
+            img{
+              width: 100%;
+              height: auto;
+            }
+          }
+          .views-field-entity-id{
+            p{
+              margin: 0;
+            }
+          }
+          .views-field-field-category{
+            margin: 0 0 4px;
+            ul{
+              margin: 0;
+              padding: 0;
+              li{
+                display: inline-block;
+                list-style: none;
+                padding: 2px 17px;
+                margin: 0 0 7px;
+                border-radius: 9px;
+                border: 1px solid #959595;
+                font-size: 15px;
+                a{
+                  color: inherit;
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .region-right{
+      width: 100%;
+    }
+    .pane-team{
+      position: relative;
+      padding: 36px 0 0 130px;
+      margin: 46px;
+      .views-row{
+        width: auto;
+      }
+      .views-field-entity-id-2{
+        margin: 0 0 10px;
+      }
+      .views-field-entity-id-3{
+        font-weight: bold;
+        margin: 0 0 2px;
+      }
+      .views-field-entity-id-6{
+        position: absolute;
+        left: 7px;
+        top: 0;
+
+        border-radius: 50%;
+        overflow: hidden;
+        width: 97px;
+        height: 97px;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .row-white {
+    .pane-team{
+      h1{
+        margin: 0 auto 41px;
+      }
+      h2.pane-title{
+        display: none;
+      }
+    }
+    h1 {
+      font-family: Ruda;
+      color: #333;
+      text-align: center;
+      font-size: 41px;
+      font-weight: normal;
+      margin: 41px auto;
+    }
+    .subtitle {
+      font-family: Roboto;
+      font-weight: lighter;
+      font-size: 20px;
+      text-align: center;
+      margin: 58px auto;
+    }
+    h2.pane-title {
+      font-family: Roboto;
+      font-size: 17px;
+      color: #666;
+      margin: 0 0 9px;
+      text-transform: uppercase;
+    }
+
+    .benefits-container {
+      width: 100%;
+      padding: 0 46px;
+      text-align: left;
+      h2 {
+        margin: 0;
+      }
+      p {
+        margin: 0 0 28px;
+      }
+      ul {
+        padding: 0;
+        margin: 0 0 56px 0;
+        list-style: none;
+
+        li {
+          line-height: 24px;
+          margin: 0px 0px 12px;
+          &:before {
+            font-family: Arial;
+            content: "· ";
+            vertical-align: middle;
+            font-size: 25px;
+          }
+        }
+      }
+    }
+  }
+}
