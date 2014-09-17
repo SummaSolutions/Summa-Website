@@ -12,7 +12,6 @@
 
       .label{
         .country{
-          font-weight: normal;
           display: block;
         }
         .address{
@@ -20,6 +19,7 @@
         }
         .city{
           display: block;
+          font-weight: normal;
         }
         .email{
           display: block;

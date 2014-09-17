@@ -8,9 +8,9 @@
     <ul>
         <li>
             <div class="label">
-                <span class="country"><?php echo t('Argentina'); ?></span>
-                <span class="address"><?php echo t('Av. Cordoba 5779 1st floor Office C'); ?></span>
                 <span class="city"><?php echo t('Palermo, Capital federal'); ?></span>
+                <span class="address"><?php echo t('Av. Cordoba 5779 1st floor Office C'); ?></span>
+                <span class="country"><?php echo t('Argentina'); ?></span>
                 <span class="email">
                     <a href="mailto:argentina@summasolutions.net">argentina@summasolutions.net</a>
                 </span>
@@ -21,8 +21,9 @@
         </li>
         <li>
             <div class="label">
-                <span class="address"><?php echo t('Santamarina 876'); ?></span>
                 <span class="city"><?php echo t('Tandil, Buenos Aires'); ?></span>
+                <span class="address"><?php echo t('Santamarina 876'); ?></span>
+                <span class="country"><?php echo t('Argentina'); ?></span>
                 <span class="email">
                     <a href="mailto:argentina@summasolutions.net">argentina@summasolutions.net</a>
                 </span>
