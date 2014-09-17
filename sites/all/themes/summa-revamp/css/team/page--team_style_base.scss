@@ -123,6 +123,30 @@
           }
         }
       }
+      .more-from-author{
+        a{
+          text-decoration: none;
+          text-align: center;
+          color: inherit;
+          display: inline-block;
+
+          font-family: Arial;
+
+          border-radius: 4px;
+
+          border: 1px solid #999;
+
+          padding: 16px 0;
+          margin: 0 auto 64px;
+
+          width: 100%;
+
+          text-transform: uppercase;
+
+          font-size: 10px;
+          letter-spacing: 3px;
+        }
+      }
     }
     .region-right{
       width: 100%;
