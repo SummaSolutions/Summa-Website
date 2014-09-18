@@ -2,23 +2,15 @@
   //  color: #fff;
   height: 568px;
 
-  .background-map {
-    background: #444;
-    width: 100%;
-    height: 568px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-
-    &.map-bsas {
-      background: url(../../images/map-bsas-tablet.jpg);
-    }
-    &.map-tandil {
-      background: url(../../images/map-tandil-tablet.jpg);
-    }
+  .google-maps-container {
+//    width: 100%; //635px;
+//    height: 100%;
+//    position: absolute;
+//    top: 0;
+//    left: 0;
+//    right: 0;
+//    z-index: 10;
   }
-
   .bxslider {
     margin: 0 auto;
     height: 482px;

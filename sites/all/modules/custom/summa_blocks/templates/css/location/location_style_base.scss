@@ -3,23 +3,21 @@
   position: relative;
   width: 100%; //635px;
   height: 766px;
-  background: #555;
+  background: #000;
 
-  .background-map {
-    background-position: center center;
+  .google-maps-container {
     width: 100%; //635px;
-    height: 766px;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
     z-index: 10;
-
-    &.map-bsas {
-      background-image: url(../../images/map-bsas-mobile.jpg);
-    }
-    &.map-tandil {
-      background-image: url(../../images/map-tandil-mobile.jpg);
-    }
+    opacity: .42;
+  }
+  .bx-controls{
+    z-index: 30;
+    position: relative;
   }
   .bx-viewport {
     overflow: visible !important;
@@ -37,7 +35,6 @@
 
       .container {
         position: relative;
-        z-index: 30;
         padding: 64px 36px 57px;
       }
     }
