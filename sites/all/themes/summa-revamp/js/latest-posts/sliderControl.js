@@ -1,7 +1,7 @@
 var lpSliderSelector = "#latest-posts-container .bxslider";
 var lpSliderControl;
 
-jQuery(document).ready(function () {
+jQuery(window).load(function () {
     if (!jQuery("body").hasClass("breakpoint-641"))
         lpSliderControl = jQuery(lpSliderSelector).bxSlider({
             wrapperClass: 'bx-wrapper',

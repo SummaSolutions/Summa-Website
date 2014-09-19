@@ -29,7 +29,7 @@ jQuery(window).bind("enterBreakpoint641", function () {
 });
 
 // Go to Top button
-jQuery(document).ready(function () {
+jQuery(window).load(function () {
     function _scroll(a, velocity) {
         debugger;
         var target = jQuery(a.hash);

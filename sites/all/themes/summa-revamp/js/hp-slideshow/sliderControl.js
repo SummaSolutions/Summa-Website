@@ -1,7 +1,7 @@
 var hbSliderSelector = "#header-bottom .bxslider";
 var hbSliderControl;
 
-jQuery(document).ready(function () {
+jQuery(window).load(function () {
     var settings = {
         wrapperClass: 'bx-wrapper',
         controls: false,

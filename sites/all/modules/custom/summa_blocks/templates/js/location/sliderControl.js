@@ -2,7 +2,7 @@ var locSliderSelector = ".location-container .bxslider";
 var locMapSelector = ".location-container .google-maps-container";
 var locControl;
 
-jQuery(document).ready(function () {
+jQuery(window).load(function () {
 
     // Convert slides into maps
     var mapElement = jQuery(locMapSelector);

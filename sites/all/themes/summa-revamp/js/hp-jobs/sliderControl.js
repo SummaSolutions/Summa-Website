@@ -2,7 +2,7 @@ var hpjSliderSelector = "#hp-jobs-container .bxslider";
 var hpSliderControl;
 
 
-jQuery(document).ready(function () {
+jQuery(window).load(function () {
     if (!jQuery("body").hasClass("breakpoint-641"))
         hpSliderControl = jQuery(hpjSliderSelector).bxSlider({
             wrapperClass: 'bx-wrapper',
