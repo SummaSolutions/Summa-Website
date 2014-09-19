@@ -31,6 +31,7 @@ jQuery(window).bind("enterBreakpoint641", function () {
 // Go to Top button
 jQuery(document).ready(function () {
     function _scroll(a, velocity) {
+        debugger;
         var target = jQuery(a.hash);
         target = target.length ? target : jQuery('[name=' + a.hash.slice(1) + ']');
         if (target.length) {
@@ -50,6 +51,9 @@ jQuery(document).ready(function () {
         e.preventDefault();
         return _scroll(this, 1000);
     });
+
+    if( location.hash != "" )
+        _scroll( jQuery("<a/>").attr("href", location.hash).get(0) , 1000);
 });
 
 
