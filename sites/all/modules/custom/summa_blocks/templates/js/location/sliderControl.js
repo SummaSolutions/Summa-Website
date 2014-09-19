@@ -56,4 +56,6 @@ jQuery(document).ready(function () {
         }
     });
 
+
+    jQuery(".google-maps-container").hover( locControl.stopAuto, locControl.startAuto );
 });
