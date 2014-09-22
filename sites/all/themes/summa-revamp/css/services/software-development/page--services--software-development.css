@@ -1,28 +1,18 @@
-.canvas-services .region-body-container {
-    padding: 0 46px;
-    margin: 0 auto;
-}
-
+.canvas-services .row-description .region-description-container .pane-content {
+  width: 100%; }
 .canvas-services .region-overview-container {
-    padding: 38px 46px 0;
-    font-size: 20px !important;
-}
-
+  padding: 38px 46px 0;
+  font-size: 20px !important; }
 .canvas-services h1 {
-    font-family: Ruda;
-    font-weight: normal;
-    font-size: 45px;
-    color: #5d5e5e;
-    text-align: center;
-    margin: 0 0 48px;
-}
+  font-family: Ruda;
+  font-weight: normal;
+  font-size: 45px;
+  color: #5d5e5e;
+  text-align: center;
+  margin: 0 0 48px; }
 
 @media only screen and (min-width: 641px) {
-    .canvas-services .region-body-container {
-        padding: 0 84px;
-    }
-
-    .canvas-services .region-overview-container {
-        padding: 0 84px;
-    }
-}
+  .canvas-services .region-body-container {
+    padding: 0 84px; }
+  .canvas-services .region-overview-container {
+    padding: 0 84px; } }

@@ -50,7 +50,8 @@
 
 @media only screen and (min-width: 641px) {
   #services-list-container {
-    text-align: left; }
+    text-align: left;
+    margin: 0 auto 70px; }
     #services-list-container .subtitle {
       padding: 0 0 73px 46px;
       width: 456px; }
@@ -95,3 +96,5 @@
         max-height: 83px; }
     #services-list-container .pane-content .views-field-path a {
       left: 50%; } }
+
+/*# sourceMappingURL=service-list.css.map */

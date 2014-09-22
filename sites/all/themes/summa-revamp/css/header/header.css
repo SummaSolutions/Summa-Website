@@ -1,275 +1,182 @@
 #header {
-    color: #fff;
-    background: url("../../images/menu-background-mobile.jpg") no-repeat left top;
-    width: 100%;
-}
-
-#header.expanded #header-bottom {
+  color: #fff;
+  background: url("../../images/menu-background-mobile.jpg") no-repeat left top;
+  width: 100%; }
+  #header.expanded #header-bottom {
     margin: -192px 0 0 0;
     padding: 247px 49px 0;
-    background: url("../../images/menu-background-mobile.jpg") no-repeat left -122px;
-}
-
-#header #header-top {
+    background: url("../../images/menu-background-mobile.jpg") no-repeat left -122px; }
+  #header #header-top {
     height: 122px;
     padding: 17px 26px;
     width: 100%;
     z-index: 21;
     position: relative;
-    background: url("../../images/menu-background-mobile.jpg") no-repeat left top;
-}
-
-#header #header-top #logo {
-    background: url("../../images/logo-mobile.png") no-repeat top left;
-    width: 372px;
-    height: 34px;
-    display: block;
-    float: left;
-    margin: 19px 26px;
-}
-
-#header #header-top .menu-mobile {
-    float: left;
-}
-
-#header #header-top .menu-mobile a {
-    display: block;
-    background: url("../../images/menu-trigger-mobile.png") no-repeat;
-    width: 73px;
-    height: 73px;
-}
-
-#header #header-middle {
+    background: url("../../images/menu-background-mobile.jpg") no-repeat left top; }
+    #header #header-top #logo {
+      background: url("../../images/logo-mobile.png") no-repeat top left;
+      width: 372px;
+      height: 34px;
+      display: block;
+      float: left;
+      margin: 19px 26px; }
+    #header #header-top .menu-mobile {
+      float: left; }
+      #header #header-top .menu-mobile a {
+        display: block;
+        background: url("../../images/menu-trigger-mobile.png") no-repeat;
+        width: 73px;
+        height: 73px; }
+  #header #header-middle {
     height: auto;
     width: 100%;
     display: none;
     z-index: 20;
     position: relative;
-    margin-bottom: 41px;
-}
-
-#header #header-middle #block-menu-menu-summa-options .block-title {
-    display: none;
-}
-
-#header #header-middle #block-menu-menu-summa-options ul {
-    padding: 0;
-    margin: 0;
-    background: #899a28;
-    width: 641px;
-}
-
-#header #header-middle #block-menu-menu-summa-options ul li {
-    margin: 0;
-    list-style: none;
-    font-size: 36px;
-    text-transform: uppercase;
-    height: 107px;
-    padding: 0 0 0 130px;
-    line-height: 122px;
-    border-top: 1px solid #fff;
-    background: url("../../images/menu-list-mobile-sprites.png") no-repeat 26px top;
-}
-
-#header #header-middle #block-menu-menu-summa-options ul li:nth-child(1) {
-    background-position: 26px 0;
-}
-
-#header #header-middle #block-menu-menu-summa-options ul li:nth-child(2) {
-    background-position: 26px -108px;
-}
-
-#header #header-middle #block-menu-menu-summa-options ul li:nth-child(3) {
-    background-position: 26px -216px;
-}
-
-#header #header-middle #block-menu-menu-summa-options ul li:nth-child(4) {
-    background-position: 26px -324px;
-}
-
-#header #header-middle #block-menu-menu-summa-options ul li:nth-child(5) {
-    background-position: 26px -432px;
-}
-
-#header #header-middle #block-menu-menu-summa-options ul li:nth-child(6) {
-    background-position: 26px -540px;
-}
-
-#header #header-middle #block-menu-menu-summa-options ul li a {
-    text-decoration: none;
-    color: #fff;
-}
-
-#header #header-middle #block-menu-menu-summa-options ul li.last {
-    border-bottom: 1px solid #fff;
-}
-
-#header #header-middle #block-summa-blocks-social-media {
-    height: 151px;
-    background: url(../../images/menu-shadow-mobile.png) repeat-x top;
-    text-align: center;
-    width: 100%;
-}
-
-#header #header-middle #block-summa-blocks-social-media ul {
-    padding: 52px 0 0 0;
-    margin: 0 auto;
-    min-width: 494px;
-}
-
-#header #header-middle #block-summa-blocks-social-media ul li {
-    display: inline;
-    padding: 0 30px 0 0;
-}
-
-#header #header-middle #block-summa-blocks-social-media ul li:last-child {
-    padding: 0;
-}
-
-#header #header-middle #block-summa-blocks-social-media ul li a {
-    background: url("../../images/social-mobile-sprites.png") no-repeat top left;
-    width: 98px;
-    height: 98px;
-    display: inline-block;
-}
-
-#header #header-middle #block-summa-blocks-social-media ul li.icon-facebook a {
-    background-position: 0 0;
-}
-
-#header #header-middle #block-summa-blocks-social-media ul li.icon-twitter a {
-    background-position: -99px 0;
-}
-
-#header #header-middle #block-summa-blocks-social-media ul li.icon-google_plus a {
-    background-position: -198px 0;
-}
-
-#header #header-middle #block-summa-blocks-social-media ul li.icon-linkedin a {
-    background-position: -297px 0;
-}
-
-#header #header-bottom {
+    margin-bottom: 41px; }
+    #header #header-middle #block-menu-menu-summa-options .block-title {
+      display: none; }
+    #header #header-middle #block-menu-menu-summa-options ul {
+      padding: 0;
+      margin: 0;
+      background: #899a28;
+      width: 641px; }
+      #header #header-middle #block-menu-menu-summa-options ul li {
+        margin: 0;
+        list-style: none;
+        font-size: 36px;
+        text-transform: uppercase;
+        height: 107px;
+        padding: 0 0 0 130px;
+        line-height: 122px;
+        border-top: 1px solid #fff;
+        background: url("../../images/menu-list-mobile-sprites.png") no-repeat 26px top; }
+        #header #header-middle #block-menu-menu-summa-options ul li:nth-child(1) {
+          background-position: 26px 0; }
+        #header #header-middle #block-menu-menu-summa-options ul li:nth-child(2) {
+          background-position: 26px -108px; }
+        #header #header-middle #block-menu-menu-summa-options ul li:nth-child(3) {
+          background-position: 26px -216px; }
+        #header #header-middle #block-menu-menu-summa-options ul li:nth-child(4) {
+          background-position: 26px -324px; }
+        #header #header-middle #block-menu-menu-summa-options ul li:nth-child(5) {
+          background-position: 26px -432px; }
+        #header #header-middle #block-menu-menu-summa-options ul li:nth-child(6) {
+          background-position: 26px -540px; }
+        #header #header-middle #block-menu-menu-summa-options ul li a {
+          text-decoration: none;
+          color: #fff; }
+        #header #header-middle #block-menu-menu-summa-options ul li.last {
+          border-bottom: 1px solid #fff; }
+    #header #header-middle #block-summa-blocks-social-media {
+      height: 151px;
+      background: url(../../images/menu-shadow-mobile.png) repeat-x top;
+      text-align: center;
+      width: 100%; }
+      #header #header-middle #block-summa-blocks-social-media ul {
+        padding: 52px 0 0 0;
+        margin: 0 auto;
+        min-width: 494px; }
+        #header #header-middle #block-summa-blocks-social-media ul li {
+          display: inline;
+          padding: 0 30px 0 0; }
+          #header #header-middle #block-summa-blocks-social-media ul li:last-child {
+            padding: 0; }
+          #header #header-middle #block-summa-blocks-social-media ul li a {
+            background: url("../../images/social-mobile-sprites.png") no-repeat top left;
+            width: 98px;
+            height: 98px;
+            display: inline-block; }
+          #header #header-middle #block-summa-blocks-social-media ul li.icon-facebook a {
+            background-position: 0 0; }
+          #header #header-middle #block-summa-blocks-social-media ul li.icon-twitter a {
+            background-position: -99px 0; }
+          #header #header-middle #block-summa-blocks-social-media ul li.icon-google_plus a {
+            background-position: -198px 0; }
+          #header #header-middle #block-summa-blocks-social-media ul li.icon-linkedin a {
+            background-position: -297px 0; }
+  #header #header-bottom {
     z-index: 19;
     position: relative;
     padding: 96px 49px 0;
     height: auto;
     width: 100%;
     text-align: center;
-    min-height: 408px;
-}
+    min-height: 408px; }
 
 @media only screen and (min-width: 641px) {
-    #header {
-        background: none;
-    }
-
+  #header {
+    background: none; }
     #header.expanded #header-bottom {
-        margin: 0;
-        padding: 0;
-        background: none;
-        clear: both;
-    }
-
+      margin: 0;
+      padding: 0;
+      background: none;
+      clear: both; }
     #header #header-top {
-        background: none;
-        width: auto;
-        float: left;
-    }
-
-    #header #header-top #logo {
+      background: none;
+      width: auto;
+      float: left; }
+      #header #header-top #logo {
         background: url("../../images/logo-tablet.png") no-repeat top left;
         width: 197px;
         height: 57px;
-        margin: 12px 6px;
-    }
-
-    #header #header-top .menu-mobile {
-        display: none;
-    }
-
+        margin: 12px 6px; }
+      #header #header-top .menu-mobile {
+        display: none; }
     #header #header-middle {
-        display: block;
-        float: right;
-        padding: 17px 0 0 0;
-        margin: 6px 0;
-        width: auto;
-    }
-
-    #header #header-middle #block-menu-menu-summa-options ul {
+      display: block;
+      float: right;
+      padding: 17px 0 0 0;
+      margin: 6px 0;
+      width: auto; }
+      #header #header-middle #block-menu-menu-summa-options ul {
         margin-top: 12px;
         background: none;
-        width: auto;
-    }
-
-    #header #header-middle #block-menu-menu-summa-options ul li {
-        width: auto;
-        background: none;
-        display: inline;
-        border: 0;
-        font-size: 14px;
-        padding: 0;
-        line-height: normal;
-        margin-right: 13px;
-    }
-
-    #header #header-middle #block-menu-menu-summa-options ul li a {
-        padding: 5px 14px;
-    }
-
-    #header #header-middle #block-menu-menu-summa-options ul li a:hover, #header #header-middle #block-menu-menu-summa-options ul li a:nth-child(2), #header #header-middle #block-menu-menu-summa-options ul li a.active {
-        border-radius: 9px;
-        background: #fff;
-        width: auto;
-        padding: 9px 14px;
-        color: #000;
-    }
-
-    #header #header-middle #block-menu-menu-summa-options ul li.last {
-        border: 0;
-    }
-
-    #header #header-middle #block-summa-blocks-social-media {
+        width: auto; }
+        #header #header-middle #block-menu-menu-summa-options ul li {
+          width: auto;
+          background: none;
+          display: inline;
+          border: 0;
+          font-size: 14px;
+          padding: 0;
+          line-height: normal;
+          margin-right: 13px; }
+          #header #header-middle #block-menu-menu-summa-options ul li a {
+            padding: 5px 14px; }
+            #header #header-middle #block-menu-menu-summa-options ul li a:hover, #header #header-middle #block-menu-menu-summa-options ul li a:nth-child(2), #header #header-middle #block-menu-menu-summa-options ul li a.active {
+              border-radius: 9px;
+              background: #fff;
+              width: auto;
+              padding: 9px 14px;
+              color: #000; }
+          #header #header-middle #block-menu-menu-summa-options ul li.last {
+            border: 0; }
+      #header #header-middle #block-summa-blocks-social-media {
         position: fixed;
         top: 50%;
         right: 0;
         width: auto;
         background: none;
         -webkit-backface-visibility: hidden;
-        -webkit-transform: translateZ(0);
-    }
-
-    #header #header-middle #block-summa-blocks-social-media ul {
-        padding: 0;
-        margin: -64px auto;
-        min-width: initial;
-    }
-
-    #header #header-middle #block-summa-blocks-social-media ul li {
-        display: block;
-        padding: 0;
-    }
-
-    #header #header-middle #block-summa-blocks-social-media ul li a {
-        background: url("../../images/social-tablet-sprites.png") no-repeat top left;
-        width: 32px;
-        height: 32px;
-        display: block;
-    }
-
-    #header #header-middle #block-summa-blocks-social-media ul li.icon-facebook a {
-        background-position: 0 0;
-    }
-
-    #header #header-middle #block-summa-blocks-social-media ul li.icon-twitter a {
-        background-position: 0 -32px;
-    }
-
-    #header #header-middle #block-summa-blocks-social-media ul li.icon-google_plus a {
-        background-position: 0 -64px;
-    }
-
-    #header #header-middle #block-summa-blocks-social-media ul li.icon-linkedin a {
-        background-position: 0 -96px;
-    }
-}
+        -webkit-transform: translateZ(0); }
+        #header #header-middle #block-summa-blocks-social-media ul {
+          padding: 0;
+          margin: -64px auto;
+          min-width: initial; }
+          #header #header-middle #block-summa-blocks-social-media ul li {
+            display: block;
+            padding: 0; }
+            #header #header-middle #block-summa-blocks-social-media ul li a {
+              background: url("../../images/social-tablet-sprites.png") no-repeat top left;
+              width: 32px;
+              height: 32px;
+              display: block; }
+            #header #header-middle #block-summa-blocks-social-media ul li.icon-facebook a {
+              background-position: 0 0; }
+            #header #header-middle #block-summa-blocks-social-media ul li.icon-twitter a {
+              background-position: 0 -32px; }
+            #header #header-middle #block-summa-blocks-social-media ul li.icon-google_plus a {
+              background-position: 0 -64px; }
+            #header #header-middle #block-summa-blocks-social-media ul li.icon-linkedin a {
+              background-position: 0 -96px; } }

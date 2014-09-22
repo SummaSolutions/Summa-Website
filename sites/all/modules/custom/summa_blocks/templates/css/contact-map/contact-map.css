@@ -8,12 +8,12 @@
     padding: 0;
     list-style: none; }
     .contact-map-container ul li .label .country {
-      font-weight: normal;
       display: block; }
     .contact-map-container ul li .label .address {
       display: block; }
     .contact-map-container ul li .label .city {
-      display: block; }
+      display: block;
+      font-weight: normal; }
     .contact-map-container ul li .label .email {
       display: block; }
       .contact-map-container ul li .label .email a {

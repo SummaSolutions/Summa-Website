@@ -1,23 +1,12 @@
-@media only screen and (min-width: 319px) {
-    #header {
-        background: red;
-    }
-}
-
-@media only screen and (min-width: 479px) {
-    #header {
-        background: blue;
-    }
-}
-
-@media only screen and (min-width: 767px) {
-    #header {
-        background: green;
-    }
-}
-
-@media only screen and (min-width: 1023px) {
-    #header {
-        background: orange;
-    }
-}
+@media only screen and (min-width: 321px) {
+  #header {
+    background: red; } }
+@media only screen and (min-width: 481px) {
+  #header {
+    background: blue; } }
+@media only screen and (min-width: 769px) {
+  #header {
+    background: green; } }
+@media only screen and (min-width: 1025px) {
+  #header {
+    background: orange; } }

@@ -1,0 +1,201 @@
+.featured-case-studies-wrapper {
+  padding: 65px 25px;
+  text-align: center; }
+  .featured-case-studies-wrapper .pane-title {
+    color: #fff;
+    margin: 0 0 90px;
+    font-size: 70px;
+    font-weight: normal; }
+    .featured-case-studies-wrapper .pane-title .subtitle {
+      margin: 36px 0 0;
+      font-size: 34px;
+      display: block;
+      font-weight: lighter;
+      font-family: Roboto; }
+
+#featured-case-studies-container {
+  color: #fff;
+  position: relative; }
+  #featured-case-studies-container .views-row {
+    position: relative;
+    padding: 0 0 168px; }
+  #featured-case-studies-container .views_slideshow_main {
+    position: absolute;
+    top: 305px; }
+  #featured-case-studies-container .pane-content {
+    /* Read More link */ }
+    #featured-case-studies-container .pane-content .bxslider {
+      overflow: hidden; }
+      #featured-case-studies-container .pane-content .bxslider .slide {
+        width: 100%;
+        float: left; }
+    #featured-case-studies-container .pane-content .views-field-title {
+      font-size: 50px;
+      height: 70px;
+      margin: 0 0 26px;
+      width: auto; }
+      #featured-case-studies-container .pane-content .views-field-title a {
+        color: inherit;
+        text-decoration: none; }
+    #featured-case-studies-container .pane-content .views-field-entity-id {
+      padding: 36px;
+      height: 405px;
+      overflow: hidden;
+      color: #000 !important; }
+      #featured-case-studies-container .pane-content .views-field-entity-id span {
+        font-size: 28px !important;
+        font-weight: lighter !important;
+        font-family: Roboto !important;
+        line-height: 34px !important; }
+      #featured-case-studies-container .pane-content .views-field-entity-id p {
+        margin: 0 !important; }
+    #featured-case-studies-container .pane-content .views-field-field-picture {
+      width: 100%;
+      height: 495px;
+      overflow: visible; }
+      #featured-case-studies-container .pane-content .views-field-field-picture img {
+        max-height: 498px;
+        float: right; }
+    #featured-case-studies-container .pane-content .views-field-path {
+      width: 100%;
+      position: absolute;
+      bottom: 30px; }
+      #featured-case-studies-container .pane-content .views-field-path a {
+        -moz-border-radius: 7px;
+        -webkit-border-radius: 7px;
+        border-radius: 7px;
+        border: 1px solid #9fb335;
+        background: #fff;
+        width: 100%;
+        display: block;
+        padding: 45px 0;
+        text-transform: uppercase;
+        font-family: Arial;
+        color: #9fb335;
+        text-decoration: none; }
+    #featured-case-studies-container .pane-content .views-field-field-picture-whyus {
+      display: none; }
+    #featured-case-studies-container .pane-content .views-field-body {
+      display: none; }
+    #featured-case-studies-container .pane-content .views-field-field-testimonial-logo {
+      display: none; }
+
+@media only screen and (min-width: 641px) {
+  .featured-case-studies-wrapper {
+    padding: 23px 0 0 0; }
+    .featured-case-studies-wrapper .pane-title {
+      margin: 0;
+      font-size: 70px;
+      font-weight: normal;
+      text-align: center; }
+      .featured-case-studies-wrapper .pane-title .subtitle {
+        margin: 0;
+        font-size: 24px;
+        display: block;
+        font-weight: lighter;
+        font-family: Roboto; }
+
+  #featured-case-studies-container {
+    text-align: left;
+    min-width: 1000px; }
+    #featured-case-studies-container .pane-content .bxslider {
+      overflow: hidden;
+      width: 100%; }
+      #featured-case-studies-container .pane-content .bxslider .slide {
+        width: 100%;
+        height: 765px;
+        text-align: left;
+        margin-right: 300px;
+        float: left; }
+        #featured-case-studies-container .pane-content .bxslider .slide .container {
+          position: relative;
+          width: 1000px;
+          height: 765px;
+          margin: 0 auto; }
+    #featured-case-studies-container .pane-content .views-field-title {
+      padding: 0 28px;
+      margin-top: 58px;
+      float: right;
+      font-size: 39px;
+      font-weight: bold;
+      height: auto;
+      width: 384px; }
+    #featured-case-studies-container .pane-content .views-field-field-picture {
+      text-align: right;
+      position: absolute;
+      right: 453px;
+      top: 70px;
+      width: 750px; }
+    #featured-case-studies-container .pane-content .views-field-entity-id {
+      float: right;
+      clear: both;
+      padding: 0 28px;
+      max-height: 224px;
+      width: 384px;
+      color: #fff !important;
+      overflow: hidden; }
+      #featured-case-studies-container .pane-content .views-field-entity-id span {
+        font-size: 16px !important;
+        line-height: 23px !important; }
+    #featured-case-studies-container .pane-content .views-field-path {
+      width: 384px;
+      position: absolute;
+      right: 0;
+      top: 392px;
+      bottom: initial;
+      left: initial;
+      padding: 0 28px;
+      text-align: center;
+      height: auto; }
+      #featured-case-studies-container .pane-content .views-field-path a {
+        border: 1px solid #fff;
+        background: transparent;
+        display: block;
+        padding: 22px 0;
+        color: #fff; }
+    #featured-case-studies-container .pane-content .views-field-body {
+      display: block;
+      color: #000;
+      width: 381px;
+      height: 180px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      text-align: center; }
+      #featured-case-studies-container .pane-content .views-field-body .views-label-body {
+        color: #5d5e5e;
+        font-size: 16px;
+        font-weight: bold; }
+      #featured-case-studies-container .pane-content .views-field-body .field-content {
+        font-family: Roboto;
+        font-size: 14px;
+        font-weight: lighter;
+        color: #333; }
+    #featured-case-studies-container .pane-content .views-field-field-picture-whyus {
+      display: block;
+      bottom: 0;
+      left: 0;
+      width: 50%;
+      height: 185px;
+      position: absolute;
+      background: url(../../images/latest-dashed-background.gif) no-repeat right top;
+      text-align: center; }
+      #featured-case-studies-container .pane-content .views-field-field-picture-whyus .views-label-field-picture-whyus {
+        color: #5d5e5e;
+        font-size: 16px;
+        font-weight: bold; }
+      #featured-case-studies-container .pane-content .views-field-field-picture-whyus img {
+        height: 65px;
+        display: inline-block;
+        margin: 23px 30px; }
+    #featured-case-studies-container .pane-content .views-field-field-testimonial-logo {
+      display: block;
+      position: absolute;
+      bottom: 55px;
+      right: 389px;
+      height: 82px;
+      width: 82px;
+      border-radius: 50%;
+      overflow: hidden; } }
+
+/*# sourceMappingURL=featured-case-studies.css.map */

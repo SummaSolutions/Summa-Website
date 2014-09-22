@@ -1,72 +1,43 @@
 .canvas-services .region-body-container {
-    margin-top: 0;
-    margin-bottom: 25px;
-    padding-top: 15px;
-}
-
+  margin-top: 0;
+  margin-bottom: 25px;
+  padding-top: 15px; }
 .canvas-services .row-description .panels-flexible-region-canvas-services-center {
-    height: 710px;
-}
-
+  height: 710px; }
 .canvas-services .col-left {
-    margin: 36px 0 0;
-    float: left;
-    width: 282px;
-}
-
+  margin: 36px 0 0;
+  float: left;
+  width: 282px; }
 .canvas-services .col-right {
-    margin: 36px 0 0;
-    float: right;
-    width: 252px;
-}
-
+  margin: 36px 0 0;
+  float: right;
+  width: 252px; }
 .canvas-services .col-left, .canvas-services .col-right {
-    font-size: 14px;
-}
-
-.canvas-services .col-left img, .canvas-services .col-right img {
-    margin: 0 0 15px;
-}
-
-.canvas-services .col-left p, .canvas-services .col-right p {
-    margin: 0;
-}
+  font-size: 14px; }
+  .canvas-services .col-left img, .canvas-services .col-right img {
+    margin: 0 0 15px; }
+  .canvas-services .col-left p, .canvas-services .col-right p {
+    margin: 0; }
 
 @media only screen and (min-width: 641px) {
-    .canvas-services .region-body-container {
-        margin-top: 84px;
-        margin-bottom: 95px;
-    }
-
-    .canvas-services .col-left {
-        margin: 16px 0 0;
-        width: 324px;
-    }
-
-    .canvas-services .col-right {
-        margin: 16px 0 0;
-        width: 411px;
-    }
-
-    .canvas-services .col-left, .canvas-services .col-right {
-        text-align: center;
-    }
-
+  .canvas-services .region-body-container {
+    margin-top: 84px;
+    margin-bottom: 95px; }
+  .canvas-services .col-left {
+    margin: 16px 0 0;
+    width: 324px; }
+  .canvas-services .col-right {
+    margin: 16px 0 0;
+    width: 411px; }
+  .canvas-services .col-left, .canvas-services .col-right {
+    text-align: center; }
     .canvas-services .col-left p em, .canvas-services .col-right p em {
-        margin: 0 0 25px;
-    }
-
-    .canvas-services .col-left-tablet {
-        width: 408px;
-        float: left;
-    }
-
-    .canvas-services .col-right-tablet {
-        width: 411px;
-        float: right;
-    }
-
-    .canvas-services .field-name-body h2 {
-        text-align: center;
-    }
-}
+      margin: 0 0 25px; }
+  .canvas-services .col-left-tablet {
+    width: 408px;
+    float: left; }
+  .canvas-services .col-right-tablet {
+    width: 411px;
+    float: right; }
+  .canvas-services .field-name-body h2 {
+    text-align: center; } }
