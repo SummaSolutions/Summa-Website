@@ -28,9 +28,11 @@
 /** LAYOUTS **/
 
 .dashed-row {
-  background: url(../../images/service-list-horizontal-dashed-background-mobile.gif) repeat-x left 441px;
+  background: url(../../images/service-list-horizontal-dashed-background-mobile.gif) repeat-x left 430px;
 }
-
+.gray-row{
+  padding: 0px 0px 85px;
+}
 .green-row {
   background: url(../../images/layout-green-background-tablet.gif) repeat-x center top #fff;
   height: 1032px;
