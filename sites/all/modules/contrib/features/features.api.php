@@ -49,16 +49,15 @@
  *   'alter_hook': What the name of the alter hook for this component is.
  *    Do not include the '_alter' part. Defaults to 'default_hook'.
  */
-function hook_features_api()
-{
-    return array(
-        'mycomponent' => array(
-            'default_hook' => 'mycomponent_defaults',
-            'default_file' => FEATURES_DEFAULTS_INCLUDED,
-            'feature_source' => TRUE,
-            'file' => drupal_get_path( 'module', 'mycomponent' ) . '/mycomponent.features.inc',
-        ),
-    );
+function hook_features_api() {
+  return array(
+    'mycomponent' => array(
+      'default_hook' => 'mycomponent_defaults',
+      'default_file' => FEATURES_DEFAULTS_INCLUDED,
+      'feature_source' => TRUE,
+      'file' => drupal_get_path('module', 'mycomponent') . '/mycomponent.features.inc',
+    ),
+  );
 }
 
 /**
@@ -109,14 +108,13 @@ function hook_features_api()
  * @return array
  *   The pipe array of further processors that should be called.
  */
-function hook_features_export( $data, &$export, $module_name )
-{
-    // The following is the simplest implementation of a straight object export
-    // with no further export processors called.
-    foreach ( $data as $component ) {
-        $export['features']['mycomponent'][$component] = $component;
-    }
-    return array();
+function hook_features_export($data, &$export, $module_name) {
+  // The following is the simplest implementation of a straight object export
+  // with no further export processors called.
+  foreach ($data as $component) {
+    $export['features']['mycomponent'][$component] = $component;
+  }
+  return array();
 }
 
 /**
@@ -130,13 +128,12 @@ function hook_features_export( $data, &$export, $module_name )
  *   A keyed array of items, suitable for use with a FormAPI select or
  *   checkboxes element.
  */
-function hook_features_export_options()
-{
-    $options = array();
-    foreach ( mycomponent_load() as $mycomponent ) {
-        $options[$mycomponent->name] = $mycomponent->title;
-    }
-    return $options;
+function hook_features_export_options() {
+  $options = array();
+  foreach (mycomponent_load() as $mycomponent) {
+    $options[$mycomponent->name] = $mycomponent->title;
+  }
+  return $options;
 }
 
 /**
@@ -162,16 +159,15 @@ function hook_features_export_options()
  *   with the required key of 'code' and optional key of 'args', if 'args' need
  *   to be added to the hook.
  */
-function hook_features_export_render( $module_name, $data, $export = NULL )
-{
-    $code = array();
-    $code[] = '$mycomponents = array();';
-    foreach ( $data as $name ) {
-        $code[] = "  \$mycomponents['{$name}'] = " . features_var_export( mycomponent_load( $name ) ) . ";";
-    }
-    $code[] = "return \$mycomponents;";
-    $code = implode( "\n", $code );
-    return array( 'mycomponent_defaults' => $code );
+function hook_features_export_render($module_name, $data, $export = NULL) {
+  $code = array();
+  $code[] = '$mycomponents = array();';
+  foreach ($data as $name) {
+    $code[] = "  \$mycomponents['{$name}'] = " . features_var_export(mycomponent_load($name)) .";";
+  }
+  $code[] = "return \$mycomponents;";
+  $code = implode("\n", $code);
+  return array('mycomponent_defaults' => $code);
 }
 
 /**
@@ -188,14 +184,13 @@ function hook_features_export_render( $module_name, $data, $export = NULL )
  *   NOTE: This return value is no longer used in the latest Features so
  *   modules should no longer count on this value
  */
-function hook_features_revert( $module_name )
-{
-    $mycomponents = module_invoke( $module_name, 'mycomponent_defaults' );
-    if ( !empty( $mycomponents ) ) {
-        foreach ( $mycomponents as $mycomponent ) {
-            mycomponent_delete( $mycomponent );
-        }
+function hook_features_revert($module_name) {
+  $mycomponents = module_invoke($module_name, 'mycomponent_defaults');
+  if (!empty($mycomponents)) {
+    foreach ($mycomponents as $mycomponent) {
+      mycomponent_delete($mycomponent);
     }
+  }
 }
 
 /**
@@ -215,14 +210,13 @@ function hook_features_revert( $module_name )
  * @param string $module_name
  *   The name of the feature module whose components should be rebuilt.
  */
-function hook_features_rebuild( $module_name )
-{
-    $mycomponents = module_invoke( $module_name, 'mycomponent_defaults' );
-    if ( !empty( $mycomponents ) ) {
-        foreach ( $mycomponents as $mycomponent ) {
-            mycomponent_save( $mycomponent );
-        }
+function hook_features_rebuild($module_name) {
+  $mycomponents = module_invoke($module_name, 'mycomponent_defaults');
+  if (!empty($mycomponents)) {
+    foreach ($mycomponents as $mycomponent) {
+      mycomponent_save($mycomponent);
     }
+  }
 }
 
 /**
@@ -236,12 +230,11 @@ function hook_features_rebuild( $module_name )
  * @param array $items
  *   The items handled by the operation.
  */
-function hook_features_pre_restore( $op, $items )
-{
-    if ( $op == 'rebuild' ) {
-        // Use features rebuild to rebuild the features independent exports too.
-        entity_defaults_rebuild();
-    }
+function hook_features_pre_restore($op, $items) {
+  if ($op == 'rebuild') {
+    // Use features rebuild to rebuild the features independent exports too.
+    entity_defaults_rebuild();
+  }
 }
 
 /**
@@ -255,12 +248,11 @@ function hook_features_pre_restore( $op, $items )
  * @param array $items
  *   The items handled by the operation.
  */
-function hook_features_post_restore( $op, $items )
-{
-    if ( $op == 'rebuild' ) {
-        // Use features rebuild to rebuild the features independent exports too.
-        entity_defaults_rebuild();
-    }
+function hook_features_post_restore($op, $items) {
+  if ($op == 'rebuild') {
+    // Use features rebuild to rebuild the features independent exports too.
+    entity_defaults_rebuild();
+  }
 }
 
 /**
@@ -275,12 +267,11 @@ function hook_features_post_restore( $op, $items )
  * @param array $module_name
  *   The name of the feature module to be generated.
  */
-function hook_features_export_alter( &$export, $module_name )
-{
-    // Example: do not allow the page content type to be exported, ever.
-    if ( !empty( $export['features']['node']['page'] ) ) {
-        unset( $export['features']['node']['page'] );
-    }
+function hook_features_export_alter(&$export, $module_name) {
+  // Example: do not allow the page content type to be exported, ever.
+  if (!empty($export['features']['node']['page'])) {
+    unset($export['features']['node']['page']);
+  }
 }
 
 /**
@@ -297,11 +288,10 @@ function hook_features_export_alter( &$export, $module_name )
  *   By reference. An array of all components to be exported with a given
  *   feature.
  */
-function hook_features_pipe_COMPONENT_alter( &$pipe, $data, $export )
-{
-    if ( in_array( $data, 'my-node-type' ) ) {
-        $pipe['dependencies'][] = 'mymodule';
-    }
+function hook_features_pipe_COMPONENT_alter(&$pipe, $data, $export) {
+  if (in_array($data, 'my-node-type')) {
+    $pipe['dependencies'][] = 'mymodule';
+  }
 }
 
 /**
@@ -318,11 +308,10 @@ function hook_features_pipe_COMPONENT_alter( &$pipe, $data, $export )
  * The component being exported is contained in $export['component'].
  * The module being exported contained in $export['module_name'].
  */
-function hook_features_pipe_alter( &$pipe, $data, $export )
-{
-    if ( $export['component'] == 'node' && in_array( $data, 'my-node-type' ) ) {
-        $pipe['dependencies'][] = 'mymodule';
-    }
+function hook_features_pipe_alter(&$pipe, $data, $export) {
+  if ($export['component'] == 'node' && in_array($data, 'my-node-type')) {
+    $pipe['dependencies'][] = 'mymodule';
+  }
 }
 
 /**
@@ -347,8 +336,7 @@ function hook_features_pipe_alter( &$pipe, $data, $export )
  * @param &$fields
  *   By reference. The fields that have been declared by another feature.
  */
-function hook_field_default_fields_alter( &$fields )
-{
+function hook_field_default_fields_alter(&$fields) {
 }
 
 /**
@@ -357,8 +345,7 @@ function hook_field_default_fields_alter( &$fields )
  * @param &$fields
  *   By reference. The fields that have been declared by another feature.
  */
-function hook_field_default_field_bases_alter( &$fields )
-{
+function hook_field_default_field_bases_alter(&$fields) {
 }
 
 /**
@@ -367,8 +354,7 @@ function hook_field_default_field_bases_alter( &$fields )
  * @param &$fields
  *   By reference. The fields that have been declared by another feature.
  */
-function hook_field_default_field_instances_alter( &$fields )
-{
+function hook_field_default_field_instances_alter(&$fields) {
 }
 
 /**
@@ -379,8 +365,7 @@ function hook_field_default_field_instances_alter( &$fields )
  *   By reference. The fieldgroup groups that have been declared by another
  *   feature.
  */
-function hook_fieldgroup_default_groups_alter( &$groups )
-{
+function hook_fieldgroup_default_groups_alter(&$groups) {
 }
 
 /**
@@ -390,8 +375,7 @@ function hook_fieldgroup_default_groups_alter( &$groups )
  * @param &$formats
  *   By reference. The formats that have been declared by another feature.
  */
-function hook_filter_default_formats_alter( &$formats )
-{
+function hook_filter_default_formats_alter(&$formats) {
 }
 
 /**
@@ -400,8 +384,7 @@ function hook_filter_default_formats_alter( &$formats )
  * @param &$menus
  *   By reference. The menus that have been declared by another feature.
  */
-function hook_menu_default_menu_custom_alter( &$menus )
-{
+function hook_menu_default_menu_custom_alter(&$menus) {
 }
 
 /**
@@ -410,8 +393,7 @@ function hook_menu_default_menu_custom_alter( &$menus )
  * @param &$links
  *   By reference. The menu links that have been declared by another feature.
  */
-function hook_menu_default_menu_links_alter( &$links )
-{
+function hook_menu_default_menu_links_alter(&$links) {
 }
 
 /**
@@ -420,8 +402,7 @@ function hook_menu_default_menu_links_alter( &$links )
  * @param &$items
  *   By reference. The menu items that have been declared by another feature.
  */
-function hook_menu_default_items_alter( &$items )
-{
+function hook_menu_default_items_alter(&$items) {
 }
 
 /**
@@ -431,8 +412,7 @@ function hook_menu_default_items_alter( &$items )
  * @param &$vocabularies
  *   By reference. The vocabularies that have been declared by another feature.
  */
-function hook_taxonomy_default_vocabularies_alter( &$vocabularies )
-{
+function hook_taxonomy_default_vocabularies_alter(&$vocabularies) {
 }
 
 /**
@@ -442,8 +422,7 @@ function hook_taxonomy_default_vocabularies_alter( &$vocabularies )
  * @param &$permissions
  *   By reference. The permissions that have been declared by another feature.
  */
-function hook_user_default_permissions_alter( &$permissions )
-{
+function hook_user_default_permissions_alter(&$permissions) {
 }
 
 /**
@@ -452,8 +431,7 @@ function hook_user_default_permissions_alter( &$permissions )
  * @param &$roles
  *   By reference. The roles that have been declared by another feature.
  */
-function hook_user_default_roles_alter( &$roles )
-{
+function hook_user_default_roles_alter(&$roles) {
 }
 
 /**
@@ -476,8 +454,7 @@ function hook_user_default_roles_alter( &$roles )
  * @param $component
  *   String name of the component that is about to be reverted.
  */
-function hook_pre_features_revert( $component )
-{
+function hook_pre_features_revert($component) {
 }
 
 /**
@@ -487,8 +464,7 @@ function hook_pre_features_revert( $component )
  * @param $component
  *   String name of the component that has just been reverted.
  */
-function hook_post_features_revert( $component )
-{
+function hook_post_features_revert($component) {
 }
 
 /**
@@ -498,8 +474,7 @@ function hook_post_features_revert( $component )
  * @param $component
  *   String name of the component that is about to be rebuilt.
  */
-function hook_pre_features_rebuild( $component )
-{
+function hook_pre_features_rebuild($component) {
 }
 
 /**
@@ -509,8 +484,7 @@ function hook_pre_features_rebuild( $component )
  * @param $component
  *   String name of the component that has just been rebuilt.
  */
-function hook_post_features_rebuild( $component )
-{
+function hook_post_features_rebuild($component) {
 }
 
 /**
@@ -520,8 +494,7 @@ function hook_post_features_rebuild( $component )
  * @param $component
  *   String name of the component that is about to be disabled.
  */
-function hook_pre_features_disable_feature( $component )
-{
+function hook_pre_features_disable_feature($component) {
 }
 
 /**
@@ -531,8 +504,7 @@ function hook_pre_features_disable_feature( $component )
  * @param $component
  *   String name of the component that has just been disabled.
  */
-function hook_post_features_disable_feature( $component )
-{
+function hook_post_features_disable_feature($component) {
 }
 
 /**
@@ -542,8 +514,7 @@ function hook_post_features_disable_feature( $component )
  * @param $component
  *   String name of the component that is about to be enabled.
  */
-function hook_pre_features_enable_feature( $component )
-{
+function hook_pre_features_enable_feature($component) {
 }
 
 /**
@@ -553,8 +524,7 @@ function hook_pre_features_enable_feature( $component )
  * @param $component
  *   String name of the component that has just been enabled.
  */
-function hook_post_features_enable_feature( $component )
-{
+function hook_post_features_enable_feature($component) {
 }
 
 /**
