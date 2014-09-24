@@ -1,0 +1,40 @@
+.canvas-company .row-white .manifesto-container .pane-content {
+  padding: 0 46px; }
+.canvas-company .row-white .view-manifesto-items ul.manifesto-accordion {
+  margin: 0 0 0 44px;
+  padding: 0 0 0 30px; }
+  .canvas-company .row-white .view-manifesto-items ul.manifesto-accordion > li {
+    position: relative;
+    list-style: none; }
+    .canvas-company .row-white .view-manifesto-items ul.manifesto-accordion > li:before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: -43px;
+      width: 29px;
+      height: 29px;
+      background-image: url(../../../images/accordion-collapsed.gif); }
+    .canvas-company .row-white .view-manifesto-items ul.manifesto-accordion > li.gv-accordion-active:before {
+      background-image: url(../../../images/accordion-expanded.gif); }
+  .canvas-company .row-white .view-manifesto-items ul.manifesto-accordion li.gv-accordion-active .views-field-title {
+    border: none; }
+  .canvas-company .row-white .view-manifesto-items ul.manifesto-accordion li .views-field-title {
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #666;
+    border-bottom: 1px solid #c2c2c2;
+    line-height: 46px; }
+  .canvas-company .row-white .view-manifesto-items ul.manifesto-accordion li .views-field-body {
+    padding: 11px 46px 47px 0; }
+
+@media only screen and (min-width: 641px) {
+  .canvas-company .row-white .manifesto-container .pane-content {
+    padding: 0 0 0 84px;
+    margin: 0 0 34px; }
+  .canvas-company .row-white .view-manifesto-items ul.manifesto-accordion {
+    margin: 0 0 0 55px; }
+    .canvas-company .row-white .view-manifesto-items ul.manifesto-accordion > li .views-field-body {
+      padding: 11px 0 47px 0; } }
+
+/*# sourceMappingURL=manifesto.css.map */
