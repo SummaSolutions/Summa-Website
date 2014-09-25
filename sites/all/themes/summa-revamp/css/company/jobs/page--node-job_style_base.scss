@@ -1,0 +1,19 @@
+.canvas-company {
+  .row-white {
+    background: white!important;
+    h2{
+      margin: 34px 0 19px;
+    }
+    .safe-container{
+      padding: 0 46px;
+    }
+    .socials-container{
+      text-align: center;
+      .like-google, .like-twitter, .like-facebook{
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 0 24px;
+      }
+    }
+  }
+}

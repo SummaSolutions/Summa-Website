@@ -1,0 +1,22 @@
+.canvas-company .row-white {
+  background: white !important; }
+  .canvas-company .row-white h2 {
+    margin: 34px 0 19px; }
+  .canvas-company .row-white .safe-container {
+    padding: 0 46px; }
+  .canvas-company .row-white .socials-container {
+    text-align: center; }
+    .canvas-company .row-white .socials-container .like-google, .canvas-company .row-white .socials-container .like-twitter, .canvas-company .row-white .socials-container .like-facebook {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 0 24px; }
+
+@media only screen and (min-width: 641px) {
+  .canvas-company .row-white .safe-container {
+    padding: 0 84px; }
+  .canvas-company .row-current-openings h1 {
+    top: 53px !important; }
+  .canvas-company .row-current-openings .col-left, .canvas-company .row-current-openings .col-right {
+    margin: 207px 0px 0px !important; } }
+
+/*# sourceMappingURL=page--node-job.css.map */
