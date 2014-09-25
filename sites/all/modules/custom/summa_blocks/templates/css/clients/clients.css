@@ -1,9 +1,8 @@
 .clients-wrapper .clients-container {
-    width: 519px;
-    margin: 80px auto 0;
-}
-
-.clients-wrapper .clients-container .views-field-field-picture {
+  width: 519px;
+  margin: 80px auto 0;
+  position: relative; }
+  .clients-wrapper .clients-container .views-field-field-picture {
     width: 156px;
     height: 156px;
     text-align: center;
@@ -11,23 +10,17 @@
     border: 1px solid #c2c2c2;
     float: left;
     margin: 0 12px 12px 0;
-    position: relative;
-}
-
-.clients-wrapper .clients-container .views-field-field-picture img {
-    margin: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: absolute;
-}
-
+    position: relative; }
+    .clients-wrapper .clients-container .views-field-field-picture img {
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute; }
 .clients-wrapper .more-container {
-    text-align: center;
-}
-
-.clients-wrapper .more-container a.more {
+  text-align: center; }
+  .clients-wrapper .more-container a.more {
     display: block;
     background: url(../../images/load-more.gif) no-repeat left center;
     padding: 0 0 0 34px;
@@ -38,19 +31,14 @@
     font-weight: lighter;
     color: #333;
     line-height: 29px;
-    text-decoration: none;
-}
-
-.clients-wrapper .more-container a.more:hover {
-    text-decoration: none;
-}
-
+    text-decoration: none; }
+    .clients-wrapper .more-container a.more:hover {
+      text-decoration: none; }
 .clients-wrapper .anchor-next {
-    margin: 54px auto 0 !important;
-}
+  margin: 54px auto 0 !important; }
 
 @media only screen and (min-width: 641px) {
-    .clients-wrapper .clients-container {
-        width: 840px;
-    }
-}
+  .clients-wrapper .clients-container {
+    width: 840px; } }
+
+/*# sourceMappingURL=clients.css.map */

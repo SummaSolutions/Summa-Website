@@ -1,5 +1,7 @@
-.canvas-company .row-white .manifesto-container .pane-content {
-  padding: 0 46px; }
+.canvas-company .row-white .manifesto-container {
+  position: relative; }
+  .canvas-company .row-white .manifesto-container .pane-content {
+    padding: 0 46px; }
 .canvas-company .row-white .view-manifesto-items ul.manifesto-accordion {
   margin: 0 0 0 44px;
   padding: 0 0 0 30px; }
