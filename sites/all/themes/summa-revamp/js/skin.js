@@ -1,7 +1,7 @@
 var headerSelector = "#header";
 var headerMiddleSelector = "#header-middle";
 
-jQuery(document).ready(function () {
+jQuery(window).load(function () {
     jQuery(".menu-mobile a").click(function (e) {
         e.preventDefault();
         jQuery(headerMiddleSelector).slideToggle();
@@ -31,7 +31,6 @@ jQuery(window).bind("enterBreakpoint641", function () {
 // Go to Top button
 jQuery(window).load(function () {
     function _scroll(a, velocity) {
-        debugger;
         var target = jQuery(a.hash);
         target = target.length ? target : jQuery('[name=' + a.hash.slice(1) + ']');
         if (target.length) {
