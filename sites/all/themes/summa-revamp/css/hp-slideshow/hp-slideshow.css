@@ -30,7 +30,8 @@
       display: block;
       max-height: 166px; }
   #header #header-bottom .views-field-entity-id {
-    margin: 20px 0; }
+    margin: 20px 0;
+    padding: 1px; }
   #header #header-bottom .views-field-path {
     width: 100%;
     position: absolute;
@@ -112,3 +113,5 @@
         max-height: 603px; }
     #header #header-bottom .views-field-path {
       display: none; } }
+
+/*# sourceMappingURL=hp-slideshow.css.map */
