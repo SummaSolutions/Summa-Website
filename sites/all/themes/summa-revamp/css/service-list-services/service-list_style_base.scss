@@ -60,16 +60,19 @@
         border: 1px solid #959595;
         background: #fff;
         padding: 22px 35px;
-        margin: 0 -71px; // left 50% at center
-        width: auto;
-        display: inline-block;
-        height: auto;
-        position: absolute;
-        bottom: 49px;
+        margin: 0 auto; // left 50% at center
+        width: 146px;
+        display: inline;
         text-transform: uppercase;
         font-size: 14px;
         text-decoration: none;
         color: inherit;
+        font-family: Ruda;
+
+        position: absolute;
+        bottom: 49px;
+        left:0;
+        right: 0;
       }
     }
   }
