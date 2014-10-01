@@ -1,11 +1,15 @@
 .canvas-blog .row-h1 {
   display: none; }
+.canvas-blog .row-white .pane-node-title {
+  margin: 46px 0 0; }
 .canvas-blog .row-white .region-right {
   display: none; }
 
 @media only screen and (min-width: 641px) {
   .canvas-blog .row-h1 {
     display: block; }
+  .canvas-blog .row-white .pane-node-title {
+    margin: 0; }
   .canvas-blog .row-white .region-right {
     display: block; } }
 
