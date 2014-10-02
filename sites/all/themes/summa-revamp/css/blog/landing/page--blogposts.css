@@ -86,6 +86,9 @@
             list-style: none;
             padding: 2px 17px;
             margin: 0 0 7px; }
+            .canvas-blog .row-white .region-main .views-field-entity-id-2 ul li a {
+              text-decoration: none;
+              color: inherit; }
       .canvas-blog .row-white .region-main .pane-node-field-category .field-item {
         margin: 0 2px 7px 0;
         display: inline-block;

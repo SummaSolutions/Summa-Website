@@ -131,6 +131,11 @@
             list-style: none;
             padding: 2px 17px;
             margin: 0 0 7px;
+
+            a{
+              text-decoration: none;
+              color: inherit;
+            }
           }
         }
       }
