@@ -2,7 +2,7 @@ var wuSliderSelector = ".pane-summa-blocks-why-us .bxslider";
 var wuSliderControl;
 
 
-jQuery(document).ready(function () {
+jQuery(window).load(function () {
     if (!jQuery("body").hasClass("breakpoint-641"))
         wuSliderControl = jQuery(wuSliderSelector).bxSlider({
             wrapperClass: 'bx-wrapper',
