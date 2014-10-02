@@ -15,8 +15,6 @@ $plugin = array(
 );
 
 function ctools_cache_simple_cache_get($data, $key) {
-  ctools_include('object-cache');
-
   // Ensure that if there is somehow no data, we at least don't stomp on other
   // people's caches.
   if (empty($data)) {
@@ -27,8 +25,6 @@ function ctools_cache_simple_cache_get($data, $key) {
 }
 
 function ctools_cache_simple_cache_set($data, $key, $object) {
-  ctools_include('object-cache');
-
   // Ensure that if there is somehow no data, we at least don't stomp on other
   // people's caches.
   if (empty($data)) {
@@ -39,8 +35,6 @@ function ctools_cache_simple_cache_set($data, $key, $object) {
 }
 
 function ctools_cache_simple_cache_clear($data, $key) {
-  ctools_include('object-cache');
-
   // Ensure that if there is somehow no data, we at least don't stomp on other
   // people's caches.
   if (empty($data)) {

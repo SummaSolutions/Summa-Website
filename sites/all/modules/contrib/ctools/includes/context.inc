@@ -12,7 +12,7 @@
  * is operating in or on.
  *
  * For example, when viewing a page, the 'context' is a node object. When
- * viewing a user, the 'context' is a user object. Contexts can also
+ * viewing a user, the 'context' is a user object. Contexs can also
  * have related contexts. For example, when viewing a 'node' you may need
  * to know something about the node author. Therefore, the node author
  * is a related context.
@@ -106,12 +106,6 @@ class ctools_context_required {
   var $required = TRUE;
 
   /**
-   * If TRUE, skip the check in ctools_context_required::select()
-   * for contexts whose names may have changed.
-   */
-  var $skip_name_check = FALSE;
-
-  /**
    *
    * @param $title
    *   The first parameter should be the 'title' of the context for use
@@ -122,11 +116,6 @@ class ctools_context_required {
   function ctools_context_required($title) {
     $args = func_get_args();
     $this->title = array_shift($args);
-
-    // If we have a boolean value at the end for $skip_name_check, store it
-    if (is_bool(end($args))) {
-      $this->skip_name_check = array_pop($args);
-    }
 
     // If we were given restrictions at the end, store them.
     if (count($args) > 1 && is_array(end($args))) {
@@ -176,7 +165,7 @@ class ctools_context_required {
     // in our context list, there is a good chance that what happened
     // is our context IDs changed. See if there's another context
     // that satisfies our requirements.
-    if (!$this->skip_name_check && !empty($context) && !isset($contexts[$context])) {
+    if (!empty($context) && !isset($contexts[$context])) {
       $choices = $this->filter($contexts);
 
       // If we got a hit, take the first one that matches.
@@ -508,33 +497,21 @@ function ctools_context_get_all_converters() {
 
 /**
  * Let the context convert an argument based upon the converter that was given.
- *
- * @param $context
- *   The context object
- * @param $converter
- *   The converter to use, which should be a string provided by the converter list.
- * @param $converter_options
- *   A n array of options to pass on to the generation function. For contexts
- *   that use token module, of particular use is 'sanitize' => FALSE which can
- *   get raw tokens. This should ONLY be used in values that will later be
- *   treated as unsafe user input since these values are by themselves unsafe.
- *   It is particularly useful to get raw values from Field API.
  */
-function ctools_context_convert_context($context, $converter, $converter_options = array()) {
+function ctools_context_convert_context($context, $converter) {
   // Contexts without plugins might be optional placeholders.
   if (empty($context->plugin)) {
     return;
   }
 
   $value = $context->argument;
-  $plugin = ctools_get_context($context->plugin);
-  if ($function = ctools_plugin_get_function($plugin, 'convert')) {
-    $value = $function($context, $converter, $converter_options);
+  if ($function = ctools_plugin_load_function('ctools', 'contexts', $context->plugin, 'convert')) {
+    $value = $function($context, $converter);
   }
 
   foreach (module_implements('ctools_context_converter_alter') as $module) {
     $function = $module . '_ctools_context_converter_alter';
-    $function($context, $converter, $value, $converter_options);
+    $function($context, $converter, $value);
   }
 
   return $value;
@@ -595,8 +572,7 @@ function _ctools_context_select($contexts, $required, $context) {
 function ctools_context_create($type, $data = NULL, $conf = FALSE) {
   ctools_include('plugins');
   $plugin = ctools_get_context($type);
-
-  if ($function = ctools_plugin_get_function($plugin, 'context')) {
+  if ($function = ctools_plugin_load_function('ctools', 'contexts', $type, 'context')) {
     return $function(FALSE, $data, $conf, $plugin);
   }
 }
@@ -630,7 +606,7 @@ function ctools_context_create_empty($type) {
 /**
  * Perform keyword and context substitutions.
  */
-function ctools_context_keyword_substitute($string, $keywords, $contexts, $converter_options = array()) {
+function ctools_context_keyword_substitute($string, $keywords, $contexts) {
   // Ensure a default keyword exists:
   $keywords['%%'] = '%';
 
@@ -644,7 +620,7 @@ function ctools_context_keyword_substitute($string, $keywords, $contexts, $conve
 
   // Look for context matches we we only have to convert known matches.
   $matches = array();
-  if (preg_match_all('/%(%|[a-zA-Z0-9_-]+(?:\:[a-zA-Z0-9_-]+)*)/us', $string, $matches)) {
+  if (preg_match_all('/%([a-zA-Z0-9%:_-]+)/us', $string, $matches)) {
     foreach ($matches[1] as $keyword) {
       // Ignore anything it finds with %%.
       if ($keyword[0] == '%') {
@@ -677,7 +653,7 @@ function ctools_context_keyword_substitute($string, $keywords, $contexts, $conve
         $keywords['%' . $keyword] = '';
       }
       else if (!empty($converter)) {
-        $keywords['%' . $keyword] = ctools_context_convert_context($context_keywords[$context], $converter, $converter_options);
+        $keywords['%' . $keyword] = ctools_context_convert_context($context_keywords[$context], $converter);
       }
       else {
         $keywords['%' . $keyword] = $context_keywords[$keyword]->title;
@@ -1027,23 +1003,8 @@ function ctools_context_get_context_from_relationships($relationships, &$context
  *   An array with information about the requested panel context.
  */
 function ctools_get_context($context) {
-  static $gate = array();
   ctools_include('plugins');
-  $plugin = ctools_get_plugins('ctools', 'contexts', $context);
-  if (empty($gate['context']) && !empty($plugin['superceded by'])) {
-    // This gate prevents infinite loops.
-    $gate[$context] = TRUE;
-    $new_plugin = ctools_get_plugins('ctools', 'contexts', $plugin['superceded by']);
-    $gate[$context] = FALSE;
-
-    // If a new plugin was returned, return it. Otherwise fall through and
-    // return the original we fetched.
-    if ($new_plugin) {
-      return $new_plugin;
-    }
-  }
-
-  return $plugin;
+  return ctools_get_plugins('ctools', 'contexts', $context);
 }
 
 /**
@@ -1400,7 +1361,8 @@ function ctools_get_relevant_access_plugins($contexts) {
  * Create a context for the logged in user.
  */
 function ctools_access_get_loggedin_context() {
-  $context = ctools_context_create('entity:user', array('type' => 'current'), TRUE);
+  global $user;
+  $context = ctools_context_create('entity:user', $user);
   $context->identifier = t('Logged in user');
   $context->keyword    = 'viewer';
   $context->id         = 0;

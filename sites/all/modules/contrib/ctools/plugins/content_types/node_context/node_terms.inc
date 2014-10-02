@@ -82,26 +82,20 @@ function ctools_node_terms_content_type_render($subtype, $conf, $panel_args, $co
   switch ($conf['term_format']) {
     case 'term-links':
       drupal_alter('link', $terms, $node);
-      $formatted_terms = theme('links', array('links' => $terms));
+      $formatted_terms = theme('links', $terms);
       break;
 
     case 'ul':
-      $formatted_terms = theme('item_list', array('items' => $terms));
+      $formatted_terms = theme('item_list', $terms);
       break;
 
     case 'inline-delimited':
-      $delimiter = isset($conf['term_delimiter']) ? $conf['term_delimiter'] : ', ';
-      $processed_terms = array();
-      foreach ($terms as $key => $term) {
-        if (is_string($term)) {
-          $processed_terms[$key] = $term;
-        }
-        else {
-          $terms[$key] = l($term['title'], $term['href'], $term);
-        }
+      $term_names = array();
+      foreach ($terms AS $term) {
+        $term_names[] = $term['title'];
       }
-
-      $formatted_terms = implode($delimiter, $processed_terms);
+      $delimiter = isset($conf['term_delimiter']) ? $conf['term_delimiter'] : ', ';
+      $formatted_terms = implode($delimiter, $term_names);
       break;
   }
 
@@ -109,7 +103,7 @@ function ctools_node_terms_content_type_render($subtype, $conf, $panel_args, $co
   $block = new stdClass();
   $block->module  = 'node_terms';
   $block->delta   = $node->nid;
-  $block->title   = t('Terms');
+  $block->title   = $type->title_label;
   $block->content = $formatted_terms;
 
   return $block;

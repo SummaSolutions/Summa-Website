@@ -1,5 +1,8 @@
-<p>Access plugins allow context based access control to pages.</p>
-<pre>    'title' => Title of the plugin
+
+access plugins allow context based access control to pages.    
+
+    
+    'title' => Title of the plugin
     'description' => Description of the plugin
     'callback' => callback to see if there is access is available. params: $conf, $contexts, $account
     'required context' => zero or more required contexts for this access plugin
@@ -7,6 +10,5 @@
     'settings form' => settings form. params: &$form, &$form_state, $conf
     settings form validate
     settings form submit
-</pre>
 
-<p><strong>Warning:</strong> your settings array will be stored <strong>in the meny system</strong> to reduce loads, so be <strong>trim</strong>.</p>
+warning: Your settings array will be stored IN THE MENU SYSTEM to reduce loads, so be TRIM.

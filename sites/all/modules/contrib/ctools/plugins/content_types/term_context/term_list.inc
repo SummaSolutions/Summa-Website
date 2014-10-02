@@ -49,7 +49,7 @@ function ctools_term_list_content_type_render($subtype, $conf, $panel_args, $con
 
       case 'parent':
         $terms = taxonomy_get_parents($term->tid);
-        $block->title = count($terms) == 1 ? t('Parent term') : t('Parent terms');
+        $block->title = format_plural(count($terms), 'Parent term', 'Parent terms');
         break;
 
       case 'sibling':
@@ -77,9 +77,7 @@ function ctools_term_list_content_type_render($subtype, $conf, $panel_args, $con
         }
       }
 
-      if (!empty($items)) {
-        $block->content = theme('item_list', array('items' => $items, 'type' => $conf['list_type']));
-      }
+      $block->content = theme('item_list', array('items' => $items, 'type' => $conf['list_type']));
     }
   }
   else {

@@ -1,0 +1,112 @@
+$green: #9fb335;
+#featured-case-studies-container {
+  color: #fff;
+  text-align: center;
+  position: relative;
+  padding: 65px 25px 0;
+  // Same as .slide
+  .views-row {
+    position: relative;
+    padding: 0 0 138px; //64px (Read More) + 74px (navigation)
+  }
+
+  .views_slideshow_main {
+    position: absolute;
+    top: 305px;
+  }
+  .pane-title {
+    margin: 0 0 99px;
+    font-size: 70px;
+    font-weight: normal;
+    .subtitle {
+      font-size: 34px;
+      display: block;
+      font-weight: lighter;
+      font-family: Roboto;
+    }
+  }
+
+  .pane-content {
+
+    .bxslider {
+      overflow: hidden;
+      //height: 854px - $title-height;
+      // same as .views-row
+      .slide {
+        width: 100%;
+        float: left;
+      }
+    }
+
+    .views-field-title {
+      font-size: 50px;
+      height: 70px;
+      margin: 0 0 26px;
+      width: auto;
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+    .views-field-entity-id {
+      padding: 36px;
+      height: 405px;
+      overflow: hidden;
+      color: #000 !important;
+      span {
+        font-size: 28px !important;
+        font-weight: lighter !important;
+        font-family: Roboto !important;
+        line-height: 34px !important;
+      }
+      p {
+        margin: 0 !important;
+      }
+    }
+    .views-field-field-picture {
+      width: 100%;
+      height: 495px;
+      overflow: visible;
+
+      img {
+        max-height: 498px;
+        float: right;
+      }
+    }
+
+    .views-field-path {
+      color: $green;
+      left: 0;
+      right: 0;
+      bottom: 23px + 74px; // Himself padding-bottom + navigation area
+      position: absolute;
+      a {
+
+        border-radius: 4px;
+        border: 1px solid $green;
+        background: #fff;
+        padding: 22px 35px;
+        margin: 0 -71px; // left 50% at center
+        width: auto;
+        display: inline;
+        text-transform: uppercase;
+        font-size: 14px;
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+    .views-field-field-picture-whyus {
+      display: none;
+    }
+
+    .views-field-body {
+      display: none;
+    }
+
+    .views-field-field-testimonial-logo {
+      display: none;
+    }
+
+  }
+
+}

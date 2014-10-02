@@ -1,15 +1,17 @@
 /**
  * @file
- * Provides dependent visibility for form items in CTools' ajax forms.
+ *
+ * Written by dmitrig01 (Dmitri Gaskin) for CTools; this provides dependent
+ * visibility for form items in CTools' ajax forms.
  *
  * To your $form item definition add:
- * - '#process' => array('ctools_process_dependency'),
- * - '#dependency' => array('id-of-form-item' => array(list, of, values, that,
- *   make, this, item, show),
+ * - '#process' => array('CTools_process_dependency'),
+ * - Add '#dependency' => array('id-of-form-item' => array(list, of, values, that,
+     make, this, item, show),
  *
  * Special considerations:
- * - Radios are harder. Because Drupal doesn't give radio groups individual IDs,
- *   use 'radio:name-of-radio'.
+ * - radios are harder. Because Drupal doesn't give radio groups individual ids,
+ *   use 'radio:name-of-radio'
  *
  * - Checkboxes don't have their own id, so you need to add one in a div
  *   around the checkboxes via #prefix and #suffix. You actually need to add TWO
@@ -52,8 +54,6 @@
 
     // Iterate through all relationships
     for (id in Drupal.settings.CTools.dependent) {
-      // Test to make sure the id even exists; this helps clean up multiple
-      // AJAX calls with multiple forms.
 
       // Drupal.CTools.dependent.activeBindings[id] is a boolean,
       // whether the binding is active or not.  Defaults to no.
@@ -87,17 +87,13 @@
         }
 
         var getValue = function(item, trigger) {
-          if ($(trigger).size() == 0) {
-            return null;
-          }
-
           if (item.substring(0, 6) == 'radio:') {
             var val = $(trigger + ':checked').val();
           }
           else {
             switch ($(trigger).attr('type')) {
               case 'checkbox':
-                var val = $(trigger).attr('checked') ? true : false;
+                var val = $(trigger).attr('checked') || 0;
 
                 if (val) {
                   $(trigger).siblings('label').removeClass('hidden-options').addClass('expanded-options');
@@ -119,12 +115,9 @@
           var changeTrigger = function() {
             var val = getValue(bind_id, trigger_id);
 
-            if (val == null) {
-              return;
-            }
-
             for (i in Drupal.CTools.dependent.bindings[bind_id]) {
               var id = Drupal.CTools.dependent.bindings[bind_id][i];
+
               // Fix numerous errors
               if (typeof id != 'string') {
                 continue;
@@ -150,16 +143,6 @@
 
               var object = $('#' + id + '-wrapper');
               if (!object.size()) {
-                // Some elements can't use the parent() method or they can
-                // damage things. They are guaranteed to have wrappers but
-                // only if dependent.inc provided them. This check prevents
-                // problems when multiple AJAX calls cause settings to build
-                // up.
-                var $original = $('#' + id);
-                if ($original.is('fieldset') || $original.is('textarea')) {
-                  continue;
-                }
-
                 object = $('#' + id).parent();
               }
 
@@ -213,8 +196,8 @@
 
       // Really large sets of fields are too slow with the above method, so this
       // is a sort of hacked one that's faster but much less flexible.
-      $("select.ctools-master-dependent")
-        .once('ctools-dependent')
+      $("select.ctools-master-dependent:not(.ctools-processed)")
+        .addClass('ctools-processed')
         .change(function() {
           var val = $(this).val();
           if (val == 'all') {

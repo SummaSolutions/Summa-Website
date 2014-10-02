@@ -121,7 +121,7 @@ class ctools_export_ui {
 
     switch ($op) {
       case 'import':
-        return user_access('use PHP for settings');
+        return user_access('use PHP for block visibility');
       case 'revert':
         return ($item->export_type & EXPORT_IN_DATABASE) && ($item->export_type & EXPORT_IN_CODE);
       case 'delete':
@@ -152,7 +152,7 @@ class ctools_export_ui {
     if (isset($input['op']) && $input['op'] == t('Reset')) {
       unset($_SESSION['ctools_export_ui'][$this->plugin['name']]);
       if (!$js) {
-        drupal_goto($_GET['q']);
+        return drupal_goto($_GET['q']);
       }
       // clear everything but form id, form build id and form token:
       $keys = array_keys($input);
@@ -312,9 +312,7 @@ class ctools_export_ui {
 
     $form['#prefix'] = '<div class="clearfix">';
     $form['#suffix'] = '</div>';
-    $form['#attached']['js'] = array(ctools_attach_js('auto-submit'));
-    $form['#attached']['library'][] = array('system', 'drupal.ajax');
-    $form['#attached']['library'][] = array('system', 'jquery.form');
+    $form['#attached']['js'] = array('misc/ajax.js', 'misc/progress.js', 'misc/jquery.form.js', ctools_attach_js('auto-submit'));
     $form['#attributes'] = array('class' => array('ctools-auto-submit-full-form'));
   }
 
@@ -339,6 +337,7 @@ class ctools_export_ui {
   function list_form_submit(&$form, &$form_state) {
     // Filter and re-sort the pages.
     $plugin = $this->plugin;
+    $schema = ctools_export_get_schema($this->plugin['schema']);
 
     $prefix = ctools_export_ui_plugin_base_path($plugin);
 
@@ -349,7 +348,44 @@ class ctools_export_ui {
         continue;
       }
 
-      $operations = $this->build_operations($item);
+      // Note: Creating this list seems a little clumsy, but can't think of
+      // better ways to do this.
+      $allowed_operations = drupal_map_assoc(array_keys($plugin['allowed operations']));
+      $not_allowed_operations = array('import');
+
+      if ($item->{$schema['export']['export type string']} == t('Normal')) {
+        $not_allowed_operations[] = 'revert';
+      }
+      elseif ($item->{$schema['export']['export type string']} == t('Overridden')) {
+        $not_allowed_operations[] = 'delete';
+      }
+      else {
+        $not_allowed_operations[] = 'revert';
+        $not_allowed_operations[] = 'delete';
+      }
+
+      $not_allowed_operations[] = empty($item->disabled) ? 'enable' : 'disable';
+
+      foreach ($not_allowed_operations as $op) {
+        // Remove the operations that are not allowed for the specific
+        // exportable.
+        unset($allowed_operations[$op]);
+      }
+
+      $operations = array();
+
+      foreach ($allowed_operations as $op) {
+        $operations[$op] = array(
+          'title' => $plugin['allowed operations'][$op]['title'],
+          'href' => ctools_export_ui_plugin_menu_path($plugin, $op, $name),
+        );
+        if (!empty($plugin['allowed operations'][$op]['ajax'])) {
+          $operations[$op]['attributes'] = array('class' => array('use-ajax'));
+        }
+        if (!empty($plugin['allowed operations'][$op]['token'])) {
+          $operations[$op]['query'] = array('token' => drupal_get_token($op));
+        }
+      }
 
       $this->list_build_row($item, $form_state, $operations);
     }
@@ -463,52 +499,6 @@ class ctools_export_ui {
   }
 
   /**
-   * Builds the operation links for a specific exportable item.
-   */
-  function build_operations($item) {
-    $plugin = $this->plugin;
-    $schema = ctools_export_get_schema($plugin['schema']);
-    $operations = $plugin['allowed operations'];
-    $operations['import'] = FALSE;
-
-    if ($item->{$schema['export']['export type string']} == t('Normal')) {
-      $operations['revert'] = FALSE;
-    }
-    elseif ($item->{$schema['export']['export type string']} == t('Overridden')) {
-      $operations['delete'] = FALSE;
-    }
-    else {
-      $operations['revert'] = FALSE;
-      $operations['delete'] = FALSE;
-    }
-    if (empty($item->disabled)) {
-      $operations['enable'] = FALSE;
-    }
-    else {
-      $operations['disable'] = FALSE;
-    }
-
-    $allowed_operations = array();
-
-    foreach ($operations as $op => $info) {
-      if (!empty($info)) {
-        $allowed_operations[$op] = array(
-          'title' => $info['title'],
-          'href' => ctools_export_ui_plugin_menu_path($plugin, $op, $item->{$this->plugin['export']['key']}),
-        );
-        if (!empty($info['ajax'])) {
-          $allowed_operations[$op]['attributes'] = array('class' => array('use-ajax'));
-        }
-        if (!empty($info['token'])) {
-          $allowed_operations[$op]['query'] = array('token' => drupal_get_token($op));
-        }
-      }
-    }
-
-    return $allowed_operations;
-  }
-
-  /**
    * Build a row based on the item.
    *
    * By default all of the rows are placed into a table by the render
@@ -612,32 +602,6 @@ class ctools_export_ui {
   // ------------------------------------------------------------------------
   // These methods are the API for adding/editing exportable items
 
-  /**
-   * Perform a drupal_goto() to the location provided by the plugin for the
-   * operation.
-   *
-   * @param $op
-   *   The operation to use. A string must exist in $this->plugin['redirect']
-   *   for this operation.
-   * @param $item
-   *   The item in use; this may be necessary as item IDs are often embedded in
-   *   redirects.
-   */
-  function redirect($op, $item = NULL) {
-    if (isset($this->plugin['redirect'][$op])) {
-      $destination = (array) $this->plugin['redirect'][$op];
-      if ($item) {
-        $export_key = $this->plugin['export']['key'];
-        $destination[0] = str_replace('%ctools_export_ui', $item->{$export_key}, $destination[0]);
-      }
-      call_user_func_array('drupal_goto', $destination);
-    }
-    else {
-      // If the operation isn't set, fall back to the plugin's base path.
-      drupal_goto(ctools_export_ui_plugin_base_path($this->plugin));
-    }
-  }
-
   function add_page($js, $input, $step = NULL) {
     drupal_set_title($this->get_page_title('add'));
 
@@ -665,8 +629,9 @@ class ctools_export_ui {
     );
 
     $output = $this->edit_execute_form($form_state);
-    if (!empty($form_state['executed']) && empty($form_state['rebuild'])) {
-      $this->redirect($form_state['op'], $form_state['item']);
+    if (!empty($form_state['executed'])) {
+      $export_key = $this->plugin['export']['key'];
+      drupal_goto(str_replace('%ctools_export_ui', $form_state['item']->{$export_key}, $this->plugin['redirect']['add']));
     }
 
     return $output;
@@ -701,8 +666,9 @@ class ctools_export_ui {
     );
 
     $output = $this->edit_execute_form($form_state);
-    if (!empty($form_state['executed']) && empty($form_state['rebuild'])) {
-      $this->redirect($form_state['op'], $form_state['item']);
+    if (!empty($form_state['executed'])) {
+      $export_key = $this->plugin['export']['key'];
+      drupal_goto(str_replace('%ctools_export_ui', $form_state['item']->{$export_key}, $this->plugin['redirect']['edit']));
     }
 
     return $output;
@@ -749,8 +715,9 @@ class ctools_export_ui {
     );
 
     $output = $this->edit_execute_form($form_state);
-    if (!empty($form_state['executed']) && empty($form_state['rebuild'])) {
-      $this->redirect($form_state['op'], $form_state['item']);
+    if (!empty($form_state['executed'])) {
+      $export_key = $this->plugin['export']['key'];
+      drupal_goto(str_replace('%ctools_export_ui', $form_state['item']->{$export_key}, $this->plugin['redirect']['clone']));
     }
 
     return $output;
@@ -778,7 +745,7 @@ class ctools_export_ui {
    */
   function edit_execute_form_standard(&$form_state) {
     $output = drupal_build_form('ctools_export_ui_edit_item_form', $form_state);
-    if (!empty($form_state['executed']) && empty($form_state['rebuild'])) {
+    if (!empty($form_state['executed'])) {
       $this->edit_save_form($form_state);
     }
 
@@ -1109,11 +1076,11 @@ class ctools_export_ui {
    */
   function edit_finish_validate(&$form, &$form_state) {
     if ($form_state['op'] != 'edit') {
-      // Validate the export key. Fake an element for form_error().
+      // Validate the name. Fake an element for form_error().
       $export_key = $this->plugin['export']['key'];
       $element = array(
         '#value' => $form_state['item']->{$export_key},
-        '#parents' => array($export_key),
+        '#parents' => array('name'),
       );
       $form_state['plugin'] = $this->plugin;
       ctools_export_ui_edit_name_validate($element, $form_state);
@@ -1195,23 +1162,14 @@ class ctools_export_ui {
 
     $output = drupal_build_form('ctools_export_ui_delete_confirm_form', $form_state);
     if (!empty($form_state['executed'])) {
-      $this->delete_form_submit($form_state);
-      $this->redirect($form_state['op'], $item);
+      ctools_export_crud_delete($this->plugin['schema'], $item);
+      $export_key = $this->plugin['export']['key'];
+      $message = str_replace('%title', check_plain($item->{$export_key}), $this->plugin['strings']['confirmation'][$form_state['op']]['success']);
+      drupal_set_message($message);
+      drupal_goto(ctools_export_ui_plugin_base_path($this->plugin));
     }
 
     return $output;
-  }
-
-  /**
-   * Deletes exportable items from the database.
-   */
-  function delete_form_submit(&$form_state) {
-    $item = $form_state['item'];
-
-    ctools_export_crud_delete($this->plugin['schema'], $item);
-    $export_key = $this->plugin['export']['key'];
-    $message = str_replace('%title', check_plain($item->{$export_key}), $this->plugin['strings']['confirmation'][$form_state['op']]['success']);
-    drupal_set_message($message);
   }
 
   /**
@@ -1256,7 +1214,8 @@ class ctools_export_ui {
     // import always uses the wizard.
     $output = $this->edit_execute_form_wizard($form_state);
     if (!empty($form_state['executed'])) {
-      $this->redirect($form_state['op'], $form_state['item']);
+      $export_key = $this->plugin['export']['key'];
+      drupal_goto(str_replace('%ctools_export_ui', $form_state['item']->{$export_key}, $this->plugin['redirect']['add']));
     }
 
     return $output;
@@ -1323,18 +1282,6 @@ class ctools_export_ui {
 // mostly just be pass-throughs back to the object.
 
 /**
- * Add all appropriate includes to forms so that caching the form
- * still loads the files that we need.
- */
-function _ctools_export_ui_add_form_files($form, &$form_state) {
-  ctools_form_include($form_state, 'export');
-  ctools_form_include($form_state, 'export-ui');
-
-  // Also make sure the plugin .inc file is loaded.
-  ctools_form_include_file($form_state, $form_state['object']->plugin['path'] . '/' . $form_state['object']->plugin['file']);
-}
-
-/**
  * Form callback to handle the filter/sort form when listing items.
  *
  * This simply loads the object defined in the plugin and hands it off.
@@ -1364,10 +1311,7 @@ function ctools_export_ui_list_form_submit(&$form, &$form_state) {
  * This simply loads the object defined in the plugin and hands it off.
  */
 function ctools_export_ui_edit_item_form($form, &$form_state) {
-  // When called using #ajax via ajax_form_callback(), 'export' may
-  // not be included so include it here.
-  _ctools_export_ui_add_form_files($form, $form_state);
-
+  $form = array();
   $form_state['object']->edit_form($form, $form_state);
   return $form;
 }
@@ -1392,8 +1336,6 @@ function ctools_export_ui_edit_item_form_submit(&$form, &$form_state) {
  * @todo Put this on a callback in the object.
  */
 function ctools_export_ui_edit_item_form_delete(&$form, &$form_state) {
-  _ctools_export_ui_add_form_files($form, $form_state);
-
   $export_key = $form_state['plugin']['export']['key'];
   $path = $form_state['item']->export_type & EXPORT_IN_CODE ? 'revert' : 'delete';
 
@@ -1432,8 +1374,6 @@ function ctools_export_ui_edit_name_exists($name, $element, &$form_state) {
  * @todo -- call back into the object instead.
  */
 function ctools_export_ui_delete_confirm_form($form, &$form_state) {
-  _ctools_export_ui_add_form_files($form, $form_state);
-
   $plugin = $form_state['plugin'];
   $item = $form_state['item'];
 
@@ -1461,8 +1401,6 @@ function ctools_export_ui_delete_confirm_form($form, &$form_state) {
  * This simply loads the object defined in the plugin and hands it off.
  */
 function ctools_export_ui_edit_item_wizard_form($form, &$form_state) {
-  _ctools_export_ui_add_form_files($form, $form_state);
-
   $method = 'edit_form_' . $form_state['step'];
   if (!method_exists($form_state['object'], $method)) {
     $method = 'edit_form';
