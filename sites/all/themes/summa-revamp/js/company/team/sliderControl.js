@@ -46,7 +46,7 @@ var groupEachMobile = 3;
     }
 
 
-    jQuery(document).ready(function () {
+    jQuery(window).load(function () {
         if (jQuery("body").hasClass("breakpoint-641")) {
             _adjustDomSlides(groupEachTablet);
         } else {

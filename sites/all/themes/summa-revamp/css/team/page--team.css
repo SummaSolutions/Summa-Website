@@ -125,6 +125,8 @@
         width: 97px;
         height: 97px; }
         .canvas-team .row-top .pane-team .views-field-entity-id-6 img {
+          -webkit-mask-image: url(../../images/mask.png);
+          -webkit-mask-size: 100%;
           width: 100%;
           height: 100%; }
   .canvas-team .row-white .pane-team h1 {

@@ -19,6 +19,7 @@
         .image-container {
           text-align: center;
           img {
+            -webkit-mask-image: url(../../../images/mask.png);
             height: 100%;
             position: absolute;
             margin: auto;
@@ -32,11 +33,12 @@
         .position-container {
           background: rgba(0, 0, 0, .6);
           text-align: center;
+          -webkit-mask-image: url(../../../images/mask.png);
 
           color: #fff;
           font-family: Roboto;
           font-size: 17px;
-          padding: 12px;
+          padding: 0 12px;
 
           margin: auto;
 
