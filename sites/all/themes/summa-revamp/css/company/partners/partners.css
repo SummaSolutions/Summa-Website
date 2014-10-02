@@ -36,7 +36,7 @@
     padding: 0 110px; }
     .canvas-company .partners-container .views-row .views-field-entity-id-1 .field-content {
       max-height: 198px; }
-  .canvas-company .partners-container .views-row .views-field-path {
+  .canvas-company .partners-container .views-row .views-field-field-external-link {
     color: #999;
     position: absolute;
     bottom: 0;
@@ -44,7 +44,7 @@
     right: 0;
     padding: 18px 0;
     width: auto; }
-    .canvas-company .partners-container .views-row .views-field-path a {
+    .canvas-company .partners-container .views-row .views-field-field-external-link a {
       font-family: Arial;
       border-radius: 4px;
       border: 1px solid #999;
@@ -58,7 +58,7 @@
       color: inherit;
       letter-spacing: 2px;
       display: inline; }
-      .canvas-company .partners-container .views-row .views-field-path a:hover {
+      .canvas-company .partners-container .views-row .views-field-field-external-link a:hover {
         text-decoration: none; }
 .canvas-company .partners-container .bx-wrapper .bx-controls-direction a {
   top: 98px; }
