@@ -77,8 +77,6 @@
 
         webform_submission_send_mail( $node, $submission );
 
-
-
         $mail_params['body'] = theme("feria-empleo-mail");
         $mail_params['from'] = webform_format_email_address("Summa Solutions", "hc@summasolutions.net", $node, $submission);
         $mail_params['subject'] = "¡Gracias por tu interés en Summa Solutions!";
@@ -90,7 +88,7 @@
         $mail_params['plaintext'] = null;
         $mail_params['headers'] = array();
         $mail_params['headers']['Content-Type'] = 'text/html; charset=UTF-8';
-        drupal_mail('feria_empleo', 'feria_empleo_confirmation', "dscafati@summasolutions.net", $language, $mail_params);
+        drupal_mail('feria_empleo', 'feria_empleo_confirmation', $email, $language, $mail_params, "hc@summasolutions.net");
         return;
     }
 
@@ -98,16 +96,16 @@
 
         switch($key) {
             case "feria_empleo_confirmation" :
-                $message['subject'] = isset($params['subject']) ? $params['subject'] : $message['subject'] = t('Payment recieved @site-name', array('@site-name' => variable_get('site_name', 'Express Canvas')), $options);
+                $message['subject'] = isset($params['subject']) ? $params['subject'] : $message['subject'] = t('Payment recieved @site-name', array('@site-name' => variable_get('site_name', 'Express Canvas')), array());
                 $message['body'][] = isset($params['body']) ? $params['body'] : NULL;
                 $message["headers"] = array (
                     'MIME-Version' => '1.0',
                     'Content-Type' => 'text/html; charset=UTF-8',
                     'Content-Transfer-Encoding' => '8Bit',
                     'X-Mailer' => 'Drupal',
-                    'Return-Path' => 'info@summasolutions.net',
-                    'Sender' => 'info@summasolutions.net',
-                    'From' => 'info@summasolutions.net',
+                    'Return-Path' => 'hc@summasolutions.net',
+                    'Sender' => 'hc@summasolutions.net',
+                    'From' => 'hc@summasolutions.net',
                 );
                 break;
         }
