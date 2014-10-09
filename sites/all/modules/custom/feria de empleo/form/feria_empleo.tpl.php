@@ -41,7 +41,7 @@
                     <li><input type="checkbox" autocomplete="off" name="conocimientos[]" value="sass">SASS/LESS</li>
                     <li><input type="checkbox" autocomplete="off" name="conocimientos[]" value="magento">Magento</li>
                     <li><input type="checkbox" autocomplete="off" name="conocimientos[]" value="hybris">Hybris</li>
-                    <li><input type="checkbox" autocomplete="off" name="conocimientos[]" value="oop">Programacion Orientada Objetos</li>
+                    <li><input type="checkbox" autocomplete="off" name="conocimientos[]" value="oop">Programación Orientada Objetos</li>
                 </ul>
             </div>
             <div class="float-right">

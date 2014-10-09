@@ -1,0 +1,9 @@
+.canvas-company .row-description {
+    background: url(../../images/company-description-bakcround.jpg) no-repeat center bottom #5e5e5e;
+    height: 637px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-family: Roboto;
+    font-size: 20px;
+}
