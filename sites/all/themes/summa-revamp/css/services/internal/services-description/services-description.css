@@ -1,0 +1,36 @@
+.row-description .region-description-container {
+  text-align: center;
+  width: 640px;
+  padding: 0 60px;
+  margin: 0 auto; }
+  .row-description .region-description-container h2.pane-title {
+    color: #fff;
+    font-family: Ruda;
+    font-size: 60px;
+    font-weight: bold;
+    margin: 71px 0 23px; }
+  .row-description .region-description-container .pane-content {
+    font-family: Roboto;
+    color: #fff;
+    padding: 0 0 68px;
+    font-size: 20px;
+    text-align: left;
+    height: 442px; }
+  .row-description .region-description-container h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase; }
+
+.field-name-field-image-background {
+  display: none; }
+
+@media only screen and (min-width: 641px) {
+  .row-description .region-description-container {
+    width: 1000px;
+    padding: 0 84px 0; }
+    .row-description .region-description-container .pane-content {
+      width: 400px;
+      float: left; } }
+
+/*# sourceMappingURL=services-description.css.map */

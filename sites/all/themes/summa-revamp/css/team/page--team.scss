@@ -1,0 +1,6 @@
+@import "../global";
+@import "page--team_style_base";
+
+@media only screen and (min-width: $hdi-mobile-portrait) {
+  @import "page--team_style_640up";
+}

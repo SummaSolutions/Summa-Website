@@ -1,5 +1,4 @@
 <?php
-// $Id: flag.features.inc,v 1.7 2011/01/10 12:21:37 mooffie Exp $
 
 /**
  * @file
@@ -7,13 +6,13 @@
  */
 
 /**
- * Implementation of hook_features_export().
+ * Implements hook_features_export().
  */
 function flag_features_export($data, &$export, $module_name = '') {
   $pipe = array();
 
   // Add flag module as a dependency.
-  $export['dependencies']['features'] = 'flag';
+  $export['dependencies']['flag'] = 'flag';
 
   // Ensure the modules that provide the flag are included as dependencies.
   $modules = flag_features_providing_module();
@@ -30,20 +29,20 @@ function flag_features_export($data, &$export, $module_name = '') {
 }
 
 /**
- * Implementation of hook_features_export_options().
+ * Implements hook_features_export_options().
  */
 function flag_features_export_options() {
   $options = array();
   // Get all flags, including disabled defaults.
   $flags = flag_get_flags() + flag_get_default_flags(TRUE);
   foreach ($flags as $name => $flag) {
-    $options[$name] = ucfirst(check_plain($flag->content_type)) .': '. check_plain($flag->title);
+    $options[$name] = drupal_ucfirst(check_plain($flag->content_type)) . ': ' . check_plain($flag->title);
   }
   return $options;
 }
 
 /**
- * Implementation of hook_features_export_render().
+ * Implements hook_features_export_render().
  */
 function flag_features_export_render($module, $data) {
   module_load_include('inc', 'flag', '/includes/flag.export');
@@ -52,7 +51,7 @@ function flag_features_export_render($module, $data) {
 }
 
 /**
- * Implementation of hook_features_revert().
+ * Implements hook_features_revert().
  *
  * @param $module
  *   The name of module for which to revert content.
@@ -76,11 +75,6 @@ function flag_features_revert($module = NULL) {
     }
     _flag_clear_cache();
   }
-  else {
-    drupal_set_message(t('Could not load default flag.'), 'error');
-    return FALSE;
-  }
-  return TRUE;
 }
 
 /**
@@ -94,5 +88,14 @@ function flag_features_providing_module() {
       $modules[$key] = $module;
     }
   }
+
+  // Any entity type without a flag providing module will be provided by the
+  // flag module.
+  foreach (entity_get_info() as $entity_type => $entity) {
+    if (!isset($modules[$entity_type]) && empty($entity['configuration']) && $entity_type !== 'taxonomy_vocabulary') {
+      $modules[$entity_type] = 'flag';
+    }
+  }
+
   return $modules;
 }

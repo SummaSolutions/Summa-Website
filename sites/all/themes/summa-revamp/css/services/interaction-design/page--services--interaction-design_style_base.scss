@@ -1,0 +1,29 @@
+.canvas-services {
+  .region-body-container {
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-top: 15px;
+  }
+  .row-description .panels-flexible-region-canvas-services-center {
+    height: 710px;
+  }
+  .col-left {
+    margin: 36px 0 0;
+    float: left;
+    width: 282px;
+  }
+  .col-right {
+    margin: 36px 0 0;
+    float: right;
+    width: 252px;
+  }
+  .col-left, .col-right {
+    font-size: 14px;
+    img {
+      margin: 0 0 15px;
+    }
+    p {
+      margin: 0;
+    }
+  }
+}

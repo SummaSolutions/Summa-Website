@@ -1,0 +1,133 @@
+.canvas-case-studies-internal{
+  .row-white{
+    margin: 0 auto;
+    padding: 0;
+
+    h1{
+      display: block;
+      margin: 0 0 10px 200px;
+    }
+    span.subtitle{
+      display: block;
+      margin: 0 0 0 200px;
+      font-family: Roboto;
+      font-size: 16px;
+    }
+
+    .panels-flexible-region-canvas-case-studies-internal-white{
+      width: 1000px;
+      float: none;
+      margin: 0 auto;
+       > .inside{
+        width: 1259px;
+        height: 2017px;
+        margin: 0 auto;
+        padding: 56px 0 0;
+        position: relative;
+        left: -130px;
+        background: url("../../../images/case-studies-internal-path-background.gif") no-repeat center top #fff;
+      }
+    }
+
+    .bx-wrapper{
+//      padding: 0 0 38px;
+      display: none;
+    }
+    h2.pane-title{
+//      background: url("../../../images/icon-star.gif") no-repeat left center;
+//      height: 72px;
+//      line-height: 72px;
+//      padding: 0 0 0 87px;
+//      margin: 0 0 26px -16px;
+
+    }
+
+    .pane-node-field-overview{
+      h2.pane-title{
+//        background: url("../../../images/icon-folder.gif") no-repeat left center;
+      }
+    }
+
+    .pane-node-field-overview, .pane-node-field-challenge, .pane-node-field-solution{
+      padding: 0 0 0 16px;
+      position: absolute;
+      text-align: left;
+      .pane-content{
+        padding: 0 0 0 73px;
+      }
+    }
+    .panel-separator{
+      display: none;
+//      margin: 0 0 64px;
+    }
+
+    .field-name-field-overview-image, .field-name-field-challenge-image, .field-name-field-solution-image,{
+      display: block;
+      position: absolute;
+    }
+
+    .field-name-field-overview-image{
+      top: 180px;
+      left: 0;
+    }
+    .pane-node-field-overview{
+      top: 180px;
+      left: 596px;
+      width: 415px;
+    }
+
+    .field-name-field-challenge-image{
+      top: 700px;
+      right: 0;
+    }
+    .pane-node-field-challenge{
+      left: 160px;
+      top: 700px;
+      width: 408px;
+      .pane-content{
+        padding: 0;
+      }
+      h2.pane-title{
+        margin: 0 0 60px 0;
+
+      }
+    }
+
+    .field-name-field-solution-image{
+      top: 1310px;
+      left: 0;
+    }
+    .pane-node-field-solution{
+      right: 250px;
+      top: 1310px;
+      width: 415px;
+    }
+    .contact-us-button-container{
+      margin: 0;
+//      padding: 0 46px;
+    }
+
+    .contact-us-button-container{
+      position: static!important;
+      a.contact-us{
+        position: absolute;
+
+        bottom: 73px;
+        left: 0;
+        right: 0;
+
+        margin: 0 auto;
+      }
+    }
+  }
+  .row-light-gray{
+    display: block;
+    background: #d7d7d7;
+    height: 338px;
+    text-align: center;
+    h2.pane-title{
+      color: #5d5e5e;
+      text-transform: uppercase;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<?php
+    function feria_empleo_enable() {
+      $current = variable_get('mail_system', array('default-system' => 'DefaultMailSystem'));
+      $addition = array('feria_empleo' => 'FeriaEmpleoMailSystem');
+      variable_set('mail_system', array_merge($current, $addition));
+    }
+
+    function feria_empleo_disable() {
+      $mail_system = variable_get('mail_system', array('default-system' => 'DefaultMailSystem'));
+      unset($mail_system['feria_empleo']);
+      variable_set('mail_system', $mail_system);
+    }

@@ -1,0 +1,53 @@
+.canvas-company {
+  .row-white {
+    .manifesto-container {
+      position:relative;
+      .pane-content {
+        padding: 0 46px;
+      }
+    }
+    .view-manifesto-items {
+      ul.manifesto-accordion {
+        margin: 0 0 0 44px;
+        padding: 0 0 0 30px;
+
+        > li {
+          position: relative;
+          list-style: none;
+
+          &:before {
+            content: "";
+            position: absolute;
+            top: 8px;
+            left: -43px;
+            width: 29px;
+            height: 29px;
+            background-image: url(../../../images/accordion-collapsed.gif);
+          }
+
+          &.gv-accordion-active:before {
+            background-image: url(../../../images/accordion-expanded.gif);
+          }
+        }
+        li {
+          &.gv-accordion-active {
+            .views-field-title {
+              border: none;
+            }
+          }
+          .views-field-title {
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #666;
+            border-bottom: 1px solid #c2c2c2;
+            line-height: 46px;
+          }
+          .views-field-body {
+            padding: 11px 46px 47px 0;
+          }
+        }
+      }
+    }
+  }
+}

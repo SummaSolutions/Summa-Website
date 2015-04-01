@@ -231,6 +231,23 @@ function nodequeue_schema() {
 }
 
 /**
+ * Implements hook_uninstall().
+ */
+function nodequeue_uninstall() {
+  // Remove our variables.
+  $variables = array(
+    'nodequeue_use_tab',
+    'nodequeue_tab_display_max',
+    'nodequeue_tab_name',
+    'nodequeue_autocomplete_limit',
+    'nodequeue_view_per_queue',
+  );
+  foreach ($variables as $variable) {
+    variable_del($variable);
+  }
+}
+
+/**
  * There was a discrepancy between the link/link_remove fields created with
  * node_install/node_schema, and the ones created with nodequeue_update_5000.
  * This forces everyone to 40 characters.
@@ -261,7 +278,9 @@ function nodequeue_update_6003() {
   $ret = array();
   $invalid = db_query("SELECT count(nid) FROM {nodequeue_nodes} WHERE nid = 0")->fetchField();
   if (!empty($invalid)) {
-    db_query("DELETE FROM {nodequeue_nodes} WHERE nid = 0");
+    db_delete('nodequeue_nodes')
+    ->condition('nid', 0)
+    ->execute();
     $t = get_t();
     $ret[] = array('success' => TRUE, 'query' => $t("Deleted @invalid invalid entries from the {nodequeue_nodes} table.", array('@invalid' => $invalid)));
   }
@@ -305,8 +324,8 @@ function nodequeue_update_7200() {
       'nodequeue_subqueue' => array('qid', 'reference', 'title'),
       'nodequeue_nodes' => array('sqid', 'qid_nid'),
     );
-    foreach($del_indices as $table => $indices) {
-      foreach($indices as $k => $index) {
+    foreach ($del_indices as $table => $indices) {
+      foreach ($indices as $k => $index) {
         db_drop_index($table, $table . "_" . $index . "_idx");
       }
     }
@@ -334,8 +353,8 @@ function nodequeue_update_7200() {
          'nid' => array('nid'),
        ),
     );
-    foreach($add_indexes as $table => $indices) {
-      foreach($indices as $name => $columns) {
+    foreach ($add_indexes as $table => $indices) {
+      foreach ($indices as $name => $columns) {
         db_add_index($table, $name, $columns);
       }
     }

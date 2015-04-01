@@ -1,0 +1,34 @@
+.canvas-company {
+  .row-mission-vision {
+    .col-left {
+      float: left;
+      width: 408px;
+      padding: 0 56px 0 84px;
+      margin: 171px 0 0;
+    }
+    .col-right {
+      float: left;
+      width: 580px;
+      padding: 0 84px 0 0;
+      margin: 171px 0 0;
+    }
+    .contextual-links-region {
+      position: static;
+    }
+    .about-us-container, .vision-container, .mission-container {
+      padding: 0;
+    }
+    h1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+  .row-first-separator {
+    margin: -320px 0 -285px;
+  }
+  .row-second-separator {
+    margin: -150px  0 -90px;
+  }
+}

@@ -1,0 +1,120 @@
+<?php
+
+    function feria_empleo_menu(){
+        $items['ajax/feria-empleo'] = array(
+            'page callback' => 'feria_empleo_ajax_contact',
+            'delivery callback' => 'drupal_json_output',
+            'access callback' => true,
+            'type' => MENU_CALLBACK,
+        );
+        return $items;
+    }
+
+    function feria_empleo_theme(){
+        $themes = array();
+        $themes["feria-empleo-form"] = array(
+            "template" => "form/feria_empleo"
+        );
+        $themes["feria-empleo-mail"] = array(
+            "template" => "form/feria_empleo.mail"
+        );
+        return $themes;
+    }
+
+    function feria_empleo_block_info(){
+        $blocks['feria-empleo-form'] = array(
+            'info' => t( 'Summa - Formulario de contacto (feria de empleo)' ),
+        );
+        return $blocks;
+    }
+
+    function feria_empleo_block_view( $delta = '' ){
+        $block = array();
+        switch ( $delta ) {
+            case 'feria-empleo-form':
+                $block['content'] = theme("feria-empleo-form");
+                break;
+        }
+        return $block;
+    }
+
+    function feria_empleo_ajax_contact(){
+        global $user;
+        $name = ( isset( $_POST["name"] ) ? $_POST["name"] : "" );
+        $lastName = ( isset( $_POST["lastname"] ) ? $_POST["lastname"] : "" );
+        $email = ( isset( $_POST["email"] ) ? $_POST["email"] : "" );
+        $carrera = ( isset( $_POST["carrera"] ) ? $_POST["carrera"] : "" );
+        $ano_cursada = ( isset( $_POST["ano_cursada"] ) ? $_POST["ano_cursada"] : "" );
+        $experiencia = ( isset( $_POST["experiencia"] ) ? $_POST["experiencia"] : "" );
+        $conocimientos = ( isset( $_POST["conocimientos"] ) ? $_POST["conocimientos"] : array() );
+
+        $nid = 173;
+
+        $node = node_load( $nid );
+
+        $data = array(
+            1 => array( "value" => array( $name ) ),
+            2 => array( "value" => array( $lastName ) ),
+            3 => array( "value" => array( $email ) ),
+            4 => array( "value" => array( $carrera ) ),
+            5 => array( "value" => array( $ano_cursada ) ),
+            6 => array( "value" => array( $experiencia ) ),
+            7 => array( "value" => $conocimientos ),
+        );
+
+        $submission = (object)array(
+            'nid' => $nid,
+            'uid' => $user->uid,
+            'submitted' => REQUEST_TIME,
+            'remote_addr' => ip_address(),
+            'is_draft' => FALSE,
+            'data' => $data,
+        );
+
+        module_load_include( 'inc', 'webform', 'includes/webform.submissions' );
+
+        webform_submission_insert( $node, $submission );
+
+        webform_submission_send_mail( $node, $submission );
+
+        $mail_params['body'] = theme("feria-empleo-mail");
+        $mail_params['from'] = webform_format_email_address("Summa Solutions", "hc@summasolutions.net", $node, $submission);
+        $mail_params['subject'] = "¡Gracias por tu interés en Summa Solutions!";
+        $language = language_default();
+
+
+        $mail_params['attachments'] = "";
+        $mail_params['plain'] = false; // html
+        $mail_params['plaintext'] = null;
+        $mail_params['headers'] = array();
+        $mail_params['headers']['Content-Type'] = 'text/html; charset=UTF-8';
+        drupal_mail('feria_empleo', 'feria_empleo_confirmation', $email, $language, $mail_params, "hc@summasolutions.net");
+        return;
+    }
+
+    function feria_empleo_mail( $key, &$message, $params ){
+
+        switch($key) {
+            case "feria_empleo_confirmation" :
+                $message['subject'] = isset($params['subject']) ? $params['subject'] : $message['subject'] = t('Payment recieved @site-name', array('@site-name' => variable_get('site_name', 'Express Canvas')), array());
+                $message['body'][] = isset($params['body']) ? $params['body'] : NULL;
+                $message["headers"] = array (
+                    'MIME-Version' => '1.0',
+                    'Content-Type' => 'text/html; charset=UTF-8',
+                    'Content-Transfer-Encoding' => '8Bit',
+                    'X-Mailer' => 'Drupal',
+                    'Return-Path' => 'hc@summasolutions.net',
+                    'Sender' => 'hc@summasolutions.net',
+                    'From' => 'hc@summasolutions.net',
+                );
+                break;
+        }
+    }
+
+class FeriaEmpleoMailSystem extends SmtpMailSystem {
+    public function format(array $message) {
+        $message['body'] = implode("\n\n", $message['body']);
+        $message['body'] = drupal_wrap_mail($message['body']);
+        return $message;
+    }
+}

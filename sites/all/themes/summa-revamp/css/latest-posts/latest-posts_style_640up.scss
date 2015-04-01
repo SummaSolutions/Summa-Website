@@ -1,0 +1,72 @@
+#latest-posts-container {
+  background: url(../../images/latest-posts-background-tablet.png) no-repeat 680px 23px;
+  height: auto;
+  margin: 0 auto 78px;
+  width: 1000px;
+  text-align: left;
+  padding: 0 466px 0 85px;
+
+  h2.pane-title {
+    font-size: 34px;
+    margin: 0 0 31px;
+    //font-weight: normal;
+    padding: 0;
+  }
+
+  .views-field-title {
+    //font-family: roboto;
+    ////font-weight: bold;
+    font-size: 16px;
+    max-height: none;
+    //overflow: hidden;
+  }
+
+  .views-field-entity-id {
+    //font-family: roboto;
+    //font-weight: lighter;
+    font-size: 16px;
+    max-height: none;
+    //overflow: hidden;
+  }
+
+  .views-field-path {
+    color: #fff;
+    //    left: 0;
+    //    right: 0;
+    //    bottom: 23px + 74px; // Himself padding-bottom + navigation area
+    position: static;
+    clear: both;
+    margin: 19px auto 15px;
+    padding: 18px 0;
+    a {
+      //      font-family: Arial;
+      //      border-radius: 4px;
+      //      border: 1px solid #999;
+      //      background: transparent;
+      padding: 18px 25px;
+      margin: 0;
+      //      width: auto;
+      //      display: inline;
+      //      text-transform: uppercase;
+      font-size: 10px;
+      //      text-decoration: none;
+      //      color: inherit;
+      letter-spacing: 2px;
+    }
+  }
+  .bxslider {
+    height: auto;
+
+    .slide {
+      text-align: inherit;
+      float: none;
+      //        clear: none;
+      height: auto;
+      width: auto !important;
+      //
+      padding: 0;
+      //        display: block;
+      //        position: relative;
+    }
+  }
+}

@@ -1,5 +1,4 @@
 <?php
-// $Id: syntaxhighlighter.admin.inc,v 1.26 2011/01/28 07:28:02 mattyoung Exp $
 
 /**
  * @file
@@ -12,14 +11,14 @@
  * An admin form to specify which language to support for highlighting
  */
 function syntaxhighlighter_settings_form() {
-	// delete the variable to force a re-scan of library location just in case
+// delete the variable to force a re-scan of library location just in case
   variable_del('syntaxhighlighter_lib_location');
   $path = _syntaxhighlighter_get_lib_location();
   if (!$path) {
     drupal_set_message(t('The syntaxhighlighter javascript library is not found. Consult <a href="!readme">README.txt</a> for help on how to install it, then <a href="!reload">reload</a> this page.',
                          array('!readme' => '/' . drupal_get_path('module', 'syntaxhighlighter') . '/README.txt',
-                               '!reload' => '/admin/settings/syntaxhighlighter')),
-                      'error');
+                               '!reload' => 'admin/config/content/syntaxhighlighter')),
+                         'error');
     return array();
   }
 
@@ -116,7 +115,7 @@ function syntaxhighlighter_settings_form() {
       $messages[] = t('You do not have the "%permission" permission to change these settings.', array('%permission' => $permission[SYNTAXHIGHLIGHTER_PHP_PERMISSION]['title']));
     }
     if (!function_exists('php_eval')) {
-        $messages[] = t('The "%module_name" module is disabled, re-enable the module to change these settings. Because of this, syntax highlighting is effectively disabled on every page.', array('%module_name' => t('PHP filter')));
+        $messages[] = t('The "%module_name" module is disabled, re-enable the module to change these settings. Because the "%module_name" module is disabled, syntax highlighting is effectively disabled on every page.', array('%module_name' => t('PHP filter')));
     }
     $items = array(
       'items' => $messages,
@@ -139,6 +138,22 @@ function syntaxhighlighter_settings_form() {
       $description .= ' ' . t('If the PHP-mode is chosen, enter PHP code between %php. Note that executing incorrect PHP-code can break your Drupal site.', array('%php' => '<?php ?>'));
       $title = t('Pages or PHP code');
     }
+    else {
+    // show some friendly info message if PHP is not available because...
+    if (!$has_php_access && !function_exists('php_eval')) {
+        $permission = syntaxhighlighter_permission();
+        $php_info_message = t('You need to have the "%permission" permission and enable the "%module_name" module to use PHP code here.',
+                              array('%permission' => $permission[SYNTAXHIGHLIGHTER_PHP_PERMISSION]['title'], '%module_name' => t('PHP filter')));
+    }
+    elseif (!$has_php_access) {
+        $permission = syntaxhighlighter_permission();
+        $php_info_message = t('You need to have the "%permission" permission to use PHP code here.',
+                              array('%permission' => $permission[SYNTAXHIGHLIGHTER_PHP_PERMISSION]['title']));
+    }
+    elseif (!function_exists('php_eval')) {
+        $php_info_message = t('Enable the "%module_name" module to use PHP code here.', array('%module_name' => t('PHP filter')));
+    }
+    }
 
     $form['inject_settings']['syntaxhighlighter_inject'] = array(
       '#type' => 'radios',
@@ -146,6 +161,9 @@ function syntaxhighlighter_settings_form() {
       '#options' => $options,
       '#default_value' => variable_get('syntaxhighlighter_inject', SYNTAXHIGHLIGHTER_INJECT_EXCEPT_LISTED),
     );
+    if (isset($php_info_message)) {
+    $form['inject_settings']['syntaxhighlighter_inject']['#description'] = $php_info_message;
+    }
     $form['inject_settings']['syntaxhighlighter_pages'] = array(
       '#type' => 'textarea',
       '#title' => '<span class="element-invisible">' . $title . '</span>',
@@ -161,7 +179,7 @@ function syntaxhighlighter_settings_form() {
     '#description' => t('Enter syntaxhihglighter default settings javascript expressions, e.g. !example. To turn off clipboardSwf, use !swfoff. See the <a href="!link">syntaxhighlighter js lib doc page</a> for details. Note: these default settings affect the entire site unless they are overridden locally.',
                          array('!example' => '<code>SyntaxHighlighter.defaults[\'auto-links\'] = true;SyntaxHighlighter.defaults[\'gutter\'] = false;</code>',
                                '!swfoff' => '<code>SyntaxHighlighter.config.clipboardSwf = undefined;</code>',
-                               '!link' => 'http://alexgorbatchev.com/wiki/SyntaxHighlighter:Configuration',
+                               '!link' => 'http://alexgorbatchev.com/SyntaxHighlighter/',
                          )),
   );
 

@@ -12,20 +12,34 @@ div.tweets-pulled-listing div.tweet-authorphoto img {
   max-width: 40px;
 }
 
-div.tweets-pulled-listing a {
-  color: blue;
-}
-
 div.tweets-pulled-listing .tweet-author a {
   font-weight: bold;
-}
-
-div.tweets-pulled-listing .tweet-time a {
-  color: silver;
 }
 
 div.tweets-pulled-listing  div.tweet-divider {
   clear: left;
   border-bottom: 1px solid #efefef;
   margin: 5px 0 5px 0;
+}
+
+div.tweet-author-wrapper .twitter-follow-button {
+	float:right;
+}
+
+div.tweet-author-wrapper .tweet-author-info {
+	float:left;
+	width:75%;
+	min-width: 175px;
+}
+
+div.tweet-footer {
+	font-size: 0.75em;
+}
+
+div.tweet-footer .tweet-time {
+	float:left;
+}
+
+div.tweet-footer .tweet-actions {
+	float:right;
 }

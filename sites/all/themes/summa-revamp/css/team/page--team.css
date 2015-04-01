@@ -1,0 +1,204 @@
+@charset "UTF-8";
+.canvas-team {
+  font-weight: lighter;
+  font-family: Roboto; }
+  .canvas-team .anchor-next {
+    display: block;
+    width: 40px;
+    height: 48px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: -40px top;
+    background: url(../../images/anchor-next-sprites.png); }
+    .canvas-team .anchor-next.anchor-next-white {
+      background-position: -40px top; }
+    .canvas-team .anchor-next.anchor-next-gray {
+      background-position: left top; }
+  .canvas-team .anchor-prev {
+    display: block;
+    width: 40px;
+    height: 48px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: -40px top;
+    background: url(../../images/anchor-prev-sprites.png); }
+    .canvas-team .anchor-prev.anchor-prev-white {
+      background-position: -40px top; }
+    .canvas-team .anchor-prev.anchor-prev-gray {
+      background-position: left top; }
+  .canvas-team .row-top {
+    background: #fff; }
+    .canvas-team .row-top .region-main {
+      width: 100%; }
+      .canvas-team .row-top .region-main .view-empty {
+        font-style: italic;
+        margin: 80px 0 0; }
+      .canvas-team .row-top .region-main .pane-blog-posts-full-list {
+        font-weight: lighter;
+        font-size: 16px;
+        padding: 0 46px; }
+        .canvas-team .row-top .region-main .pane-blog-posts-full-list .views-row {
+          margin: 0 0 62px;
+          width: 544px; }
+          .canvas-team .row-top .region-main .pane-blog-posts-full-list .views-row .views-field-created {
+            display: inline-block;
+            margin: 0 0 18px; }
+          .canvas-team .row-top .region-main .pane-blog-posts-full-list .views-row .views-field-title {
+            margin: 0 0 13px;
+            color: inherit;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 18px; }
+            .canvas-team .row-top .region-main .pane-blog-posts-full-list .views-row .views-field-title a {
+              color: inherit;
+              font-weight: inherit;
+              text-decoration: inherit;
+              text-transform: inherit;
+              font-size: inherit; }
+          .canvas-team .row-top .region-main .pane-blog-posts-full-list .views-row .views-field-name {
+            display: inline-block;
+            margin: 0 0 18px;
+            text-decoration: none; }
+            .canvas-team .row-top .region-main .pane-blog-posts-full-list .views-row .views-field-name a {
+              color: inherit;
+              text-decoration: inherit; }
+          .canvas-team .row-top .region-main .pane-blog-posts-full-list .views-row .views-field-field-picture {
+            width: 547px;
+            max-height: 218px;
+            overflow: hidden;
+            margin: 0 0 14px; }
+            .canvas-team .row-top .region-main .pane-blog-posts-full-list .views-row .views-field-field-picture img {
+              width: 100%;
+              height: auto; }
+          .canvas-team .row-top .region-main .pane-blog-posts-full-list .views-row .views-field-entity-id p {
+            margin: 0; }
+          .canvas-team .row-top .region-main .pane-blog-posts-full-list .views-row .views-field-field-category {
+            margin: 0 0 4px; }
+            .canvas-team .row-top .region-main .pane-blog-posts-full-list .views-row .views-field-field-category ul {
+              margin: 0;
+              padding: 0; }
+              .canvas-team .row-top .region-main .pane-blog-posts-full-list .views-row .views-field-field-category ul li {
+                display: inline-block;
+                list-style: none;
+                padding: 2px 17px;
+                margin: 0 0 7px;
+                border-radius: 9px;
+                border: 1px solid #959595;
+                font-size: 15px; }
+                .canvas-team .row-top .region-main .pane-blog-posts-full-list .views-row .views-field-field-category ul li a {
+                  color: inherit;
+                  text-decoration: none; }
+      .canvas-team .row-top .region-main .more-from-author a {
+        text-decoration: none;
+        text-align: center;
+        color: inherit;
+        display: inline-block;
+        font-family: Arial;
+        border-radius: 4px;
+        border: 1px solid #999;
+        padding: 16px 0;
+        margin: 0 auto 64px;
+        width: 100%;
+        text-transform: uppercase;
+        font-size: 10px;
+        letter-spacing: 3px; }
+    .canvas-team .row-top .region-right {
+      width: 100%; }
+    .canvas-team .row-top .pane-team {
+      position: relative;
+      padding: 36px 0 0 130px;
+      margin: 46px; }
+      .canvas-team .row-top .pane-team .views-row {
+        width: auto; }
+      .canvas-team .row-top .pane-team .views-field-entity-id-2 {
+        margin: 0 0 10px; }
+      .canvas-team .row-top .pane-team .views-field-entity-id-3 {
+        font-weight: bold;
+        margin: 0 0 2px; }
+      .canvas-team .row-top .pane-team .views-field-entity-id-6 {
+        position: absolute;
+        left: 7px;
+        top: 0;
+        border-radius: 50%;
+        overflow: hidden;
+        width: 97px;
+        height: 97px; }
+        .canvas-team .row-top .pane-team .views-field-entity-id-6 img {
+          -webkit-mask-image: url(../../images/mask.png);
+          -webkit-mask-size: 100%;
+          width: 100%;
+          height: 100%; }
+  .canvas-team .row-white .pane-team h1 {
+    margin: 0 auto 41px; }
+  .canvas-team .row-white .pane-team h2.pane-title {
+    display: none; }
+  .canvas-team .row-white h1 {
+    font-family: Ruda;
+    color: #333;
+    text-align: center;
+    font-size: 41px;
+    font-weight: normal;
+    margin: 41px auto; }
+  .canvas-team .row-white .subtitle {
+    font-family: Roboto;
+    font-weight: lighter;
+    font-size: 20px;
+    text-align: center;
+    margin: 58px auto; }
+  .canvas-team .row-white h2.pane-title {
+    font-family: Roboto;
+    font-size: 17px;
+    color: #666;
+    margin: 0 0 9px;
+    text-transform: uppercase; }
+  .canvas-team .row-white .benefits-container {
+    width: 100%;
+    padding: 0 46px;
+    text-align: left; }
+    .canvas-team .row-white .benefits-container h2 {
+      margin: 0; }
+    .canvas-team .row-white .benefits-container p {
+      margin: 0 0 28px; }
+    .canvas-team .row-white .benefits-container ul {
+      padding: 0;
+      margin: 0 0 56px 0;
+      list-style: none; }
+      .canvas-team .row-white .benefits-container ul li {
+        line-height: 24px;
+        margin: 0px 0px 12px; }
+        .canvas-team .row-white .benefits-container ul li:before {
+          font-family: Arial;
+          content: "· ";
+          vertical-align: middle;
+          font-size: 25px; }
+
+@media only screen and (min-width: 641px) {
+  .canvas-team .row-top > .inside {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0 84px; }
+    .canvas-team .row-top > .inside .region-right {
+      float: right;
+      width: 267px;
+      padding: 64px 12px 0;
+      margin: 0 auto; }
+      .canvas-team .row-top > .inside .region-right .pane-team {
+        text-align: center;
+        padding: 0;
+        margin: 0; }
+        .canvas-team .row-top > .inside .region-right .pane-team .views-field-entity-id-6 {
+          position: static;
+          margin: 0 auto 10px; }
+    .canvas-team .row-top > .inside .region-main {
+      width: 565px;
+      padding: 64px 0 0;
+      float: left; }
+      .canvas-team .row-top > .inside .region-main .pane-blog-posts-full-list {
+        padding: 0; }
+  .canvas-team .pane-hp-jobs {
+    padding: 0 84px; }
+  .canvas-team .row-white .benefits-container {
+    padding: 0 84px; } }
+
+/*# sourceMappingURL=page--team.css.map */

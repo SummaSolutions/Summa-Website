@@ -1,0 +1,122 @@
+.case-studies-grid-wrapper{
+  padding: 50px 25px 50px 25px;
+
+  .views-row {
+    width: 100%;
+    height: 510px;
+    position: relative;
+    margin: 0 0 25px 0;
+    float: left;
+
+    background: #F0EFE9;
+    box-shadow: 2px 2px 1px 0 #ccc;
+
+    padding: 10px;
+
+    font-family: Roboto;
+
+    .views-field-title {
+      position: absolute;
+      top: 153px;
+      right: 0;
+      margin: 0 0 0 10px;
+
+      font-size: 36px;
+      font-weight: bold;
+      text-transform: uppercase;
+      a{
+        color: #fff;
+        text-decoration: none;
+      }
+
+      background: #666;
+      padding: 2px 10px;
+
+      box-shadow: 2px 2px 2px 0 #333;
+    }
+    .views-field-body{
+      margin: 10px;
+      overflow: hidden;
+      font-size: 24px;
+
+      font-weight: lighter;
+
+      max-height: 144px;
+      p{
+        margin: 0;
+      }
+    }
+    .views-field-field-overview-image {
+      width: 100%;
+      height: 310px;
+      overflow: hidden;
+      img{
+        width: 100%;
+      }
+    }
+
+    .views-field-path {
+      position: absolute;
+      bottom: 2px;
+      right: 4px;
+
+      a {
+        color: #8db234;
+        text-transform: uppercase;
+        font-size: 24px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+    }
+
+    .views-field-field-testimonial-logo {
+    }
+
+
+    &:hover{
+
+      .views-field-field-overview-image {
+        background: #333;
+        img{
+          opacity: .125;
+        }
+      }
+      .views-field-title {
+        width: 100%;
+
+        background: #f0efe9;
+
+        box-shadow: none;
+        padding: 5px;
+
+        a{
+          color: #000;
+          font-weight: normal;
+          content: "READ MORE";
+        }
+        text-align: center;
+      }
+    }
+
+  }
+
+  .see-more{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+
+    display: block;
+
+    background: #F0EFE9;
+    color: #000;
+
+    clear: both;
+
+    text-align: center;
+    text-decoration: none;
+
+    font-size: 24px;
+    font-weight: normal;
+  }
+}

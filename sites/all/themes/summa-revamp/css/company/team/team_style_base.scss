@@ -1,0 +1,70 @@
+.team-container {
+  .bxslider {
+    height: 129px;
+  }
+  .group-container {
+    text-align: center;
+    .views-row {
+      width: auto;
+      display: inline-block;
+      margin: 0 14px;
+
+      .views-field-uid {
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        width: 129px;
+        height: 129px;
+        text-align: left;
+        .image-container {
+          text-align: center;
+          img {
+            -webkit-mask-image: url(../../../images/mask.png);
+            height: 100%;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 5;
+          }
+        }
+        .position-container {
+          background: rgba(0, 0, 0, .6);
+          text-align: center;
+          -webkit-mask-image: url(../../../images/mask.png);
+
+          color: #fff;
+          font-family: Roboto;
+          font-size: 17px;
+          padding: 0 12px;
+
+          margin: auto;
+
+          height: 100%;
+          width: 100%;
+
+          display: none;
+
+          span {
+            display: table-cell;
+            vertical-align: middle;
+          }
+
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          z-index: 10;
+
+        }
+      }
+    }
+  }
+}
+
+.canvas-company .row-white .team-container .subtitle {
+  margin: 98px 0 16px;
+}

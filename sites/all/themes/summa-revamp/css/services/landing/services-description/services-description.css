@@ -1,0 +1,25 @@
+.row-description .region-description-container {
+  text-align: center;
+  width: 640px;
+  padding: 0 60px;
+  margin: 0 auto; }
+  .row-description .region-description-container h2.pane-title {
+    color: #fff;
+    font-family: Ruda;
+    font-size: 60px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin: 71px 0 23px; }
+  .row-description .region-description-container .pane-content {
+    color: #fff;
+    height: 432px;
+    padding: 0 0 68px;
+    font-size: 20px;
+    position: relative; }
+    .row-description .region-description-container .pane-content .anchor-next {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0; }
+
+/*# sourceMappingURL=services-description.css.map */

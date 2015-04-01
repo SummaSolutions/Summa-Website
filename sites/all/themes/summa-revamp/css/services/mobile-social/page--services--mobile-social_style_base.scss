@@ -1,0 +1,38 @@
+.canvas-services {
+
+  .region-body-container {
+    margin: -140px auto 64px;
+    .col {
+      width: 50%;
+      text-align: left;
+      &.col-left {
+        float: left;
+        padding: 0 10px 0 0;
+      }
+      &.col-right {
+        float: right;
+        padding: 0 0 0 10px;
+      }
+      img {
+        margin: 0 12px 24px;
+      }
+    }
+  }
+  .row-description {
+    .panels-flexible-region-canvas-services-center {
+      height: 712px;
+      background-position: right bottom !important;
+    }
+    .region-description-container {
+      padding: 0px 46px;
+      .pane-content {
+        font-family: Roboto;
+        color: #fff;
+        padding: 0 0 68px;
+        font-size: 20px;
+        text-align: left;
+        height: 510px;
+      }
+    }
+  }
+}

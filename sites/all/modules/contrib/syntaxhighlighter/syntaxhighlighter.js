@@ -1,4 +1,3 @@
-/* $Id: syntaxhighlighter.js,v 1.14 2011/01/13 23:56:05 mattyoung Exp $ */
 
 /**
  * @file

@@ -1,0 +1,129 @@
+.canvas-company {
+
+  .pane-content {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: lighter;
+    color: #333;
+    p {
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+      font-weight: normal;
+      color: inherit;
+      &:hover {
+        text-decoration: underline;
+
+      }
+    }
+  }
+  .anchor-next {
+    display: block;
+    width: 40px;
+    height: 48px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: -40px top;
+    background: url(../../images/anchor-next-sprites.png);
+    &.anchor-next-white {
+      background-position: -40px top;
+    }
+    &.anchor-next-gray {
+      background-position: left top;
+    }
+  }
+  .anchor-prev {
+    display: block;
+    width: 40px;
+    height: 48px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: -40px top;
+    background: url(../../images/anchor-prev-sprites.png);
+    &.anchor-prev-white {
+      background-position: -40px top;
+    }
+    &.anchor-prev-gray {
+      background-position: left top;
+    }
+  }
+
+  .row-description {
+    background: url(../../images/company-description-background.jpg) no-repeat center bottom #5e5e5e;
+    height: 637px;
+    width: 100%;
+    text-align: center;
+    .panels-flexible-row-inside {
+      width: 640px;
+      margin: 0 auto;
+    }
+  }
+
+  .row-dashed {
+    background: url(../../images/dashed-horizonal-background.png) repeat-x center 231px;
+  }
+  .row-white, .row-mission-vision, .row-dashed, .row-current-openings {
+    h1 {
+      font-family: Ruda;
+      color: #333;
+      text-align: center;
+      font-size: 41px;
+      font-weight: normal;
+      margin: 41px auto;
+    }
+    .subtitle {
+      font-family: Roboto;
+      font-weight: lighter;
+      font-size: 20px;
+      text-align: center;
+      margin: 58px auto;
+    }
+    h2.pane-title {
+      font-family: Roboto;
+      font-size: 21px;
+      color: #666;
+      margin: 0 0 9px;
+      text-transform: uppercase;
+    }
+  }
+  .row-white {
+    background: none;
+  }
+  .row-current-openings {
+    h2.pane-title {
+      font-size: 17px;
+    }
+  }
+  .footer-green-row {
+
+    .pane-content {
+      a {
+        font-weight: lighter;
+      }
+    }
+    a, .title {
+      color: #fff;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .row-first-separator {
+    background: url(../../images/company-first-separator-background.jpg) no-repeat center top;
+    width: 100%;
+    height: 1067px;
+    margin: -320px 0 -285px;
+  }
+  .row-second-separator {
+    background: url(../../images/company-second-separator-background.jpg) no-repeat center top;
+    width: 100%;
+    height: 876px;
+    margin: -240px  0 -140px;
+  }
+  .pane-team {
+    position: relative;
+  }
+
+}

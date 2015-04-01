@@ -1,0 +1,56 @@
+.canvas-contact{
+  background: #fff;
+  .row-white{
+    width: 1000px;
+    margin: 0 auto;
+  }
+  .region-main{
+    width: 568px;
+  }
+  .region-right{
+    width: 356px;
+  }
+  .about-us-container{
+    padding: 64px 0px 13px 64px;
+    p{
+      margin: 0;
+      font-size: 17px!important;
+    }
+  }
+  .panels-flexible-row{
+    padding: 0;
+  }
+  .contact-map-container{
+    padding: 0 0 0 64px;
+    .map-container{
+      width: 100%;
+      height: 316px;
+    }
+  }
+  #contact-form-container {
+    padding: 135px 0 0;
+    margin: 0;
+    width: auto!important;
+    #contact-form{
+      margin: 0;
+    }
+    .float-left {
+      float: none;
+      width: 100%;
+      padding: 0;
+    }
+    .float-right {
+      float: none;
+      width: 100%;
+      padding: 0;
+    }
+    form {
+      textarea {
+        min-height: 115px;
+      }
+    }
+  }
+
+
+
+}

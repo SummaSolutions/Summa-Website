@@ -1,0 +1,46 @@
+  ; The name and description of (this).find(".position-container").slideUp({
+                    duration: 100,
+                    easing: "linear"
+                });the theme used on the admin/build/themes page.
+name        = Summa Solutions (revamp)
+description = Site Version 2014
+
+  ; The screenshot used on the admin/build/themes page.
+screenshot = screenshot.png
+
+  ; "core" specifies the version of Drupal that this theme is compatible with.
+  ; "base theme" specifies that this is a theme that uses the "zen" theme as its
+  ; base theme. Its unlikely you will ever need to change these, but they are
+  ; required fields for a Zen sub-theme. The "engine" field is not used in a
+  ; sub-theme since the engine is inherited from its base theme.
+core       = 7.x
+base theme = zen
+
+
+;regions[help]           = Help
+;regions[sidebar_first]  = First sidebar
+;regions[sidebar_second] = Second sidebar
+;regions[navigation]     = Navigation bar
+regions[highlight]      = Highlighted content
+regions[content]        = Content
+regions[header]         = Header
+;regions[footer]         = Footer
+;regions[bottom]         = Page bottom
+;regions[page_top]       = Page top
+;regions[page_bottom]    = Page bottom
+
+
+  ; Set the default settings to be used in theme-settings.php
+settings[zen_breadcrumb]           = yes
+settings[zen_breadcrumb_separator] = ' › '
+settings[zen_breadcrumb_home]      = 1
+settings[zen_breadcrumb_trailing]  = 1
+settings[zen_breadcrumb_title]     = 0
+settings[zen_rebuild_registry]     = 1
+settings[zen_wireframes]           = 0
+;settings[shortcut_module_link]    = 1
+
+
+stylesheets[all][]   = css/header/header.css
+stylesheets[all][]   = css/footer/footer.css
+stylesheets[all][]   = css/page/page.css
