@@ -1,5 +1,4 @@
 <?php
-// $Id: flag.admin.inc,v 1.14 2011/01/10 13:03:01 mooffie Exp $
 
 /**
  * @file
@@ -12,18 +11,66 @@
 function flag_admin_page() {
   $flags = flag_get_flags();
   $default_flags = flag_get_default_flags(TRUE);
-  return theme('flag_admin_page', array('flags' => $flags, 'default_flags' => $default_flags));
+  $flag_admin_listing = drupal_get_form('flag_admin_listing', $flags);
+  return theme('flag_admin_page', array('flags' => $flags, 'default_flags' => $default_flags, 'flag_admin_listing' => $flag_admin_listing));
 }
 
 /**
- * Theme the output for the main flag administration page.
+ * A form for ordering the weights of all the active flags in the system.
  */
-function theme_flag_admin_page($variables) {
-  $flags = $variables['flags'];
-  $default_flags = $variables['default_flags'];
+function flag_admin_listing($form, &$form_state, $flags) {
+  $form['#flags'] = $flags;
+  $form['#tree'] = TRUE;
+
+  foreach ($flags as $flag) {
+    $form['flags'][$flag->name]['weight'] = array(
+      '#type' => 'weight',
+      '#delta' => count($flags) + 5,
+      '#default_value' => $flag->weight,
+      '#attributes' => array('class' => array('flag-weight')),
+    );
+  }
+
+  $form['actions'] = array(
+    '#type' => 'actions',
+  );
+
+  if (count($flags) == 1) {
+    // Don't show weights with only one flag.
+    unset($form['flags'][$flag->name]['weight']);
+  }
+  else if (count($flags) > 1){
+    // Only show the form button if there are several flags.
+    $form['actions']['submit'] = array(
+      '#type' => 'submit',
+      '#value' => t('Save flag order'),
+    );
+  }
+
+  return $form;
+}
+
+/**
+ * Submit handler for the flag_admin_listing form. Save flag weight ordering.
+ */
+function flag_admin_listing_submit($form, &$form_state) {
+  foreach ($form['#flags'] as $flag) {
+    if ($flag->weight != $form_state['values']['flags'][$flag->name]['weight']) {
+      $flag->weight = $form_state['values']['flags'][$flag->name]['weight'];
+      $flag->save();
+    }
+  }
+}
+
+/**
+ * Theme the output of the normal, database flags into a table.
+ */
+function theme_flag_admin_listing($variables) {
+  $form = $variables['form'];
+  $flags = $form['#flags'];
+
   $output = '';
 
-  // Build out the list of normal, database flags.
   foreach ($flags as $flag) {
     $ops = array(
       'flags_edit' =>  array('title' => t('edit'), 'href' => $flag->admin_path('edit')),
@@ -32,23 +79,49 @@ function theme_flag_admin_page($variables) {
     );
 
     $roles = array_flip(array_intersect(array_flip(user_roles()), $flag->roles['flag']));
+    $row = array();
+    $row[] = $flag->name;
+    if (count($flags) > 1) {
+      $row[] = drupal_render($form['flags'][$flag->name]['weight']);
+    }
+    $row[] = $flag->content_type;
+    $row[] = empty($flag->roles['flag']) ? '<em>' . t('No roles') . '</em>' : implode(', ', $roles);
+    $row[] = $flag->types ? implode(', ', $flag->types) : '-';
+    $row[] = $flag->global ? t('Yes') : t('No');
+    $row[] = theme('links', array('links' => $ops));
+
     $rows[] = array(
-      $flag->name,
-      $flag->content_type,
-      empty($flag->roles['flag']) ? '<em>' . t('No roles') . '</em>' : implode(', ', $roles),
-      $flag->types ? implode(', ', $flag->types) : '-',
-      $flag->global ? t('Yes') : t('No'),
-      theme('links', array('links' => $ops)),
+      'data' => $row,
+      'class' => array('draggable'),
     );
   }
   if (!$flags) {
     $rows[] = array(
-      array('data' => t('No flags are currently defined.'), 'colspan' => 6),
+      array('data' => t('No flags are currently defined.'), 'colspan' => 7),
     );
   }
+  else if (count($flags) > 1) {
+    drupal_add_tabledrag('flag-admin-listing-table', 'order', 'sibling', 'flag-weight');
+  }
 
-  $header = array(t('Flag'), t('Flag type'), t('Roles'), t('Node types'), t('Global?'), t('Operations'));
-  $output .= theme('table', array('header' => $header, 'rows' => $rows));
+  $header = array(t('Flag'));
+  if (count($flags) > 1) {
+    $header[] = t('Weight');
+  }
+  $header = array_merge($header, array(t('Flag type'), t('Roles'), t('Entity bundles'), t('Global?'), t('Operations')));
+  $output .= theme('table', array('header' => $header, 'rows' => $rows, 'attributes' => array('id' => 'flag-admin-listing-table')));
+  $output .= drupal_render_children($form);
+
+  return $output;
+}
+
+/**
+ * Theme the list of disabled flags into a table.
+ */
+function theme_flag_admin_listing_disabled($variables) {
+  $flags = $variables['flags'];
+  $default_flags = $variables['default_flags'];
+  $output = '';
 
   // Build a list of disabled, module-based flags.
   $rows = array();
@@ -82,6 +155,21 @@ function theme_flag_admin_page($variables) {
     $output .= theme('table', array('header' => $header, 'rows' => $rows));
   }
 
+  return $output;
+}
+
+/**
+ * Theme the output for the main flag administration page.
+ */
+function theme_flag_admin_page($variables) {
+  $flags = $variables['flags'];
+  $default_flags = $variables['default_flags'];
+
+  $output = '';
+
+  $output .= drupal_render($variables['flag_admin_listing']);
+  $output .= theme('flag_admin_listing_disabled', array('flags' => $flags, 'default_flags' => $default_flags));
+
   if (!module_exists('views')) {
     $output .= '<p>' . t('The <a href="@views-url">Views</a> module is not installed, or not enabled. It is recommended that you install the Views module to be able to easily produce lists of flagged content.', array('@views-url' => url('http://drupal.org/project/views'))) . '</p>';
   }
@@ -106,7 +194,7 @@ function theme_flag_admin_page($variables) {
     $output .= '<p>' . t('Flagging an item may trigger <em>rules</em>. However, you don\'t have the <a href="@rules-url">Rules</a> module enabled, so you won\'t be able to enjoy this feature. The Rules module is a more extensive solution than Flag actions.', array('@rules-url' => url('http://drupal.org/node/407070'))) . '</p>';
   }
   else {
-    $output .= '<p>' . t('<del>Flagging an item may trigger <a href="@rules-url">rules</a>.</del> (This feature was not yet ported to Drupal 7.)', array('@rules-url' => url('admin/rules/trigger'))) . '</p>';
+    $output .= '<p>' . t('Flagging an item may trigger <a href="@rules-url">rules</a>.', array('@rules-url' => url('admin/config/workflow/rules'))) . '</p>';
   }
 
   $output .= '<p>' . t('To learn about the various ways to use flags, please check out the <a href="@handbook-url">Flag module handbook</a>.', array('@handbook-url' => 'http://drupal.org/handbook/modules/flag')) . '</p>';
@@ -136,7 +224,7 @@ function flag_add_form($form, &$form_state) {
   $form['name'] = array(
     '#type' => 'textfield',
     '#title' => t('Flag name'),
-    '#description' => t('The machine-name for this flag. It may be up to 32 characters long and my only contain lowercase letters, underscores, and numbers. It will be used in URLs and in all API calls.'),
+    '#description' => t('The machine-name for this flag. It may be up to 32 characters long and may only contain lowercase letters, underscores, and numbers. It will be used in URLs and in all API calls.'),
     '#maxlength' => 32,
     '#required' => TRUE,
   );
@@ -155,9 +243,13 @@ function flag_add_form($form, &$form_state) {
     '#options' => $types,
   );
 
-  $form['submit'] = array(
+  $form['actions'] = array(
+    '#type' => 'actions',
+  );
+
+  $form['actions']['submit'] = array(
     '#type' => 'submit',
-    '#value' => t('Submit'),
+    '#value' => t('Add flag'),
   );
 
   return $form;
@@ -188,7 +280,7 @@ function flag_form($form, &$form_state, $flag) {
     '#type' => 'textfield',
     '#title' => t('Name'),
     '#default_value' => $flag->name,
-    '#description' => t('The machine-name for this flag. It may be up to 32 characters long and my only contain lowercase letters, underscores, and numbers. It will be used in URLs and in all API calls.'),
+    '#description' => t('The machine-name for this flag. It may be up to 32 characters long and may only contain lowercase letters, underscores, and numbers. It will be used in URLs and in all API calls.'),
     '#maxlength' => 32,
     '#required' => TRUE,
     '#access' => empty($flag->locked['name']),
@@ -196,7 +288,7 @@ function flag_form($form, &$form_state, $flag) {
   );
 
   if (!empty($flag->fid)) {
-    $form['name']['#description'] .= ' <strong>'. t('Change this value only with great care.') .'</strong>';
+    $form['name']['#description'] .= ' <strong>' . t('Change this value only with great care.') . '</strong>';
   }
 
   $form['title'] = array(
@@ -214,7 +306,7 @@ function flag_form($form, &$form_state, $flag) {
     '#type' => 'checkbox',
     '#title' => t('Global flag'),
     '#default_value' => $flag->global,
-    '#description' => t('If checked, flag is considered "global" and each node is either flagged or not. If unchecked, each user has individual flags on content.'),
+    '#description' => t('If checked, flag is considered "global" and each entity is either flagged or not. If unchecked, each user has individual flags on entities.'),
     '#access' => empty($flag->locked['global']),
     '#weight' => -1,
   );
@@ -296,7 +388,7 @@ function flag_form($form, &$form_state, $flag) {
     '#tree' => FALSE,
     '#weight' => 10,
   );
-  
+
   $options = array();
   $node_types = node_type_get_types();
   foreach ($node_types as $node_type) {
@@ -378,10 +470,11 @@ function flag_form($form, &$form_state, $flag) {
     '#title' => t('Link type'),
     '#options' => _flag_link_type_options(),
     '#option_descriptions' => _flag_link_type_descriptions(),
-    '#flag_link_fields' => _flag_link_type_fields(),
     '#after_build' => array('flag_expand_link_option', 'flag_check_link_types'),
     '#default_value' => $flag->link_type,
-    '#weight' => 2,
+    // Give this a high weight so additions by the flag classes for entity-
+    // specific options go above.
+    '#weight' => 18,
     '#access' => empty($flag->locked['link_type']),
   );
 
@@ -417,9 +510,13 @@ function flag_form($form, &$form_state, $flag) {
     '#access' => empty($flag->locked['unflag_confirmation']),
   );
 
-  $form['submit'] = array(
+  $form['actions'] = array(
+    '#type' => 'actions',
+  );
+
+  $form['actions']['submit'] = array(
     '#type' => 'submit',
-    '#value' => t('Submit'),
+    '#value' => t('Save flag'),
     // We put this button on the form before calling $flag->options_form()
     // to give the flag handler a chance to remove it (e.g. flag_broken).
     '#weight' => 999,
@@ -506,7 +603,7 @@ function flag_delete_confirm($form, &$form_state, $flag) {
   return confirm_form($form,
     t('Are you sure you want to delete %title?', array('%title' => $flag->get_title())),
     !empty($_GET['destination']) ? $_GET['destination'] : FLAG_ADMIN_PATH,
-    isset($flag->module) ? t('This flag is provided by the %module module. It will loose any customizations and be disabled.', array('%module' => $flag->module)) : t('This action cannot be undone.'),
+    isset($flag->module) ? t('This flag is provided by the %module module. It will lose any customizations and be disabled.', array('%module' => $flag->module)) : t('This action cannot be undone.'),
     t('Delete'), t('Cancel')
   );
 }

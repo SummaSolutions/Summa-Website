@@ -1,5 +1,4 @@
 <?php
-// $Id: syntaxhighlighter.install,v 1.23 2010/12/26 02:52:31 mattyoung Exp $
 
 /**
  * @file
@@ -8,12 +7,13 @@
 
 function syntaxhighlighter_install() {
   $t = get_t();
-  drupal_set_message($t('You must <a href="!link">turn on the Syntaxhighlighter filter</a> in an input format for syntax highlight code using that format.',
-    array('!link' => url('admin/config/content/formats'))), 'status');
-  drupal_set_message($t('Then <a href="!link">configure the Syntax Highlighter module</a>.',
-    array('!link' => url('admin/config/syntaxhighlighter'))), 'status');
-  drupal_set_message($t('See <a href="!link">the Syntaxhighlighter module README.txt file</a> for instructions.',
-                         array('!link' => url(drupal_get_path('module', 'syntaxhighlighter') . '/README.txt'))));
+  $message = $t('You must <a href="!link">turn on the Syntaxhighlighter filter</a> in an input format to syntax highlight code using that format.',
+                array('!link' => url('admin/config/content/formats')));
+  $message .= ' ' . $t('Then <a href="!link">configure the Syntax Highlighter module</a>.',
+                       array('!link' => url('admin/config/content/syntaxhighlighter')));
+  $message .= ' ' . $t('See <a href="!link">the Syntaxhighlighter module README.txt file</a> for instructions.',
+                       array('!link' => url(drupal_get_path('module', 'syntaxhighlighter') . '/README.txt')));
+  drupal_set_message($message, 'status');
 }
 
 

@@ -8,9 +8,9 @@ core = 7.x
 files[] = views_slideshow_slider.module
 files[] = theme/views_slideshow_slider.theme.inc
 
-; Information added by drupal.org packaging script on 2011-04-09
-version = "7.x-3.x-dev"
+; Information added by drupal.org packaging script on 2011-11-13
+version = "7.x-3.0"
 core = "7.x"
 project = "views_slideshow_slider"
-datestamp = "1302351558"
+datestamp = "1321205136"
 

@@ -10,7 +10,8 @@
   font-weight: lighter;
   color: #333; }
   .canvas-services .pane-content p {
-    margin: 0 0 32px; }
+    margin: 0 0 32px;
+    font-size: 16px !important; }
   .canvas-services .pane-content a {
     text-decoration: none;
     font-weight: normal;
@@ -60,3 +61,5 @@
 @media only screen and (min-width: 641px) {
   .canvas-services .region-body-container {
     padding: 0 84px; } }
+
+/*# sourceMappingURL=page--services.css.map */

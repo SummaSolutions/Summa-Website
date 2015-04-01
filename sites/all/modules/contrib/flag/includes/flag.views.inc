@@ -1,5 +1,4 @@
 <?php
-// $Id: flag.views.inc,v 1.3 2010/12/20 13:48:37 mooffie Exp $
 
 /**
  * @file
@@ -7,41 +6,7 @@
  */
 
 /**
- * Implementation of hook_views_handlers().
- */
-function flag_views_handlers() {
-  return array(
-    'info' => array(
-      'path' => drupal_get_path('module', 'flag') . '/includes',
-    ),
-    'handlers' => array(
-      'flag_handler_relationship_content' => array(
-        'parent' => 'views_handler_relationship',
-        'file' => 'flag_handler_relationships.inc',
-      ),
-      'flag_handler_relationship_counts' => array(
-        'parent' => 'views_handler_relationship',
-        'file' => 'flag_handler_relationships.inc',
-      ),
-      'flag_handler_relationship_user_content' => array(
-        'parent' => 'views_handler_relationship',
-        'file' => 'flag_handler_relationships.inc',
-      ),
-      'flag_handler_field_ops' => array(
-        'parent' => 'views_handler_field',
-      ),
-      'flag_handler_filter_flagged' => array(
-        'parent' => 'views_handler_filter_boolean_operator',
-      ),
-      'flag_handler_argument_content_id' => array(
-        'parent' => 'views_handler_argument_numeric',
-      ),
-    ),
-  );
-}
-
-/**
- * Implementation of hook_views_plugins().
+ * Implements hook_views_plugins().
  */
 function flag_views_plugins() {
   return array(
@@ -65,7 +30,7 @@ function flag_views_plugins() {
   );
 }
 /**
- * Implementation of hook_views_data().
+ * Implements hook_views_data().
  */
 function flag_views_data() {
   $data = array();
@@ -74,12 +39,23 @@ function flag_views_data() {
   $data['flag_counts']['table']['group'] = t('Flags');
 
   $data['flag_content']['uid'] = array(
-    'title' => t('User'),
-    'help' => t('The user that flagged an item.'),
+    'title' => t('User uid'),
+    'help' => t('The user that flagged an item. If you need more fields than the uid add the "Flags: User" relationship.'),
     'relationship' => array(
       'base' => 'users',
+      'title' => t('User'),
+      'help' => t('Relate an item to the user that flagged it.'),
       'handler' => 'views_handler_relationship',
       'label' => t('Flag user'),
+    ),
+    'filter' => array(
+      'handler' => 'views_handler_filter_user_name',
+    ),
+    'argument' => array(
+      'handler' => 'views_handler_argument_numeric',
+    ),
+    'field' => array(
+      'handler' => 'views_handler_field_user',
     ),
   );
 
@@ -113,11 +89,16 @@ function flag_views_data() {
   // Specialized is null/is not null filter.
   $data['flag_content']['flagged'] = array(
     'title' => t('Flagged'),
-    'help' => t('Filter to ensure content has or has not been flagged.'),
     'real field' => 'uid',
     'filter' => array(
       'handler' => 'flag_handler_filter_flagged',
       'label' => t('Flagged'),
+      'help' => t('Filter to ensure content has or has not been flagged.'),
+    ),
+    'sort' => array(
+      'handler' => 'flag_handler_sort_flagged',
+      'label' => t('Flagged'),
+      'help' => t('Sort by whether entities have or have not been flagged.'),
     ),
   );
 
@@ -148,11 +129,29 @@ function flag_views_data() {
     ),
   );
 
+  $data['flag_counts']['last_updated'] = array(
+    'title' => t('Time last flagged'),
+    'help' => t('The time a piece of content was most recently flagged by any user.'),
+    'field' => array(
+      'handler' => 'views_handler_field_date',
+      'click sortable' => TRUE,
+    ),
+    'sort' => array(
+      'handler' => 'views_handler_sort_date',
+    ),
+    'filter' => array(
+      'handler' => 'views_handler_filter_date',
+    ),
+    'argument' => array(
+      'handler' => 'views_handler_argument_date',
+    ),
+  );
+
   return $data;
 }
 
 /**
- * Implementation of hook_views_data_alter().
+ * Implements hook_views_data_alter().
  */
 function flag_views_data_alter(&$data) {
 
@@ -160,35 +159,37 @@ function flag_views_data_alter(&$data) {
     $flag = flag_flag::factory_by_content_type($flag_type);
     $info = $flag->get_views_info();
 
-    // Add the flag relationship.
-    $data[$info['views table']]['flag_content_rel'] = array(
-      'group' => t('Flags'),
-      'title' => $info['title'],
-      'help' => $info['help'],
-      'relationship' => array(
-        'flag type' => $flag_type,
-        'handler' => 'flag_handler_relationship_content',
-        'label' => t('flag'),
-        'base' => 'flag_content',
-        'base field' => 'content_id',
-        'relationship field' => $info['join field'],
-      ),
-    );
+    if (!empty($info['join field'])) {
+      // Add the flag relationship.
+      $data[$info['views table']]['flag_content_rel'] = array(
+        'group' => t('Flags'),
+        'title' => $info['title'],
+        'help' => $info['help'],
+        'relationship' => array(
+          'flag type' => $flag_type,
+          'handler' => 'flag_handler_relationship_content',
+          'label' => t('flag'),
+          'base' => 'flag_content',
+          'base field' => 'content_id',
+          'relationship field' => $info['join field'],
+        ),
+      );
 
-    // Add the flag counter relationship.
-    $data[$info['views table']]['flag_count_rel'] = array(
-      'group' => t('Flags'),
-      'title' => $info['counter title'],
-      'help' => $info['counter help'],
-      'relationship' => array(
-        'flag type' => $flag_type,
-        'handler' => 'flag_handler_relationship_counts',
-        'label' => t('counter'),
-        'base' => 'flag_counts',
-        'base field' => 'content_id',
-        'relationship field' => $info['join field'],
-      ),
-    );
+      // Add the flag counter relationship.
+      $data[$info['views table']]['flag_count_rel'] = array(
+        'group' => t('Flags'),
+        'title' => $info['counter title'],
+        'help' => $info['counter help'],
+        'relationship' => array(
+          'flag type' => $flag_type,
+          'handler' => 'flag_handler_relationship_counts',
+          'label' => t('counter'),
+          'base' => 'flag_counts',
+          'base field' => 'content_id',
+          'relationship field' => $info['join field'],
+        ),
+      );
+    }
   }
 
   // Add a relationship for the user that flagged any type of content.
@@ -245,7 +246,7 @@ function flag_views_flag_config_form($form_type, $content_type, $current_flag) {
  * Helper function that gets the first defined flag and returns its name.
  */
 function flag_views_flag_default($content_type) {
-  static $default_flag = array();
+  $default_flag = &drupal_static(__FUNCTION__, array());
 
   if (!array_key_exists($content_type, $default_flag)) {
     $flag = array_shift(flag_get_flags($content_type));

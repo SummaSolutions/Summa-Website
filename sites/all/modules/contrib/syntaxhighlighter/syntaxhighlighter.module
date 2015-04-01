@@ -1,5 +1,4 @@
 <?php
-// $Id: syntaxhighlighter.module,v 1.58 2011/01/28 07:29:37 mattyoung Exp $
 
 /**
  * @file
@@ -27,6 +26,11 @@ define('SYNTAXHIGHLIGHTER_INJECT_PHP', 2);
 
 define('SYNTAXHIGHLIGHTER_PHP_PERMISSION', 'use PHP for syntaxhighlighter js/css code inject control');
 
+/**
+ * Use a completely none sense word for replacement when filtering so there is
+ * absolutely no chance this will conflict with something in content text
+ */
+define('SYNTAXHIGHLGHTER_TAG_STRING', '-_sYnTaXhIgHlIgHtEr_-');
 
 
 /**
@@ -170,45 +174,81 @@ function syntaxhighlighter_filter_info() {
 
 
 function _syntaxhighlighter_filter_tips($filter, $format, $long = FALSE) {
+  $tag_name = variable_get('syntaxhighlighter_tagname', 'pre');
+  $tip = t('Syntax highlight code surrounded by the <code>!ex0</code> tags, where !lang is one of the following language brushes: %brushes.',
+           array('!ex0' => "&lt;$tag_name class=\"brush: <i>lang</i>\"&gt;...&lt;/$tag_name&gt;",
+                 '!lang' => '<i>lang</i>',
+                 '%brushes' => implode(', ', _syntaxhighlighter_get_enabled_language_brushes()),
+                )
+           );
   if ($long) {
-      $tip[] = '<p>' . t('Syntax highlight code surrounded by the <code>!ex0</code> tags, where SPEC is a Syntaxhighlighter options string or "class="OPTIONS" title="the title".',
-                          array('!ex0' => '{syntaxhighlighter SPEC}...{/syntaxhighlighter}')) . '</p>';
-      $tip[] = '<p>' . t('Example: <code>!ex1</code>',
-                         array('!ex1' => '{syntaxhighlighter brush:php;collapse:true;first-line:50;highlight:[57,81,101];class-name:\'some_class some_other_class\'}...{/syntaxhighlighter}')) . '</p>';
-      $tip[] = '<p>' . t('This will syntax highlight PHP code, initially collapsed, start line number at 50, highlight lines 57, 81 and 101 and tag highlighted code with class names some_class and some_other_class.');
-      $tip[] = '<p>' . t('See <a href="!url0">the Syntaxhighlighter javascript library site</a> for additional helps.',
-                         array('!url0' => 'http://alexgorbatchev.com/')) . '</p>';
-      $tip = implode("\n", $tip);
-  }
-  else {
-    $tip = t('Syntax highlight code surrounded by the <code>!ex0</code> tags, where SPEC is a Syntaxhighlighter options string or class="OPTIONS" [title="the title"].',
-             array('!ex0' => '{syntaxhighlighter SPEC}...{/syntaxhighlighter}'));
+    $tip .= ' ' . t('See <a href="!url0">the SyntaxHighlighter javascript library site</a> for additional helps.',
+                       array('!url0' => 'http://alexgorbatchev.com/'));
   }
   return $tip;
 }
 
 
 /**
- * Escape the content text in preparation for filtering by replacing all
- * '<' and '>' with &lt; and &gt; inside.
+ * @return an array of all enabled language brushes
+ */
+function _syntaxhighlighter_get_enabled_language_brushes() {
+  $brushes = &drupal_static(__FUNCTION__);
+  if (!isset($brushes)) {
+    $brushes = array();
+    foreach (variable_get('syntaxhighlighter_enabled_languages', array('shBrushPhp.js')) as $val) {
+      if ($val) {
+        $brushes[] = strtolower(substr(substr($val, 7),0,-3));
+      }
+    }
+  }
+  return $brushes;
+}
+
+
+/**
+ * Escape the content text in preparation for filtering:
+ * 
+ *  - change all syntaxhighlighter <pre> tag pairs to {-_sYnTaXhIgHlIgHtEr_-}
+ *    {/-_sYnTaXhIgHlIgHtEr_-} pair (so other filters would not mess with them
  *
+ * Precondition: all the open/close tags much match because search is done on
+ * pair by pair basis. If match is not even, do nothing.
+ * 
+ * All HTML tags and entities inside the SyntaxHighlighter must be properly
+ * escape. For example, if you show HTML code, change
+ * 
+ *  - '<' to '&lt;': e.g.  <pre> -> &lt;pre>, <html> -> &lt;html>
+ *  - neutralize & in entity: e.g.: &gt; -> &amp;gt;
+ * 
  * @param string $text
  *   the content text to be filtered
  * @return
  *   the escape content text
  */
 function _syntaxhighlighter_do_filter_prepare($text) {
-  preg_match_all('/\{ *syntaxhighlighter *[^}]+\}|\{\/ *syntaxhighlighter *\}/', $text, $matches, PREG_OFFSET_CAPTURE);
+  $tag_name = variable_get('syntaxhighlighter_tagname', 'pre');
+  $pattern = "#<$tag_name\\s*([^>]*)>|</\\s*$tag_name>#";
+  preg_match_all($pattern, $text, $matches, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
   $output = '';
   $at = 0;
-  for ($it = new ArrayIterator($matches[0]) ; $it->valid() ; $it->next()) {
-    $open_tag = $it->current();
-    $it->next();
-    $close_tag = $it->current();
-    $output .= substr($text, $at, $open_tag[1] - $at);
-    $end = $close_tag[1] + strlen($close_tag[0]);
-    $output .= strtr(substr($text, $open_tag[1], $end - $open_tag[1]), array('<' => '&lt;', '>' => '&gt;'));
-    $at = $close_tag[1] + strlen($close_tag[0]);
+  $n = count($matches);
+  // do nothing if open/close tag match is not even
+  if ($n % 2) {
+    return $text;
+  }
+  for ($i = 0 ; $i < $n ; ) {
+    $open_tag = $matches[$i++];
+    $close_tag = $matches[$i++];
+    if (strpos($open_tag[1][0], 'brush:')) {
+      $output .= substr($text, $at, $open_tag[0][1] - $at);
+      $begin = $open_tag[0][1] + strlen($open_tag[0][0]);
+      $length = $close_tag[0][1] - $begin;
+      $output .= '{' . SYNTAXHIGHLGHTER_TAG_STRING . ' ' . $open_tag[1][0] . '}' .
+                  substr($text, $begin, $length) .
+                  '{/' . SYNTAXHIGHLGHTER_TAG_STRING . '}';
+      $at = $close_tag[0][1] + strlen($close_tag[0][0]);
+    }
   }
   $output .= substr($text, $at);
   return $output;
@@ -216,24 +256,21 @@ function _syntaxhighlighter_do_filter_prepare($text) {
 
 
 /**
- * Filter {syntaxhighlighter options}program code{/syntaxhighlighter} into
- * <pre class="options">program code</pre>
- *
- * We make sure if there is " inside options, they become ' so the HTML
- * in the end is proper
+ * Revert back to <pre> tag
  */
 function _syntaxhighlighter_do_filter_process($text) {
   $patterns = array(
-    '/{ *syntaxhighlighter *([^}]+)\}/e',
-    '/\{\/ *syntaxhighlighter *\}/',
+    '#{' . SYNTAXHIGHLGHTER_TAG_STRING . ' ([^}]+)}#',
+    '#{/' . SYNTAXHIGHLGHTER_TAG_STRING . '}#',
   );
   $tag_name = variable_get('syntaxhighlighter_tagname', 'pre');
   $replacements = array(
-    "_syntaxhighlighter_replace('$1')",
+    "<$tag_name $1>",
     "</$tag_name>",
   );
   return preg_replace($patterns, $replacements, $text);
 }
+
 
 
 /**
@@ -288,47 +325,24 @@ function _syntaxhighlighter_comment_validate($form, &$form_state) {
  */
 function _syntaxhighlighter_validate_input($field, $text) {
   $errors = array();
-
+  $tag_name = variable_get('syntaxhighlighter_tagname', 'pre');
+  
   // check for balance open/close tags
-  preg_match_all('/\{ *syntaxhighlighter *[^}]+\}/', $text, $matches_open, PREG_OFFSET_CAPTURE);
-  preg_match_all('/\{\/ *syntaxhighlighter *\}/', $text, $matches_close, PREG_OFFSET_CAPTURE);
+  preg_match_all("#<$tag_name\\s*[^>]*>#", $text, $matches_open);
+  preg_match_all("#</\\s*$tag_name\\s*>#", $text, $matches_close);
   if (count($matches_open[0]) != count($matches_close[0])) {
-    $errors[] = format_plural(count($matches_open[0]) <= 1 && count($matches_close[0]) <= 1,
-      '{syntaxhighlighter} tag not balanced: open and close tags must match.',
-      '{syntaxhighlighter} tags not balanced: open and close tags must match.');
+    $errors[] = t('Unbalanced !tag tags.', array('!tag' => "&lt;$tag_name&gt;"));
   }
 
   // make sure no nesting
-  preg_match_all('/\{ *syntaxhighlighter *[^}]+\}.*\{\/ *syntaxhighlighter *\}/sU', $text, $matches_pair, PREG_OFFSET_CAPTURE);
-  if (count($matches_pair[0]) != 0 && (count($matches_pair[0]) != count($matches_open[0]) || count($matches_pair[0]) != count($matches_close[0]))) {
-    $errors[] = format_plural(count($matches_open[0]) <= 1 && count($matches_close[0]) <= 1,
-      '{syntaxhighlighter} tag cannot be nested. If you need to show the {syntaxhighlighter}/{/syntaxhighlighter} strings in syntax highlighted code, show them in escape form as <code>&amp;#123;syntaxhighlighter OPTIONS&amp;#125;</code> and <code>&amp;#123;/syntaxhighlighter&amp;#125;</code>',
-      '{syntaxhighlighter} tags cannot be nested. If you need to show the {syntaxhighlighter}/{/syntaxhighlighter} strings in syntax highlighted code, show them in escape form as <code>&amp;#123;syntaxhighlighter OPTIONS&amp;#125;</code> and <code>&amp;#123;/syntaxhighlighter&amp;#125;</code>');
+  preg_match_all("#<$tag_name\\s*[^>]*>.*</\\s*$tag_name\\s*>#sU", $text, $matches_pair);
+  if (count($matches_pair[0]) != count($matches_open[0]) || count($matches_pair[0]) != count($matches_close[0])) {
+    $errors[] = t('!tag tags cannot be nested.', array('!tag' => "&lt;$tag_name&gt;"));
   }
 
   if (!empty($errors)) {
-    form_set_error($field, implode('<br />', $errors));
+    form_set_error($field, implode(' ', $errors));
   }
-}
-
-
-/**
- * Escape " to ' in OPTIONS string
- */
-function _syntaxhighlighter_replace($x) {
-  $x = strtr($x, array('\\"' => "'"));
-  $tag_name = variable_get('syntaxhighlighter_tagname', 'pre');
-  if (_syntaxhighlighter_string_begins_with($x, 'class') || _syntaxhighlighter_string_begins_with($x, 'title')) {
-    return "<$tag_name $x>";
-  }
-  else {
-    return "<$tag_name class=\"$x\">";
-  }
-}
-
-
-function _syntaxhighlighter_string_begins_with($string, $search) {
-  return (0 == strncmp($string, $search, strlen($search)));
 }
 
 

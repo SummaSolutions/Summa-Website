@@ -346,7 +346,7 @@ Drupal.nodequeue = function(base, settings) {
               }
             },
             error: function(data) {
-              alert('An error occurred');
+              alert(Drupal.t('An error occurred'));
               $(input).parent().removeClass('throbbing');
               $(input).attr('disabled', false);
             }
@@ -385,10 +385,10 @@ Drupal.nodequeue.autoAttach = function() {
       data: { js: 1 },
       url: href,
       global: true,
+      dataType: 'json',
       success: function (data) {
         // Parse response
         $(a).removeClass('throbbing');
-        data = Drupal.parseJson(data);
         // Change text on success
         if (data.status) {
           // Change label back

@@ -182,9 +182,16 @@ Drupal.ajax = function (base, element, element_settings) {
   // can be triggered through keyboard input as well as e.g. a mousedown
   // action.
   if (element_settings.keypress) {
-    $(element_settings.element).keypress(function (event) {
+    $(ajax.element).keypress(function (event) {
       return ajax.keypressResponse(this, event);
     });
+  }
+
+  // If necessary, prevent the browser default action of an additional event.
+  // For example, prevent the browser default action of a click, even if the
+  // AJAX behavior binds to mousedown.
+  if (element_settings.prevent) {
+    $(ajax.element).bind(element_settings.prevent, false);
   }
 };
 
@@ -311,7 +318,7 @@ Drupal.ajax.prototype.beforeSerialize = function (element, options) {
 Drupal.ajax.prototype.beforeSubmit = function (form_values, element, options) {
   // This function is left empty to make it simple to override for modules
   // that wish to add functionality here.
-}
+};
 
 /**
  * Prepare the Ajax request before it is sent.
@@ -341,7 +348,7 @@ Drupal.ajax.prototype.beforeSend = function (xmlhttprequest, options) {
     // this is only needed for IFRAME submissions.
     var v = $.fieldValue(this.element);
     if (v !== null) {
-      options.extraData[this.element.name] = v;
+      options.extraData[this.element.name] = Drupal.checkPlain(v);
     }
   }
 
@@ -389,7 +396,7 @@ Drupal.ajax.prototype.success = function (response, status) {
   Drupal.freezeHeight();
 
   for (var i in response) {
-    if (response[i]['command'] && this.commands[response[i]['command']]) {
+    if (response.hasOwnProperty(i) && response[i]['command'] && this.commands[response[i]['command']]) {
       this.commands[response[i]['command']](this, response[i], status);
     }
   }
@@ -609,6 +616,13 @@ Drupal.ajax.prototype.commands = {
       .removeClass('odd even')
       .filter(':even').addClass('odd').end()
       .filter(':odd').addClass('even');
+  },
+
+  /**
+   * Command to update a form's build ID.
+   */
+  updateBuildId: function(ajax, response, status) {
+    $('input[name="form_build_id"][value="' + response['old'] + '"]').val(response['new']);
   }
 };
 

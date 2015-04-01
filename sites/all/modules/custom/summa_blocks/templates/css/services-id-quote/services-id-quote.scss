@@ -1,7 +1,0 @@
-$hdi-mobile-portrait: 641px;
-
-@import "services-id-quote_style_base";
-
-@media only screen and (min-width: $hdi-mobile-portrait) {
-  @import "services-id-quote_style_640up";
-}

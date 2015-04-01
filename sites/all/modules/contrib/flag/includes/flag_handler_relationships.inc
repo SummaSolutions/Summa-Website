@@ -1,5 +1,4 @@
 <?php
-// $Id: flag_handler_relationships.inc,v 1.10 2010/12/27 23:26:13 mooffie Exp $
 
 /**
  * @file
@@ -39,7 +38,7 @@ abstract class flag_handler_relationship extends views_handler_relationship {
     if (!$this->options['flag']) {
       $errors[] = t('You must pick a flag to use for the relationship "@relationship-name".', $tokens);
     }
-    else if (!flag_get_flag($this->options['flag'])) {
+    elseif (!flag_get_flag($this->options['flag'])) {
       $errors[] = t('This view is looking for a flag by the name "@flag-name", but there is no such flag. Perhaps it was deleted. Please update the relationship "@relationship-name" in this view to use an existing flag.', $tokens);
     }
     return $errors;
@@ -93,7 +92,7 @@ class flag_handler_relationship_content extends flag_handler_relationship {
   function options_form(&$form, &$form_state) {
     parent::options_form($form, $form_state);
     $content_type = $this->definition['flag type'];
-    $form['label']['#description'] .= ' '. t('The name of the selected flag makes a good label.');
+    $form['label']['#description'] .= ' ' . t('The name of the selected flag makes a good label.');
     $form['flag'] = flag_views_flag_config_form('radios', $content_type, $this->options['flag']);
 
     $form['user_scope'] = array(
@@ -121,7 +120,7 @@ class flag_handler_relationship_content extends flag_handler_relationship {
     }
   }
 
-  function options_validate($form, &$form_state) {
+  function options_validate(&$form, &$form_state) {
     if (!empty($form_state['no flags exist'])) {
       form_error($form, t('You must first create a flag'));
     }
@@ -131,7 +130,7 @@ class flag_handler_relationship_content extends flag_handler_relationship {
     return $this->options['user_scope'] == 'current' ? t('by current user') : t('by any user');
   }
 
-  function ui_name() {
+  function ui_name($short = FALSE) {
     // We put the bookmark name in the UI string to save space.
     return t('!group: !title', array('!group' => $this->definition['group'], '!title' => empty($this->options['flag']) ? t('(Please select a flag)') : $this->options['flag']));
   }
@@ -157,7 +156,7 @@ class flag_handler_relationship_content extends flag_handler_relationship {
       );
       if (array_search(DRUPAL_ANONYMOUS_RID, $flag->roles['flag']) !== FALSE) {
         // Disable page caching for anonymous users.
-        $GLOBALS['conf']['cache'] = 0;
+        drupal_page_is_cacheable(FALSE);
 
         // Add in the SID from Session API for anonymous users.
         $this->definition['extra'][] = array(
@@ -191,7 +190,7 @@ class flag_handler_relationship_counts extends flag_handler_relationship {
     // Nothing to show.
   }
 
-  function ui_name() {
+  function ui_name($short = FALSE) {
     // We put the bookmark name in the UI string to save space.
     return t('!group: !title counter', array('!group' => $this->definition['group'], '!title' => $this->options['flag']));
   }
@@ -235,7 +234,7 @@ class flag_handler_relationship_user_content extends flag_handler_relationship {
 
   function options_form(&$form, &$form_state) {
     parent::options_form($form, $form_state);
-    $form['label']['#description'] .= ' '. t('Including name of the selected flag helps identify this relationship.');
+    $form['label']['#description'] .= ' ' . t('Including name of the selected flag helps identify this relationship.');
 
     $form['flag'] = flag_views_flag_config_form('radios', NULL, $this->options['flag']);
     $form['flag']['#title'] = t('Flagged');
