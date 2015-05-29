@@ -1,0 +1,70 @@
+<?php
+/**
+ * Implements hook_install()
+ */
+function summa_quiz_install()
+{
+    $quiz_permissions = array(
+        'access quiz'
+    );
+
+    $role = new stdClass();
+    $role->name = 'summa quiz access';
+    user_role_save($role);
+    user_role_grant_permissions($role->rid, $quiz_permissions);
+    $role = new stdClass();
+    $role->name = 'summa quiz only user';
+    user_role_save($role);
+    variable_set('summa_quiz_mail_subject',t('E-mail sent from @site-name'));
+    variable_set('summa_quiz_mail_body',t('@name: @link'));
+}
+
+/**
+ * Implements hook_schema()
+ */
+function summa_quiz_schema()
+{
+    $schema['summa_quiz_applicant'] = array(
+        'description' => t('Table that connects applicants and taken quizzes.'),
+        'fields' => array(
+            'qid' => array(
+                'description' => t('Quiz node id.'),
+                'type' => 'int',
+                'length' => 10,
+                'unsigned' => TRUE,
+                'not null' => TRUE),
+            'result_id' => array(
+                'description' => t('Quiz result id.'),
+                'type' => 'int',
+                'length' => 10,
+                'unsigned' => TRUE,
+                'not null' => TRUE,),
+            'mail' => array(
+                'description' => t('Applicant mail.'),
+                'type' => 'varchar',
+                'length' => 100,
+                'not null' => TRUE,
+            ),
+
+        ),
+    );
+    return $schema;
+}
+
+
+/**
+ * Implements hook_uninstall()
+ */
+function summa_quiz_uninstall()
+{
+    // remove any roles we created
+    user_role_delete('summa quiz access');
+    user_role_delete('summa quiz only user');
+    //remove database table
+    db_delete('summa_quiz_applicant');
+    //remove configuration variables
+    variable_del('summa_quiz_mail_subject');
+    variable_del('summa_quiz_mail_body');
+    //remove action
+    actions_synchronize(TRUE);
+}
