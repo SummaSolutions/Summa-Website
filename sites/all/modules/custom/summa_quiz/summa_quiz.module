@@ -1,0 +1,302 @@
+<?php
+
+function summa_quiz_menu()
+{
+    $items = array();
+
+    $items['admin/quiz/summa_quiz'] = array(
+        'title' => 'Quiz send',
+        'description' => 'Send quiz to a new user.',
+        'position' => 'left',
+        'weight' => -100,
+        'page callback' => 'summa_quiz_prepare_page',
+        'access callback' => TRUE
+    );
+    $items['admin/config/summa/summa_quiz'] = array(
+        'title' => 'Summa Quiz',
+        'description' => 'Configuration for Quiz Mails',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('summa_quiz_settings_form'),
+        'access callback' => TRUE,
+    );
+    $items['quiz/finished'] = array(
+        'title' => 'Quiz Finished',
+        'page callback' => 'summa_quiz_finished',
+        'access callback' => TRUE,
+    );
+    return $items;
+}
+
+function summa_quiz_prepare_page()
+{
+    $output = array();
+    $output['summa_quiz_send_form'] = drupal_get_form('summa_quiz_send_form');
+    $output['summa_quiz_search_form'] = drupal_get_form('summa_quiz_search_form');
+    return $output;
+}
+
+/**
+ * Implements hook_form()
+ * Form used for sending quizzes
+ */
+function summa_quiz_send_form($form, &$form_state)
+{
+    $form['user_name'] = array(
+        '#type' => 'textfield',
+        '#title' => 'Name',
+        '#size' => 50,
+        '#maxlength' => 100,
+        '#required' => TRUE,
+    );
+    $form['mail'] = array(
+        '#type' => 'textfield',
+        '#title' => 'Email',
+        '#size' => 50,
+        '#maxlength' => 100,
+        '#required' => TRUE,
+    );
+    $quiz = quiz_get_all_titles();
+    $form['quiz'] = array(
+        '#type' => 'select',
+        '#title' => 'Quiz',
+        '#options' => $quiz,
+        '#required' => TRUE,
+    );
+
+    $form['submit_button'] = array(
+        '#type' => 'submit',
+        '#value' => t('Send Quiz'),
+    );
+
+    return $form;
+}
+
+/**
+ * Implements hook_form()
+ * Form used for sending quizzes
+ */
+function summa_quiz_search_form($form, &$form_state)
+{
+    $form['search_mail'] = array(
+        '#type' => 'textfield',
+        '#title' => 'Email',
+        '#size' => 50,
+        '#maxlength' => 100,
+        '#required' => TRUE,
+    );
+    $form['search_submit_button'] = array(
+        '#type' => 'submit',
+        '#ajax' => array(
+            'callback' => 'summa_quiz_search_form_ajax_submit',
+            'wrapper' => 'box',
+        ),
+        '#value' => t('Search Results'),
+    );
+    $form['box'] = array(
+        '#type' => 'markup',
+        '#markup' => '<div id="box"></div>',
+    );
+
+    return $form;
+}
+
+/**
+ * Implements hook_form()
+ * Form used for module configuration
+ */
+function summa_quiz_settings_form($form, &$form_state)
+{
+
+    $form['summa_quiz_mail_subject'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Mail subject'),
+        '#default_value' => t(variable_get('summa_quiz_mail_subject', 'E-mail sent from @site-name')),
+        '#size' => 50,
+        '#maxength' => 250,
+        '#description' => t('Mail subject. Use @site-name as placeholder for site name.'),
+        '#required' => TRUE,
+    );
+
+    $form['summa_quiz_mail_body'] = array(
+        '#type' => 'textarea',
+        '#title' => t('Mail body'),
+        '#default_value' => t(variable_get('summa_quiz_mail_body', '@name: @link')),
+        '#size' => 2,
+        '#maxlength' => 500,
+        '#description' => t('The text that will be send on the mail. Use @name and @link as placeholders for the receiver name and quiz link respectively.'),
+        '#required' => TRUE,
+    );
+
+    return system_settings_form($form);
+}
+
+/**
+ * Implements hook_form_validate()
+ */
+function summa_quiz_send_form_validate($form, &$form_state)
+{
+    if (!valid_email_address($form_state['values']['mail'])) {
+        form_set_error('mail', t('Invalid Email format.'));
+    }
+}
+
+/**
+ * Implements hook_form_submit()
+ * Creates the user, and sends the mail with the quiz link.
+ */
+
+function summa_quiz_send_form_submit($form, &$form_state)
+{
+    $password = user_password(8);
+    $quiz_role = user_role_load_by_name('summa quiz access');
+    $user = user_load_by_mail($form_state['values']['mail']);
+
+    if (!$user) {
+        $quiz_only_role = user_role_load_by_name('summa quiz only user');
+        //set up the user fields
+        $fields = array(
+            'name' => $form_state['values']['user_name'],
+            'mail' => $form_state['values']['mail'],
+            'pass' => $password,
+            'status' => 1,
+            'init' => 'email address',
+            'roles' => array(
+                $quiz_role->rid => 'summa quiz access',
+                $quiz_only_role->rid => 'summa quiz only user',
+            ),
+
+        );
+        $user = user_save(null, $fields);
+    } else {
+        $fields = array(
+            $quiz_role->rid => 'summa quiz access'
+        );
+        $user = user_save($user, $fields);
+    }
+    $nodePath = drupal_get_path_alias('node/' . $form_state['values']['quiz'] . '/take');
+    $auto_login_url = auto_login_url_create($user->uid, $nodePath, $absolute = true);
+    $params = array('url' => $auto_login_url, 'name' => $form_state['values']['user_name']);
+    $message = drupal_mail('summa_quiz', 'quiz_sent', $form_state['values']['mail'], language_default(), $params);
+    if ($message['result']) {
+        drupal_set_message(t('The quiz has been sent correctly.'));
+    } else {
+        drupal_set_message(t('An error ocurred sending the mail.'), 'error');
+    }
+}
+
+/**
+ * Implements hook_form_submit()
+ * Search for quiz results for that user mail
+ */
+function summa_quiz_search_form_ajax_submit($form, &$form_state)
+{
+    $query = db_select('summa_quiz_applicant', 'sqa')
+        ->fields('sqa')
+        ->condition('sqa.mail', $form_state['values']['search_mail']);
+
+    $query->join('quiz_node_results', 'qnr', 'qnr.result_id = sqa.result_id'); //JOIN node with users
+    $query->fields('qnr');
+
+    $query->join('node', 'n', 'sqa.qid = n.nid'); //JOIN node with users
+    $query->fields('n', array('title'))
+        ->orderBy('time_start', 'ASC');
+
+
+    $results = $query->execute();
+
+    $header = array('Quiz', 'Started at', 'Finished at', 'Score', 'Link');
+    $rows = array();
+
+    while ($node = $results->fetchAssoc()) {
+        $link = array(
+            'text' => 'Click Here to see the Result',
+            'path' => url(drupal_get_path_alias('node/' . $node['qid'] . '/results/' . $node['result_id']), array('absolute' => TRUE)),
+            'options' => array(
+                'attributes' => array(),
+                'html' => TRUE,
+            ),
+        );
+        $row = array($node['title'], date("Y-m-d H:i:s", $node['time_start']), date("Y-m-d H:i:s", $node['time_end']), $node['score'], theme_link($link));
+        $rows[] = array('data' => $row, 'align' => 'center');
+    }
+    $html = '<div id="box">' . theme_table(array('header' => $header, 'rows' => $rows, 'attributes' => array('id' => 'summa_quiz_table'))) . '</div>';
+    return $html;
+}
+
+/**
+ * Implements hook_form_validate()
+ */
+function summa_quiz_search_form_validate($form, &$form_state)
+{
+    if (!valid_email_address($form_state['values']['search_mail'])) {
+        form_set_error('search_mail', t('Invalid Email format.'));
+    }
+}
+
+
+/**
+ * Renders the quiz finished page.
+ */
+function summa_quiz_finished()
+{
+    return theme('html_tag', array(
+        'element' => array(
+            '#tag' => 'p',
+            '#attributes' => array(
+                'class' => 'center',
+            ),
+            '#value' => 'Thank you for completing the quiz',
+        ),
+    ));
+}
+
+/**
+ * Implements hook_mail()
+ * Generates the mail that will be sent to the User.
+ */
+function summa_quiz_mail($key, &$message, $params)
+{
+    $options = array(
+        'langcode' => $message['language']->language,
+    );
+    $message['subject'] = t(variable_get('summa_quiz_mail_subject'), array('@site-name' => variable_get('site_name', 'Drupal')), $options);
+    $message['body'][] = t(variable_get('summa_quiz_mail_body'), array("@name" => $params['name'], "@link" => $params['url']), $options);
+}
+
+/**
+ * Implements hook_action_info()
+ */
+function summa_quiz_action_info()
+{
+    return array(
+        'summa_quiz_savequiz_action' => array(
+            'type' => 'node',
+            'label' => t('Save Quiz and Remove User'),
+            'configurable' => FALSE,
+            'triggers' => array('node_insert')
+        )
+    );
+}
+
+function summa_quiz_savequiz_action($entity, $context, $result)
+{
+    $uid = db_query('SELECT qnr.uid
+FROM {quiz_node_results} qnr WHERE qnr.result_id = :rid', array(':rid' => $result['result_id']))->fetchField();
+
+    $user = user_load($uid);
+    db_insert('summa_quiz_applicant')
+        ->fields(array(
+            'mail' => $user->mail,
+            'result_id' => $result['result_id'],
+            'qid' => $entity->nid
+        ))
+        ->execute();
+    db_delete('auto_login_url')
+        ->condition('uid', $uid)
+        ->execute();
+    //elimino el usuario solo si fue un usuario creado para las quiz
+    if (in_array('summa quiz only user', array_values($user->roles))) {
+        user_delete($uid);
+    }
+    drupal_goto('quiz/finished');
+}

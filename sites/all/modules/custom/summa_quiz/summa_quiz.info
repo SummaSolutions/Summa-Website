@@ -1,0 +1,7 @@
+core = "7.x"
+description = "A module for creating quiz for applicants."
+name = "Summa Quiz"
+package = "Summa Solutions"
+dependencies[] = quiz
+dependencies[] = auto_login_url
+configure = admin/config/summa/summa_quiz
