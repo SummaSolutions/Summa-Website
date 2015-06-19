@@ -157,7 +157,7 @@
       top: 76px; }
       #certifieds-container .views-field-field-image-right .image-container img, #certifieds-container .views-field-field-image-right-1 .image-container img {
         margin: 0;
-        width: 63px; }
+        width: 80px; }
       #certifieds-container .views-field-field-image-right .image-container img:first-child, #certifieds-container .views-field-field-image-right-1 .image-container img:first-child {
         float: left; }
       #certifieds-container .views-field-field-image-right .image-container img:last-child, #certifieds-container .views-field-field-image-right-1 .image-container img:last-child {
@@ -179,7 +179,7 @@
       border-radius: 50%;
       background: url(../../images/certifieds-center-background.png) no-repeat center 107px;
       font-weight: bold;
-      font-size: 32px;
+      font-size: 28px;
       padding: 21px;
       text-align: center;
       margin: auto;

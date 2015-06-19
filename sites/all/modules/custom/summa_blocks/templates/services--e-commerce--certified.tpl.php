@@ -28,11 +28,11 @@ drupal_add_css( drupal_get_path( "module", "summa_blocks" ) . "/templates/css/se
         </h3>
         <div class="row">
             <div class="certified-item"><img
-                    src="<?php echo $base_url . "/" . $resource_path . "/certified-developer.gif"; ?>"></div>
+                    src="<?php echo $base_url . "/" . $resource_path . "/certified-developer.png"; ?>"></div>
             <div class="certified-item"><img
-                    src="<?php echo $base_url . "/" . $resource_path . "/certified-developer-plus.gif"; ?>"></div>
+                    src="<?php echo $base_url . "/" . $resource_path . "/certified-developer-frontend.png"; ?>"></div>
             <div class="certified-item"><img
-                    src="<?php echo $base_url . "/" . $resource_path . "/certified-developer-frontend.gif"; ?>"></div>
+                    src="<?php echo $base_url . "/" . $resource_path . "/certified-solution-specialist.png"; ?>"></div>
         </div>
         <div class="row  middle-line">
 
