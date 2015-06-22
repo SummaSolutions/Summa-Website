@@ -1,0 +1,103 @@
+.canvas-quiz {
+    font-family: Roboto;
+    font-weight: lighter;
+    font-size: 16px;
+
+    .region-main {
+        width: 100%;
+    }
+
+    .quiz-container {
+        padding: 65px 45px;
+    }
+
+    .panels-flexible-row {
+        font-size: 16px;
+        padding: 0;
+    }
+
+    .region-content {
+        background: #fff;
+        border-top: 1px solid #999;
+        margin: 20px 0px 0px 0px;
+        padding: 20px 0px 0px 0px;
+
+        input {
+            &[type=text] {
+                background: #ebebeb;
+                border: 1px solid #999;
+                border-radius: 4px;
+                box-shadow: none;
+                color: #333;
+                font-family: Arial;
+                font-size: 12px;
+                height: auto;
+                padding: 18px 24px;
+                width: 100%;
+            }
+
+            &[type=submit] {
+                background: none;
+                border: 1px solid #999;
+                border-radius: 4px;
+                color: #999;
+                cursor: pointer;
+                float: left;
+                font-family: Arial;
+                font-size: 11px;
+                margin: 0px 10px 0px 0px;
+                outline: 0px;
+                padding: 20px 100px;
+                text-transform: uppercase;
+            }
+        }
+
+        #quiz_progress {
+            margin: 0px 0px 15px 0px;
+
+            select {
+                margin: 0px 5px;
+            }
+        }
+
+        .field-items {
+            p {
+                margin: 0px 0px 10px 0px;
+            }
+        }
+
+        .answering-form {
+            margin: 25px 0px 0px 0px;
+
+            tbody {
+                border: none;
+
+                tr, td {
+                    background: none;
+                    border: none;
+                    padding: 0;
+                }
+
+                td {
+                    padding: 5px 0px;
+                }
+            }
+
+            #edit-tries-answer {
+                margin: 15px auto;
+            }
+        }
+    }
+}
+
+.page-quiz-finished {
+    .region-content {
+        background: #fff;
+        padding: 65px 45px;
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
+}

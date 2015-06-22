@@ -7,19 +7,10 @@
  */
 
 /* Layout */
-drupal_add_js(drupal_get_path('theme', 'summa_revamp') . '/js/jquery.dotdotdot.min.js');
-drupal_add_css(drupal_get_path('theme', 'summa_revamp') . '/css/company/page--company.css');
-drupal_add_css(drupal_get_path('theme', 'summa_revamp') . '/css/company/jobs/page--node-job.css');
-
-/* Are you looking for a change? */
-drupal_add_css(drupal_get_path('theme', 'summa_revamp') . '/css/company/custom-openings/custom-openings.css');
-
-#include( 'templates/page.tpl.php' );
-
 drupal_add_js(drupal_get_path("theme", "summa_revamp") . "/js/skin.js");
 drupal_add_js(drupal_get_path("theme", "summa_revamp") . "/js/breakpoints.js");
 /* Case studies */
-drupal_add_css(drupal_get_path("theme", "summa_revamp") . "");
+drupal_add_css(drupal_get_path("theme", "summa_revamp") . "/css/quiz/page--node-quiz.css");
 
 ?>
 
@@ -76,13 +67,8 @@ drupal_add_css(drupal_get_path("theme", "summa_revamp") . "");
                 <div id="content" class="column">
                     <div class="section">
                         <a id="main-content"></a>
-                        <!--                        --><?php //print render( $title_prefix ); ?>
-                        <!--                        --><?php //if ( $title ): ?>
-                        <!--                            <h1 class="title" id="page-title">--><?php //print $title; ?><!--</h1>-->
-                        <!--                        --><?php //endif; ?>
-                        <!--                        --><?php //print render( $title_suffix ); ?>
                         <?php print $messages; ?>
-                        <?php if ($tabs && in_array('administrator', $user->roles)): ?>
+                        <?php if ($tabs && in_array('administrator', $user->roles)) : ?>
                             <div class="tabs"><?php print render($tabs); ?></div>
                         <?php endif; ?>
                         <?php print render($page['help']); ?>
@@ -90,13 +76,17 @@ drupal_add_css(drupal_get_path("theme", "summa_revamp") . "");
                             <ul class="action-links"><?php print render($action_links); ?></ul>
                         <?php endif; ?>
 
-                        <div class="panel-flexible canvas-contact clearfix">
-                            <div class="panel-flexible-inside canvas-contact-inside">
-                                <div class="panels-flexible-row panels-flexible-row-canvas-contact-main-row panels-flexible-row-first clearfix row-white">
-                                    <div class="inside panels-flexible-row-inside panels-flexible-row-canvas-contact-main-row-inside panels-flexible-row-inside-first clearfix">
-                                        <div class="panels-flexible-region panels-flexible-region-canvas-contact-main_ panels-flexible-region-first region-main">
-                                            <div class="inside panels-flexible-region-inside panels-flexible-region-canvas-contact-main_-inside panels-flexible-region-inside-first">
-                                                <div class="panel-pane pane-block pane-block-29 about-us-container">
+                        <div class="panel-flexible canvas-quiz clearfix">
+                            <div class="panel-flexible-inside canvas-quiz-inside">
+                                <div class="panels-flexible-row panels-flexible-row-canvas-quiz-main-row panels-flexible-row-first clearfix row-white">
+                                    <div class="inside panels-flexible-row-inside panels-flexible-row-canvas-quiz-main-row-inside panels-flexible-row-inside-first clearfix">
+                                        <div class="panels-flexible-region panels-flexible-region-canvas-quiz-main_ panels-flexible-region-first region-main">
+                                            <div class="inside panels-flexible-region-inside panels-flexible-region-canvas-quiz-main_-inside panels-flexible-region-inside-first">
+                                                <div class="panel-pane pane-block pane-block-29 quiz-container">
+                                                    <h2 class="pane-title">Quiz</h2>
+                                                    <div class="pane-content">
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius ut risus eget blandit. Aenean et pretium felis. Morbi id sapien at nisi semper malesuada nec posuere ante. Quisque eleifend dapibus eros, ut fermentum libero interdum vitae. Sed malesuada sapien odio, ut blandit metus ultrices rhoncus. Vivamus et ullamcorper nibh. Phasellus massa urna, aliquam at nunc ut, dignissim egestas ipsum. Quisque sed hendrerit odio, nec dictum neque. Duis a ornare purus, non sodales lacus.</p>
+                                                    </div>
                                                     <?php print render($page['content']); ?>
                                                 </div>
                                                 <div class="panel-separator"></div>

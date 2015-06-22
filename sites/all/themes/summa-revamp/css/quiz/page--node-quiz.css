@@ -1,0 +1,80 @@
+.canvas-quiz {
+  font-family: Roboto;
+  font-weight: lighter;
+  font-size: 16px; }
+  .canvas-quiz .region-main {
+    width: 100%; }
+  .canvas-quiz .quiz-container {
+    padding: 65px 45px; }
+  .canvas-quiz .panels-flexible-row {
+    font-size: 16px;
+    padding: 0; }
+  .canvas-quiz .region-content {
+    background: #fff;
+    border-top: 1px solid #999;
+    margin: 20px 0px 0px 0px;
+    padding: 20px 0px 0px 0px; }
+    .canvas-quiz .region-content input[type=text] {
+      background: #ebebeb;
+      border: 1px solid #999;
+      border-radius: 4px;
+      box-shadow: none;
+      color: #333;
+      font-family: Arial;
+      font-size: 12px;
+      height: auto;
+      padding: 18px 24px;
+      width: 100%; }
+    .canvas-quiz .region-content input[type=submit] {
+      background: none;
+      border: 1px solid #999;
+      border-radius: 4px;
+      color: #999;
+      cursor: pointer;
+      float: left;
+      font-family: Arial;
+      font-size: 11px;
+      margin: 0px 10px 0px 0px;
+      outline: 0px;
+      padding: 20px 100px;
+      text-transform: uppercase; }
+    .canvas-quiz .region-content #quiz_progress {
+      margin: 0px 0px 15px 0px; }
+      .canvas-quiz .region-content #quiz_progress select {
+        margin: 0px 5px; }
+    .canvas-quiz .region-content .field-items p {
+      margin: 0px 0px 10px 0px; }
+    .canvas-quiz .region-content .answering-form {
+      margin: 25px 0px 0px 0px; }
+      .canvas-quiz .region-content .answering-form tbody {
+        border: none; }
+        .canvas-quiz .region-content .answering-form tbody tr, .canvas-quiz .region-content .answering-form tbody td {
+          background: none;
+          border: none;
+          padding: 0; }
+        .canvas-quiz .region-content .answering-form tbody td {
+          padding: 5px 0px; }
+      .canvas-quiz .region-content .answering-form #edit-tries-answer {
+        margin: 15px auto; }
+
+.page-quiz-finished .region-content {
+  background: #fff;
+  padding: 65px 45px; }
+.page-quiz-finished p {
+  margin: 0;
+  padding: 0; }
+
+@media only screen and (min-width: 641px) {
+  .canvas-quiz {
+    background: #fff; }
+    .canvas-quiz .row-white {
+      margin: 0 auto;
+      max-width: 1000px;
+      width: 100%; }
+    .canvas-quiz .quiz-container p {
+      margin: 0;
+      font-size: 17px !important; }
+    .canvas-quiz .panels-flexible-row {
+      padding: 0; } }
+
+/*# sourceMappingURL=page--node-quiz.css.map */
