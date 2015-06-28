@@ -23,24 +23,8 @@ drupal_add_css(drupal_get_path("theme", "summa_revamp") . "/css/quiz/page--node-
             <!-- header -->
             <div id="header">
                 <div class="section clearfix">
-
                     <div id="header-top">
-                        <div class="menu-mobile hide-text">
-                            <a href="#">Menu</a>
-                        </div>
                         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo" class="hide-text"><?php print ($site_name) ? $site_name : t('Summa Solutions'); ?></a>
-                    </div>
-                    <div id="header-middle">
-                        <?php
-                        /**
-                         * Region "header"
-                         * Blocks:
-                         *  menu-mobile
-                         *  summa options
-                         *  summa social media
-                         */
-                        print render($page['header']);
-                        ?>
                     </div>
                     <?php
                     if ($page['highlight']) :
