@@ -28,7 +28,7 @@ drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.form-val
                 <input type="text" name="name" data-validation="required"
                        placeholder="<?php echo t( 'YOUR NAME (*)' ); ?>">
             </div>
-            <div class="float-left hp_name">
+            <div class="float-left hp_name" style="display: none;">
                 <input type="text" name="hp_name"
                        placeholder="<?php echo t( 'YOUR NAME (*)' ); ?>">
             </div>

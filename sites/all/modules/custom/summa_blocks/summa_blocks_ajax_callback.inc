@@ -23,9 +23,9 @@ function summa_blocks_ajax_contact()
     $data = array(
 
         1 => array( "value" => array( $name ) ),
-        2 => array( "value" => array( $hpname ) ),
+        //2 => array( "value" => array( $hpname ) ),
         3 => array( "value" => array( $company ) ),
-        4 => array( "value" => array( $hpcompany ) ),
+        //4 => array( "value" => array( $hpcompany ) ),
         5 => array( "value" => array( $message ) ),
         6 => array( "value" => array( $email ) ),
         7 => array( "value" => array( $interested ) ),
@@ -43,11 +43,13 @@ function summa_blocks_ajax_contact()
         'data' => $data,
     );
 
-    module_load_include( 'inc', 'webform', 'includes/webform.submissions' );
+    // honeypot implementation in hardcoded form
+    if (empty($hpname) && empty($hpcompany)) {
+        module_load_include( 'inc', 'webform', 'includes/webform.submissions' );
 
-    webform_submission_insert( $node, $submission );
+        webform_submission_insert( $node, $submission );
 
-    webform_submission_send_mail( $node, $submission );
-
+        webform_submission_send_mail( $node, $submission );
+    }
     return;
 }
