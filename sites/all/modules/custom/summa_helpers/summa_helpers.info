@@ -3,4 +3,7 @@ name = "Summa Helpers"
 description = "Summa Helper functions"
 core = "7.x"
 package = "Summa Solutions"
+project = summa_helpers
 
+; Files
+files[] = summa_helpers.module

@@ -39,3 +39,8 @@ function show_blog_by_term() {
 
   return $show;
 }
+
+function summa_helpers_form_alter(&$form, &$form_state, $form_id){
+    //
+    $value = $form_id;
+}

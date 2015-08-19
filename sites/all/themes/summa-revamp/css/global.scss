@@ -11,3 +11,9 @@ $tablet-portrait: 769px;
 $tablet-landscape: 1025px;
 
 $desktop: 1025px;
+
+#contact-form{
+    .hp_name{
+        display: none;
+    }
+}

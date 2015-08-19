@@ -28,6 +28,10 @@ drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.form-val
                 <input type="text" name="name" data-validation="required"
                        placeholder="<?php echo t( 'YOUR NAME (*)' ); ?>">
             </div>
+            <div class="float-left hp_name" style="display: none;">
+                <input type="text" name="hp_name"
+                       placeholder="<?php echo t( 'YOUR NAME (*)' ); ?>">
+            </div>
             <div class="float-right">
                 <div class="combobox-container clearfix">
                     <select name="how" placeholder="<?php echo t( 'HOW DID YOU FIND US?' ); ?>">
@@ -63,6 +67,7 @@ drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.form-val
         <div class="row clearfix">
             <div class="float-left">
                 <input type="text" name="company" placeholder="<?php echo t( 'COMPANY' ); ?>">
+                <input type="hidden" name="hp_company" placeholder="<?php echo t( 'COMPANY' ); ?>" class="hp_company" >
                 <input type="text" name="skype" placeholder="<?php echo t( 'SKYPE' ); ?>">
             </div>
             <div class="float-right">
