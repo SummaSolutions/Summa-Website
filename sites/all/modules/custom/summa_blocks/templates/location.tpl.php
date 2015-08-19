@@ -3,6 +3,7 @@ drupal_add_css( drupal_get_path( "module", "summa_blocks" ) . "/templates/css/lo
 drupal_add_css( drupal_get_path( "theme", "summa_revamp" ) . "/css/jquery.bxslider.css" );
 drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.bxslider.min.js" );
 drupal_add_js( drupal_get_path( "module", "summa_blocks" ) . "/templates/js/location/sliderControl.js" );
+drupal_add_css( drupal_get_path( "theme", "summa_revamp" ) . "/css/global.css" );
 //avoid issues with scroll and api limits
 //drupal_add_js("http://maps.googleapis.com/maps/api/js?key=AIzaSyAinJdoSrNxKW3k-8ArbioXeLT2HLl54gw&sensor=false");
 
