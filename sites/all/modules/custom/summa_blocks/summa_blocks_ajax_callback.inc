@@ -23,14 +23,12 @@ function summa_blocks_ajax_contact()
     $data = array(
 
         1 => array( "value" => array( $name ) ),
-        //2 => array( "value" => array( $hpname ) ),
         3 => array( "value" => array( $company ) ),
-        //4 => array( "value" => array( $hpcompany ) ),
-        5 => array( "value" => array( $message ) ),
-        6 => array( "value" => array( $email ) ),
-        7 => array( "value" => array( $interested ) ),
-        8 => array( "value" => array( $skype ) ),
-        9 => array( "value" => array( $how ) ),
+        4 => array( "value" => array( $message ) ),
+        5 => array( "value" => array( $email ) ),
+        6 => array( "value" => array( $interested ) ),
+        7 => array( "value" => array( $skype ) ),
+        8 => array( "value" => array( $how ) ),
 
 
     );

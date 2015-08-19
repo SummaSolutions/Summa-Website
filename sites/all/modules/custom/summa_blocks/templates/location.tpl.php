@@ -3,7 +3,8 @@ drupal_add_css( drupal_get_path( "module", "summa_blocks" ) . "/templates/css/lo
 drupal_add_css( drupal_get_path( "theme", "summa_revamp" ) . "/css/jquery.bxslider.css" );
 drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.bxslider.min.js" );
 drupal_add_js( drupal_get_path( "module", "summa_blocks" ) . "/templates/js/location/sliderControl.js" );
-drupal_add_js("http://maps.googleapis.com/maps/api/js?key=AIzaSyAinJdoSrNxKW3k-8ArbioXeLT2HLl54gw&sensor=false");
+//avoid issues with scroll and api limits
+//drupal_add_js("http://maps.googleapis.com/maps/api/js?key=AIzaSyAinJdoSrNxKW3k-8ArbioXeLT2HLl54gw&sensor=false");
 
 ?>
 
@@ -53,5 +54,7 @@ drupal_add_js("http://maps.googleapis.com/maps/api/js?key=AIzaSyAinJdoSrNxKW3k-8
         </div>
     </div>
     <div class="google-maps-container">
+        <div class="map" style="background-image: url('/sites/all/themes/summa-revamp/images/map-1.jpg'); background-position: center center; width: 100%; height: 100%;"></div>
+        <div class="map" style="background-image: url('/sites/all/themes/summa-revamp/images/map-2.jpg'); background-position: center center; width: 100%; height: 100%; display: none;"></div>
     </div>
 </div>
