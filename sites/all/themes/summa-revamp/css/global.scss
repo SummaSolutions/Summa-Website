@@ -17,3 +17,28 @@ $desktop: 1025px;
         display: none;
     }
 }
+
+#header-bottom{
+    .bxSlider-container{
+        &>.bxslider{
+            display: block;
+            position: relative !important;
+            min-height: 600px !important;
+            &>.views-row.slide{
+                //margin: auto !important;
+                //margin-top: 100px !important;
+                text-align: center !important;
+                &>.slide-wrapper{
+                    //margin: auto !important;
+                    text-align: center !important;
+                    .slide-safe-container{
+                        //float: none !important;
+                        .views-field-entity-id{
+                            //right: 0 !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

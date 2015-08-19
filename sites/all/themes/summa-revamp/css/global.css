@@ -1,2 +1,11 @@
 #contact-form .hp_name {
   display: none; }
+
+#header-bottom .bxSlider-container > .bxslider {
+  display: block;
+  position: relative !important;
+  min-height: 600px !important; }
+  #header-bottom .bxSlider-container > .bxslider > .views-row.slide {
+    text-align: center !important; }
+    #header-bottom .bxSlider-container > .bxslider > .views-row.slide > .slide-wrapper {
+      text-align: center !important; }
