@@ -626,7 +626,7 @@ abstract class DatabaseConnection extends PDO {
    *   A sanitized version of the query comment string.
    */
   protected function filterComment($comment = '') {
-    return preg_replace('/(\/\*\s*)|(\s*\*\/)/', '', $comment);
+    return strtr($comment, array('*' => ' * '));
   }
 
   /**
@@ -736,7 +736,7 @@ abstract class DatabaseConnection extends PDO {
     // to expand it out into a comma-delimited set of placeholders.
     foreach (array_filter($args, 'is_array') as $key => $data) {
       $new_keys = array();
-      foreach ($data as $i => $value) {
+      foreach (array_values($data) as $i => $value) {
         // This assumes that there are no other placeholders that use the same
         // name.  For example, if the array placeholder is defined as :example
         // and there is already an :example_2 placeholder, this will generate
