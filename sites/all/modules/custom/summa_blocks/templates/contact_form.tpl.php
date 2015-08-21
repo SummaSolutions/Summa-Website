@@ -24,16 +24,16 @@ drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.form-val
     <form action="<?php echo $base_url . "/ajax/contact"; ?>" method="post" id="contact-form" class="clearfix">
 
         <div class="row clearfix">
-            <div class="float-left">
+            <div class="float-left" style="z-index: 100;">
                 <input type="text" name="hp_name" data-validation="required"
                        placeholder="<?php echo t( 'YOUR NAME (*)' ); ?>">
             </div>
-            <div class="float-left hp_name" style="position: absolute; max-width: 300px; z-index: 0;">
+            <div class="float-left hp_name" style="position: absolute; max-width: 300px; z-index: -100;">
                 <span style="display: inline-block; margin-bottom: -37px; float:left; padding:12px 30px 0;">do<b>not</b><i>fill</i></span>
                 <input type="text" name="hp_lastname" validation="required" class="required"
                        placeholder="<?php echo t( 'YOUR LASTNAME (*)' ); ?>">
             </div>
-            <div class="float-right" style="z-index: 10;">
+            <div class="float-right" style="z-index: 100;">
                 <div class="combobox-container clearfix">
                     <select name="hp_how" placeholder="<?php echo t( 'HOW DID YOU FIND US? (*)' ); ?>" data-validation="required">
                         <option value="form_engines"><?php echo t( 'SEARCH ENGINES' ); ?></option>
