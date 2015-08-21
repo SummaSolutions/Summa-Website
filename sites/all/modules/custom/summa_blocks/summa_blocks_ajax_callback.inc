@@ -49,8 +49,19 @@ function summa_blocks_ajax_contact()
         'data' => $data,
     );
 
+    $isSpam = false;
+    //todo: add this into a config
+    $stopIn = array('viagra','netvibes','genericusaonline','Zeldas','AdsPoster','prescription','sildenafilsale','cialis','Vevox');
+    foreach ($stopIn as $code) {
+        $spam = strpos($message, $code);
+        if ($spam !== false) {
+            $isSpam = true;
+        }
+    }
+
     // honeypot implementation in hardcoded form
-    if (empty($hpLastname) && $hpDepartment === false && !empty($name) && !empty($email)) {
+    if (empty($hpLastname) && $hpDepartment === false && !$isSpam
+        && !empty($name) && !empty($email) && !empty($how) && !empty($interested)) {
         module_load_include( 'inc', 'webform', 'includes/webform.submissions' );
 
         webform_submission_insert( $node, $submission );
