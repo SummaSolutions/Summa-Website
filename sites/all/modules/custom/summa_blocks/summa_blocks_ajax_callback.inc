@@ -16,19 +16,27 @@ function summa_blocks_ajax_contact()
     $hpLastname   = ( isset( $_POST["hp_lastname"] ) ? $_POST["hp_lastname"] : "" );
     $hpDepartment = ( isset( $_POST["hp_department"] ) ? $_POST["hp_department"] : false );
 
+    $_POST['name']      = $name;
+    $_POST['how']       = $how;
+    $_POST['email']     = $email;
+    $_POST['company']   = $company;
+    $_POST['skype']     = $skype;
+    $_POST['interested'] = $interested;
+    $_POST['message']   = $message;
+
     $nid = 125;
 
     $node = node_load( $nid );
 
     $data = array(
 
-        1 => array( "value" => array( $name ) ),
-        3 => array( "value" => array( $company ) ),
-        4 => array( "value" => array( $message ) ),
-        5 => array( "value" => array( $email ) ),
-        6 => array( "value" => array( $interested ) ),
-        7 => array( "value" => array( $skype ) ),
-        8 => array( "value" => array( $how ) ),
+        1 => array( $name  ),
+        3 => array( $company  ),
+        4 => array( $message  ),
+        5 => array( $email  ),
+        6 => array( $interested  ),
+        7 => array( $skype  ),
+        8 => array( $how  ),
 
 
     );
@@ -42,7 +50,7 @@ function summa_blocks_ajax_contact()
     );
 
     // honeypot implementation in hardcoded form
-    if (empty($hpLastname) && $hpDepartment === false) {
+    if (empty($hpLastname) && $hpDepartment === false && !empty($name) && !empty($email)) {
         module_load_include( 'inc', 'webform', 'includes/webform.submissions' );
 
         webform_submission_insert( $node, $submission );

@@ -28,7 +28,7 @@ drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.form-val
                 <input type="text" name="hp_name" data-validation="required"
                        placeholder="<?php echo t( 'YOUR NAME (*)' ); ?>">
             </div>
-            <div class="float-left hp_name" style="position: absolute; max-width: 300px; z-index: -100;">
+            <div class="float-left hp_name" style="font-size:18px; position: absolute; max-width: 300px; z-index: -100;">
                 <span style="display: inline-block; margin-bottom: -37px; float:left; padding:12px 30px 0;">do<b>not</b><i>fill</i></span>
                 <input type="text" name="hp_lastname" validation="required" class="required"
                        placeholder="<?php echo t( 'YOUR LASTNAME (*)' ); ?>">
