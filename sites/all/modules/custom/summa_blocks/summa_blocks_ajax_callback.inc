@@ -6,15 +6,15 @@ function summa_blocks_ajax_contact()
 {
     global $user;
 
-    $name   = ( isset( $_POST["name"] ) ? $_POST["name"] : "" );
-    $how    = ( isset( $_POST["how"] ) ? $_POST["how"] : "" );
-    $email  = ( isset( $_POST["email"] ) ? $_POST["email"] : "" );
-    $interested = ( isset( $_POST["interested"] ) ? $_POST["interested"] : "" );
-    $company = ( isset( $_POST["company"] ) ? $_POST["company"] : "" );
-    $skype  = ( isset( $_POST["skype"] ) ? $_POST["skype"] : "" );
-    $message = ( isset( $_POST["message"] ) ? $_POST["message"] : "" );
-    $hpname   = ( isset( $_POST["hp_lastname"] ) ? $_POST["hp_lastname"] : "" );
-    $hpcompany = ( isset( $_POST["hp_company"] ) ? $_POST["hp_company"] : "" );
+    $name       = ( isset( $_POST["hp_name"] )      ? $_POST["hp_name"] : "" );
+    $how        = ( isset( $_POST["hp_how"] )       ? $_POST["hp_how"] : "" );
+    $email      = ( isset( $_POST["hp_email"] )     ? $_POST["hp_email"] : "" );
+    $interested = ( isset( $_POST["hp_interested"] ) ? $_POST["hp_interested"] : "" );
+    $company    = ( isset( $_POST["hp_company"] )   ? $_POST["hp_company"] : "" );
+    $skype      = ( isset( $_POST["hp_skype"] )     ? $_POST["hp_skype"] : "" );
+    $message    = ( isset( $_POST["hp_message"] )   ? $_POST["hp_message"] : "" );
+    $hpLastname   = ( isset( $_POST["hp_lastname"] ) ? $_POST["hp_lastname"] : "" );
+    $hpDepartment = ( isset( $_POST["hp_department"] ) ? $_POST["hp_department"] : false );
 
     $nid = 125;
 
@@ -42,7 +42,7 @@ function summa_blocks_ajax_contact()
     );
 
     // honeypot implementation in hardcoded form
-    if (empty($hpname) && empty($hpcompany)) {
+    if (empty($hpLastname) && $hpDepartment === false) {
         module_load_include( 'inc', 'webform', 'includes/webform.submissions' );
 
         webform_submission_insert( $node, $submission );

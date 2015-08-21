@@ -9,3 +9,8 @@
     text-align: center !important; }
     #header-bottom .bxSlider-container > .bxslider > .views-row.slide > .slide-wrapper {
       text-align: center !important; }
+
+#services-list-container .pane-content .views-field-field-picture-whyus img {
+  width: auto !important; }
+
+/*# sourceMappingURL=global.css.map */

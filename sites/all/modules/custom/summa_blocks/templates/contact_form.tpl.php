@@ -25,16 +25,17 @@ drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.form-val
 
         <div class="row clearfix">
             <div class="float-left">
-                <input type="text" name="name" data-validation="required"
+                <input type="text" name="hp_name" data-validation="required"
                        placeholder="<?php echo t( 'YOUR NAME (*)' ); ?>">
             </div>
-            <div class="float-left hp_name" style="display: none;">
-                <input type="text" name="hp_name"
-                       placeholder="<?php echo t( 'YOUR NAME (*)' ); ?>">
+            <div class="float-left hp_name" style="position: absolute; max-width: 300px; z-index: 0;">
+                <span style="display: inline-block; margin-bottom: -37px; float:left; padding:12px 30px 0;">do<b>not</b><i>fill</i></span>
+                <input type="text" name="hp_lastname" validation="required" class="required"
+                       placeholder="<?php echo t( 'YOUR LASTNAME (*)' ); ?>">
             </div>
-            <div class="float-right">
+            <div class="float-right" style="z-index: 10;">
                 <div class="combobox-container clearfix">
-                    <select name="how" placeholder="<?php echo t( 'HOW DID YOU FIND US?' ); ?>">
+                    <select name="hp_how" placeholder="<?php echo t( 'HOW DID YOU FIND US? (*)' ); ?>" data-validation="required">
                         <option value="form_engines"><?php echo t( 'SEARCH ENGINES' ); ?></option>
                         <option value="form_referral"><?php echo t( 'DIRECT REFERRAL' ); ?></option>
                         <option value="form_social"><?php echo t( 'SOCIAL MEDIA' ); ?></option>
@@ -47,12 +48,12 @@ drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.form-val
 
         <div class="row clearfix">
             <div class="float-left">
-                <input type="text" name="email" data-validation="email"
+                <input type="text" name="hp_email" data-validation="email"
                        placeholder="<?php echo t( 'YOUR E-MAIL ADDRESS (*)' ); ?>">
             </div>
             <div class="float-right">
                 <div class="combobox-container clearfix">
-                    <select name="interested" data-validation="required"
+                    <select name="hp_interested" data-validation="required"
                             placeholder="<?php echo t( 'INTERESTED IN... (*)' ); ?>">
                         <option value="services_ecommerce"><?php echo t( 'E-COMMERCE' ); ?></option>
                         <option value="services_mobile"><?php echo t( 'MOBILE' ); ?></option>
@@ -66,12 +67,12 @@ drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.form-val
 
         <div class="row clearfix">
             <div class="float-left">
-                <input type="text" name="company" placeholder="<?php echo t( 'COMPANY' ); ?>">
-                <input type="hidden" name="hp_company" placeholder="<?php echo t( 'COMPANY' ); ?>" class="hp_company" >
-                <input type="text" name="skype" placeholder="<?php echo t( 'SKYPE' ); ?>">
+                <input type="text" name="hp_company" placeholder="<?php echo t( 'COMPANY' ); ?>">
+                <input type="text" name="hp_department" placeholder="<?php echo t( 'DEPARTMENT' ); ?>" class="required" data-validation="required" >
+                <input type="text" name="hp_skype" placeholder="<?php echo t( 'SKYPE' ); ?>">
             </div>
             <div class="float-right">
-                <textarea name="message" data-validation="required"
+                <textarea name="hp_message" data-validation="required"
                           placeholder="<?php echo t( 'MESSAGE (*)' ); ?>"></textarea>
                 <input type="reset" value="<?php echo t( 'CANCEL' ); ?>">
                 <input type="submit" value="<?php echo t( 'SUBMIT' ); ?>">
@@ -80,3 +81,8 @@ drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/jquery.form-val
 
     </form>
 </div>
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        jQuery('input[name="hp_department"]').remove();
+    });
+</script>
