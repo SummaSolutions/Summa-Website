@@ -1,0 +1,7 @@
+$hdi-mobile-portrait: 641px;
+
+@import "team_style_base";
+
+@media only screen and (min-width: $hdi-mobile-portrait) {
+  @import "team_style_640up";
+}

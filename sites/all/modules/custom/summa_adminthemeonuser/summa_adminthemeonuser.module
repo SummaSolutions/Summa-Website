@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Implements hook_custom_theme
+ */
+function summa_adminthemeonuser_custom_theme() {
+  // Set path specific theme.
+  if (arg(0) == 'user') {
+    return variable_get('admin_theme', 'seven');
+  }
+}

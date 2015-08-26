@@ -2,29 +2,62 @@
 
 Drupal.behaviors.nodequeueDrag = {
   attach: function(context) {
-    var tableDrag = Drupal.tableDrag['nodequeue-dragdrop'];
+    $('.nodequeue-dragdrop').each(function() {
+      var table_id = $(this).attr('id');
+      var tableDrag = Drupal.tableDrag[table_id];
 
-    tableDrag.onDrop = function() {
-      $('td.position').each(function(i){
-        $(this).html(i + 1);
-      });
+      tableDrag.onDrop = function() {
+        $('#' + table_id + ' td.position').each(function(i) {
+          $(this).html(i + 1);
+        });
 
-      nodequeueUpdateNodePositions();
-    }
+        nodequeueUpdateNodePositions(table_id);
+      }
+    });
+  }
+};
+
+Drupal.behaviors.nodequeueWeightChange = {
+  attach: function(context) {
+    $('.nodequeue-dragdrop tr.draggable select.node-position').bind('change', function() {
+      var table_id = $(this).parents('.nodequeue-dragdrop').attr('id');
+      var row = $(this).parents('tr');
+      var pos = $(this).attr('value') * 1;
+      var true_pos = row.parent().children().index(row) + 1;
+
+      var row_after = $('.nodequeue-dragdrop tbody tr:nth-child(' + pos + ')');
+
+      if (pos < true_pos) {
+        row_after.before(row);
+      }
+      else if (pos > true_pos) {
+        row_after.after(row);
+      }
+      else { // Nothing to do, in the same position.
+        return;
+      }
+
+      nodequeueUpdateNodePositions(table_id);
+      nodequeueInsertChangedWarning(table_id);
+      nodequeueRestripeTable(table_id);
+    });
   }
 };
 
 Drupal.behaviors.nodequeueReverse = {
   attach: function(context) {
-    $('#edit-reverse').click(function(){
-      // reverse table rows...
-      $('tr.draggable').each(function(i){
-        $('.nodequeue-dragdrop tbody').prepend(this);
+    $('#edit-actions-reverse').click(function() {
+      var $table = $(this).parent().parent().find('.nodequeue-dragdrop:first');
+      var table_id = $table.attr('id');
+
+      // Reverse table rows.
+      $table.find('tr.draggable').each(function(i) {
+        $table.find('tbody').prepend(this);
       });
 
-      nodequeueUpdateNodePositions();
-      nodequeueInsertChangedWarning();
-      nodequeueRestripeTable();
+      nodequeueUpdateNodePositions(table_id);
+      nodequeueInsertChangedWarning(table_id);
+      nodequeueRestripeTable(table_id);
 
       return false;
     });
@@ -33,17 +66,20 @@ Drupal.behaviors.nodequeueReverse = {
 
 Drupal.behaviors.nodequeueShuffle = {
   attach: function(context) {
-    $('#edit-shuffle').click(function(){
-      // randomize table rows...
-      var rows = $('table.nodequeue-dragdrop tbody tr:not(:hidden)').get();
+    $('#edit-actions-shuffle').click(function() {
+      var $table = $(this).parent().parent().find('.nodequeue-dragdrop:first');
+      var table_id = $table.attr('id');
+
+      // Randomize table rows.
+      var rows = $('#' + table_id + ' tbody tr:not(:hidden)').get();
       rows.sort(function(){return (Math.round(Math.random())-0.5);});
       $.each(rows, function(i, row) {
-        $('.nodequeue-dragdrop tbody').prepend(this);
+        $('#' + table_id + ' tbody').prepend(this);
       });
 
-      nodequeueUpdateNodePositions();
-      nodequeueInsertChangedWarning();
-      nodequeueRestripeTable();
+      nodequeueUpdateNodePositions(table_id);
+      nodequeueInsertChangedWarning(table_id);
+      nodequeueRestripeTable(table_id);
 
       return false;
     });
@@ -52,17 +88,20 @@ Drupal.behaviors.nodequeueShuffle = {
 
 Drupal.behaviors.nodequeueClear = {
   attach: function(context) {
-    $('#edit-clear').click(function(){
-      // mark nodes for removal
-      $('.node-position').each(function(i){
+    $('#edit-actions-clear').click(function() {
+      var $table = $(this).parent().parent().find('.nodequeue-dragdrop:first');
+      var table_id = $table.attr('id');
+
+      // Mark nodes for removal.
+      $('#' + table_id + ' .node-position').each(function(i) {
         $(this).val('r');
       });
 
-      // remove table rows...
-      rows = $('table.nodequeue-dragdrop tbody tr:not(:hidden)').hide();
+      // Remove table rows.
+      rows = $('#' + table_id + ' tbody tr:not(:hidden)').hide();
 
-      nodequeuePrependEmptyMessage();
-      nodequeueInsertChangedWarning();
+      nodequeuePrependEmptyMessage(table_id);
+      nodequeueInsertChangedWarning(table_id);
 
       return false;
     });
@@ -73,18 +112,23 @@ Drupal.behaviors.nodequeueRemoveNode = {
   attach: function(context) {
     $('a.nodequeue-remove').css('display', 'block');
     $('a.nodequeue-remove').click(function() {
-      a = $(this).attr('id');
-      a = '#' + a.replace('nodequeue-remove-', 'edit-') + '-position';
-      $(a).val('r');
+      var node_edit = '#' + $(this).attr('id').replace('nodequeue-remove-', 'edit-nodes-') + '-position';
+      $(node_edit).val('r');
+      // Remove "node-position" class so that position rearrangement in misc/tabledrag.js will ignore this node.
+      $(node_edit).removeClass('node-position');
 
-      // hide the current row
-      $(this).parent().parent().fadeOut('fast', function(){
-        if ($('table.nodequeue-dragdrop tbody tr:not(:hidden)').size() == 0) {
-          nodequeuePrependEmptyMessage();
+      // Hide the current row.
+      $(this).parent().parent().fadeOut('fast', function() {
+        var $table = $(this).parent().parent();
+        var table_id = $table.attr('id');
+
+        if ($('#' + table_id + ' tbody tr:not(:hidden)').size() == 0) {
+          nodequeuePrependEmptyMessage(table_id);
+          nodequeueInsertChangedWarning(table_id);
         }
         else {
-          nodequeueRestripeTable()
-          nodequeueInsertChangedWarning();
+          nodequeueRestripeTable(table_id)
+          nodequeueInsertChangedWarning(table_id);
         }
       });
 
@@ -95,12 +139,12 @@ Drupal.behaviors.nodequeueRemoveNode = {
 
 Drupal.behaviors.nodequeueClearTitle = {
   attach: function(context) {
-    $('#edit-add-nid').focus(function() {
+    $('.subqueue-add-nid').focus(function() {
       if (this.value == this.defaultValue) {
         this.value = '';
         $(this).css('color', '#000');
       }
-    }).blur(function(){
+    }).blur(function() {
       if (!this.value.length) {
         this.value = this.defaultValue;
         $(this).css('color', '#999');
@@ -113,13 +157,14 @@ Drupal.behaviors.nodequeueClearTitle = {
  * Updates node positions after nodequeue has been rearranged.
  * It cares about the reverse order and populates nodes the other way round.
  */
-function nodequeueUpdateNodePositions() {
+function nodequeueUpdateNodePositions(table_id) {
   // Check if reverse option is set.
-  var reverse = Drupal.settings.nodequeue.reverse;
-  var size = reverse ? $('.node-position').size() : 1;
+  var reverse = Drupal.settings.nodequeue.reverse[table_id.replace(/-/g, '_')];
+  var size = reverse ? $('#' + table_id + ' .node-position').size() : 1;
 
-  $('.node-position').each(function(i){
+  $('#' + table_id + ' tr').filter(":visible").find('select.node-position').each(function(i) {
     $(this).val(size);
+    $(this).find("option[value='" + size + "']").attr('selected', 'selected');
     reverse ? size-- : size++;
   });
 }
@@ -128,8 +173,8 @@ function nodequeueUpdateNodePositions() {
  * Restripe the nodequeue table after removing an element or changing the
  * order of the elements.
  */
-function nodequeueRestripeTable() {
-  $('table.nodequeue-dragdrop tbody tr:not(:hidden)')
+function nodequeueRestripeTable(table_id) {
+  $('#' + table_id + ' tbody tr:not(:hidden)')
   .filter(':odd')
     .removeClass('odd').addClass('even')
       .end()
@@ -137,7 +182,7 @@ function nodequeueRestripeTable() {
     .removeClass('even').addClass('odd')
       .end();
 
-  $('tr:visible td.position').each(function(i){
+  $('#' + table_id + ' tr:visible td.position').each(function(i) {
     $(this).html(i + 1);
   });
 }
@@ -145,17 +190,17 @@ function nodequeueRestripeTable() {
 /**
  * Add a row to the nodequeue table explaining that the queue is empty.
  */
-function nodequeuePrependEmptyMessage() {
-  $('.nodequeue-dragdrop tbody').prepend('<tr class="odd"><td colspan="6">'+Drupal.t('No nodes in this queue.')+'</td></tr>');
+function nodequeuePrependEmptyMessage(table_id) {
+  $('#' + table_id + ' tbody').prepend('<tr class="odd"><td colspan="6">'+Drupal.t('No nodes in this queue.')+'</td></tr>');
 }
 
 /**
  * Display a warning reminding the user to save the nodequeue.
  */
-function nodequeueInsertChangedWarning() {
-  if (Drupal.tableDrag['nodequeue-dragdrop'].changed == false) {
-    $(Drupal.theme('tableDragChangedWarning')).insertAfter('.nodequeue-dragdrop').hide().fadeIn('slow');
-    Drupal.tableDrag['nodequeue-dragdrop'].changed = true;
+function nodequeueInsertChangedWarning(table_id) {
+  if (Drupal.tableDrag[table_id].changed == false) {
+    $(Drupal.theme('tableDragChangedWarning')).insertAfter('#' + table_id).hide().fadeIn('slow');
+    Drupal.tableDrag[table_id].changed = true;
   }
 }
 

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Implementation of hook_features_api().
+ * Implements hook_features_api().
  */
 function user_features_api() {
   return array(
@@ -21,7 +21,7 @@ function user_features_api() {
 }
 
 /**
- * Implementation of hook_features_export().
+ * Implements hook_features_export().
  */
 function user_permission_features_export($data, &$export, $module_name = '') {
   $export['dependencies']['features'] = 'features';
@@ -29,8 +29,12 @@ function user_permission_features_export($data, &$export, $module_name = '') {
   // Ensure the modules that provide the given permissions are included as dependencies.
   $map = user_permission_get_modules();
   foreach ($data as $perm) {
-    if (isset($map[$perm])) {
-      $perm_module = $map[$perm];
+    $perm_name = $perm;
+    // Export vocabulary permissions using the machine name, instead of
+    // vocabulary id.
+    _user_features_change_term_permission($perm_name, 'machine_name');
+    if (isset($map[$perm_name])) {
+      $perm_module = $map[$perm_name];
       $export['dependencies'][$perm_module] = $perm_module;
       $export['features']['user_permission'][$perm] = $perm;
     }
@@ -40,20 +44,23 @@ function user_permission_features_export($data, &$export, $module_name = '') {
 }
 
 /**
- * Implementation of hook_features_export_options().
+ * Implements hook_features_export_options().
  */
 function user_permission_features_export_options() {
   $modules = array();
   $module_info = system_get_info('module');
   foreach (module_implements('permission') as $module) {
-    $modules[$module_info[$module]['name']] = $module;
+    $modules[$module] = $module_info[$module]['name'];
   }
   ksort($modules);
 
   $options = array();
-  foreach ($modules as $display_name => $module) {
+  foreach ($modules as $module => $display_name) {
     if ($permissions = module_invoke($module, 'permission')) {
       foreach ($permissions as $perm => $perm_item) {
+        // Export vocabulary permissions using the machine name, instead of
+        // vocabulary id.
+        _user_features_change_term_permission($perm);
         $options[$perm] = strip_tags("{$display_name}: {$perm_item['title']}");
       }
     }
@@ -62,14 +69,14 @@ function user_permission_features_export_options() {
 }
 
 /**
- * Implementation of hook_features_export_render().
+ * Implements hook_features_export_render().
  */
-function user_permission_features_export_render($module, $data) {  
+function user_permission_features_export_render($module, $data) {
   $perm_modules = &drupal_static(__FUNCTION__ . '_perm_modules');
   if (!isset($perm_modules)) {
     $perm_modules = user_permission_get_modules();
   }
-  
+
   $code = array();
   $code[] = '  $permissions = array();';
   $code[] = '';
@@ -78,18 +85,24 @@ function user_permission_features_export_render($module, $data) {
 
   foreach ($data as $perm_name) {
     $permission = array();
-    $permission['name'] = $perm_name;
-    if (isset($permissions[$perm_name])) {
+    // Export vocabulary permissions using the machine name, instead of
+    // vocabulary id.
+    $perm = $perm_name;
+    _user_features_change_term_permission($perm_name, 'machine_name');
+    $permission['name'] = $perm;
+    if (!empty($permissions[$perm_name])) {
       sort($permissions[$perm_name]);
-      $permission['roles'] = $permissions[$perm_name];
-      $permission['module'] = $perm_modules[$perm_name];
+      $permission['roles'] = drupal_map_assoc($permissions[$perm_name]);
     }
     else {
       $permission['roles'] = array();
     }
-    $perm_identifier = features_var_export($perm_name);
+    if (isset($perm_modules[$perm_name])) {
+      $permission['module'] = $perm_modules[$perm_name];
+    }
+    $perm_identifier = features_var_export($perm);
     $perm_export = features_var_export($permission, '  ');
-    $code[] = "  // Exported permission: {$perm_name}";
+    $code[] = "  // Exported permission: {$perm_identifier}.";
     $code[] = "  \$permissions[{$perm_identifier}] = {$perm_export};";
     $code[] = "";
   }
@@ -100,14 +113,14 @@ function user_permission_features_export_render($module, $data) {
 }
 
 /**
- * Implementation of hook_features_revert().
+ * Implements hook_features_revert().
  */
 function user_permission_features_revert($module) {
   user_permission_features_rebuild($module);
 }
 
 /**
- * Implementation of hook_features_rebuild().
+ * Implements hook_features_rebuild().
  * Iterate through default permissions and update the permissions map.
  *
  * @param $module
@@ -115,10 +128,25 @@ function user_permission_features_revert($module) {
  */
 function user_permission_features_rebuild($module) {
   if ($defaults = features_get_default('user_permission', $module)) {
+    // Make sure the list of available node types is up to date, especially when
+    // installing multiple features at once, for example from an install profile
+    // or via drush.
+    node_types_rebuild();
+
+    $modules = user_permission_get_modules();
     $roles = _user_features_get_roles();
     $permissions_by_role = _user_features_get_permissions(FALSE);
     foreach ($defaults as $permission) {
       $perm = $permission['name'];
+      _user_features_change_term_permission($perm, 'machine_name');
+      if (empty($modules[$perm])) {
+        $args = array('!name' => $perm, '!module' => $module,);
+        $msg = t('Warning in features rebuild of !module. No module defines permission "!name".', $args);
+        drupal_set_message($msg, 'warning');
+        continue;
+      }
+      // Export vocabulary permissions using the machine name, instead of
+      // vocabulary id.
       foreach ($roles as $role) {
         if (in_array($role, $permission['roles'])) {
           $permissions_by_role[$role][$perm] = TRUE;
@@ -138,7 +166,7 @@ function user_permission_features_rebuild($module) {
 }
 
 /**
- * Implementation of hook_features_export().
+ * Implements hook_features_export().
  */
 function user_role_features_export($data, &$export, $module_name = '') {
   $export['dependencies']['features'] = 'features';
@@ -157,14 +185,14 @@ function user_role_features_export($data, &$export, $module_name = '') {
 }
 
 /**
- * Implementation of hook_features_export_options().
+ * Implements hook_features_export_options().
  */
 function user_role_features_export_options() {
   return drupal_map_assoc(_user_features_get_roles(FALSE));
 }
 
 /**
- * Implementation of hook_features_export_render().
+ * Implements hook_features_export_render().
  */
 function user_role_features_export_render($module, $data) {
   $code = array();
@@ -176,7 +204,7 @@ function user_role_features_export_render($module, $data) {
       unset($role->rid);
       $role_identifier = features_var_export($name);
       $role_export = features_var_export($role , '  ');
-      $code[] = "  // Exported role: {$name}";
+      $code[] = "  // Exported role: {$name}.";
       $code[] = "  \$roles[{$role_identifier}] = {$role_export};";
       $code[] = "";
     }
@@ -188,14 +216,14 @@ function user_role_features_export_render($module, $data) {
 }
 
 /**
- * Implementation of hook_features_revert().
+ * Implements hook_features_revert().
  */
 function user_role_features_revert($module) {
   user_role_features_rebuild($module);
 }
 
 /**
- * Implementation of hook_features_rebuild().
+ * Implements hook_features_rebuild().
  */
 function user_role_features_rebuild($module) {
   if ($defaults = features_get_default('user_role', $module)) {

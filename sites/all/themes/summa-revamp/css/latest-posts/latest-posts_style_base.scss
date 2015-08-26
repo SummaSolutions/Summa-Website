@@ -1,0 +1,74 @@
+#latest-posts-container {
+  background: url(../../images/latest-posts-background-mobile.png) no-repeat center 133px;
+  height: 944px;
+  margin: 0 0 146px 0;
+  text-align: center;
+  padding: 455px 0 0;
+
+  h2.pane-title {
+    font-size: 64px;
+    margin: 0;
+    font-weight: normal;
+    padding: 0 36px;
+  }
+
+  .views-field-title {
+    font-family: roboto;
+    //font-weight: bold;
+    font-size: 34px;
+    max-height: 46px;
+    overflow: hidden;
+  }
+
+  .views-field-entity-id {
+    font-family: roboto;
+    font-weight: lighter;
+    font-size: 34px;
+    max-height: 142px;
+    overflow: hidden;
+    .field-content {
+      display: block;
+      max-height: 344px;
+    }
+  }
+
+  .views-field-path {
+    color: #999;
+    left: 0;
+    right: 0;
+    bottom: 23px + 74px; // Himself padding-bottom + navigation area
+    position: absolute;
+    a {
+      font-family: Arial;
+      border-radius: 4px;
+      border: 1px solid #999;
+      background: transparent;
+      padding: 35px 48px;
+      margin: 0 -71px; // left 50% at center
+      width: auto;
+      display: inline;
+      text-transform: uppercase;
+      font-size: 20px;
+      text-decoration: none;
+      color: inherit;
+      letter-spacing: 3px;
+    }
+  }
+  .bxslider {
+    position: relative;
+    width: 100%;
+    height: 994px - 79px - 455px; // Full height - <h2> height - top padding
+
+    .slide {
+      text-align: center;
+      float: left;
+      clear: none;
+      height: 100%;
+      width: 640px !important; // The fluid row makes this of 635px
+
+      padding: 36px;
+      display: block;
+      position: relative;
+    }
+  }
+}

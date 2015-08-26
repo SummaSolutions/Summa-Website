@@ -1,0 +1,6 @@
+@import "../global";
+@import "page--contact_style_base";
+
+@media only screen and (min-width: $hdi-mobile-portrait) {
+  @import "page--contact_style_640up";
+}

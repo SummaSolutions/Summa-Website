@@ -1,5 +1,4 @@
 <?php
-// $Id: advanced-help-popup.tpl.php,v 1.2.4.1 2010/03/01 21:12:39 fgm Exp $
 /**
  * @file
  * Default theme implementation to display a help popup.
@@ -16,7 +15,7 @@
   <?php print $scripts; ?>
   <script type="text/javascript"><?php /* Needed to avoid Flash of Unstyled Content in IE */ ?> </script>
 </head>
-<body>
+<body class="advanced-help-popup-body">
   <div id="page">
     <div id="header">
       <?php if (!empty($search_box)): ?>
@@ -35,7 +34,10 @@
       </div> <!-- /content-content -->
     </div> <!-- /content -->
 
-    <?php print $closure; ?>
+    <!--
+    See comment about $closure in main module.
+    print $closure;
+    -->
 
   </div> <!-- /page -->
 </body>

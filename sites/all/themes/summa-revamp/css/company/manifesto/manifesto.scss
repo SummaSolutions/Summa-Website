@@ -1,0 +1,6 @@
+@import "../../global";
+@import "manifesto_style_base";
+
+@media only screen and (min-width: $hdi-mobile-portrait) {
+  @import "manifesto_style_640up";
+}

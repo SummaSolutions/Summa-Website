@@ -1,9 +1,12 @@
 <?php
+
 /**
  * @file
  * Administrative page code for the smtp module.
  *
  */
+
+
 /**
  * Administrative settings.
  *
@@ -45,6 +48,12 @@ function smtp_admin_settings() {
     '#default_value' => variable_get('smtp_on', 0),
     '#options'       => array(1 => t('On'), 0 => t('Off')),
     '#description'   => t('To uninstall this module you must turn it off here first.'),
+  );
+  $form['onoff']['smtp_queue'] = array(
+    '#type'  => 'checkbox',
+    '#title' => t('Send mail by queue'),
+    '#default_value' => variable_get('smtp_queue', FALSE),
+    '#description'   => t('Mails will be sent by drupal queue api.'),
   );
 
   $form['server'] = array(
@@ -109,7 +118,7 @@ function smtp_admin_settings() {
     '#type'          => 'password',
     '#title'         => t('Password'),
     '#default_value' => variable_get('smtp_password', ''),
-    '#description'   => t('SMTP password. Leave blank if you don\'t wish to change it.'),
+    '#description'   => t('SMTP password. If you have already entered your password before, you should leave this field blank, unless you want to change the stored password.'),
   );
 
   $form['email_options'] = array(
@@ -132,7 +141,7 @@ function smtp_admin_settings() {
     '#type'          => 'checkbox',
     '#title'         => t('Allow to send e-mails formated as Html'),
     '#default_value' => variable_get('smtp_allowhtml', 0),
-    '#description'   => t('Cheking this box will allow Html formated e-mails to be sent with the SMTP protocol.'),
+    '#description'   => t('Checking this box will allow Html formated e-mails to be sent with the SMTP protocol.'),
   );
 
   // If an address was given, send a test e-mail message.
@@ -164,13 +173,15 @@ function smtp_admin_settings() {
     '#description'   => t('Checking this box will print SMTP messages from the server for every e-mail that is sent.'),
   );
 
+  $form['#submit'][] = 'smtp_admin_settings_form_submit';
+
   return system_settings_form($form);
 }  //  End of smtp_admin_settings().
 
 
 
 /**
- * Validataion for the administrative settings form.
+ * Validation for the administrative settings form.
  *
  * @param form
  *   An associative array containing the structure of the form.
@@ -189,10 +200,40 @@ function smtp_admin_settings_validate($form, &$form_state) {
   if ($form_state['values']['smtp_from'] && !valid_email_address($form_state['values']['smtp_from'])) {
     form_set_error('smtp_from', t('The provided from e-mail address is not valid.'));
   }
+
+  // If username is set empty, we must set both username/password empty as well.
+  if (empty($form_state['values']['smtp_username'])) {
+    $form_state['values']['smtp_password'] = '';
+  }
+
   // A little hack. When form is presentend, the password is not shown (Drupal way of doing).
-  // So, if user submits the form without changing the password, we mus prevent it from being reset.
-  if (empty($form_state['values']['smtp_password'])) {
+  // So, if user submits the form without changing the password, we must prevent it from being reset.
+  elseif (empty($form_state['values']['smtp_password'])) {
     unset($form_state['values']['smtp_password']);
   }
 }  //  End of smtp_admin_settings_validate().
 
+/**
+ * Submit handler().
+ */
+function smtp_admin_settings_form_submit($form, &$form_state) {
+  // Check if SMTP status has been changed.
+  if (
+    (!variable_get('smtp_on', FALSE) && $form_state['values']['smtp_on']) ||
+    (variable_get('smtp_on', FALSE) && !$form_state['values']['smtp_on'])
+  ) {
+    $mail_modes = variable_get('mail_system', array('default-system' => 'DefaultMailSystem'));
+
+    // Turning on.
+    if ($form_state['values']['smtp_on']) {
+      variable_set('smtp_previous_mail_system', $mail_modes['default-system']);
+      $mail_modes['default-system'] = 'SmtpMailSystem';
+    }
+    // Turning off.
+    else {
+      $mail_modes['default-system'] = variable_get('smtp_previous_mail_system', 'DefaultMailSystem');
+    }
+
+    variable_set('mail_system', $mail_modes);
+  }
+}

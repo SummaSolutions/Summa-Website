@@ -17,7 +17,7 @@ Drupal.flexible.fixHeight = function() {
 Drupal.behaviors.flexibleAdmin = {
   attach: function(context) {
     // Show/hide layout manager button
-    $('input#panels-flexible-toggle-layout:not(.panels-flexible-processed)', context)
+    $('#panels-flexible-toggle-layout:not(.panels-flexible-processed)', context)
       .addClass('panels-flexible-processed')
       .click(function() {
         $('.panel-flexible-admin')
@@ -176,6 +176,10 @@ Drupal.flexible.splitter = function($splitter) {
   function splitterMove(event) {
     var diff = splitter.startX - event.pageX;
     var moved = 0;
+
+    if (event.keyCode == 37) diff = 10;
+    if (event.keyCode == 39) diff = -10;
+
     // Bah, javascript has no logical xor operator
     if ((splitter.left_unit && !splitter.right_unit) ||
       (!splitter.left_unit && splitter.right_unit)) {
@@ -286,11 +290,14 @@ Drupal.flexible.splitter = function($splitter) {
       // if not moving the right side, adjust the parent padding instead.
       splitter.parent.css('padding-left', (splitter.left_padding - moved) + 'px');
       splitter.left.parent().css('margin-left', (splitter.left_parent + moved) + 'px');
-      if (jQuery.browser.msie) {
-        splitter.left.parent().css('left', splitter.currentLeft);
-      }
     }
     return false;
+  };
+
+  function splitterKeyPress(event) {
+    splitterStart(event);
+    splitterMove(event);
+    splitterEnd(event);
   };
 
   function splitterEnd(event) {
@@ -357,7 +364,8 @@ Drupal.flexible.splitter = function($splitter) {
   splitter.right = $(splitter.right_class);
 
   $splitter
-    .bind("mousedown", splitterStart);
+    .bind("mousedown", splitterStart)
+    .bind("keydown", splitterKeyPress);
 
 };
 

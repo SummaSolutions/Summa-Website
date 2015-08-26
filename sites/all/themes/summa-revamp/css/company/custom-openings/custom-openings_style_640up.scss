@@ -1,0 +1,32 @@
+.canvas-company {
+  .row-current-openings {
+    .col-left {
+      float: left;
+      width: 549px;
+      padding: 0 0 0 76px;
+      margin: 267px 0 0;
+    }
+    .col-right {
+      float: right;
+      width: 407px;
+      padding: 0 76px 0 0;
+      margin: 267px 0 0;
+    }
+    .contextual-links-region {
+      position: static;
+    }
+    .about-us-container, .vision-container, .mission-container, .benefits-container {
+      padding: 0;
+    }
+    h1 {
+      position: absolute;
+      top: 113px;
+      left: 0;
+      right: 0;
+      margin: 0;
+    }
+    a.anchor-target {
+      top: 113px;
+    }
+  }
+}

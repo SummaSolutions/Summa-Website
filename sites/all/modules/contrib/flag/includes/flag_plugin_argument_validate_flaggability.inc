@@ -1,5 +1,4 @@
 <?php
-// $Id: flag_plugin_argument_validate_flaggability.inc,v 1.4 2010/12/20 23:05:12 mooffie Exp $
 
 /**
  * @file
@@ -27,6 +26,11 @@ class flag_plugin_argument_validate_flaggability extends views_plugin_argument_v
   }
 
   function options_form(&$form, &$form_state) {
+    // If there are no flag relationships set, skip this form of validation.
+    $flags = flag_get_flags($this->flag_type);
+    if (!$flags) {
+      return array();
+    }
     $options = $this->flags_options();
 
     $form[$this->_option_name('flag_name')] = array(
@@ -215,7 +219,7 @@ class flag_plugin_argument_validate_flaggability extends views_plugin_argument_v
     global $user;
     if (!$user->uid) {
       // Anonymous user
-      return FALSE;
+      return array();
     }
     $flattened_ids = implode(',', $ids);
     return $this->_test_by_sql("SELECT content_id FROM {flag_content} WHERE fid = :fid AND content_id IN ($flattened_ids) AND uid = :uid", array(':fid' => $flag->fid, ':uid' => $user->uid));

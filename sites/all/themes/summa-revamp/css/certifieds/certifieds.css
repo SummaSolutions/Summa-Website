@@ -1,0 +1,192 @@
+#certifieds-container {
+  background: url(../../images/certifieds-background-mobile.gif) no-repeat 450px top;
+  text-align: center;
+  height: 1245px; }
+  #certifieds-container h2 {
+    margin: 0;
+    font-family: Ruda;
+    font-size: 64px;
+    color: #8db234;
+    font-weight: normal;
+    width: 300px;
+    padding: 25px 0 0 72px;
+    text-align: left; }
+  #certifieds-container .bxslider {
+    height: 983px;
+    position: relative; }
+    #certifieds-container .bxslider .slide {
+      height: 100%;
+      position: relative;
+      float: left; }
+  #certifieds-container .views-field-field-image-top {
+    position: absolute;
+    bottom: 875px;
+    left: 0;
+    right: 0;
+    text-align: center; }
+    #certifieds-container .views-field-field-image-top img {
+      margin: 0 auto; }
+  #certifieds-container .views-field-title {
+    font-size: 60px;
+    font-weight: normal;
+    font-family: Ruda;
+    color: #999;
+    padding: 135px 0 0 0; }
+    #certifieds-container .views-field-title .title-container {
+      margin: 0 65px;
+      background: #000;
+      background: url(../../images/certifieds-title-background-mobile.gif) repeat-x left center;
+      padding: 0 36px; }
+      #certifieds-container .views-field-title .title-container .title-mask {
+        background: #fff;
+        padding: 0 30px;
+        max-height: 237px;
+        display: inline-block;
+        max-width: 100%; }
+  #certifieds-container .views-field-field-subtitle {
+    color: #999;
+    font-weight: lighter;
+    padding: 0 72px;
+    font-size: 36px;
+    font-family: Roboto; }
+  #certifieds-container .views-field-body {
+    color: #999;
+    font-weight: lighter;
+    padding: 0 36px;
+    font-size: 34px;
+    font-family: Roboto; }
+    #certifieds-container .views-field-body .field-content {
+      max-height: 230px; }
+  #certifieds-container .views-field-field-image-right .image-container, #certifieds-container .views-field-field-image-right-1 .image-container {
+    width: auto;
+    margin: 0 auto; }
+    #certifieds-container .views-field-field-image-right .image-container img, #certifieds-container .views-field-field-image-right-1 .image-container img {
+      display: inline-block;
+      margin: 0 23px; }
+  #certifieds-container .views-field-field-external-link {
+    color: #999;
+    position: absolute;
+    bottom: 107px;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    padding: 36px; }
+    #certifieds-container .views-field-field-external-link a {
+      background: #fff;
+      font-family: Arial;
+      border-radius: 4px;
+      border: 1px solid #999;
+      padding: 35px 48px;
+      margin: 0;
+      width: auto;
+      text-transform: uppercase;
+      font-size: 20px;
+      text-decoration: none;
+      color: inherit;
+      letter-spacing: 3px;
+      display: inline; }
+
+@media only screen and (min-width: 641px) {
+  #certifieds-container {
+    background: url(../../images/certifieds-background-tablet.gif) no-repeat left top;
+    height: 1090px;
+    position: relative;
+    width: 1000px;
+    margin: 0 auto; }
+    #certifieds-container h2 {
+      display: none; }
+    #certifieds-container .bxslider {
+      height: auto;
+      position: static; }
+      #certifieds-container .bxslider .slide {
+        position: absolute;
+        float: none;
+        height: 355px;
+        width: 447px;
+        margin: auto; }
+        #certifieds-container .bxslider .slide.position-top {
+          top: 0;
+          left: 0;
+          right: 0; }
+        #certifieds-container .bxslider .slide.position-right {
+          top: 0;
+          bottom: 0;
+          right: 0;
+          margin-right: -65px;
+          padding-top: 50px; }
+        #certifieds-container .bxslider .slide.position-bottom {
+          bottom: 0;
+          left: 0;
+          right: 0; }
+        #certifieds-container .bxslider .slide.position-left {
+          top: 0;
+          left: 0;
+          bottom: 0;
+          margin-left: -65px;
+          padding-top: 50px; }
+        #certifieds-container .bxslider .slide.position-left .views-field-field-image-top, #certifieds-container .bxslider .slide.position-right .views-field-field-image-top {
+          position: absolute;
+          top: auto;
+          bottom: 310px; }
+    #certifieds-container .views-field-field-image-top {
+      position: static;
+      margin-top: 36px; }
+    #certifieds-container .views-field-title {
+      font-size: 28px;
+      padding: 0; }
+      #certifieds-container .views-field-title .title-container {
+        padding: 0 27px;
+        display: inline-block;
+        background: url(../../images/certifieds-title-background-mobile.gif) repeat-x left 20px; }
+        #certifieds-container .views-field-title .title-container .title-mask {
+          padding: 0 20px;
+          max-height: 80px; }
+    #certifieds-container .views-field-field-subtitle {
+      color: #333;
+      padding: 0 88px;
+      font-size: 18px; }
+    #certifieds-container .views-field-body {
+      color: #333;
+      padding: 0 88px;
+      font-size: 16px; }
+      #certifieds-container .views-field-body .field-content {
+        max-height: 88px; }
+    #certifieds-container .views-field-field-image-right .image-container, #certifieds-container .views-field-field-image-right-1 .image-container {
+      width: 100%;
+      position: relative;
+      top: 76px; }
+      #certifieds-container .views-field-field-image-right .image-container img, #certifieds-container .views-field-field-image-right-1 .image-container img {
+        margin: 0;
+        width: 80px; }
+      #certifieds-container .views-field-field-image-right .image-container img:first-child, #certifieds-container .views-field-field-image-right-1 .image-container img:first-child {
+        float: left; }
+      #certifieds-container .views-field-field-image-right .image-container img:last-child, #certifieds-container .views-field-field-image-right-1 .image-container img:last-child {
+        float: right; }
+    #certifieds-container .views-field-field-external-link {
+      position: static;
+      padding: 18px 0; }
+      #certifieds-container .views-field-field-external-link a {
+        padding: 18px 25px;
+        margin: 0;
+        font-size: 10px;
+        letter-spacing: 2px; }
+    #certifieds-container .center-mask {
+      background: #fff;
+      width: 233px;
+      height: 233px;
+      border: 4px solid #8db234;
+      color: #8db234;
+      border-radius: 50%;
+      background: url(../../images/certifieds-center-background.png) no-repeat center 107px;
+      font-weight: bold;
+      font-size: 28px;
+      padding: 21px;
+      text-align: center;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0; } }
+
+/*# sourceMappingURL=certifieds.css.map */

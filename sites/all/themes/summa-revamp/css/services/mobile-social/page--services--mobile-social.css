@@ -1,0 +1,33 @@
+.canvas-services .region-body-container {
+  margin: -140px auto 64px; }
+  .canvas-services .region-body-container .col {
+    width: 50%;
+    text-align: left; }
+    .canvas-services .region-body-container .col.col-left {
+      float: left;
+      padding: 0 10px 0 0; }
+    .canvas-services .region-body-container .col.col-right {
+      float: right;
+      padding: 0 0 0 10px; }
+    .canvas-services .region-body-container .col img {
+      margin: 0 12px 24px; }
+.canvas-services .row-description .panels-flexible-region-canvas-services-center {
+  height: 712px;
+  background-position: right bottom !important; }
+.canvas-services .row-description .region-description-container {
+  padding: 0px 46px; }
+  .canvas-services .row-description .region-description-container .pane-content {
+    font-family: Roboto;
+    color: #fff;
+    padding: 0 0 68px;
+    font-size: 20px;
+    text-align: left;
+    height: 510px; }
+
+@media only screen and (min-width: 641px) {
+  .canvas-services .row-description .panels-flexible-region-canvas-services-center {
+    background-position: center bottom !important; }
+  .canvas-services .region-body-container .col {
+    text-align: center; } }
+
+/*# sourceMappingURL=page--services--mobile-social.css.map */

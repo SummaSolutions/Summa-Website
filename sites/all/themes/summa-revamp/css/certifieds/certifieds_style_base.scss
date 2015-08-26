@@ -1,0 +1,113 @@
+$region-height: 1245px;
+
+#certifieds-container {
+  background: url(../../images/certifieds-background-mobile.gif) no-repeat 450px top;
+  text-align: center;
+  height: $region-height;
+
+  h2 {
+    margin: 0;
+    font-family: Ruda;
+    font-size: 64px;
+    color: #8db234;
+    font-weight: normal;
+    width: 300px;
+    padding: 25px 0 0 72px;
+    text-align: left;
+  }
+
+  .bxslider {
+    //height: $region-height - 183px;
+    height: 983px;
+    position: relative;
+    .slide {
+      height: 100%;
+      position: relative;
+      float: left;
+    }
+  }
+
+  .views-field-field-image-top {
+    position: absolute;
+    bottom: 875px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    img {
+      margin: 0 auto;
+    }
+  }
+
+  .views-field-title {
+    font-size: 60px;
+    font-weight: normal;
+    font-family: Ruda;
+    color: #999;
+    padding: 135px 0 0 0;
+    .title-container {
+      margin: 0 65px;
+      background: #000;
+      background: url(../../images/certifieds-title-background-mobile.gif) repeat-x left center;
+      padding: 0 36px;
+      .title-mask {
+        background: #fff;
+        padding: 0 30px;
+        max-height: 237px;
+        display: inline-block;
+        max-width: 100%;
+      }
+    }
+  }
+  .views-field-field-subtitle {
+    color: #999;
+    font-weight: lighter;
+    padding: 0 72px;
+    font-size: 36px;
+    font-family: Roboto;
+  }
+  .views-field-body {
+    color: #999;
+    font-weight: lighter;
+    padding: 0 36px;
+    font-size: 34px;
+    font-family: Roboto;
+    .field-content {
+      max-height: 230px;
+    }
+  }
+  .views-field-field-image-right, .views-field-field-image-right-1 {
+    .image-container {
+      width: auto;
+      margin: 0 auto;
+      img {
+        display: inline-block;
+        margin: 0 23px;
+      }
+    }
+  }
+
+  .views-field-field-external-link {
+    color: #999;
+    position: absolute;
+    bottom: 107px;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    padding: 36px;
+    a {
+      background: #fff;
+      font-family: Arial;
+      border-radius: 4px;
+      border: 1px solid #999;
+      padding: 35px 48px;
+      margin: 0;
+      width: auto;
+      text-transform: uppercase;
+      font-size: 20px;
+      text-decoration: none;
+      color: inherit;
+      letter-spacing: 3px;
+      display: inline;
+    }
+  }
+}

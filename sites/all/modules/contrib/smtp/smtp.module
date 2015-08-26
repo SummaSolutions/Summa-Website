@@ -16,17 +16,17 @@
  */
 
 /**
- * Implementation of hook_help().
+ * Implements hook_help().
  */
 function smtp_help($path, $arg) {
   switch ($path) {
     case 'admin/help#smtp':
       return t('Allow for site emails to be sent through an SMTP server of your choice.');
   }
-}  //  End of smtp_help().
+}
 
 /**
- * Implementation of hook_menu().
+ * Implements hook_menu().
  */
 function smtp_menu() {
   $items['admin/config/system/smtp'] = array(
@@ -38,10 +38,10 @@ function smtp_menu() {
     'file'             => 'smtp.admin.inc',
   );
   return $items;
-}  //  End of smtp_menu().
+}
 
 /**
- * Implementation of hook_permission().
+ * Implements hook_permission().
  */
 function smtp_permission() {
   return array(
@@ -49,15 +49,56 @@ function smtp_permission() {
       'title' => t('Administer SMTP Authentication Support module'),
       'description' => t('Perform administration tasks for SMTP Authentication Support module.'))
   );
-}  //  End of smtp_permission().
+}
 
 
 /**
- * Implementation of hook_mail().
+ * Implements hook_mail().
  */
 function smtp_mail($key, &$message, $params) {
   if ($key == 'smtp-test') {
     $message['subject'] = $params['subject'];
-    $message['body']    = $params['body'];
+    $message['body'] = $params['body'];
   }
-}  //  End of smtp_mail().
+}
+
+/**
+ * Implementation of hook_cron_queue_info().
+ */
+function smtp_cron_queue_info() {
+  $queues['smtp_send_queue'] = array(
+    'worker callback' => 'smtp_send_queue_runner',
+    'time' => 60, // This is the max run time per cron run in seconds.
+  );
+  return $queues;
+}
+
+/**
+ * smtp_send_queue queuer.
+ */
+function smtp_send_queue($mailerObj) {
+  $queue = DrupalQueue::get('smtp_send_queue');
+  $queue->createItem($mailerObj);
+}
+
+function smtp_send_queue_runner($variables) {
+  _smtp_mailer_send($variables);
+}
+
+function _smtp_mailer_send($variables) {
+  $mailer = $variables['mailer'];
+  $to = $variables['to'];
+  $from = $variables['from'];
+
+  // Let the people know what is going on.
+  watchdog('smtp', 'Sending mail to: @to', array('@to' => $to));
+
+  // Try to send e-mail. If it fails, set watchdog entry.
+  if (!$mailer->Send()) {
+    watchdog('smtp', 'Error sending e-mail from @from to @to : !error_message', array('@from' => $from, '@to' => $to, '!error_message' => $mailer->ErrorInfo), WATCHDOG_ERROR);
+    return FALSE;
+  }
+
+  $mailer->SmtpClose();
+  return TRUE;
+}

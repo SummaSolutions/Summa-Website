@@ -93,7 +93,9 @@ function panels_flexible_convert_settings(&$settings, &$layout) {
 
   if (!empty($layout['layout'])) {
     $settings = $layout['layout']->settings;
-    return $settings;
+    if ($settings) {
+      return $settings;
+    }
   }
 
   if (empty($settings)) {
@@ -253,7 +255,11 @@ function panels_flexible_panels($display, $settings, $layout) {
   $items = array();
   panels_flexible_convert_settings($settings, $layout);
   foreach ($settings['items'] as $id => $item) {
-    if ($item['type'] == 'region') {
+    // Remove garbage values.
+    if (!isset($item['type'])) {
+      unset($items[$id]);
+    }
+    else if ($item['type'] == 'region') {
       $items[$id] = $item['title'];
     }
   }
@@ -465,15 +471,26 @@ function panels_flexible_render_items($renderer, $list, $owner_id) {
     switch ($item['type']) {
       case 'column':
         $content = panels_flexible_render_items($renderer, $item['children'], $renderer->base['column'] . '-' . $id);
-        $groups[$location] .= panels_flexible_render_item($renderer, $item, $content, $id, $position, $max);
+        if (empty($renderer->settings['items'][$id]['hide_empty']) || trim($content)) {
+          $groups[$location] .= panels_flexible_render_item($renderer, $item, $content, $id, $position, $max);
+        }
         break;
       case 'row':
         $content = panels_flexible_render_items($renderer, $item['children'], $renderer->base['row'] . '-' . $id);
-        $groups[$location] .= panels_flexible_render_item($renderer, $item, $content, $id, $position, $max, TRUE);
+        if (empty($renderer->settings['items'][$id]['hide_empty']) || trim($content)) {
+          $groups[$location] .= panels_flexible_render_item($renderer, $item, $content, $id, $position, $max, TRUE);
+        }
         break;
       case 'region':
-        $content = isset($renderer->content[$id]) ? $renderer->content[$id] : "&nbsp;";
-        $groups[$location] .= panels_flexible_render_item($renderer, $item, $content, $id, $position, $max);
+        if (empty($renderer->settings['items'][$id]['hide_empty'])) {
+          $content = isset($renderer->content[$id]) ? $renderer->content[$id] : "&nbsp;";
+        }
+        else {
+          $content = isset($renderer->content[$id]) ? trim($renderer->content[$id]) : "";
+        }
+        if (empty($renderer->settings['items'][$id]['hide_empty']) || $content) {
+          $groups[$location] .= panels_flexible_render_item($renderer, $item, $content, $id, $position, $max);
+        }
         break;
     }
 
@@ -591,7 +608,8 @@ function panels_flexible_render_splitter($renderer, $left_id, $right_id) {
     $right_class = $left_class;
   }
 
-  $output = '<div class="panels-flexible-splitter flexible-splitter-for-' . $left_class . '">';
+  $output = '<div tabindex="0"
+    class="panels-flexible-splitter flexible-splitter-for-' . $left_class . '">';
 
   // Name the left object
   $output .= '<span class="panels-flexible-splitter-left">';
@@ -740,47 +758,47 @@ function panels_flexible_render_css_group($renderer, $list, $owner_id, $type, $i
   $css = array();
 
   // Start off with some generic CSS to properly pad regions
-  $css['.' . $renderer->item_class['region']] = array(
+  $css[$owner_id . ' .' . $renderer->item_class['region']] = array(
     'padding' => '0',
   );
 
-  $css['.' . $renderer->item_class['region'] . '-inside'] = array(
+  $css[$owner_id . ' .' . $renderer->item_class['region'] . '-inside'] = array(
     'padding-right' => $renderer->region_separation,
     'padding-left' => $renderer->region_separation,
   );
 
-  $css['.' . $renderer->item_class['region'] . '-inside-first'] = array(
+  $css[$owner_id . ' .' . $renderer->item_class['region'] . '-inside-first'] = array(
     'padding-left' => '0',
   );
 
-  $css['.' . $renderer->item_class['region'] . '-inside-last'] = array(
+  $css[$owner_id . ' .' . $renderer->item_class['region'] . '-inside-last'] = array(
     'padding-right' => '0',
   );
 
-  $css['.' . $renderer->item_class['column']] = array(
+  $css[$owner_id . ' .' . $renderer->item_class['column']] = array(
     'padding' => '0',
   );
 
-  $css['.' . $renderer->item_class['column'] . '-inside'] = array(
+  $css[$owner_id . ' .' . $renderer->item_class['column'] . '-inside'] = array(
     'padding-right' => $renderer->column_separation,
     'padding-left' => $renderer->column_separation,
   );
 
-  $css['.' . $renderer->item_class['column'] . '-inside-first'] = array(
+  $css[$owner_id . ' .' . $renderer->item_class['column'] . '-inside-first'] = array(
     'padding-left' => '0',
   );
 
-  $css['.' . $renderer->item_class['column'] . '-inside-last'] = array(
+  $css[$owner_id . ' .' . $renderer->item_class['column'] . '-inside-last'] = array(
     'padding-right' => '0',
   );
 
   // And properly pad rows too
-  $css['.' . $renderer->item_class['row']] = array(
+  $css[$owner_id . ' .' . $renderer->item_class['row']] = array(
     'padding' => '0 0 ' . $renderer->row_separation . ' 0',
     'margin' => '0',
   );
 
-  $css['.' . $renderer->item_class['row'] . '-last'] = array(
+  $css[$owner_id . ' .' . $renderer->item_class['row'] . '-last'] = array(
     'padding-bottom' => '0',
   );
 
@@ -1179,6 +1197,12 @@ function panels_flexible_config_item_form($form, &$form_state) {
     }
   }
 
+  $form['hide_empty'] = array(
+    '#title' => t('Hide element if empty'),
+    '#type' => 'checkbox',
+    '#default_value' => !empty($item['hide_empty']) ? 1 : 0,
+  );
+
   $form['save'] = array(
     '#type' => 'submit',
     '#value' => t('Save'),
@@ -1216,6 +1240,7 @@ function panels_flexible_config_item_form_submit(&$form, &$form_state) {
   else {
     $item['contains'] = $form_state['values']['contains'];
   }
+  $item['hide_empty'] = $form_state['values']['hide_empty'];
 
 }
 
@@ -1479,6 +1504,12 @@ function panels_flexible_add_item_form($form, &$form_state) {
     );
   }
 
+  $form['hide_empty'] = array(
+    '#title' => t('Hide element if empty'),
+    '#type' => 'checkbox',
+    '#default_value' => 0,
+  );
+
   $form['save'] = array(
     '#type' => 'submit',
     '#value' => t('Save'),
@@ -1508,6 +1539,8 @@ function panels_flexible_add_item_form_submit(&$form, &$form_state) {
   else {
     $item['contains'] = $form_state['values']['contains'];
   }
+
+  $item['hide_empty'] = $form_state['values']['hide_empty'];
 
   if ($item['type'] == 'region') {
     // derive the region key from the title
@@ -1788,6 +1821,7 @@ function panels_flexible_reuse_form_validate(&$form, &$form_state) {
  * Test for #machine_name type to see if an export exists.
  */
 function panels_flexible_edit_name_exists($name, $element, &$form_state) {
+  ctools_include('export');
   $plugin = $form_state['plugin'];
 
   return (empty($form_state['item']->export_ui_allow_overwrite) && ctools_export_crud_load($plugin['schema'], $name));

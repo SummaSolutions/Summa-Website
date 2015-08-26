@@ -1,0 +1,49 @@
+$mobile-portrait: 321px;
+$mobile-landscape: 481px;
+
+$hdi-mobile-portrait: 641px;
+$hdi-mobile-landscape: 961px;
+
+$small-tablet-portrait: 601px;
+$small-tablet-landscape: 801px;
+
+$tablet-portrait: 769px;
+$tablet-landscape: 1025px;
+
+$desktop: 1025px;
+
+#contact-form{
+    .hp_name{
+        display: none;
+    }
+}
+
+#header-bottom{
+    .bxSlider-container{
+        &>.bxslider{
+            display: block;
+            position: relative !important;
+            min-height: 600px !important;
+            &>.views-row.slide{
+                //margin: auto !important;
+                //margin-top: 100px !important;
+                text-align: center !important;
+                &>.slide-wrapper{
+                    //margin: auto !important;
+                    text-align: center !important;
+                    .slide-safe-container{
+                        //float: none !important;
+                        .views-field-entity-id{
+                            //right: 0 !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+#services-list-container .pane-content .views-field-field-picture-whyus img {
+  width: auto !important;
+}

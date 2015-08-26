@@ -1,0 +1,70 @@
+.canvas-contact .region-main {
+  width: 100%; }
+.canvas-contact .region-right {
+  width: 100%; }
+.canvas-contact .about-us-container {
+  padding: 64px 46px 46px; }
+  .canvas-contact .about-us-container .pane-content {
+    font-family: Roboto;
+    font-weight: lighter;
+    font-size: 16px; }
+.canvas-contact .panels-flexible-row {
+  padding: 0;
+  font-size: 16px; }
+.canvas-contact .contact-map-container {
+  padding: 0 46px;
+  font-family: Roboto;
+  font-weight: lighter;
+  font-size: 16px; }
+  .canvas-contact .contact-map-container .map-container {
+    width: 100%;
+    height: 396px; }
+.canvas-contact #contact-form-container #contact-form {
+  margin: 0; }
+.canvas-contact #contact-form-container .subtitle {
+  display: none; }
+.canvas-contact #contact-form-container input[type=reset] {
+  display: none; }
+.canvas-contact #contact-form-container input[type=submit] {
+  width: 100%; }
+
+@media only screen and (min-width: 641px) {
+  .canvas-contact {
+    background: #fff; }
+    .canvas-contact .row-white {
+      width: 1000px;
+      margin: 0 auto; }
+    .canvas-contact .region-main {
+      width: 568px; }
+    .canvas-contact .region-right {
+      width: 356px; }
+    .canvas-contact .about-us-container {
+      padding: 64px 0px 13px 64px; }
+      .canvas-contact .about-us-container p {
+        margin: 0;
+        font-size: 17px !important; }
+    .canvas-contact .panels-flexible-row {
+      padding: 0; }
+    .canvas-contact .contact-map-container {
+      padding: 0 0 0 64px; }
+      .canvas-contact .contact-map-container .map-container {
+        width: 100%;
+        height: 316px; }
+    .canvas-contact #contact-form-container {
+      padding: 135px 0 0;
+      margin: 0;
+      width: auto !important; }
+      .canvas-contact #contact-form-container #contact-form {
+        margin: 0; }
+      .canvas-contact #contact-form-container .float-left {
+        float: none;
+        width: 100%;
+        padding: 0; }
+      .canvas-contact #contact-form-container .float-right {
+        float: none;
+        width: 100%;
+        padding: 0; }
+      .canvas-contact #contact-form-container form textarea {
+        min-height: 115px; } }
+
+/*# sourceMappingURL=page--contact.css.map */

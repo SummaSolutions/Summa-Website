@@ -10,7 +10,7 @@
  *
  * Manages translation information for nodes.
  */
-function translation_helpers_node_delete(&$node) {
+function translation_helpers_node_delete($node) {
   // Only act if we are dealing with a content type supporting translations.
   if (translation_supported_type($node->type)) {
     translation_helpers_invoke_translation_change($node);
@@ -25,7 +25,7 @@ function translation_helpers_node_delete(&$node) {
  *
  * Sample implementation:
  * <code>
- * function example_node_translation_change() {
+ * function example_node_translation_change($node) {
  *   if (isset($node->translation_change)) {
  *     // If there is only one node remaining, track by nid rather than tnid. Otherwise, use
  *     // the new tnid.

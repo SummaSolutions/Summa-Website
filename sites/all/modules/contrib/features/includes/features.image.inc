@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Implementation of hook_features_api().
+ * Implements hook_features_api().
  */
 function image_features_api() {
   return array(
@@ -9,12 +9,13 @@ function image_features_api() {
       'name' => t('Image styles'),
       'feature_source' => TRUE,
       'default_hook' => 'image_default_styles',
+      'alter_hook' => 'image_styles',
     )
   );
 }
 
 /**
- * Implementation of hook_features_export_options().
+ * Implements hook_features_export_options().
  */
 function image_features_export_options() {
   $options = array();
@@ -25,7 +26,7 @@ function image_features_export_options() {
 }
 
 /**
- * Implementation of hook_features_export().
+ * Implements hook_features_export().
  */
 function image_features_export($data, &$export, $module_name = '') {
   $pipe = array();
@@ -46,7 +47,7 @@ function image_features_export($data, &$export, $module_name = '') {
 }
 
 /**
- * Implementation of hook_features_export_render().
+ * Implements hook_features_export_render().
  */
 function image_features_export_render($module_name, $data, $export = NULL) {
   $code = array();
@@ -57,7 +58,7 @@ function image_features_export_render($module_name, $data, $export = NULL) {
       _image_features_style_sanitize($style);
       $style_export = features_var_export($style, '  ');
       $style_identifier = features_var_export($name);
-      $code[] = "  // Exported image style: {$name}";
+      $code[] = "  // Exported image style: {$name}.";
       $code[] = "  \$styles[{$style_identifier}] = {$style_export};";
       $code[] = "";
     }
@@ -68,13 +69,15 @@ function image_features_export_render($module_name, $data, $export = NULL) {
 }
 
 /**
- * Implementation of hook_features_revert().
+ * Implements hook_features_revert().
  */
 function image_features_revert($module) {
-  if ($default_styles = features_get_default('image')) {
+  if ($default_styles = features_get_default('image', $module)) {
     foreach (array_keys($default_styles) as $default_style) {
       if ($style = image_style_load($default_style)) {
-        image_style_delete($style);
+        if ($style['storage'] != IMAGE_STORAGE_DEFAULT) {
+          image_default_style_revert($style);
+        }
       }
     }
   }
@@ -83,16 +86,25 @@ function image_features_revert($module) {
 /**
  * Remove unnecessary keys for export.
  */
-function _image_features_style_sanitize(&$style, $child = FALSE) {
-  $omit = $child ? array('isid', 'ieid', 'storage') : array('isid', 'ieid', 'storage', 'module');
-  if (is_array($style)) {
-    foreach ($style as $k => $v) {
-      if (in_array($k, $omit, TRUE)) {
-        unset($style[$k]);
-      }
-      else if (is_array($v)) {
-        _image_features_style_sanitize($style[$k], TRUE);
-      }
-    }
+function _image_features_style_sanitize(array &$style) {
+  // Sanitize style: Don't export numeric IDs and things which get overwritten
+  // in image_styles() or are code/storage specific. The name property will be
+  // the key of the exported $style array.
+  $style = array_diff_key($style, array_flip(array(
+    'isid',
+    'name',
+    'module',
+    'storage',
+  )));
+
+  // Sanitize effects: all that needs to be kept is name, weight and data,
+  // which holds all the style-specific configuration. Other keys are assumed
+  // to belong to the definition of the effect itself, so not configuration.
+  foreach ($style['effects'] as $id => $effect) {
+    $style['effects'][$id] = array_intersect_key($effect, array_flip(array(
+      'name',
+      'data',
+      'weight',
+    )));
   }
 }

@@ -1,0 +1,14 @@
+name        = Summa2015
+description = New Drupal Theme for Summa2015 design
+screenshot  = screenshot.jpg
+engine      = phptemplate
+package     = Summa
+core        = 7.x
+base theme  = summa_revamp
+
+; stylesheets
+stylesheets[all][] = css/summa2015.css
+
+; scripts
+scripts[] = js/summa2015.js
+

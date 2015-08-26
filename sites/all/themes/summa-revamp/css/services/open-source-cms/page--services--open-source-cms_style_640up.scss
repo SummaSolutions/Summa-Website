@@ -1,0 +1,32 @@
+.canvas-services {
+  .region-body-container {
+    padding: 0 84px;
+
+    .col-left {
+      width: 408px;
+
+      strong::after {
+        content: "";
+        display: none;
+      }
+    }
+    .col-right {
+      width: 411px;
+      text-align: center;
+      p {
+        display: inline-block;
+        //        width: 65px;
+        word-wrap: normal;
+        margin: 38px 20px 0;
+      }
+      img {
+        clear: both;
+        margin: 0 auto 12px;
+        display: block;
+      }
+    }
+  }
+  .region-overview-container {
+    padding: 0 84px;
+  }
+}

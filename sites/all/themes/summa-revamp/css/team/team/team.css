@@ -1,0 +1,51 @@
+.team-container .bxslider {
+  height: 129px; }
+.team-container .group-container {
+  text-align: center; }
+  .team-container .group-container .views-row {
+    width: auto;
+    display: inline-block;
+    margin: 0 14px; }
+    .team-container .group-container .views-row .views-field-uid {
+      position: relative;
+      overflow: hidden;
+      border-radius: 50%;
+      width: 129px;
+      height: 129px;
+      text-align: left; }
+      .team-container .group-container .views-row .views-field-uid .image-container {
+        text-align: center; }
+        .team-container .group-container .views-row .views-field-uid .image-container img {
+          height: 100%;
+          position: absolute;
+          margin: auto;
+          top: 0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          z-index: 5; }
+      .team-container .group-container .views-row .views-field-uid .position-container {
+        background: rgba(0, 0, 0, 0.6);
+        text-align: center;
+        color: #fff;
+        font-family: Roboto;
+        font-size: 17px;
+        padding: 12px;
+        margin: auto;
+        height: 100%;
+        width: 100%;
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 10; }
+        .team-container .group-container .views-row .views-field-uid .position-container span {
+          display: table-cell;
+          vertical-align: middle; }
+
+.canvas-company .row-white .team-container .subtitle {
+  margin: 98px 0 16px; }
+
+/*# sourceMappingURL=team.css.map */

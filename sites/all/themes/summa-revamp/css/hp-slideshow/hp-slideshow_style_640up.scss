@@ -1,0 +1,117 @@
+$leftPadding: 33px;
+#header #header-bottom {
+  padding: 0 !important;
+  position: unset !important;
+
+  .bxslider {
+    //overflow: hidden;
+    width: 100%;
+    clear: both;
+    position: absolute;
+    left: 0;
+    height: 613px;
+
+    // same as .views-row
+    .slide {
+      height: 613px;
+      //float: left;
+      margin: 0 auto;
+
+      .slide-wrapper {
+        width: 1500px;
+        height: 613px;
+        margin: 0;
+        .slide-safe-container {
+          width: 1000px !important;
+          float: left;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  .bxSlider-container {
+    width: 2000px;
+    text-align: left;
+  }
+  .bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+    bottom: 96px;
+  }
+  .bx-wrapper {
+    margin: 0;
+  }
+  .bx-wrapper .bx-pager {
+    width: 1000px;
+  }
+
+  .views-field-title {
+    float: left;
+    text-align: left;
+    //    left: 0;
+    font-size: 52px;
+    width: 534px;
+    margin-bottom: 16px;
+    //    position: relative;
+    z-index: 31;
+    padding: 60px 0 0 $leftPadding;
+    .field-content {
+      display: block;
+      max-height: 128px;
+      //      a {
+      //        color: #fff;
+      //        text-decoration: none;
+      //      }
+    }
+    //padding: 0 0 28px 0;
+  }
+  /* Subtile & Content */
+  .views-field-entity-id-1, .views-field-entity-id-8 {
+    text-align: left;
+    float: left;
+    //    left: 0;
+    //    top: 0;
+    //    position: relative;
+    z-index: 31;
+    line-height: 29px;
+    //font-family: "Roboto";
+    //font-weight: lighter;
+    font-size: 24px;
+    width: 534px;
+    padding: 0 0 0 $leftPadding;
+  }
+
+  /* Image */
+  .views-field-entity-id {
+    left: 508px;
+    width: auto;
+    overflow: visible;
+    position: absolute;
+    z-index: 30;
+    margin: 0;
+    img {
+      max-height: 603px;
+    }
+  }
+
+  /* Read More link */
+  .views-field-path {
+    display: none;
+    //width: 100%;
+    //position: absolute;
+    //bottom: 0;
+
+    a {
+      //-moz-border-radius: 7px;
+      //-webkit-border-radius: 7px;
+      //border-radius: 7px;
+      //border: 1px solid $slideshow-green;
+      //background: #fff;
+      //width: 100%;
+      //display: block;
+      //padding: 45px 0;
+      //text-transform: uppercase;
+      //font-family: Arial;
+      //color: $slideshow-green;
+      //text-decoration: none;
+    }
+  }
+}

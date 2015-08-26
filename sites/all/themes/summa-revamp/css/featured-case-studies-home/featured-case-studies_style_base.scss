@@ -1,0 +1,118 @@
+$green: #9fb335;
+.featured-case-studies-wrapper{
+  padding: 65px 25px ;
+
+  text-align: center;
+  .pane-title {
+    color: #fff;
+    margin: 0 0 90px;
+    font-size: 70px;
+    font-weight: normal;
+    .subtitle {
+      margin: 36px 0 0;
+      font-size: 34px;
+      display: block;
+      font-weight: lighter;
+      font-family: Roboto;
+    }
+  }
+
+}
+#featured-case-studies-container {
+  color: #fff;
+  position: relative;
+  // Same as .slide
+  .views-row {
+    position: relative;
+    padding: 0 0 168px; //64px (Read More) + 74px (navigation)
+  }
+
+  .views_slideshow_main {
+    position: absolute;
+    top: 305px;
+  }
+  .pane-content {
+
+    .bxslider {
+      overflow: hidden;
+      //height: 854px - $title-height;
+      // same as .views-row
+
+      .slide {
+        width: 100%;
+        float: left;
+      }
+    }
+
+    .views-field-title {
+      font-size: 50px;
+      height: 70px;
+      margin: 0 0 26px;
+      width: auto;
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+    .views-field-entity-id {
+      padding: 36px;
+      height: 405px;
+      overflow: hidden;
+      color: #000 !important;
+      span {
+        font-size: 28px !important;
+        font-weight: lighter !important;
+        font-family: Roboto !important;
+        line-height: 34px !important;
+      }
+      p {
+        margin: 0 !important;
+      }
+    }
+    .views-field-field-picture {
+      width: 100%;
+      height: 495px;
+      overflow: visible;
+
+      img {
+        max-height: 498px;
+        float: right;
+      }
+    }
+
+    /* Read More link */
+    .views-field-path {
+      width: 100%;
+      position: absolute;
+      bottom: 30px;
+
+      a {
+        -moz-border-radius: 7px;
+        -webkit-border-radius: 7px;
+        border-radius: 7px;
+        border: 1px solid $green;
+        background: #fff;
+        width: 100%;
+        display: block;
+        padding: 45px 0;
+        text-transform: uppercase;
+        font-family: Arial;
+        color: $green;
+        text-decoration: none;
+      }
+    }
+    .views-field-field-picture-whyus {
+      display: none;
+    }
+
+    .views-field-body {
+      display: none;
+    }
+
+    .views-field-field-testimonial-logo {
+      display: none;
+    }
+
+  }
+
+}

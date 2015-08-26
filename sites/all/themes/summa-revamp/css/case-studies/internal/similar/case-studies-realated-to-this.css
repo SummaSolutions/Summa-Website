@@ -1,0 +1,12 @@
+.similar-container .views-row {
+  width: auto;
+  display: inline; }
+  .similar-container .views-row .views-field-field-picture {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 232px;
+    height: 232px;
+    display: inline-block;
+    margin: 0 30px; }
+
+/*# sourceMappingURL=case-studies-realated-to-this.css.map */

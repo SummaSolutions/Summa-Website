@@ -1,0 +1,46 @@
+.canvas-company .row-mission-vision {
+  position: relative; }
+  .canvas-company .row-mission-vision .col-left {
+    width: 100%;
+    float: none;
+    padding: 0;
+    margin: 0px 0px 1em; }
+  .canvas-company .row-mission-vision .col-right {
+    width: 100%;
+    float: none; }
+    .canvas-company .row-mission-vision .col-right .panels-flexible-region-inside {
+      padding-left: 0; }
+  .canvas-company .row-mission-vision .about-us-container, .canvas-company .row-mission-vision .vision-container, .canvas-company .row-mission-vision .mission-container {
+    width: 100%;
+    padding: 0 46px;
+    text-align: left;
+    margin: 0 0 52px; }
+    .canvas-company .row-mission-vision .about-us-container p, .canvas-company .row-mission-vision .vision-container p, .canvas-company .row-mission-vision .mission-container p {
+      margin: 0 0 16px; }
+
+@media only screen and (min-width: 641px) {
+  .canvas-company .row-mission-vision .col-left {
+    float: left;
+    width: 408px;
+    padding: 0 56px 0 84px;
+    margin: 171px 0 0; }
+  .canvas-company .row-mission-vision .col-right {
+    float: left;
+    width: 580px;
+    padding: 0 84px 0 0;
+    margin: 171px 0 0; }
+  .canvas-company .row-mission-vision .contextual-links-region {
+    position: static; }
+  .canvas-company .row-mission-vision .about-us-container, .canvas-company .row-mission-vision .vision-container, .canvas-company .row-mission-vision .mission-container {
+    padding: 0; }
+  .canvas-company .row-mission-vision h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; }
+  .canvas-company .row-first-separator {
+    margin: -320px 0 -285px; }
+  .canvas-company .row-second-separator {
+    margin: -150px  0 -90px; } }
+
+/*# sourceMappingURL=mission-vision.css.map */

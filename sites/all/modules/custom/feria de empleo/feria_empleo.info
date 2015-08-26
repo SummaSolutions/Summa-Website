@@ -1,0 +1,5 @@
+name=Feria de empleo - Contacto
+description=Formulario de contacto para exhibir en la feria de empleo
+package=Summa Solutions
+core=7.x
+depends=webform
