@@ -1,0 +1,29 @@
+/* Summa 2015 design */
+
+#page-wrapper{
+  .full-wrapper{
+    background-color: #fff;
+  }
+}
+
+#header{
+  #header-top{
+    #logo{
+      background-image: url('../images/logo-tablet.jpg');
+    }
+  }
+  #header-middle{
+    #block-menu-menu-summa-options ul li{
+      a{
+        color: #111;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+.panels-flexible-row-last{
+  &.footer-green-row{
+    background-color: #161A1D;
+  }
+}
