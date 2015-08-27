@@ -3,6 +3,6 @@ name = "Summa Blocks"
 description = "Summa Custom Blocks"
 core = "7.x"
 package = "Summa Solutions"
-dependencies[] = webforms
+dependencies[] = webform
 
 
