@@ -197,3 +197,8 @@ function summa_revamp_js_alter( &$javascript )
     //Then we remove the Drupal core version
     unset( $javascript['misc/jquery.js'] );
 }
+
+function summa_revamp_getThemeRealpath()
+{
+    return realpath('.') .'/'. $GLOBALS['theme_path'] .'/';
+}

@@ -1,14 +1,26 @@
-name        = Summa2015
+name        = Summa 2015
 description = New Drupal Theme for Summa2015 design
 screenshot  = screenshot.jpg
 engine      = phptemplate
-package     = Summa
+package     = summa_design
 core        = 7.x
 base theme  = summa_revamp
 
 ; stylesheets
 stylesheets[all][] = css/summa2015.css
+stylesheets[all][] = css/summa2015m.css
 
 ; scripts
 scripts[] = js/summa2015.js
 
+;regions[help]           = Help
+;regions[sidebar_first]  = First sidebar
+;regions[sidebar_second] = Second sidebar
+;regions[navigation]     = Navigation bar
+regions[highlight]      = Highlighted content
+regions[content]        = Content
+regions[header]         = Header
+regions[footer]         = Footer
+;regions[bottom]         = Page bottom
+;regions[page_top]       = Page top
+;regions[page_bottom]    = Page bottom
