@@ -162,6 +162,11 @@ function summa_blocks_case_studies_grid_ajax()
 
 }
 
+function summa_blocks_block_list_alter(&$blocks)
+{
+    $pause = null;
+}
+
 /**
  * Implementation of hook_block_info().
  */
