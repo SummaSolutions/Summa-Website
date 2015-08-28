@@ -7,3 +7,14 @@
         }
     }
 }
+
+@media only screen and (max-width: 768px) {
+    #header{
+        #header-middle{
+            &.cloned{
+                /* Stop sticky in mobile */
+                display: none !important;
+            }
+        }
+    }
+}

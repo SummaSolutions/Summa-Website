@@ -71,6 +71,17 @@
                 }
             }
         }
+        &.cloned{
+            background-color: #FFF;
+            #logo{
+                margin-top: 3px;
+            }
+            #block-menu-menu-summa-options .menu li{
+                a{
+                    line-height: 50px;
+                }
+            }
+        }
     }
     #header-bottom{
         background-size: 100%;
