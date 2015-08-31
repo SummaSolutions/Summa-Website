@@ -355,6 +355,7 @@ $pane->extras = array();
 $pane->position = 0;
 $display->content['new-6'] = $pane;
 $display->panels['top'][0] = 'new-6';
+
 $pane = new stdClass;
 $pane->pid = 'new-7';
 $pane->panel = 'top';

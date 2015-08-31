@@ -162,6 +162,43 @@ function summa_blocks_case_studies_grid_ajax()
 
 }
 
+function summa_blocks_preprocess_block(&$variables)
+{
+    $pause = null;
+}
+function summa_blocks_preprocess_panels_pane(&$vars)
+{
+    $theme = $GLOBALS['theme'];
+    if ($theme == 'summa2015'){
+        $avoidContentAll = array(
+            'panels_pane__block__block_2',
+        );
+        $avoidContentFront = array(
+            'panels_pane__views__hp_jobs',
+            'panels_pane__views__case_studies_features',
+            'panels_pane__block__summa_blocks_why_us',
+            'panels_pane__views__blog_latest_posts',
+        );
+        foreach ($avoidContentAll as $code) {
+            if (in_array($code,$vars['theme_hook_suggestions'])) {
+                $vars['content'] = '&nbsp;';
+                unset($vars['pane']);
+            }
+        }
+        foreach ($avoidContentFront as $code) {
+            if (drupal_is_front_page() && in_array($code,$vars['theme_hook_suggestions'])) {
+                $vars['content'] = '&nbsp;';
+                unset($vars['pane']);
+            }
+        }
+    }
+    $pause = null;
+}
+function summa_blocks_block_list_alter(&$blocks)
+{
+    $pause = null;
+}
+
 /**
  * Implementation of hook_block_info().
  */
