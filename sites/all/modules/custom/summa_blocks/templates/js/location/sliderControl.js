@@ -26,7 +26,7 @@ jQuery(window).load(function () {
             var lat = $slideElement.data("latitude");
             var lon = $slideElement.data("longitude");
             //jQuery(locMapSelector).data("map").panTo( new google.maps.LatLng( lat, lon ) );
-            jQuery(locMapSelector).find('.map').fadeToggle();
+            jQuery(locMapSelector).find('.map').toggle();
         }
     });
 
