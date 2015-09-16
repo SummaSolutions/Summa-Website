@@ -30,15 +30,15 @@
       position: absolute;
       text-align: left;
     }
-    .views-row.views-row-1 {
+    .views-row.views-row-3 {
       top: 0px;
       left: 320px;
     }
-    .views-row.views-row-2 {
+    .views-row.views-row-4 {
       top: 214px;
       left: 84px;
     }
-    .views-row.views-row-3 {
+    .views-row.views-row-5 {
       top: 611px;
       right: 328px;
       text-align: right;
@@ -48,11 +48,11 @@
         left: auto;
       }
     }
-    .views-row.views-row-4 {
+    .views-row.views-row-6 {
       top: 860px;
       left: 72px;
     }
-    .views-row.views-row-5 {
+    .views-row.views-row-7 {
       top: 1116px;
       left: 557px;
     }
@@ -120,4 +120,9 @@
       }
     }
   }
+}
+
+#services-list-container .path-container .views-row:nth-child(1),
+#services-list-container .path-container .views-row:nth-child(2){
+    display: none;
 }

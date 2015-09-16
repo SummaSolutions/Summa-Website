@@ -13,4 +13,15 @@
 #services-list-container .pane-content .views-field-field-picture-whyus img {
   width: auto !important; }
 
+#services-list-container .views-row:nth-child(1),
+#services-list-container .views-row:nth-child(2),
+#services-list-container .views-row:nth-child(3){
+    display: none;
+}
+
+#services-list-container .path-container .views-row:nth-child(1),
+#services-list-container .path-container .views-row:nth-child(2){
+    display: none;
+}
+
 /*# sourceMappingURL=global.css.map */
