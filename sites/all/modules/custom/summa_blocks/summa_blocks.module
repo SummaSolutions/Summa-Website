@@ -162,6 +162,43 @@ function summa_blocks_case_studies_grid_ajax()
 
 }
 
+function summa_blocks_preprocess_block(&$variables)
+{
+    $pause = null;
+}
+function summa_blocks_preprocess_panels_pane(&$vars)
+{
+    $theme = $GLOBALS['theme'];
+    if ($theme == 'summa2015'){
+        $avoidContentAll = array(
+            'panels_pane__block__block_2',
+        );
+        $avoidContentFront = array(
+            'panels_pane__views__hp_jobs',
+            'panels_pane__views__case_studies_features',
+            'panels_pane__block__summa_blocks_why_us',
+            'panels_pane__views__blog_latest_posts',
+        );
+        foreach ($avoidContentAll as $code) {
+            if (in_array($code,$vars['theme_hook_suggestions'])) {
+                $vars['content'] = '&nbsp;';
+                unset($vars['pane']);
+            }
+        }
+        foreach ($avoidContentFront as $code) {
+            if (drupal_is_front_page() && in_array($code,$vars['theme_hook_suggestions'])) {
+                $vars['content'] = '&nbsp;';
+                unset($vars['pane']);
+            }
+        }
+    }
+    $pause = null;
+}
+function summa_blocks_block_list_alter(&$blocks)
+{
+    $pause = null;
+}
+
 /**
  * Implementation of hook_block_info().
  */
@@ -221,6 +258,11 @@ function summa_blocks_block_info()
     $blocks['services-id-quote'] = array(
         'info' => t( 'Interaction desing Quote' ),
     );
+    $blocks['summa-contact-footer'] = array(
+        'info' => t( 'Summa 2015 Footer' ),
+        'region' => 'footer',
+        'status' => 1,
+    );
 
     return $blocks;
 }
@@ -279,6 +321,10 @@ function summa_blocks_block_view( $delta = '' )
         case 'blog-top-posters-code':
             $block['subject'] = t( '' );
             $block['content'] = block_blog_top_posters();
+            break;
+        case 'summa-contact-footer':
+            $block['subject'] = t( '' );
+            $block['content'] = block_summa_contact_footer();
             break;
         case 'why-us':
             $block['subject'] = t( '' );
@@ -465,4 +511,54 @@ GROUP BY users.uid ORDER BY total DESC, users.name ASC" );
     }
 
     return $toHtml;
+}
+
+function block_summa_contact_footer()
+{
+    $copy = '<div class="copy">&copy; '.t('2015 Summa Solutions. All Rights Reserved.').'</div>';
+    $boxes = array(
+        array(
+            'title' => t('Services'),
+            'items' => array(
+                l(t('E-Commerce')           ,'services/e-commerce'),
+                l(t('Mobile & Social')      ,'services/mobile-social'),
+                l(t('Open Source Cms')      ,'services/open-source-cms'),
+                l(t('Software Development') ,'services/software-development'),
+                l(t('Interactive Design & Usability'),'services/interaction-design'),
+            ),
+        ),
+        array(
+            'title' => t('Office'),
+            'items' => array(
+                t('Palermo, Capital Federal, Buenos Aires<br>Av. Cordoba 5779 1st floor Office C'),
+                t('Tandil, Buenos Aires<br>Santamarina 876'),
+                t('Argentina'),
+            ),
+        ),
+        array(
+            'title' => t('Work With Us'),
+            'items' => array(
+                t('Want to work for an agency full of incredible talent?'),
+                l(t('Join Us'),'contact-us'),
+            ),
+        ),
+        array(
+            'title' => t('Get In Touch'),
+            'items' => array(
+                t('t: +54 11 60914603'),
+                t('argentina<span>&#x40;</span>summasolutions.net'),
+                '<h3>'.t('Follow Us').'</h3>',
+                block_social_media(),
+            ),
+        ),
+    );
+    $htmlBoxes = '';
+    foreach ($boxes as $box) {
+        $htmlBoxes .= '<div class="footer-box"><h3>'.$box['title'].'</h3>';
+        foreach ($box['items'] as $item) {
+            $htmlBoxes .= '<div class="item">'.$item.'</div>';
+        }
+        $htmlBoxes .= '</div>';
+    }
+    return '<div class="footer-top">'.$htmlBoxes.'</div><div class="clearfix"> </div><div class="footer-bottom">'.$copy.'</div>';
 }

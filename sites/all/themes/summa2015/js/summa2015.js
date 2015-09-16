@@ -1,0 +1,1 @@
+/* Summa 2015 design */
