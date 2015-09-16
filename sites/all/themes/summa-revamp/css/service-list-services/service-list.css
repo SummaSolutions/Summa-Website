@@ -110,8 +110,10 @@
         left: 0;
         bottom: auto; }
         #services-list-container .path-container .views-field-field-picture-whyus img {
-          max-height: 100%;
-          max-width: 100%; }
+            max-height: 100%;
+            max-width: 100%;
+            width: 100%;
+            height: auto; }
       #services-list-container .path-container .views-field-body {
         display: block;
         color: #999;
