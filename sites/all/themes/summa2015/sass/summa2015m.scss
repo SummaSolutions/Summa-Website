@@ -206,3 +206,23 @@
     }
 }
 
+@media only screen and (max-width: 720px) {
+    #header{
+        #header-middle{
+          #logo{
+            margin: 5px 0 0;
+          }
+          #block-menu-menu-summa-options .menu li{
+            a{
+              padding: 0px 10px !important;
+              line-height: 65px !important;
+              &:hover,
+              &.active{
+                padding: 0px 10px !important;
+              }
+            }
+          }
+        }
+    }
+}
+
