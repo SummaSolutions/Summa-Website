@@ -7,6 +7,7 @@ core        = 7.x
 base theme  = summa_revamp
 
 ; stylesheets
+stylesheets[all][] = css/old-header.css
 stylesheets[all][] = css/summa2015.css
 stylesheets[all][] = css/summa2015m.css
 

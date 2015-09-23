@@ -210,6 +210,7 @@
     #header{
         #header-middle{
           #logo{
+            width: 150px;
             margin: 5px 0 0;
           }
           #block-menu-menu-summa-options .menu li{
@@ -226,3 +227,74 @@
     }
 }
 
+@media only screen and (max-width: 640px) {
+  #page-wrapper{
+    width: 100%;
+  }
+  #header{
+    background-image: none;
+    #header-top{
+      background-image: none;
+      .menu-mobile{
+        width: 100%;
+        text-indent: 110%;
+        a{
+          border-radius: 9px;
+          background-color: #ccc;
+          box-shadow: 0 0 5px #ccc;
+          margin: 5px 0;
+          //display: inline-block;
+        }
+      }
+    }
+    #header-middle{
+      .header-middle-inner{
+        width: 100%;
+        #logo{
+          margin-left: 9px;
+        }
+      }
+      #block-menu-menu-summa-options .menu li a{
+        line-height: 50px !important;
+        font-size: 16px;
+      }
+      #block-summa-blocks-social-media{
+        background-image: none;
+        position: absolute;
+        width: 220px;
+        height: inherit;
+        ul{
+          margin: -50px auto 0;
+          li{
+            display: inline-block;
+            float: left;
+            margin-right: 5%;
+            padding: 5px !important;
+            border-radius: 10px;
+            &.icon-facebook{
+              background-color: #5D82D1;
+            }
+            &.icon-twitter{
+              background-color: #40BFF5;
+            }
+            &.icon-google_plus{
+              background-color: #EB5E4C;
+            }
+            &.icon-linkedin{
+              background-color: #238CC8;
+            }
+          }
+        }
+      }
+      .region.region-header{
+        display: block;
+        clear: both;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 570px) {}
+
+@media only screen and (max-width: 540px) {}
