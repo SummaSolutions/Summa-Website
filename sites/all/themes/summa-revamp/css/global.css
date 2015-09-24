@@ -24,4 +24,9 @@
     display: none;
 }
 
+#header #header-bottom .bx-wrapper .bx-pager{
+    max-width: 500px;
+    min-width: 350px;
+    width: 30%;
+}
 /*# sourceMappingURL=global.css.map */
