@@ -197,6 +197,18 @@
             }
         }
     }
+  .location-container .tablet-left{
+    width: 25%;
+  }
+  #footer .region-footer .content{
+    font-size: 15px;
+    h3{
+      font-size: 15px;
+    }
+    .footer-top .footer-box{
+      width: 33%;
+    }
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -225,6 +237,15 @@
           }
         }
     }
+  #footer .region-footer .content{
+    .footer-top .footer-box{
+      width: 50%;
+      min-height: 200px;
+    }
+    .footer-bottom .copy{
+      margin-top: 20px;
+    }
+  }
 }
 
 @media only screen and (max-width: 640px) {
@@ -293,8 +314,80 @@
       }
     }
   }
+  .location-container{
+    height: 600px;
+    .pointer{
+      height: 250px;
+      margin-bottom: 40px;
+      background-size: 25%;
+    }
+    .title{
+      font-size: 50px;
+    }
+    .body{
+      font-size: 25px;
+      //font-weight: 700;
+    }
+    .tablet-left{
+      width: 100%;
+    }
+    .bxslider .slide .container{
+      padding: 50px 10px;
+    }
+    .bx-controls{
+      display: none;
+    }
+  }
 }
 
-@media only screen and (max-width: 570px) {}
+@media only screen and (max-width: 570px) {
+  #footer .region-footer .content{
+    .footer-top .footer-box{
+      width: 100%;
+      min-height: 100px;
+    }
+  }
+  .location-container{
+    .pointer{
+      height: 250px;
+      background-size: 30%;
+    }
+  }
+}
 
-@media only screen and (max-width: 540px) {}
+@media only screen and (max-width: 540px) {
+  #footer .region-footer .content{
+    .footer-bottom .copy{
+      margin-top: 25px;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .location-container{
+    .pointer{
+      height: 210px;
+    }
+    .title{
+      font-size: 45px;
+    }
+    .body{
+      font-size: 25px;
+      font-weight: 400;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .location-container{
+    .pointer{
+      height: 190px;
+    }
+    .title{
+      font-size: 40px;
+    }
+    .body{
+      font-size: 20px;
+    }
+  }
+}
