@@ -120,3 +120,40 @@
 
   }
 }
+
+#footer{
+  ul.social {
+    padding: 0;
+    margin: -64px auto;
+    min-width: initial;
+
+    li {
+      width: inherit;
+      display: block;
+      padding: 5px;
+      margin-right: 5px;
+      &:last-child {
+      }
+      a {
+        background: url('../images/social-tablet-sprites.png') no-repeat top left;
+
+        width: 32px;
+        height: 32px;
+        display: block;
+
+      }
+      &.icon-facebook a {
+        background-position: 0 0;
+      }
+      &.icon-twitter a {
+        background-position: 0 -32px;
+      }
+      &.icon-google_plus a {
+        background-position: 0 -64px;
+      }
+      &.icon-linkedin a {
+        background-position: 0 -96px;
+      }
+    }
+  }
+}
