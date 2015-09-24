@@ -132,7 +132,7 @@
                         padding: 0;
                         margin: 0;
                         li{
-                            width: 32px;
+                            width: inherit;
                             float: left;
                             display: inline-block;
                         }
@@ -149,6 +149,28 @@
             }
         }
     }
+  ul.social{
+    margin: -50px auto 0;
+    li.hide-text{
+      display: inline-block;
+      float: left;
+      margin-right: 5%;
+      padding: 5px !important;
+      border-radius: 10px;
+      &.icon-facebook{
+        background-color: #5D82D1;
+      }
+      &.icon-twitter{
+        background-color: #40BFF5;
+      }
+      &.icon-google_plus{
+        background-color: #EB5E4C;
+      }
+      &.icon-linkedin{
+        background-color: #238CC8;
+      }
+    }
+  }
 }
 /*
 .page-front{

@@ -53,3 +53,9 @@ $desktop: 1025px;
 #services-list-container .views-row:nth-child(3){
     display: none;
 }
+
+#header #header-bottom .bx-wrapper .bx-pager{
+    max-width: 500px;
+    min-width: 350px;
+    width: 30%;
+}
