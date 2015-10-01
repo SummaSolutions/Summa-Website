@@ -136,7 +136,7 @@
     background: none;
 }
 
-@media only screen and (min-width: 641px) {
+@media only screen and (min-width: 041px) {
     /* Default */
     .bx-wrapper .bx-pager.bx-default-pager a {
         width: 15px;

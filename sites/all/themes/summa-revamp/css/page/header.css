@@ -1,7 +1,7 @@
-@media only screen and (min-width: 321px) {
+@media only screen and (min-width: 021px) {
   #header {
     background: red; } }
-@media only screen and (min-width: 481px) {
+@media only screen and (min-width: 081px) {
   #header {
     background: blue; } }
 @media only screen and (min-width: 769px) {
