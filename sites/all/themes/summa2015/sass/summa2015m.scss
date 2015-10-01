@@ -210,6 +210,17 @@
             }
         }
     }
+    .canvas-company .row-white{
+        .manifesto-container .pane-content{
+            padding: 0;
+        }
+        .view-manifesto-items ul.manifesto-accordion{
+            width: 85%;
+        }
+    }
+    .case-studies-grid-wrapper{
+        padding: 50px 0;
+    }
 }
 
 @media only screen and (max-width: 800px) {
@@ -424,72 +435,72 @@
 }
 
 @media only screen and (max-width: 600px) {
-  #services-list-container{
-    max-width: 100%;
-    .subtitle{
-      width: 98%;
-      padding-left: 25px;
+    #services-list-container{
+        max-width: 100%;
+        .subtitle{
+            width: 98%;
+            padding-left: 25px;
+        }
+        .views-row{
+            width: 100%;
+        }
+        .pane-content{
+            .views-field-title{
+                font-size: 35px;
+            }
+            .views-field-field-picture-whyus img{
+                height: 150px;
+                max-height: 150px;
+            }
+            .views-field-field-subtitle{
+                //position: relative;
+                top: 275px;
+                width: 90%;
+                float: none;
+                margin: 0 auto;
+                padding-left: 5%;
+            }
+        }
     }
-    .views-row{
-      width: 100%;
+    #certifieds-container{
+        .bxslider{
+            padding-bottom: 250px;
+            .slide{
+                width: 95%;
+                float: none;
+                margin: 0 auto !important;
+                //padding-left: 3%;
+                min-height: 250px;
+            }
+        }
+        .views-field-body,
+        .views-field-field-subtitle{
+            min-height: 75px;
+        }
+        .field-content{
+            width: 100%;
+            display: inline-block;
+            .title-container{
+                margin: 0;
+                width: 95%;
+            }
+        }
     }
-    .pane-content{
-      .views-field-title{
-        font-size: 35px;
-      }
-      .views-field-field-picture-whyus img{
-        height: 150px;
-        max-height: 150px;
-      }
-      .views-field-field-subtitle{
-        //position: relative;
-        top: 275px;
-        width: 90%;
-        float: none;
-        margin: 0 auto;
-        padding-left: 5%;
-      }
-    }
-  }
-  #certifieds-container{
-    .bxslider{
-      padding-bottom: 250px;
-      .slide{
-        width: 95%;
-        float: none;
-        margin: 0 auto !important;
-        //padding-left: 3%;
-        min-height: 250px;
-      }
-    }
-    .views-field-body,
-    .views-field-field-subtitle{
-      min-height: 75px;
-    }
-    .field-content{
-      width: 100%;
-      display: inline-block;
-      .title-container{
-        margin: 0;
-        width: 95%;
-      }
-    }
-  }
-  #footer .region-footer .content{
-    font-size: 17px;
-    line-height: 20px;
-    .footer-top .footer-box{
-      width: 100%;
-      min-height: 90px;
-      padding-bottom: 15px;
-      h3{
-        font-size: 19px;
-      }
-      .item{
+    #footer .region-footer .content{
+        font-size: 17px;
         line-height: 20px;
-      }
+        .footer-top .footer-box{
+            width: 100%;
+            min-height: 90px;
+            padding-bottom: 15px;
+            h3{
+                font-size: 19px;
+            }
+            .item{
+                line-height: 20px;
+            }
+        }
     }
-  }
 }
 
 @media only screen and (max-width: 570px) {
@@ -508,9 +519,9 @@
 }
 
 @media only screen and (max-width: 540px) {
-  #header #header-bottom .views-field-entity-id img{
-    display: none;
-  }
+    #header #header-bottom .views-field-entity-id img{
+        display: none;
+    }
     #footer .region-footer .content{
         .footer-bottom .copy{
             margin-top: 25px;
@@ -519,51 +530,51 @@
 }
 
 @media only screen and (max-width: 539px) {
-  #header{
-    #header-top .menu-mobile{
-      display: block;
-    }
-    #header-middle{
-      #logo{
-        float: right;
-        //width: inherit;
-        //padding-right: 15px;
-        position: absolute;
-        left: 60%;
-      }
-      #block-summa-blocks-social-media{
-        display: none;
-      }
-      #block-menu-menu-summa-options{
-        display: none;
-        ul.menu{
-          width: 100%;
-          li{
-            width: 98%;
-            height: auto;
-            text-align: left;
-            display: inline-block;
-            outline: none;
-            outline-style: none;
-            -moz-outline-style:none;
-            a{
-              width: 97%;
-              outline: none;
-              outline-style: none;
-              -moz-outline-style:none;
-              display: inline-block;
-              &:active,
-              &:focus{
-                outline: none;
-                outline-style: none;
-                -moz-outline-style:none;
-              }
-            }
-          }
+    #header{
+        #header-top .menu-mobile{
+            display: block;
         }
-      }
+        #header-middle{
+            #logo{
+                float: right;
+                //width: inherit;
+                //padding-right: 15px;
+                position: absolute;
+                left: 60%;
+            }
+            #block-summa-blocks-social-media{
+                display: none;
+            }
+            #block-menu-menu-summa-options{
+                display: none;
+                ul.menu{
+                    width: 100%;
+                    li{
+                        width: 98%;
+                        height: auto;
+                        text-align: left;
+                        display: inline-block;
+                        outline: none;
+                        outline-style: none;
+                        -moz-outline-style:none;
+                        a{
+                            width: 97%;
+                            outline: none;
+                            outline-style: none;
+                            -moz-outline-style:none;
+                            display: inline-block;
+                            &:active,
+                            &:focus{
+                                outline: none;
+                                outline-style: none;
+                                -moz-outline-style:none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
-  }
 
     #footer .region-footer .content{
         .footer-bottom .copy{
@@ -573,9 +584,9 @@
 }
 
 @media only screen and (max-width: 480px) {
-  #header #header-middle #logo{
-    left: 55%;
-  }
+    #header #header-middle #logo{
+        left: 55%;
+    }
     .location-container{
         .pointer{
             height: 210px;
@@ -591,9 +602,9 @@
 }
 
 @media only screen and (max-width: 400px) {
-  #header #header-middle #logo{
-    left: 50%;
-  }
+    #header #header-middle #logo{
+        left: 50%;
+    }
     .location-container{
         .pointer{
             height: 190px;
@@ -608,13 +619,13 @@
 }
 
 @media only screen and (max-width: 360px) {
-  #header #header-middle #logo{
-    left: 45%;
-  }
+    #header #header-middle #logo{
+        left: 45%;
+    }
 }
 
 @media only screen and (max-width: 320px) {
-  #header #header-middle #logo{
-    left: 40%;
-  }
+    #header #header-middle #logo{
+        left: 40%;
+    }
 }
