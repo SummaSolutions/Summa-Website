@@ -1,4 +1,5 @@
 /* Summa 2015 design */
+$maxPageWidth: 1100px;
 
 @mixin pageWidth(){
     float: none;
@@ -9,7 +10,7 @@
     &>div{
         width: 96%;
         margin: 0 auto;
-        max-width: 1100px;
+        max-width: $maxPageWidth;
         padding: 0 2%;
         float: none;
         text-align: left;
@@ -22,6 +23,10 @@
         .safe-container{
             width: 100%;
         }
+    }
+    .safe-container{
+        width: 100%;
+        max-width: $maxPageWidth;
     }
 }
 
@@ -184,7 +189,7 @@
           margin: 0 auto;
           padding: 0 2%;
           width: 96%;
-          max-width: 1100px;
+          max-width: $maxPageWidth;
         }
       }
       .pane-content{
@@ -285,4 +290,74 @@
   .panels-flexible-row-canvas-company-17-inside{
     display: none;
   }
+}
+
+.clients-wrapper .clients-container .views-field-field-picture img{
+    width: 100%;
+    height: 100%;
+}
+
+.partners-container{
+    .slider-container.safe-container{
+        width: 100%;
+        max-width: $maxPageWidth;
+    }
+}
+
+.canvas-company{
+    .pane-team.safe-container{
+        width: 100%;
+        max-width: $maxPageWidth;
+    }
+    .partners-container{
+        .group-container .views-row{
+            width: 44%;
+        }
+        .group-container .views-row:first-child{
+            margin-left: 6%;
+        }
+    }
+    .row-current-openings{
+        .col-left{
+            padding-left: 4%;
+            width: 50%;
+        }
+        .col-right{
+            padding-right: 4%;
+            width: 42%;
+        }
+    }
+    .pane-content{
+        p{
+            padding: 0 4%;
+        }
+    }
+}
+
+.team-container{
+    .bxslider,.group-container{
+        //width: 100% !important;
+        //max-width: $maxPageWidth !important;
+    }
+}
+
+.canvas-contact{
+    .region-main{
+        width: 55%;
+        .panels-flexible-region-inside{
+            padding: 0;
+        }
+        .panel-pane{
+            padding: 15px 3% 15px 9%;
+            .contact-map-container{
+                padding: 0;
+            }
+        }
+        .about-us-container{
+            padding-top: 50px;
+        }
+    }
+    #contact-form-container{
+        padding-top: 125px;
+    }
 }
