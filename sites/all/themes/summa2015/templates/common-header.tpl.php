@@ -33,6 +33,11 @@
     var topBar = '#header-middle';
     jQuery(topBar).addClass('original').clone().insertAfter(topBar).addClass('cloned').css('position','fixed').css('top','0').css('margin-top','0').css('z-index','500').removeClass('original').hide();
 
+    var $menuMobile = jQuery('#header-top .menu-mobile a');
+    $menuMobile.on('click',function(){
+        jQuery('#block-menu-menu-summa-options').toggle();
+    });
+
     scrollIntervalID = setInterval(stickIt, 10);
 
     function stickIt() {

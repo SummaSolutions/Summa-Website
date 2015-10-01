@@ -55,7 +55,7 @@
     left: 0;
     right: 0; }
 
-@media only screen and (min-width: 641px) {
+@media only screen and (min-width: 041px) {
   #services-list-container {
     margin: 0 auto 52px; }
     #services-list-container .subtitle {

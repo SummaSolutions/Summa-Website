@@ -86,7 +86,7 @@
       letter-spacing: 3px;
       display: inline; }
 
-@media only screen and (min-width: 641px) {
+@media only screen and (min-width: 041px) {
   #certifieds-container {
     background: url(../../images/certifieds-background-tablet.gif) no-repeat left top;
     height: 1090px;

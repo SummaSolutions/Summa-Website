@@ -24,7 +24,7 @@
     text-align: left;
     height: 510px; }
 
-@media only screen and (min-width: 641px) {
+@media only screen and (min-width: 041px) {
   .canvas-services .row-description .panels-flexible-region-canvas-services-center {
     background-position: center bottom !important; }
   .canvas-services .region-body-container .col {

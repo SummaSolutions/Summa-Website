@@ -8,7 +8,7 @@ html, body {
   box-sizing: border-box; }
 
 #page-wrapper {
-  width: 641px;
+  width: 041px;
   overflow: hidden;
   font-family: Ruda;
   margin: 0 auto; }
@@ -81,7 +81,7 @@ a.contact-us {
   border: 1px solid #999;
   background: #fff; }
 
-@media only screen and (min-width: 641px) {
+@media only screen and (min-width: 041px) {
   #page-wrapper {
     width: 100%;
     min-width: 1000px;

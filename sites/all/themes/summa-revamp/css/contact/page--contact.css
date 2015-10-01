@@ -28,7 +28,7 @@
 .canvas-contact #contact-form-container input[type=submit] {
   width: 100%; }
 
-@media only screen and (min-width: 641px) {
+@media only screen and (min-width: 041px) {
   .canvas-contact {
     background: #fff; }
     .canvas-contact .row-white {

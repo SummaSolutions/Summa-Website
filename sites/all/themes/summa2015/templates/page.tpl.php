@@ -1,6 +1,6 @@
 <?php
-drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/skin.js" );
-drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/breakpoints.js" );
+//drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/skin.js" );
+//drupal_add_js( drupal_get_path( "theme", "summa_revamp" ) . "/js/breakpoints.js" );
 /* Case studies */
 drupal_add_css(drupal_get_path( "theme", "summa_revamp" ) . "");
 ?>
