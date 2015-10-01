@@ -86,7 +86,7 @@
       display: block;
       position: relative; }
 
-@media only screen and (min-width: 641px) {
+@media only screen and (min-width: 041px) {
   #hp-jobs-container {
     background: url(../../images/hp-jobs-background-tablet.png) no-repeat 84px 70px;
     height: auto;

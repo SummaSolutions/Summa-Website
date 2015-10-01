@@ -18,7 +18,7 @@
     .canvas-company .row-mission-vision .about-us-container p, .canvas-company .row-mission-vision .vision-container p, .canvas-company .row-mission-vision .mission-container p {
       margin: 0 0 16px; }
 
-@media only screen and (min-width: 641px) {
+@media only screen and (min-width: 041px) {
   .canvas-company .row-mission-vision .col-left {
     float: left;
     width: 408px;

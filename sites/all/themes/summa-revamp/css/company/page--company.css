@@ -87,7 +87,7 @@
 .canvas-company .pane-team {
   position: relative; }
 
-@media only screen and (min-width: 641px) {
+@media only screen and (min-width: 041px) {
   .canvas-company .row-white h1, .canvas-company .row-mission-vision h1, .canvas-company .row-current-openings h1 {
     font-size: 60px; } }
 

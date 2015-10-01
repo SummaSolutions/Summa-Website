@@ -57,7 +57,7 @@
       display: block;
       position: relative; }
 
-@media only screen and (min-width: 641px) {
+@media only screen and (min-width: 041px) {
   #latest-posts-container {
     background: url(../../images/latest-posts-background-tablet.png) no-repeat 680px 23px;
     height: auto;

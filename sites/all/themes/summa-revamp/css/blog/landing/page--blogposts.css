@@ -235,7 +235,7 @@
         text-transform: uppercase;
         background: #FF0; }
 
-@media only screen and (min-width: 641px) {
+@media only screen and (min-width: 041px) {
   .canvas-blog .row-h1 {
     width: 1000px;
     margin: 0 auto;

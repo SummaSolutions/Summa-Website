@@ -40,7 +40,7 @@
       padding: 0;
       margin: 0;
       background: #899a28;
-      width: 641px; }
+      width: 041px; }
       #header #header-middle #block-menu-menu-summa-options ul li {
         margin: 0;
         list-style: none;
@@ -104,7 +104,7 @@
     text-align: center;
     min-height: 408px; }
 
-@media only screen and (min-width: 641px) {
+@media only screen and (min-width: 041px) {
   #header {
     background: none; }
     #header.expanded #header-bottom {
