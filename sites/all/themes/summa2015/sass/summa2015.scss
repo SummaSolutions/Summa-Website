@@ -24,9 +24,11 @@ $maxPageWidth: 1100px;
             width: 100%;
         }
     }
-    .safe-container{
-        width: 100%;
-        max-width: $maxPageWidth;
+    .column{
+        .safe-container{
+            width: 100%;
+            max-width: $maxPageWidth;
+        }
     }
 }
 
