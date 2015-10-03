@@ -26,8 +26,8 @@ $maxPageWidth: 1100px;
     }
     .column{
         .safe-container{
-            width: 100%;
-            max-width: $maxPageWidth;
+            //width: 100%;
+            //max-width: $maxPageWidth;
         }
     }
 }
@@ -145,6 +145,11 @@ $maxPageWidth: 1100px;
                         }
                     }
                 }
+              .footer-box:last-child{
+                .item:last-child{
+                  width: 100%;
+                }
+              }
             }
             .footer-bottom{
                 .copy{
