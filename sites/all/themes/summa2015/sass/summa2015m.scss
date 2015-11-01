@@ -833,6 +833,15 @@
       width: 100%;
     }
   }
+  .page-company{
+    .canvas-company .row-description .panels-flexible-row-inside{
+      width: 100%;
+    }
+    .row-description .region-description-container{
+      width: 94%;
+      padding: 0 3%;
+    }
+  }
 }
 
 @media only screen and (max-width: 570px) {

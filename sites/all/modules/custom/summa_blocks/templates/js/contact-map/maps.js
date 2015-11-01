@@ -31,4 +31,16 @@ jQuery(document).ready( function(){
 
         _this.data("map", map);
     });
+
+    //select the right map
+    var $map = jQuery('.location-container .google-maps-container .map');
+    var $control = jQuery('.location-container .bx-pager-link');
+
+    $control.on('click', function(){
+    var index = jQuery(this).attr('data-slide-index');
+    //console.log(index);
+    $map.hide();
+    $map.eq(index).show();
+    });
+
 });
