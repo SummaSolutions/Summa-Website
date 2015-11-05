@@ -40,6 +40,7 @@ $baseUrl = 'http://'.$_SERVER['SERVER_NAME'];
         img.bronze{width: 130px; margin: 0 10%;}
         img.apoyo{width: 90px; margin: 0 3%;}
         .organiza{font-size: 16px; text-transform: uppercase; color: #777;}
+        .header{position: relative;}
 
         @media only screen and (max-width: 600px), screen and (max-device-width: 600px) {
             body { padding:0; }
