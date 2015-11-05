@@ -153,12 +153,12 @@ $baseUrl = 'http://'.$_SERVER['SERVER_NAME'];
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                     <td class="h2">
-                        ¿Que van a encontrar?
+                        ¿Que vas a encontrar?
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <p>Encontrar&aacute;n <b>m&uacute;ltiples charlas</b>, desde las bien t&eacute;cnicas, a otras de <b>negocios y de pr&aacute;cticas de e-commerce</b> que ser&aacute;n tan valiosas para los profesionales del ecommerce como para los merchants o aquellos que est&eacute;n buscando conocer m&aacute;s de este apasionante mundo.</p>
+                        <p><br>Encontrar&aacute;s <b>m&uacute;ltiples charlas</b>, desde las bien t&eacute;cnicas, a otras de <b>negocios y de pr&aacute;cticas de e-commerce</b> que ser&aacute;n tan valiosas para los profesionales del ecommerce como para los merchants o aquellos que est&eacute;n buscando conocer m&aacute;s de este apasionante mundo.</p>
                         <a href="http://ar.meet-magento.com/agenda/" target="_blank" class="button">Ver agenda del evento <span class="small">&#9654;</span></a>
                     </td>
                 </tr>
@@ -170,7 +170,7 @@ $baseUrl = 'http://'.$_SERVER['SERVER_NAME'];
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                     <td>
-                        <p>Adem&aacute;s de las charlas y paneles, se tendr&aacute; un &aacute;rea de sponsors en donde habr&aacute; stands para que los asistentes puedan conocer sobre los <b>productos y servicios</b> que ofrecen.</p>
+                        <p>Adem&aacute;s de las charlas y paneles, habr&aacute; un &aacute;rea de sponsors en donde encontrar&aacute;s stands con informaci&oacute;n sobre los <b>productos y servicios</b> que ofrecen.</p>
                         <a href="http://ar.meet-magento.com/meet-magento-2015/be-a-sponsor/" target="_blank" class="button">Ver sponsors <span class="small">&#9654;</span></a>
                     </td>
                 </tr>
