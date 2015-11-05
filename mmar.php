@@ -134,7 +134,7 @@ $baseUrl = 'http://'.$_SERVER['SERVER_NAME'];
                             </tr>
                             <tr>
                                 <td class="subhead" style="padding: 5px 10px 0;">
-                                    <p>Se realiza la primera edici&oacute;n de <a href="http://ar.meet-magento.com/" target="_blank" style="color: #fff;"><b>Meet Magento Argentina.</b></a><br>Es la oportunidad de encontrarnos todos los que estamos relacionados con el e-commerce, o los que quieren empezar a estarlo.</p>
+                                    <p>Por primera vez, se realizar&aacute; en Argentina una de las conferencias de e-commerce m&aacute;s populares del mundo: <a href="http://ar.meet-magento.com/" target="_blank" style="color: #fff;"><b>Meet Magento</b></a>.<br>Es una gran oportunidad para todos los relacionados con el e-commerce, y para aquellos que quieren empezar.</p>
                                 </td>
                             </tr>
                         </table>
@@ -153,7 +153,7 @@ $baseUrl = 'http://'.$_SERVER['SERVER_NAME'];
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                     <td class="h2">
-                        ¿Que vamos a encontrar?
+                        ¿Que van a encontrar?
                     </td>
                 </tr>
                 <tr>
@@ -182,8 +182,8 @@ $baseUrl = 'http://'.$_SERVER['SERVER_NAME'];
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                     <td>
-                        <p>Tambi&eacute;n estamos organizando una <b>cl&iacute;nica con especialistas</b> en diferentes &aacute;reas, para que puedan revisar tu e-commerce y darte consejos de c&oacute;mo llevarlo al pr&oacute;ximo nivel.</p>
-                        <p>Por supuesto, para poder aprovechar tantas cosas, en necesario cargar combustible! Se tendr&aacute; un <b>desayuno</b> con la registraci&oacute;, <b>cofee breaks</b>, un <b>almuerzo</b> y el... <b>after party</b>!</p>
+                        <p>Tambi&eacute;n habr&aacute; una <b>cl&iacute;nica con especialistas</b> en diferentes &aacute;reas, para que puedan revisar tu e-commerce y darte consejos de c&oacute;mo llevarlo al pr&oacute;ximo nivel.</p>
+                        <p>Por supuesto, para poder aprovechar tantas cosas, es necesario cargar combustible! Se tendr&aacute; un <b>desayuno</b> con la registraci&oacute;n, <b>coffee breaks</b>, un <b>almuerzo</b> y el... <b>after party</b>!</p>
                     </td>
                 </tr>
             </table>
