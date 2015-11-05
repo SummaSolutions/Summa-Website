@@ -50,19 +50,22 @@ $baseUrl = 'http://'.$_SERVER['SERVER_NAME'];
             body[yahoo] .hide {display: none!important;}
             body[yahoo] .buttonwrapper {background-color: transparent!important;}
             body[yahoo] .unsubscribe {display: block; margin-top: 20px; padding: 10px 50px; background: #2f3942; border-radius: 5px; text-decoration: none!important; font-weight: bold;}
-            .header .logo{overflow-x: hidden; height: auto;}
-            .header .logo img{width: 120%; margin-left: -10%}
+            .header .logo td{overflow-x: hidden; position: relative; max-width: 540px;}
+            .header .logo img{width: 120%; margin-left: -10%; height: auto;}
         }
 
         @media only screen and (max-width: 480px), screen and (max-device-width: 480px) {
+            .header .logo td{overflow-x: hidden; position: relative; max-width: 480px;}
             .header .logo img{width: 140%; margin-left: -20%}
         }
 
         @media only screen and (max-width: 400px), screen and (max-device-width: 400px) {
+            .header .logo td{overflow-x: hidden; position: relative; max-width: 400px;}
             .header .logo img{width: 160%; margin-left: -30%}
         }
 
         @media only screen and (max-width: 360px), screen and (max-device-width: 360px) {
+            .header .logo td{overflow-x: hidden; position: relative; max-width: 360px;}
             .header .logo img{width: 170%; margin-left: -35%}
         }
 
