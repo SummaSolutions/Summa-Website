@@ -1,4 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php 
+$baseUrl = 'http://'.$_SERVER['SERVER_NAME'];
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -79,7 +81,7 @@
                             <tr>
                                 <td height="100%" style="padding: 0;">
                                     <a href="http://ar.meet-magento.com/" target="_blank">
-                                        <img class="fix" src="mmar/mmar.jpg" width="100%" height="100%" border="0" alt="" />
+                                        <img class="fix" src="<?php echo $baseUrl; ?>/mmar/mmar.jpg" width="100%" height="100%" border="0" alt="" />
                                     </a>
                                 </td>
                             </tr>
@@ -95,14 +97,14 @@
                                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                         <tr>
                                             <td class="subhead" style="padding: 0 0 0 3px;">
-                                                <img src="mmar/lolcal.png" width="80" height="80">
+                                                <img src="<?php echo $baseUrl; ?>/mmar/lolcal.png" width="80" height="80">
                                                 <p><b>3 de diciembre de 2015<br>Hotel Melia Buenos Aires</b><br>Reconquista 945</p>
                                                 <a href="https://eventioz.com.ar/e/meet-magento-argentina" target="_blank" class="button">Compr&aacute; tu entrada <span class="small">&#9654;</span></a>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="subhead" style="padding: 5px 10px 0;">
-                                                <p>Se realiza la primera edici&oacute;n de <b>Meet Magento Argentina.</b><br>Es la oportunidad de encontrarnos todos los que estamos relacionados con el e-commerce, o los que quieren empezar a estarlo.</p>
+                                                <p>Se realiza la primera edici&oacute;n de <a href="http://ar.meet-magento.com/" target="_blank" style="color: #fff;"><b>Meet Magento Argentina.</b></a><br>Es la oportunidad de encontrarnos todos los que estamos relacionados con el e-commerce, o los que quieren empezar a estarlo.</p>
                                             </td>
                                         </tr>
                                     </table>
@@ -176,7 +178,7 @@
                             <tr>
                                 <td>
                                     <p>Para m&aacute;s info e inscripciones, por favor comunicarse directamente con:</p>
-                                    <img src="mmar/mail.jpg" alt="email" style="float: left;">
+                                    <img src="<?php echo $baseUrl; ?>/mmar/mail.jpg" alt="email" style="float: left;">
                                     <p style="display: inline-block;margin: 5px 0;"><b>Paola Tabacman, de Summa Solutions<br><u><a href="mailto:ptabacman@summasolutions.net">ptabacman@summasolutions.net</a></u></b></p>
                                 </td>
                             </tr>
@@ -194,26 +196,26 @@
                             <tr>
                                 <td>
                                     <div class="sponsor">
-                                        <img src="mmar/Gold_Summa.png" alt="SummaSolutions" class="gold">
-                                        <img src="mmar/Gold_Brandlive.jpg" alt="Brandlive" class="gold">
-                                        <img src="mmar/Gold_Contactlab.png" alt="Contact lab" class="gold">
+                                        <img src="<?php echo $baseUrl; ?>/mmar/Gold_Contactlab.png" alt="Contact lab" class="gold">
+                                        <img src="<?php echo $baseUrl; ?>/mmar/Gold_Summa.png" alt="SummaSolutions" class="gold">
+                                        <img src="<?php echo $baseUrl; ?>/mmar/Gold_Brandlive.jpg" alt="Brandlive" class="gold">
                                     </div>
                                     <div class="sponsor">
-                                        <img src="mmar/Silver_e-trans.png" alt="e-trans" class="silver">
+                                        <img src="<?php echo $baseUrl; ?>/mmar/Silver_e-trans.png" alt="e-trans" class="silver">
                                     </div>
                                     <div class="sponsor">
-                                        <img src="mmar/Bronze_121ecommerce.png" alt="121 ecommerce" class="bronze">
-                                        <img src="mmar/Bronze_Nexcess.jpg" alt="Nexcess" class="bronze">
-                                        <img src="mmar/Bronze_Onetree.jpg" alt="Onetree" class="bronze">
-                                        <img src="mmar/Bronze_Peer1.png" alt="Peer" class="bronze">
+                                        <img src="<?php echo $baseUrl; ?>/mmar/Bronze_121ecommerce.png" alt="121 ecommerce" class="bronze">
+                                        <img src="<?php echo $baseUrl; ?>/mmar/Bronze_Nexcess.jpg" alt="Nexcess" class="bronze">
+                                        <img src="<?php echo $baseUrl; ?>/mmar/Bronze_Onetree.jpg" alt="Onetree" class="bronze">
+                                        <img src="<?php echo $baseUrl; ?>/mmar/Bronze_Peer1.png" alt="Peer" class="bronze">
                                     </div>
                                     <div class="sponsor">
-                                        <img src="mmar/Apoyo_CACE.jpg" alt="CACE" class="apoyo">
-                                        <img src="mmar/Apoyo_Corvalius2.png" alt="Corvalius" class="apoyo">
-                                        <img src="mmar/Apoyo_Sentialabs.png" alt="Sentia labs" class="apoyo">
-                                        <img src="mmar/Media_Amasty.png" alt="Amasty" class="apoyo">
-                                        <img src="mmar/Media_Doppler.jpg" alt="Doppler" class="apoyo">
-                                        <img src="mmar/Media_Guiapurpura.jpg" alt="Guia purpura" class="apoyo">
+                                        <img src="<?php echo $baseUrl; ?>/mmar/Apoyo_CACE.jpg" alt="CACE" class="apoyo">
+                                        <img src="<?php echo $baseUrl; ?>/mmar/Apoyo_Corvalius2.png" alt="Corvalius" class="apoyo">
+                                        <img src="<?php echo $baseUrl; ?>/mmar/Apoyo_Sentialabs.png" alt="Sentia labs" class="apoyo">
+                                        <img src="<?php echo $baseUrl; ?>/mmar/Media_Amasty.png" alt="Amasty" class="apoyo">
+                                        <img src="<?php echo $baseUrl; ?>/mmar/Media_Doppler.jpg" alt="Doppler" class="apoyo">
+                                        <img src="<?php echo $baseUrl; ?>/mmar/Media_Guiapurpura.jpg" alt="Guia purpura" class="apoyo">
                                     </div>
                                 </td>
                             </tr>
@@ -232,17 +234,17 @@
                                         <tr>
                                             <td width="37" style="text-align: center; padding: 0 10px 0 10px;">
                                                 <a href="https://www.facebook.com/meetmagentoar">
-                                                    <img src="mmar/social-fb.png" width="37" height="37" alt="Facebook" border="0" />
+                                                    <img src="<?php echo $baseUrl; ?>/mmar/social-fb.jpg" width="40" height="40" alt="Facebook" border="0" />
                                                 </a>
                                             </td>
                                             <td width="37" style="text-align: center; padding: 0 10px 0 10px;">
                                                 <a href="https://twitter.com/MeetMagentoAR">
-                                                    <img src="mmar/social-tw.png" width="37" height="37" alt="Twitter" border="0" />
+                                                    <img src="<?php echo $baseUrl; ?>/mmar/social-tw.jpg" width="40" height="40" alt="Twitter" border="0" />
                                                 </a>
                                             </td>
                                             <td width="37" style="text-align: center; padding: 0 10px 0 10px;">
                                                 <a href="https://www.linkedin.com/company/summa-solutions">
-                                                    <img src="mmar/social-ln.png" width="37" height="37" alt="linkedIn" border="0" />
+                                                    <img src="<?php echo $baseUrl; ?>/mmar/social-ln.jpg" width="40" height="40" alt="linkedIn" border="0" />
                                                 </a>
                                             </td>
                                         </tr>
@@ -261,7 +263,7 @@
                                     <p class="organiza"><b>Organiza</b></p>
                                     <div class="sponsor">
                                         <a href="http://www.summasolutions.net">
-                                            <img src="mmar/Summa.png" alt="SummaSolutions">
+                                            <img src="<?php echo $baseUrl; ?>/mmar/Summa.png" alt="SummaSolutions">
                                         </a>
                                     </div>
                                 </td>
