@@ -88,6 +88,11 @@ drupal_add_css(drupal_get_path( "theme", "summa_revamp" ) . "");
                         </div>
                         <a href="<?php print $front_page; ?>" title="<?php print t( 'Home' ); ?>" rel="home" id="logo"
                            class="hide-text"><?php print ( $site_name ) ? $site_name : t( 'Summa Solutions' ); ?></a>
+                        <div class="tel menu-mobile" style="font-size:17px;color:#fff;padding:20px 0 0 8px;clear:both;">
+                            <b>Phones
+                                &nbsp;&nbsp;&nbsp;ARG: +54 11 6091-4603
+                                &nbsp;&nbsp;&nbsp;USA: +1 440 940-6507</b>
+                        </div>
                     </div>
                     <div id="header-middle">
                         <?php
@@ -100,6 +105,11 @@ drupal_add_css(drupal_get_path( "theme", "summa_revamp" ) . "");
                          */
                         print render( $page['header'] );
                         ?>
+                        <div class="tel" style="font-size:13px;color:#fff;text-align:right;padding:25px 15px 0 0;">
+                            <b>Phones
+                            &nbsp;&nbsp;&nbsp;ARG: +54 11 6091-4603
+                            &nbsp;&nbsp;&nbsp;USA: +1 440 940-6507</b>
+                        </div>
                     </div>
                     <?php
                     if ( $page['highlight'] ) :
