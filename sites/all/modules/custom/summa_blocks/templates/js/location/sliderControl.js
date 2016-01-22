@@ -23,10 +23,17 @@ jQuery(window).load(function () {
         preventDefaultSwipeX: true,
         autoHover: true,
         onSlideNext : function($slideElement){
-            var lat = $slideElement.data("latitude");
-            var lon = $slideElement.data("longitude");
+            //var lat = $slideElement.data("latitude");
+            //var lon = $slideElement.data("longitude");
             //jQuery(locMapSelector).data("map").panTo( new google.maps.LatLng( lat, lon ) );
-            jQuery(locMapSelector).find('.map').toggle();
+            var id = $slideElement.prop('id');
+            jQuery(locMapSelector).find('.map').hide();
+            jQuery(locMapSelector).find('.'+id).fadeIn();
+        },
+        onSlidePick : function($slideElement){
+            var id = $slideElement.prop('id');
+            jQuery(locMapSelector).find('.map').hide();
+            jQuery(locMapSelector).find('.'+id).fadeIn();
         }
     });
 
