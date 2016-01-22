@@ -547,6 +547,8 @@ function block_summa_contact_footer()
             'items' => array(
                 t('t: +54 11 60914603'),
                 t('argentina<span>&#x40;</span>summasolutions.net'),
+                t('t: +1 440 9406507'),
+                t('usa<span>&#x40;</span>summasolutions.net'),
                 '<h3>'.t('Follow Us').'</h3>',
                 block_social_media(),
             ),
